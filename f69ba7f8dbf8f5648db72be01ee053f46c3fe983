@@ -1,0 +1,29 @@
+components/SuccessScreen.tsx
+  4de4995a2d523036 4,12,14,50,52,65-73,76-77,85,90-96,98-103,108-109
+lib/suggestions.ts
+  4de4995a2d523036 1-43
+app/page.tsx
+  4de4995a2d523036 3,13,28,30-33,41,44-45,50,58,93-94,101-103,137,140,158,160
+components/InputScreen.tsx
+  4de4995a2d523036 9,12,19,22,42,46-52,54-59,66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "f69ba7f8dbf8f5648db72be01ee053f46c3fe983",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 123,
+      "total_deletions": 18,
+      "accepted_lines": 117,
+      "overriden_lines": 2
+    }
+  }
+}
