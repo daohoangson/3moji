@@ -1128,9 +1128,6 @@ const EMOJI_DATABASE: EmojiCategory[] = [
 /** Map from name/alias -> first emoji that uses it */
 const nameToEmoji = new Map<string, string>();
 
-/** Map from name/alias -> all emojis that use it (for similarity detection) */
-const nameToAllEmojis = new Map<string, string[]>();
-
 /** Map from emoji -> all its names */
 const emojiToNames = new Map<string, string[]>();
 
@@ -1152,11 +1149,6 @@ EMOJI_DATABASE.forEach((cat) => {
       if (!nameToEmoji.has(lowerName)) {
         nameToEmoji.set(lowerName, item.emoji);
       }
-      // Track all emojis that share this name (for similarity)
-      if (!nameToAllEmojis.has(lowerName)) {
-        nameToAllEmojis.set(lowerName, []);
-      }
-      nameToAllEmojis.get(lowerName)!.push(item.emoji);
     });
   });
 });
