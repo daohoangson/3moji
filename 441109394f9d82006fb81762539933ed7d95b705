@@ -1,0 +1,23 @@
+docs/feat/mvp.md
+  4de4995a2d523036 67-69,73-74,78-79,81,83-84,87,89-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "441109394f9d82006fb81762539933ed7d95b705",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 12,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    }
+  }
+}
