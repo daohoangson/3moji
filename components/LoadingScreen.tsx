@@ -12,10 +12,10 @@ export function LoadingScreen() {
       <div className="relative mb-8">
         <div className="absolute inset-0 animate-ping rounded-full bg-sky-400 opacity-20 duration-1000" />
         <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-xl">
-           <Sparkles className="h-10 w-10 animate-bounce text-sky-500" />
+          <Sparkles className="h-10 w-10 animate-bounce text-sky-500" />
         </div>
       </div>
-      
+
       <div className="flex flex-col items-center gap-2">
         <h2 className="animate-pulse text-3xl font-black tracking-tight text-slate-800">
           Making magic...

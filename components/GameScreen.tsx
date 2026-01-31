@@ -29,7 +29,7 @@ function CardContent({
   if (type === "color") {
     return (
       <div
-        className="h-full w-full rounded-2xl sm:rounded-3xl shadow-inner border-2 border-black/5"
+        className="h-full w-full rounded-2xl border-2 border-black/5 shadow-inner sm:rounded-3xl"
         style={{ backgroundColor: item.value }}
       />
     );
@@ -37,7 +37,7 @@ function CardContent({
 
   return (
     <div
-      className="flex h-full w-full items-center justify-center leading-none select-none drop-shadow-sm filter"
+      className="flex h-full w-full items-center justify-center leading-none drop-shadow-sm filter select-none"
       style={{ fontSize: "min(20vh, 20vw)" }}
     >
       {item.value}
@@ -77,11 +77,10 @@ export function GameScreen({
         <button
           onClick={onBack}
           aria-label="Go back"
-          className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:bg-white hover:text-sky-600 hover:shadow-md hover:scale-105 active:scale-95 focus:ring-2 focus:ring-sky-500 focus:outline-none"
+          className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
         >
           <ArrowLeft className="h-6 w-6 stroke-[3px]" />
         </button>
-        
         <div className="mx-4 flex max-w-[70%] items-center gap-2 truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
           <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
             Find: <span className="text-sky-600 capitalize">{inputWord}</span>
@@ -96,7 +95,6 @@ export function GameScreen({
             </button>
           )}
         </div>
-        
         <div className="w-12" /> {/* Spacer for centering */}
       </div>
 
@@ -112,34 +110,27 @@ export function GameScreen({
               onClick={() => onItemClick(item.id)}
               disabled={isWrong || hasCorrectAnswer}
               aria-label={`Option: ${item.value}`}
-              className={`
-                relative min-h-0 min-w-0 flex-1 transform overflow-hidden rounded-3xl border-b-[8px] transition-all duration-300 focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px]
-                ${
-                  !isWrong && !isCorrect 
-                    ? "bg-white border-slate-200 shadow-xl" 
-                    : ""
-                }
-                ${
-                  !isWrong && !isCorrect && !hasCorrectAnswer 
-                    ? "hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl active:scale-[0.98] active:translate-y-0 active:border-b-4 focus:ring-4 focus:ring-sky-500/30" 
-                    : ""
-                }
-                ${
-                  !isWrong && !isCorrect && hasCorrectAnswer 
-                    ? "opacity-50 grayscale cursor-default" 
-                    : ""
-                }
-                ${
-                  isWrong 
-                    ? "scale-95 cursor-not-allowed border-transparent bg-slate-100 opacity-50 shadow-none grayscale" 
-                    : ""
-                }
-                ${
-                  isCorrect 
-                    ? "z-10 scale-105 border-green-500 bg-green-50 ring-4 ring-green-400 ring-offset-4 ring-offset-transparent shadow-green-200" 
-                    : ""
-                } 
-              `}
+              className={`relative min-h-0 min-w-0 flex-1 transform overflow-hidden rounded-3xl border-b-[8px] transition-all duration-300 focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px] ${
+                !isWrong && !isCorrect
+                  ? "border-slate-200 bg-white shadow-xl"
+                  : ""
+              } ${
+                !isWrong && !isCorrect && !hasCorrectAnswer
+                  ? "hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl focus:ring-4 focus:ring-sky-500/30 active:translate-y-0 active:scale-[0.98] active:border-b-4"
+                  : ""
+              } ${
+                !isWrong && !isCorrect && hasCorrectAnswer
+                  ? "cursor-default opacity-50 grayscale"
+                  : ""
+              } ${
+                isWrong
+                  ? "scale-95 cursor-not-allowed border-transparent bg-slate-100 opacity-50 shadow-none grayscale"
+                  : ""
+              } ${
+                isCorrect
+                  ? "z-10 scale-105 border-green-500 bg-green-50 ring-4 shadow-green-200 ring-green-400 ring-offset-4 ring-offset-transparent"
+                  : ""
+              } `}
             >
               <div className="pointer-events-none absolute inset-3 flex items-center justify-center overflow-hidden rounded-2xl bg-slate-50/50 sm:inset-5 sm:rounded-3xl">
                 {isCorrect && (
