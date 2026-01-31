@@ -1,0 +1,35 @@
+components/SuccessScreen.tsx
+  4de4995a2d523036 1-77
+app/page.tsx
+  4de4995a2d523036 3-18,20-57,59-63,65-69,71-98,101-105,108-111,114-138,140
+components/index.ts
+  4de4995a2d523036 1-5
+components/InputScreen.tsx
+  4de4995a2d523036 1-72
+components/LoadingScreen.tsx
+  4de4995a2d523036 1-16
+components/Confetti.tsx
+  4de4995a2d523036 1-92
+components/GameScreen.tsx
+  4de4995a2d523036 1-21,23-24,26-37,39-66,68-83,85-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "32a2e3d73bc69cddcb4b1157d74f2e0012c5cc56",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 484,
+      "total_deletions": 2,
+      "accepted_lines": 482,
+      "overriden_lines": 12
+    }
+  }
+}
