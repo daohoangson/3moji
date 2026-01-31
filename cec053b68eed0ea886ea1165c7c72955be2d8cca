@@ -1,0 +1,27 @@
+lib/emoji-data.test.ts
+  2525045b1f3831c6 8,142,144,151-152,155-160
+lib/suggestions.ts
+  2525045b1f3831c6 1,23
+lib/emoji-data.ts
+  2525045b1f3831c6 1229-1230,1232-1233,1240,1243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "cec053b68eed0ea886ea1165c7c72955be2d8cca",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 20,
+      "total_deletions": 12,
+      "accepted_lines": 20,
+      "overriden_lines": 0
+    }
+  }
+}
