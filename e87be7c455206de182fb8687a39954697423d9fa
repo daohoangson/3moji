@@ -1,0 +1,29 @@
+components/GameScreen.tsx
+  4de4995a2d523036 56,61,85,98
+components/InputScreen.tsx
+  4de4995a2d523036 27-28,49-50,58-59,75-76
+components/LoadingScreen.tsx
+  4de4995a2d523036 7,9-10,13,18
+components/SuccessScreen.tsx
+  4de4995a2d523036 25-26,34-35,49,52,80-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "e87be7c455206de182fb8687a39954697423d9fa",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 38,
+      "total_deletions": 20,
+      "accepted_lines": 25,
+      "overriden_lines": 0
+    }
+  }
+}
