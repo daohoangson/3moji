@@ -53,12 +53,13 @@ export function GameScreen({
   const hasCorrectAnswer = items.some((item) => item.status === "correct");
 
   return (
-    <div className="fixed inset-0 flex flex-col items-center overflow-hidden bg-slate-100">
+    <main className="fixed inset-0 flex flex-col items-center overflow-hidden bg-slate-100">
       {/* Header */}
       <div className="z-20 flex h-16 w-full shrink-0 items-center justify-between px-4 py-2 sm:h-20">
         <button
           onClick={onBack}
-          className="rounded-xl bg-white p-2 text-slate-400 shadow-sm transition-colors hover:bg-slate-50 hover:text-slate-600 sm:p-3"
+          aria-label="Go back"
+          className="rounded-xl bg-white p-2 text-slate-400 shadow-sm transition-colors hover:bg-slate-50 hover:text-slate-600 focus:ring-2 focus:ring-blue-500 focus:outline-none sm:p-3"
         >
           <ArrowRight className="h-5 w-5 rotate-180 sm:h-6 sm:w-6" />
         </button>
@@ -81,7 +82,8 @@ export function GameScreen({
               key={item.id}
               onClick={() => onItemClick(item.id)}
               disabled={isWrong || hasCorrectAnswer}
-              className={`relative min-h-0 min-w-0 flex-1 transform overflow-hidden rounded-2xl border-b-[6px] border-slate-200 bg-white shadow-xl transition-all duration-300 sm:rounded-3xl sm:border-b-8 ${!isWrong && !hasCorrectAnswer ? "hover:scale-[1.02] active:scale-95 active:border-b-0" : ""} ${isWrong ? "scale-95 cursor-not-allowed border-none bg-slate-200 opacity-40 shadow-inner grayscale" : ""} ${isCorrect ? "z-10 ring-4 ring-green-400 sm:ring-8" : ""} `}
+              aria-label={`Option: ${item.value}`}
+              className={`relative min-h-0 min-w-0 flex-1 transform overflow-hidden rounded-2xl border-b-[6px] border-slate-200 bg-white shadow-xl transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:outline-none sm:rounded-3xl sm:border-b-8 ${!isWrong && !hasCorrectAnswer ? "hover:scale-[1.02] active:scale-95 active:border-b-0" : ""} ${isWrong ? "scale-95 cursor-not-allowed border-none bg-slate-200 opacity-40 shadow-inner grayscale" : ""} ${isCorrect ? "z-10 ring-4 ring-green-400 sm:ring-8" : ""} `}
             >
               <div className="pointer-events-none absolute inset-2 flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 sm:inset-4 sm:rounded-2xl">
                 {isCorrect && (
@@ -93,6 +95,6 @@ export function GameScreen({
           );
         })}
       </div>
-    </div>
+    </main>
   );
 }

@@ -22,12 +22,18 @@ function TargetDisplay({
       <div
         className="h-full w-full rounded-2xl"
         style={{ backgroundColor: targetValue }}
+        role="img"
+        aria-label={`Color: ${targetValue}`}
       />
     );
   }
 
   return (
-    <div className="flex h-full w-full items-center justify-center text-8xl leading-none sm:text-9xl">
+    <div
+      className="flex h-full w-full items-center justify-center text-8xl leading-none sm:text-9xl"
+      role="img"
+      aria-label={`Emoji: ${targetValue}`}
+    >
       {targetValue}
     </div>
   );
@@ -40,10 +46,10 @@ export function SuccessScreen({
   onPlayAgain,
 }: SuccessScreenProps) {
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-100 p-6">
+    <main className="fixed inset-0 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 to-indigo-100 p-6">
       <Confetti />
 
-      <div className="z-10 flex max-h-full w-full max-w-lg flex-col items-center">
+      <section className="z-10 flex max-h-full w-full max-w-lg flex-col items-center">
         <div className="mb-4 shrink-0 animate-bounce rounded-full bg-white p-4 shadow-2xl sm:mb-8 sm:p-6">
           <Sparkles
             className="h-12 w-12 text-yellow-400 sm:h-20 sm:w-20"
@@ -66,12 +72,12 @@ export function SuccessScreen({
 
         <button
           onClick={onPlayAgain}
-          className="flex shrink-0 items-center gap-3 rounded-full bg-green-500 px-8 py-4 text-xl font-bold text-white shadow-lg shadow-green-500/40 transition-all hover:-translate-y-1 hover:bg-green-600 active:translate-y-1 sm:px-12 sm:py-6 sm:text-2xl"
+          className="flex shrink-0 items-center gap-3 rounded-full bg-green-500 px-8 py-4 text-xl font-bold text-white shadow-lg shadow-green-500/40 transition-all hover:-translate-y-1 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:outline-none active:translate-y-1 sm:px-12 sm:py-6 sm:text-2xl"
         >
           <RefreshCw className="h-6 w-6 sm:h-8 sm:w-8" />
           Play Again
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
