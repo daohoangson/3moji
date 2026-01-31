@@ -1,0 +1,33 @@
+app/find/[word]/loading.tsx
+  2525045b1f3831c6 1-5
+app/find/[word]/page.tsx
+  2525045b1f3831c6 1-57
+app/find/[word]/game.tsx
+  2525045b1f3831c6 1-109
+app/page.tsx
+  2525045b1f3831c6 4-6,10,14,25-26,37,41,43
+components/GameScreen.tsx
+  2525045b1f3831c6 3,56-62
+lib/game-content.ts
+  2525045b1f3831c6 1,10-30,208-243
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "85dd7a01ad69c29707c1e634900b4c727fbf4124",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 494,
+      "total_deletions": 379,
+      "accepted_lines": 247,
+      "overriden_lines": 0
+    }
+  }
+}
