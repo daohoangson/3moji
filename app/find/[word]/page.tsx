@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { generateGameContent } from "@/lib/game-content";
 import { shuffle } from "@/lib/shuffle";
+import { getRandomSuggestions } from "@/lib/suggestions";
 import GameClient, { type GameItem } from "./game";
 
 interface PageProps {
@@ -46,12 +47,16 @@ export default async function FindPage({ params }: PageProps) {
     },
   ]);
 
+  // Generate suggestions on server
+  const suggestions = getRandomSuggestions(4);
+
   return (
     <GameClient
       word={word}
       type={data.type}
       targetValue={data.targetValue}
       initialItems={items}
+      suggestions={suggestions}
     />
   );
 }

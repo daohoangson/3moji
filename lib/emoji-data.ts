@@ -1,3 +1,5 @@
+import "server-only";
+
 /**
  * Emoji database with categories for generating game content without LLM.
  * Only includes well-supported emojis (Unicode 6.0-11.0, ~2010-2018).

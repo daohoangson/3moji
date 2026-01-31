@@ -1,3 +1,5 @@
+import "server-only";
+
 import { getShortestEmojiNames } from "./emoji-data";
 import { shuffle } from "./shuffle";
 

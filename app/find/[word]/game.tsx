@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GameScreen, SuccessScreen } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
-import { getRandomSuggestions } from "@/lib/suggestions";
 
 type Screen = "game" | "success";
 type ItemStatus = "normal" | "correct" | "wrong";
@@ -24,6 +23,7 @@ interface GameClientProps {
   type: "color" | "emoji";
   targetValue: string;
   initialItems: GameItem[];
+  suggestions: string[];
 }
 
 export default function GameClient({
@@ -31,20 +31,15 @@ export default function GameClient({
   type,
   targetValue,
   initialItems,
+  suggestions,
 }: GameClientProps) {
   const router = useRouter();
   const [screen, setScreen] = useState<Screen>("game");
-  const [suggestions, setSuggestions] = useState<string[]>([]);
 
   // Add status to items (status is client-only state)
   const [items, setItems] = useState<GameItemWithStatus[]>(() =>
     initialItems.map((item) => ({ ...item, status: "normal" as ItemStatus })),
   );
-
-  // Generate suggestions on mount
-  useEffect(() => {
-    setSuggestions(getRandomSuggestions(4));
-  }, []);
 
   const handleBack = () => {
     router.push("/");
