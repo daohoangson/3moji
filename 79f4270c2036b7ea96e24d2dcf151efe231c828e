@@ -1,0 +1,42 @@
+lib/speech.ts
+  4de4995a2d523036 1-32
+components/InputScreen.tsx
+  4de4995a2d523036 107
+  33250cd2d62aaa02 3,31-32,34,36-40,42,48,51-54,57-58,64-68,78,80-81,86,90-91,98,108,114-115
+components/GameScreen.tsx
+  33250cd2d62aaa02 74,76,82,85,99,103,115,117,119,121,128
+  4de4995a2d523036 3-5,32,56,58-71,84,89-92,94-97,116,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "79f4270c2036b7ea96e24d2dcf151efe231c828e",
+  "prompts": {
+    "33250cd2d62aaa02": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bfb80eea-fe24-47ef-adbd-0716631d50b0",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 167,
+      "total_deletions": 70,
+      "accepted_lines": 112,
+      "overriden_lines": 17
+    },
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 75,
+      "total_deletions": 16,
+      "accepted_lines": 64,
+      "overriden_lines": 1
+    }
+  }
+}
