@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   InputScreen,
   LoadingScreen,
@@ -10,6 +10,7 @@ import {
 } from "@/components";
 import { unlockAudio, playSuccessSound, playErrorSound } from "@/lib/audio";
 import { shuffle } from "@/lib/shuffle";
+import { getRandomSuggestions } from "@/lib/suggestions";
 
 type Screen = "input" | "loading" | "game" | "success";
 
@@ -24,6 +25,12 @@ export default function Home() {
   const [errorMsg, setErrorMsg] = useState("");
   const [gameData, setGameData] = useState<GameData | null>(null);
   const [items, setItems] = useState<GameItem[]>([]);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+
+  // Generate suggestions on mount and after each game
+  useEffect(() => {
+    setSuggestions(getRandomSuggestions(4));
+  }, []);
 
   const resetGame = () => {
     setScreen("input");
@@ -31,14 +38,16 @@ export default function Home() {
     setErrorMsg("");
     setGameData(null);
     setItems([]);
+    setSuggestions(getRandomSuggestions(4));
   };
 
-  const handleStart = async () => {
-    if (!inputWord.trim()) return;
+  const startGame = async (word: string) => {
+    if (!word.trim()) return;
 
     // Unlock audio on user interaction (required for iOS/Chrome)
     await unlockAudio();
 
+    setInputWord(word);
     setScreen("loading");
     setErrorMsg("");
 
@@ -46,7 +55,7 @@ export default function Home() {
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ word: inputWord }),
+        body: JSON.stringify({ word }),
       });
 
       if (!response.ok) {
@@ -81,11 +90,17 @@ export default function Home() {
       setGameData({ type: data.type, targetValue: data.targetValue });
       setItems(newItems);
       setScreen("game");
+      // Refresh suggestions for next round
+      setSuggestions(getRandomSuggestions(4));
     } catch {
       setErrorMsg("Try a different word.");
       setScreen("input");
     }
   };
+
+  const handleStart = () => startGame(inputWord);
+
+  const handleSuggestionClick = (word: string) => startGame(word);
 
   const handleItemClick = (id: string) => {
     const hasCorrectAnswer = items.some((item) => item.status === "correct");
@@ -119,8 +134,10 @@ export default function Home() {
           inputWord={inputWord}
           errorMsg={errorMsg}
           isLoading={false}
+          suggestions={suggestions}
           onInputChange={setInputWord}
           onStart={handleStart}
+          onSuggestionClick={handleSuggestionClick}
         />
       )}
       {screen === "loading" && <LoadingScreen />}
@@ -138,7 +155,9 @@ export default function Home() {
           inputWord={inputWord}
           targetValue={gameData.targetValue}
           type={gameData.type}
+          suggestions={suggestions}
           onPlayAgain={resetGame}
+          onSuggestionClick={handleSuggestionClick}
         />
       )}
     </div>

@@ -6,16 +6,20 @@ interface InputScreenProps {
   inputWord: string;
   errorMsg: string;
   isLoading: boolean;
+  suggestions: string[];
   onInputChange: (value: string) => void;
   onStart: () => void;
+  onSuggestionClick: (word: string) => void;
 }
 
 export function InputScreen({
   inputWord,
   errorMsg,
   isLoading,
+  suggestions,
   onInputChange,
   onStart,
+  onSuggestionClick,
 }: InputScreenProps) {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && inputWord.trim() && !isLoading) {
@@ -35,9 +39,23 @@ export function InputScreen({
         <h1 className="mb-2 text-4xl font-extrabold tracking-tight text-slate-800">
           Find It!
         </h1>
-        <p className="mb-8 text-lg text-slate-500">
+        <p className="mb-6 text-lg text-slate-500">
           Type a word for your child to find.
         </p>
+
+        {/* Quick suggestions */}
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {suggestions.map((word) => (
+            <button
+              key={word}
+              onClick={() => onSuggestionClick(word)}
+              disabled={isLoading}
+              className="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600 capitalize transition-all hover:bg-blue-100 hover:text-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none active:scale-95 disabled:opacity-50"
+            >
+              {word}
+            </button>
+          ))}
+        </div>
 
         <div className="space-y-4">
           <input
@@ -45,7 +63,7 @@ export function InputScreen({
             value={inputWord}
             onChange={(e) => onInputChange(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="e.g. Red, Cat, Circle..."
+            placeholder="Or type your own..."
             aria-label="Enter a word for your child to find"
             aria-describedby={errorMsg ? "error-message" : undefined}
             className="w-full rounded-2xl border-4 border-slate-200 bg-slate-50 p-4 text-center text-2xl font-bold text-slate-800 placeholder-slate-300 transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 focus:outline-none"
