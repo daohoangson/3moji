@@ -1,0 +1,39 @@
+lib/emoji-data.ts
+  2525045b1f3831c6 1-2
+app/find/[word]/game.tsx
+  2525045b1f3831c6 3,26,34
+lib/__mocks__/server-only.ts
+  2525045b1f3831c6 1-2
+app/find/[word]/page.tsx
+  2525045b1f3831c6 4,50-52,59
+app/page.tsx
+  2525045b1f3831c6 2,5,7
+app/home-client.tsx
+  2525045b1f3831c6 1-43
+lib/game-content.ts
+  2525045b1f3831c6 1-2
+lib/suggestions.ts
+  2525045b1f3831c6 1-2
+vitest.config.ts
+  2525045b1f3831c6 13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "cf70a9e81ad7b9a8837327f6ae660ffddd57ff49",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 64,
+      "total_deletions": 49,
+      "accepted_lines": 64,
+      "overriden_lines": 0
+    }
+  }
+}
