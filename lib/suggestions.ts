@@ -1,5 +1,7 @@
-const SUGGESTIONS = [
-  // Colors
+import { getAllEmojiNames } from "./emoji-data";
+
+// CSS color names for suggestions
+const COLOR_NAMES = [
   "red",
   "blue",
   "green",
@@ -7,37 +9,20 @@ const SUGGESTIONS = [
   "orange",
   "purple",
   "pink",
-  // Animals
-  "cat",
-  "dog",
-  "bird",
-  "fish",
-  "bear",
-  "rabbit",
-  "lion",
-  "elephant",
-  // Shapes
-  "circle",
-  "square",
-  "triangle",
-  "star",
-  "heart",
-  // Objects
-  "apple",
-  "banana",
-  "car",
-  "ball",
-  "house",
-  "tree",
-  "flower",
-  "sun",
-  "moon",
+  "brown",
+  "black",
+  "white",
+  "gray",
 ];
 
 /**
- * Returns n random unique suggestions
+ * Returns n random unique suggestions (mix of colors and emoji names)
  */
 export function getRandomSuggestions(count: number = 4): string[] {
-  const shuffled = [...SUGGESTIONS].sort(() => Math.random() - 0.5);
+  const emojiNames = getAllEmojiNames();
+  const allSuggestions = [...COLOR_NAMES, ...emojiNames];
+
+  // Shuffle and take count items
+  const shuffled = allSuggestions.sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }

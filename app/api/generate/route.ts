@@ -1,6 +1,7 @@
 import { generateText, Output } from "ai";
 import { NextResponse } from "next/server";
 import { GameContentSchema } from "@/lib/schema";
+import { generateLocalContent } from "@/lib/game-content";
 
 const SYSTEM_PROMPT = `You are a helpful assistant for a children's educational game called "Find It!".
 A parent has entered a word, and you need to generate game content for their child to find.
@@ -31,6 +32,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Word is required" }, { status: 400 });
     }
 
+    // Try local generation first (faster, no API cost)
+    const localContent = generateLocalContent(word);
+    if (localContent) {
+      return NextResponse.json(localContent);
+    }
+
+    // Fall back to LLM for unknown words
     const { output } = await generateText({
       model: "google/gemini-2.0-flash-lite",
       output: Output.object({
