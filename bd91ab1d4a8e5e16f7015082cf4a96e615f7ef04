@@ -1,0 +1,25 @@
+lib/schema.ts
+  4de4995a2d523036 1-9
+app/api/generate/route.ts
+  4de4995a2d523036 1-2,4,6-44,46,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "bd91ab1d4a8e5e16f7015082cf4a96e615f7ef04",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 59,
+      "total_deletions": 3,
+      "accepted_lines": 53,
+      "overriden_lines": 1
+    }
+  }
+}
