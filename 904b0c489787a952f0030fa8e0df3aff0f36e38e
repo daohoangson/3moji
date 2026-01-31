@@ -1,0 +1,33 @@
+vitest.config.ts
+  4de4995a2d523036 1-15
+app/page.tsx
+  4de4995a2d523036 11-12,39-41,79,98,106
+lib/shuffle.test.ts
+  4de4995a2d523036 1-66
+package.json
+  4de4995a2d523036 10-12
+lib/shuffle.ts
+  4de4995a2d523036 1-11
+lib/audio.ts
+  4de4995a2d523036 1-2,4-8,11-63,65-90,92-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "904b0c489787a952f0030fa8e0df3aff0f36e38e",
+  "prompts": {
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 197,
+      "total_deletions": 13,
+      "accepted_lines": 197,
+      "overriden_lines": 0
+    }
+  }
+}
