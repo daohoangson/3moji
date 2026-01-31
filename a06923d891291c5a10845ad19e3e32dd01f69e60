@@ -1,0 +1,36 @@
+components/SuccessScreen.tsx
+  33250cd2d62aaa02 74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "a06923d891291c5a10845ad19e3e32dd01f69e60",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 3331,
+      "total_deletions": 851,
+      "accepted_lines": 2480,
+      "overriden_lines": 0
+    },
+    "33250cd2d62aaa02": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bfb80eea-fe24-47ef-adbd-0716631d50b0",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
