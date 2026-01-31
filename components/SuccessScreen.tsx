@@ -71,7 +71,7 @@ export function SuccessScreen({
         />
       </div>
 
-      <section className="z-10 flex max-h-full w-full max-w-lg flex-col items-center overflow-y-auto">
+      <section className="z-10 flex max-h-full w-full max-w-lg flex-col items-center overflow-y-auto pb-12">
         <div className="mb-2 flex items-center gap-2 rounded-full bg-white/50 px-4 py-1 backdrop-blur-sm">
           <PartyPopper className="h-5 w-5 text-amber-500" />
           <span className="text-sm font-bold tracking-widest text-slate-500 uppercase">
