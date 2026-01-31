@@ -1,0 +1,33 @@
+lib/game-content.test.ts
+  2525045b1f3831c6 1-189
+app/api/generate/route.ts
+  2525045b1f3831c6 4-7,54-57
+lib/emoji-data.ts
+  2525045b1f3831c6 5-8,1188-1191,1224,1229,1235-1236,1238-1239
+lib/emoji-data.test.ts
+  2525045b1f3831c6 1-200
+lib/game-content.ts
+  2525045b1f3831c6 3-6,8,75,121-186
+lib/suggestions.ts
+  2525045b1f3831c6 2,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "e3c424cb3950e245a84e551ccf8cfce3daf90e68",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 728,
+      "total_deletions": 305,
+      "accepted_lines": 491,
+      "overriden_lines": 1
+    }
+  }
+}
