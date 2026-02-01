@@ -1,0 +1,23 @@
+app/topics/[topicId]/loading.tsx
+  f3284794473bcb4e 3-7,9,11,17,19-23,26,28-33,35-36,40,44-48,50,53,56,61-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "8c912b3249aca53a017ed9ae184e4c2076adfdc0",
+  "prompts": {
+    "f3284794473bcb4e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "cd1d62c9-7fe5-4dc0-a606-c76d749e9966",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 45,
+      "total_deletions": 32,
+      "accepted_lines": 33,
+      "overriden_lines": 0
+    }
+  }
+}
