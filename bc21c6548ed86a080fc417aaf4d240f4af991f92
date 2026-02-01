@@ -1,0 +1,23 @@
+docs/plan/20260201_topics.md
+  5dbc35654a95e951 1-291
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "bc21c6548ed86a080fc417aaf4d240f4af991f92",
+  "prompts": {
+    "5dbc35654a95e951": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "54316113-cf93-42f9-9d04-e5e35aff5bf4",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 291,
+      "total_deletions": 0,
+      "accepted_lines": 291,
+      "overriden_lines": 0
+    }
+  }
+}
