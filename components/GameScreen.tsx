@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowLeft, Volume2 } from "lucide-react";
 import { isSpeechAvailable, speakWord } from "@/lib/speech";
 
@@ -16,7 +17,6 @@ interface GameScreenProps {
   items: GameItem[];
   type: "color" | "emoji";
   onItemClick: (id: string) => void;
-  onBack: () => void;
 }
 
 function CardContent({
@@ -50,7 +50,6 @@ export function GameScreen({
   items,
   type,
   onItemClick,
-  onBack,
 }: GameScreenProps) {
   const hasCorrectAnswer = items.some((item) => item.status === "correct");
 
@@ -80,13 +79,14 @@ export function GameScreen({
     <main className="fixed inset-0 flex flex-col items-center overflow-hidden bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50">
       {/* Header */}
       <div className="z-20 flex w-full shrink-0 items-center justify-between px-4 py-4 sm:px-6">
-        <button
-          onClick={onBack}
+        <Link
+          href="/"
+          prefetch={true}
           aria-label="Go back"
           className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
         >
           <ArrowLeft className="h-6 w-6 stroke-[3px]" />
-        </button>
+        </Link>
         <div className="mx-4 flex max-w-[70%] items-center gap-2 truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
           <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
             Find: <span className="text-sky-600 capitalize">{inputWord}</span>

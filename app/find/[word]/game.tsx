@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { GameScreen, SuccessScreen } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
 
@@ -33,25 +32,12 @@ export default function GameClient({
   initialItems,
   suggestions,
 }: GameClientProps) {
-  const router = useRouter();
   const [screen, setScreen] = useState<Screen>("game");
 
   // Add status to items (status is client-only state)
   const [items, setItems] = useState<GameItemWithStatus[]>(() =>
     initialItems.map((item) => ({ ...item, status: "normal" as ItemStatus })),
   );
-
-  const handleBack = () => {
-    router.push("/");
-  };
-
-  const handlePlayAgain = () => {
-    router.push("/");
-  };
-
-  const handleSuggestionClick = (newWord: string) => {
-    router.push(`/find/${encodeURIComponent(newWord)}`);
-  };
 
   const handleItemClick = (id: string) => {
     const hasCorrectAnswer = items.some((item) => item.status === "correct");
@@ -86,7 +72,6 @@ export default function GameClient({
           items={items}
           type={type}
           onItemClick={handleItemClick}
-          onBack={handleBack}
         />
       )}
       {screen === "success" && (
@@ -95,8 +80,6 @@ export default function GameClient({
           targetValue={targetValue}
           type={type}
           suggestions={suggestions}
-          onPlayAgain={handlePlayAgain}
-          onSuggestionClick={handleSuggestionClick}
         />
       )}
     </div>

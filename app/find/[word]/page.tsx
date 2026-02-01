@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import Link from "next/link";
+import { LoadingScreen } from "@/components";
 import { generateGameContent } from "@/lib/game-content";
 import { shuffle } from "@/lib/shuffle";
 import { getRandomSuggestions } from "@/lib/suggestions";
@@ -12,6 +14,14 @@ export default async function FindPage({ params }: PageProps) {
   const { word: encodedWord } = await params;
   const word = decodeURIComponent(encodedWord);
 
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      <GameContent word={word} />
+    </Suspense>
+  );
+}
+
+async function GameContent({ word }: { word: string }) {
   const data = await generateGameContent(word);
 
   if (!data) {

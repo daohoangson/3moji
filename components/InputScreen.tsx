@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { Sparkles, ArrowRight, Search } from "lucide-react";
+import { unlockAudio } from "@/lib/audio";
 
 interface InputScreenProps {
   inputWord: string;
@@ -9,7 +11,6 @@ interface InputScreenProps {
   suggestions: string[];
   onInputChange: (value: string) => void;
   onStart: () => void;
-  onSuggestionClick: (word: string) => void;
 }
 
 export function InputScreen({
@@ -19,7 +20,6 @@ export function InputScreen({
   suggestions,
   onInputChange,
   onStart,
-  onSuggestionClick,
 }: InputScreenProps) {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && inputWord.trim() && !isLoading) {
@@ -56,11 +56,14 @@ export function InputScreen({
         {/* Quick suggestions */}
         <div className="mb-8 flex flex-wrap justify-center gap-3">
           {suggestions.map((word, i) => (
-            <button
+            <Link
               key={word}
-              onClick={() => onSuggestionClick(word)}
-              disabled={isLoading}
-              className={`group relative overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 disabled:opacity-50 ${
+              href={`/find/${encodeURIComponent(word)}`}
+              prefetch={true}
+              onClick={() => unlockAudio()}
+              className={`group relative overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 ${
+                isLoading ? "pointer-events-none opacity-50" : ""
+              } ${
                 i % 3 === 0
                   ? "bg-sky-100 text-sky-700 hover:bg-sky-200"
                   : i % 3 === 1
@@ -69,7 +72,7 @@ export function InputScreen({
               } `}
             >
               {word}
-            </button>
+            </Link>
           ))}
         </div>
 

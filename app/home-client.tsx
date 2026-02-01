@@ -13,19 +13,15 @@ export default function HomeClient({ suggestions }: HomeClientProps) {
   const router = useRouter();
   const [inputWord, setInputWord] = useState("");
 
-  const startGame = async (word: string) => {
-    if (!word.trim()) return;
+  const handleStart = async () => {
+    if (!inputWord.trim()) return;
 
     // Unlock audio on user interaction (required for iOS/Chrome)
     await unlockAudio();
 
     // Navigate to the game page
-    router.push(`/find/${encodeURIComponent(word.trim())}`);
+    router.push(`/find/${encodeURIComponent(inputWord.trim())}`);
   };
-
-  const handleStart = () => startGame(inputWord);
-
-  const handleSuggestionClick = (word: string) => startGame(word);
 
   return (
     <div className="h-screen w-screen overflow-hidden text-slate-900 select-none">
@@ -36,7 +32,6 @@ export default function HomeClient({ suggestions }: HomeClientProps) {
         suggestions={suggestions}
         onInputChange={setInputWord}
         onStart={handleStart}
-        onSuggestionClick={handleSuggestionClick}
       />
     </div>
   );
