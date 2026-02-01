@@ -60,7 +60,7 @@ Create a `.env.local` file:
 AI_GATEWAY_API_KEY=your_api_key_here
 ```
 
-> **Note**: The app works without an API key for common words thanks to the built-in emoji database (~460 emojis) and color dictionary (25+ colors with translations).
+> **Note**: The app works without an API key for common words thanks to the built-in emoji database (~3,900 emojis) and color dictionary (25+ colors with translations).
 
 ### Development
 
@@ -100,7 +100,7 @@ npm start
 ├── lib/
 │   ├── audio.ts          # Web Audio API sounds
 │   ├── speech.ts         # Text-to-speech
-│   ├── emoji-data.ts     # Emoji database by category
+│   ├── emoji-data.ts     # Emoji database by category (generated)
 │   ├── game-content.ts   # Local content generation
 │   ├── schema.ts         # Zod validation schemas
 │   ├── shuffle.ts        # Fisher-Yates algorithm
@@ -114,7 +114,7 @@ The app uses a two-tier content generation approach:
 
 1. **Local First** (fast, free):
    - Color dictionary with 25+ CSS colors (English + translations)
-   - Emoji database with ~460 emojis across 15 categories
+   - Emoji database with ~3,900 emojis across 25 categories
    - Aliases for common words (e.g., "puppy" → 🐶)
 
 2. **LLM Fallback** (when local match not found):

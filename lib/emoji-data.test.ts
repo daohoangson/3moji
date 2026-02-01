@@ -19,7 +19,7 @@ describe("areVisuallySimilar", () => {
 
   it("should detect hearts as visually similar", () => {
     expect(areVisuallySimilar("💘", "💝")).toBe(true);
-    expect(areVisuallySimilar("❤️", "💛")).toBe(false); // different - no shared name
+    expect(areVisuallySimilar("❤️", "💛")).toBe(true);
     expect(areVisuallySimilar("💖", "💗")).toBe(true);
   });
 
@@ -69,8 +69,11 @@ describe("getCategoryByEmoji", () => {
   });
 
   it("should return null for unknown emoji", () => {
-    expect(getCategoryByEmoji("🫠")).toBeNull(); // melting face - newer emoji
-    expect(getCategoryByEmoji("unknown")).toBeNull();
+    expect(getCategoryByEmoji("not-an-emoji")).toBeNull();
+  });
+
+  it("should include newer emojis", () => {
+    expect(getCategoryByEmoji("🫠")).toBe("faces"); // melting face
   });
 });
 
