@@ -93,13 +93,13 @@ export default async function TopicDetailPage({ params }: PageProps) {
       />
 
       {/* Header */}
-      <header className="sticky top-0 z-20 px-4 py-4 sm:px-6">
-        <div className="mx-auto flex max-w-4xl items-center justify-between">
+      <header className="sticky top-0 z-20 bg-white/80 px-4 py-4 shadow-sm backdrop-blur-md sm:px-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link
             href="/topics"
             prefetch={true}
             aria-label="Back to topics"
-            className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
+            className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
           >
             <ArrowLeft className="h-6 w-6 stroke-[3px]" />
           </Link>

@@ -83,30 +83,32 @@ export function GameScreen({
   return (
     <main className="fixed inset-0 flex flex-col items-center overflow-hidden bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50">
       {/* Header */}
-      <div className="z-20 flex w-full shrink-0 items-center justify-between px-4 py-4 sm:px-6">
-        <Link
-          href={backHref}
-          prefetch={true}
-          aria-label="Go back"
-          className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
-        >
-          <ArrowLeft className="h-6 w-6 stroke-[3px]" />
-        </Link>
-        <div className="mx-4 flex max-w-[70%] items-center gap-2 truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
-          <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
-            Find: <span className="text-sky-600 capitalize">{inputWord}</span>
-          </h2>
-          {speechAvailable && (
-            <button
-              onClick={handleSpeakClick}
-              aria-label={`Listen to ${inputWord}`}
-              className="ml-1 shrink-0 rounded-full p-2 text-sky-400 transition-all hover:bg-sky-50 hover:text-sky-600 focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-90"
-            >
-              <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" />
-            </button>
-          )}
+      <div className="z-20 w-full shrink-0 px-4 py-4 sm:px-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <Link
+            href={backHref}
+            prefetch={true}
+            aria-label="Go back"
+            className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
+          >
+            <ArrowLeft className="h-6 w-6 stroke-[3px]" />
+          </Link>
+          <div className="mx-4 flex max-w-[70%] items-center gap-2 truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
+            <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
+              Find: <span className="text-sky-600 capitalize">{inputWord}</span>
+            </h2>
+            {speechAvailable && (
+              <button
+                onClick={handleSpeakClick}
+                aria-label={`Listen to ${inputWord}`}
+                className="ml-1 shrink-0 rounded-full p-2 text-sky-400 transition-all hover:bg-sky-50 hover:text-sky-600 focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-90"
+              >
+                <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" />
+              </button>
+            )}
+          </div>
+          <div className="w-12" /> {/* Spacer for centering */}
         </div>
-        <div className="w-12" /> {/* Spacer for centering */}
       </div>
 
       {/* Game Area */}
