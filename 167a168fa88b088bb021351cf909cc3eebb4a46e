@@ -1,0 +1,29 @@
+app/topics/[topicId]/page.tsx
+  ace8718b1dcd23ea 1-108
+app/topics/[topicId]/play/session.tsx
+  ace8718b1dcd23ea 1-39,41-217
+app/topics/page.tsx
+  ace8718b1dcd23ea 1-82
+app/topics/[topicId]/play/page.tsx
+  ace8718b1dcd23ea 1-4,6-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "167a168fa88b088bb021351cf909cc3eebb4a46e",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 478,
+      "total_deletions": 6,
+      "accepted_lines": 483,
+      "overriden_lines": 2
+    }
+  }
+}
