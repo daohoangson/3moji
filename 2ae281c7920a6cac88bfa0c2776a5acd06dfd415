@@ -1,0 +1,23 @@
+app/topics/[topicId]/play/page.tsx
+  ace8718b1dcd23ea 2,9-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "2ae281c7920a6cac88bfa0c2776a5acd06dfd415",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 8,
+      "accepted_lines": 47,
+      "overriden_lines": 0
+    }
+  }
+}
