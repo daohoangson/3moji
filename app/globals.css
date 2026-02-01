@@ -33,3 +33,7 @@ body {
 .animate-bounce-gentle {
   animation: bounce-gentle 2s infinite;
 }
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -87,7 +87,10 @@ export default async function TopicDetailPage({ params }: PageProps) {
       
       {/* Background decoration */}
       <div className="fixed -top-20 -left-20 h-64 w-64 rounded-full bg-sky-300 opacity-20 blur-3xl animate-pulse" />
-      <div className="fixed top-40 -right-20 h-80 w-80 rounded-full bg-emerald-300 opacity-20 blur-3xl animate-pulse delay-1000" />
+      <div
+        className="fixed top-40 -right-20 h-80 w-80 rounded-full bg-emerald-300 opacity-20 blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
 
       {/* Header */}
       <header className="sticky top-0 z-20 px-4 py-4 sm:px-6">
