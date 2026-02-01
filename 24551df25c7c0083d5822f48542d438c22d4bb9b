@@ -1,0 +1,33 @@
+components/SessionSummary.tsx
+  ace8718b1dcd23ea 1-89
+components/index.ts
+  ace8718b1dcd23ea 6-7
+lib/topics/session.ts
+  ace8718b1dcd23ea 1-60
+app/topics/[topicId]/play/page.tsx
+  ace8718b1dcd23ea 2,4-6,20,30,32
+components/SessionProgress.tsx
+  ace8718b1dcd23ea 1-49
+app/topics/[topicId]/play/session.tsx
+  ace8718b1dcd23ea 4,98-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "24551df25c7c0083d5822f48542d438c22d4bb9b",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 213,
+      "total_deletions": 148,
+      "accepted_lines": 213,
+      "overriden_lines": 0
+    }
+  }
+}
