@@ -1,0 +1,27 @@
+app/topics/[topicId]/loading.tsx
+  ace8718b1dcd23ea 1-54
+lib/topics/session.test.ts
+  ace8718b1dcd23ea 1-53
+app/topics/loading.tsx
+  ace8718b1dcd23ea 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "1c4abf4c4e905db41129961fb9ed74998fa62175",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 151,
+      "total_deletions": 0,
+      "accepted_lines": 151,
+      "overriden_lines": 0
+    }
+  }
+}
