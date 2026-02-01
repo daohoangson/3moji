@@ -1,0 +1,31 @@
+components/TopicCard.tsx
+  f3284794473bcb4e 19,21,24,35,37,43
+app/topics/page.tsx
+  f3284794473bcb4e 4,72
+components/SessionSummary.tsx
+  f3284794473bcb4e 4,24-28,44,46,52,56-58,62-79,81-84,86-87,92,96,105
+components/GameScreen.tsx
+  f3284794473bcb4e 62-65
+app/topics/[topicId]/page.tsx
+  f3284794473bcb4e 4,56-57,82,87-91,93,99,108,110-111,114,117,122,124-135,139-146,148,153-156,158-160,164-165,168,172,174-175,178-180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "4d1629b9f3d8da2871812c636830724a17742e3a",
+  "prompts": {
+    "f3284794473bcb4e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "cd1d62c9-7fe5-4dc0-a606-c76d749e9966",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 130,
+      "total_deletions": 92,
+      "accepted_lines": 106,
+      "overriden_lines": 0
+    }
+  }
+}
