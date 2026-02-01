@@ -2,8 +2,11 @@ export default function TopicDetailLoading() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 pb-12">
       {/* Background decoration */}
-      <div className="fixed -top-20 -left-20 h-64 w-64 rounded-full bg-sky-300 opacity-20 blur-3xl animate-pulse" />
-      <div className="fixed top-40 -right-20 h-80 w-80 rounded-full bg-emerald-300 opacity-20 blur-3xl animate-pulse delay-700" />
+      <div className="fixed -top-20 -left-20 h-64 w-64 animate-pulse rounded-full bg-sky-300 opacity-20 blur-3xl" />
+      <div
+        className="fixed top-40 -right-20 h-80 w-80 animate-pulse rounded-full bg-emerald-300 opacity-20 blur-3xl"
+        style={{ animationDelay: "0.7s" }}
+      />
 
       {/* Header skeleton */}
       <header className="sticky top-0 z-20 px-4 py-4 sm:px-6">
@@ -50,7 +53,7 @@ export default function TopicDetailLoading() {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((word) => (
                 <div
                   key={word}
-                  className="h-10 w-24 animate-pulse rounded-xl bg-sky-50 border border-sky-100"
+                  className="h-10 w-24 animate-pulse rounded-xl border border-sky-100 bg-sky-50"
                 />
               ))}
             </div>
