@@ -1,0 +1,25 @@
+components/GameScreen.tsx
+  ace8718b1dcd23ea 20,54,85
+app/topics/[topicId]/play/session.tsx
+  ace8718b1dcd23ea 109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "b45f3ad36623c605b413aed200b4705bd5ec4dcb",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 1,
+      "accepted_lines": 4,
+      "overriden_lines": 0
+    }
+  }
+}
