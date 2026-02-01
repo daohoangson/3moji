@@ -40,7 +40,7 @@ export function SessionSummary({
         />
       </div>
 
-      <section className="z-10 flex max-h-full w-full max-w-lg flex-col items-center overflow-y-auto pb-12">
+      <section className="z-10 flex max-h-full w-full max-w-lg flex-col items-center overflow-y-auto px-4 pb-12">
         <div className="mb-4 flex items-center gap-2 rounded-full bg-white/60 px-6 py-2 shadow-sm backdrop-blur-md">
           <PartyPopper className="h-5 w-5 text-amber-500" />
           <span className="text-sm font-bold tracking-widest text-slate-600 uppercase">
@@ -89,7 +89,7 @@ export function SessionSummary({
         </div>
 
         {/* Action buttons */}
-        <div className="flex w-full flex-col gap-4 px-4 sm:flex-row sm:px-0">
+        <div className="flex w-full flex-col gap-4 sm:flex-row">
           <Link
             href={`/topics/${topicId}/play`}
             prefetch={true}
