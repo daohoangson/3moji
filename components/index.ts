@@ -5,3 +5,4 @@ export { SuccessScreen } from "./SuccessScreen";
 export { Confetti } from "./Confetti";
 export { SessionProgress } from "./SessionProgress";
 export { SessionSummary } from "./SessionSummary";
+export { TopicCard } from "./TopicCard";
