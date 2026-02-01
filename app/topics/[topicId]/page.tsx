@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Play, Target } from "lucide-react";
-import { getAllTopics, getTopicById } from "@/lib/topics";
+import { getAllTopics, getTopicById, getLevelInfo } from "@/lib/topics";
 
 interface PageProps {
   params: Promise<{ topicId: string }>;
@@ -14,6 +15,34 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { topicId } = await params;
+  const topic = getTopicById(topicId);
+
+  if (!topic) {
+    return {
+      title: "Topic Not Found - Find It!",
+    };
+  }
+
+  const levelInfo = getLevelInfo(topic.level);
+
+  return {
+    title: `Learn ${topic.name} - Find It!`,
+    description: topic.description,
+    openGraph: {
+      title: `Learn ${topic.name} - Find It!`,
+      description: topic.description,
+      type: "website",
+    },
+    other: {
+      "age-range": levelInfo.ageRange,
+    },
+  };
+}
+
 export default async function TopicDetailPage({ params }: PageProps) {
   const { topicId } = await params;
   const topic = getTopicById(topicId);
@@ -22,11 +51,39 @@ export default async function TopicDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const levelInfo = getLevelInfo(topic.level);
+
   // Show a sample of words (up to 6)
   const sampleWords = topic.words.slice(0, 6);
 
+  // JSON-LD structured data for educational content
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: `Learn ${topic.name} - Find It!`,
+    description: topic.description,
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+      suggestedAge: levelInfo.ageRange,
+    },
+    learningResourceType: "Interactive game",
+    teaches: topic.learningGoals,
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white/80 px-4 py-4 shadow-sm backdrop-blur-md sm:px-6">
         <div className="mx-auto flex max-w-4xl items-center justify-between">

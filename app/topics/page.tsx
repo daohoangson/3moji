@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getTopicsByLevel, getLevelInfo, type TopicLevel } from "@/lib/topics";
+
+export const metadata: Metadata = {
+  title: "Learning Topics - Find It!",
+  description:
+    "Explore fun learning topics for kids. Choose from animals, colors, shapes, and more to help your child learn through play.",
+  openGraph: {
+    title: "Learning Topics - Find It!",
+    description:
+      "Explore fun learning topics for kids. Choose from animals, colors, shapes, and more.",
+    type: "website",
+  },
+};
 
 const LEVEL_ICONS: Record<TopicLevel, string> = {
   1: "🌱",
