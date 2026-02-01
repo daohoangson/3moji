@@ -1,0 +1,36 @@
+components/SessionSummary.tsx
+  ace8718b1dcd23ea 24-28,104-105,110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "359de87a952a383366b8505dabb823580684a76a",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 4,
+      "accepted_lines": 76,
+      "overriden_lines": 0
+    },
+    "f3284794473bcb4e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "cd1d62c9-7fe5-4dc0-a606-c76d749e9966",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 2,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    }
+  }
+}
