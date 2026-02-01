@@ -48,9 +48,14 @@ export default function TopicSession({
     const clickedItem = items.find((item) => item.id === id);
     if (!clickedItem || clickedItem.status === "wrong") return;
 
+    // Only count as correct if this is the first click (no wrong attempts yet)
+    const hasWrongAttempt = items.some((item) => item.status === "wrong");
+
     if (clickedItem.isCorrect) {
       playSuccessSound();
-      setCorrectCount((prev) => prev + 1);
+      if (!hasWrongAttempt) {
+        setCorrectCount((prev) => prev + 1);
+      }
       setItems((prev) =>
         prev.map((item) =>
           item.id === id ? { ...item, status: "correct" } : item,
