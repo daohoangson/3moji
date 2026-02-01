@@ -1,0 +1,25 @@
+app/topics/[topicId]/page.tsx
+  f3284794473bcb4e 91-92
+app/globals.css
+  f3284794473bcb4e 36-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "b9947f4b8099809157f216a5b88a30bae58b5998",
+  "prompts": {
+    "f3284794473bcb4e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "cd1d62c9-7fe5-4dc0-a606-c76d749e9966",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 1,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
