@@ -1,0 +1,25 @@
+lib/topics/data.ts
+  ace8718b1dcd23ea 98,102,183,262-266,284,288,340
+lib/topics/coverage.test.ts
+  ace8718b1dcd23ea 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "be09e0ce158dadf390000e5ec8895256d5ccd354",
+  "prompts": {
+    "ace8718b1dcd23ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9aeb22e6-7fd2-4368-a393-0aa0580de49d",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 94,
+      "total_deletions": 9,
+      "accepted_lines": 85,
+      "overriden_lines": 0
+    }
+  }
+}
