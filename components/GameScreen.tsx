@@ -89,7 +89,7 @@ export function GameScreen({
             href={backHref}
             prefetch={true}
             aria-label="Go back"
-            className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
+            className="self-start rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
           >
             <ArrowLeft className="h-6 w-6 stroke-[3px]" />
           </Link>
