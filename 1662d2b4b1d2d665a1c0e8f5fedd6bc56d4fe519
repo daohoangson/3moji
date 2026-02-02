@@ -1,0 +1,23 @@
+scripts/generate-emoji-data.ts
+  255add20b4a0947c 477-482,485,487-490,509,513-516,519-527,546,549-554,559-585,610-612,629-630,745,755
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "1662d2b4b1d2d665a1c0e8f5fedd6bc56d4fe519",
+  "prompts": {
+    "255add20b4a0947c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca4db204-3d34-4e41-944d-4806b57cd1a5",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 303,
+      "total_deletions": 179,
+      "accepted_lines": 151,
+      "overriden_lines": 0
+    }
+  }
+}
