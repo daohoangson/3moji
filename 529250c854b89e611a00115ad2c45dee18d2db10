@@ -1,0 +1,25 @@
+lib/game-content.snapshot.test.ts
+  adfb772ff4d91ad3 13-23,52-96,98-106,125,142-176,178-218,235-271,273-304,307-308,313,315,323-341,343-350,369,372-384,386-399,401,408-418,420-431,434-468
+scripts/generate-emoji-data.ts
+  adfb772ff4d91ad3 75-78,80-172,494-495,572,575-576,578,582-585,588-601,608-611,620,622-625,627,633-647,649-652,876-877
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "529250c854b89e611a00115ad2c45dee18d2db10",
+  "prompts": {
+    "adfb772ff4d91ad3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af62a682-f037-4fbf-89d3-cc43d60c6569",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 554,
+      "total_deletions": 144,
+      "accepted_lines": 488,
+      "overriden_lines": 0
+    }
+  }
+}
