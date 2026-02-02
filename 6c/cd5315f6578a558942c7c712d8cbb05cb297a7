@@ -1,0 +1,80 @@
+components/KeyboardHelp.tsx
+  b84368c10459cc1f 31-32,35
+lib/audio.ts
+  b84368c10459cc1f 16
+app/find/[word]/page.tsx
+  2525045b1f3831c6 29,33
+app/icon.tsx
+  b84368c10459cc1f 13-23,26,34,37-43,46-47,49-62,64-74,77,82
+components/SuccessScreen.tsx
+  b84368c10459cc1f 93,112,127
+lib/game-content.test.ts
+  2525045b1f3831c6 2
+components/InputScreen.tsx
+  b84368c10459cc1f 73,99
+lib/emoji-data.ts
+  4de4995a2d523036 166
+components/GameScreen.tsx
+  b84368c10459cc1f 3,128,134,138,162
+lib/hooks.ts
+  b84368c10459cc1f 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "6ccd5315f6578a558942c7c712d8cbb05cb297a7",
+  "prompts": {
+    "2525045b1f3831c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d3d93223-4088-4a42-b826-cf2c519bd12b",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 1,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    },
+    "33250cd2d62aaa02": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bfb80eea-fe24-47ef-adbd-0716631d50b0",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    },
+    "4de4995a2d523036": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "45c4d81f-9734-450c-baf1-ab4bef90371f",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 772,
+      "total_deletions": 118,
+      "accepted_lines": 176,
+      "overriden_lines": 0
+    },
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 3,
+      "accepted_lines": 111,
+      "overriden_lines": 0
+    }
+  }
+}
