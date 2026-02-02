@@ -1,0 +1,38 @@
+lib/emoji-data.test.ts
+  255add20b4a0947c 160
+scripts/generate-emoji-data.ts
+  255add20b4a0947c 19-26,85-86,90,92-102,105-109,112-115,117-122,124,126-131,134,137-141,537-545,549-555,559-560,562-574,581-582,591-593,595-598,600-602,608-610,612-614,617
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "c25da147c317346f86a2a7ac03037948eefe631c",
+  "prompts": {
+    "255add20b4a0947c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ca4db204-3d34-4e41-944d-4806b57cd1a5",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 1276,
+      "total_deletions": 1150,
+      "accepted_lines": 277,
+      "overriden_lines": 0
+    },
+    "2f18269722b8aebe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01499fdf-1255-4a8d-8852-0a2522a9847a",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 56,
+      "total_deletions": 32,
+      "accepted_lines": 55,
+      "overriden_lines": 0
+    }
+  }
+}
