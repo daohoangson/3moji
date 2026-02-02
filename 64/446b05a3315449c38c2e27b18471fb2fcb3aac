@@ -1,0 +1,27 @@
+components/TopicCard.tsx
+  b02cd9b2433edd59 21,38
+app/home-client.tsx
+  b02cd9b2433edd59 67,97,128
+components/SessionSummary.tsx
+  b02cd9b2433edd59 108,118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "64446b05a3315449c38c2e27b18471fb2fcb3aac",
+  "prompts": {
+    "b02cd9b2433edd59": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bea1fff2-c470-46ec-8417-df52d7fe441a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 7,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
