@@ -1,0 +1,27 @@
+components/KeyboardHelp.tsx
+  b84368c10459cc1f 1-88
+components/index.ts
+  b84368c10459cc1f 1-5,7
+app/layout.tsx
+  b84368c10459cc1f 4,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "bd418471950d20822159b4cb9a8902bc922a5865",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 96,
+      "total_deletions": 5,
+      "accepted_lines": 96,
+      "overriden_lines": 0
+    }
+  }
+}
