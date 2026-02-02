@@ -1,0 +1,23 @@
+app/layout.tsx
+  b84368c10459cc1f 3,35-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "cc07c2363172fb4edc438d0b5189a34af181b95f",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 0,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    }
+  }
+}
