@@ -1,0 +1,27 @@
+components/GameScreen.tsx
+  b84368c10459cc1f 65,108
+lib/hooks.ts
+  b84368c10459cc1f 8,10,15
+lib/audio.ts
+  b84368c10459cc1f 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "85eba8e8e438f439a1cb14e5f415c67d62800506",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 11,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  }
+}
