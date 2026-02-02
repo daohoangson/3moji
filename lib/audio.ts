@@ -8,6 +8,16 @@ function getAudioContext(): AudioContext {
   return audioCtx;
 }
 
+function isSoundEnabled(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const stored = localStorage.getItem("3moji-sound");
+    return stored === null ? true : JSON.parse(stored);
+  } catch (e) {
+    return true;
+  }
+}
+
 /**
  * Unlocks audio context on user interaction.
  * Must be called from a user gesture (click/tap) to work on iOS/Chrome.
@@ -27,6 +37,8 @@ export async function unlockAudio(): Promise<void> {
  * Plays success sound: ascending arpeggio C5 → E5 → G5 → C6 (sine wave)
  */
 export function playSuccessSound(): void {
+  if (!isSoundEnabled()) return;
+
   try {
     const ctx = getAudioContext();
     if (ctx.state === "suspended") {
@@ -67,6 +79,8 @@ export function playSuccessSound(): void {
  * Plays a short, gentle "pop" sound for UI interactions.
  */
 export function playPopSound(): void {
+  if (!isSoundEnabled()) return;
+
   try {
     const ctx = getAudioContext();
     if (ctx.state === "suspended") {
@@ -101,6 +115,8 @@ export function playPopSound(): void {
  * Plays error sound: short descending tone (sawtooth wave)
  */
 export function playErrorSound(): void {
+  if (!isSoundEnabled()) return;
+
   try {
     const ctx = getAudioContext();
     if (ctx.state === "suspended") {

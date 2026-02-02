@@ -1,0 +1,22 @@
+import { useState, useEffect } from "react";
+
+export function useSoundSettings() {
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const stored = localStorage.getItem("3moji-sound");
+    if (stored !== null) {
+      setSoundEnabled(JSON.parse(stored));
+    }
+  }, []);
+
+  const toggleSound = () => {
+    const newState = !soundEnabled;
+    setSoundEnabled(newState);
+    localStorage.setItem("3moji-sound", JSON.stringify(newState));
+  };
+
+  return { soundEnabled, toggleSound, mounted };
+}

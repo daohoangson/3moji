@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
+import { SoundToggle } from "@/components/SoundToggle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,6 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} font-sans antialiased`}>
+        <div className="fixed top-4 right-4 z-50">
+          <SoundToggle />
+        </div>
         {children}
       </body>
     </html>
