@@ -1,0 +1,23 @@
+scripts/generate-emoji-data.ts
+  adfb772ff4d91ad3 301-304
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "0ca07b4b660f18348baac7512c0b97cc89dc0907",
+  "prompts": {
+    "adfb772ff4d91ad3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af62a682-f037-4fbf-89d3-cc43d60c6569",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 8,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
