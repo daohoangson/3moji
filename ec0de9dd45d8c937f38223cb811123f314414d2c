@@ -1,0 +1,31 @@
+lib/emoji-data.ts
+  2f18269722b8aebe 7,39-43,49,51-56,58
+lib/emoji-data.test.ts
+  2f18269722b8aebe 12-15,18-21,24-25,27-28,31-33,42-47,125,128,132-133,139-141,201-203,205-206,209-212,215-218
+lib/topics/data.ts
+  2f18269722b8aebe 239-241,261
+scripts/generate-emoji-data.ts
+  2f18269722b8aebe 18,781-856
+lib/game-content.test.ts
+  2f18269722b8aebe 58,63,68-69,103-106,109-110,115-117,166-167,170,176-179
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "ec0de9dd45d8c937f38223cb811123f314414d2c",
+  "prompts": {
+    "2f18269722b8aebe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01499fdf-1255-4a8d-8852-0a2522a9847a",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 1236,
+      "total_deletions": 1082,
+      "accepted_lines": 273,
+      "overriden_lines": 0
+    }
+  }
+}
