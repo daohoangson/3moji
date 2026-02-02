@@ -298,7 +298,10 @@ const CATEGORY_BY_GROUP: Record<string, Record<string, string>> = {
     hotel: "places",
     "place-building": "places",
     "place-geographic": "places",
-    "place-map": "places",
+    // Globes (🌍🌎🌏) and maps (🗺️🗾) are internal to prevent:
+    // - "australia" → 🌏 globe (should be 🇦🇺 flag)
+    // - "japan" → 🗾 map (should be 🇯🇵 flag)
+    "place-map": "internal:place-map",
     "place-other": "places",
     "place-religious": "places",
     "sky & weather": "weather",
