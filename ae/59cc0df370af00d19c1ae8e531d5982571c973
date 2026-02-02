@@ -1,0 +1,23 @@
+app/home-client.tsx
+  b02cd9b2433edd59 23-24,105,121,128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "ae59cc0df370af00d19c1ae8e531d5982571c973",
+  "prompts": {
+    "b02cd9b2433edd59": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bea1fff2-c470-46ec-8417-df52d7fe441a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 16,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
