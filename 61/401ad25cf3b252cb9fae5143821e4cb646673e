@@ -1,0 +1,29 @@
+app/layout.tsx
+  b84368c10459cc1f 4,37
+components/KeyboardHelp.tsx
+  b84368c10459cc1f 1-109
+components/GameScreen.tsx
+  b84368c10459cc1f 5,59,68-107
+components/index.ts
+  b84368c10459cc1f 1-5,7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "61401ad25cf3b252cb9fae5143821e4cb646673e",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": null,
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 159,
+      "overriden_lines": 0
+    }
+  }
+}
