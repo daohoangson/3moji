@@ -1,0 +1,25 @@
+lib/emoji-data.ts
+  adfb772ff4d91ad3 4,6-7,9-18,20,23,28-30,41,44,47,57-58,65,72-73,86,108
+scripts/generate-emoji-data.ts
+  adfb772ff4d91ad3 1-729
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "f4876d871d25e72649e3b48a0c1a65a08c060830",
+  "prompts": {
+    "adfb772ff4d91ad3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af62a682-f037-4fbf-89d3-cc43d60c6569",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 2044,
+      "total_deletions": 395,
+      "accepted_lines": 1750,
+      "overriden_lines": 0
+    }
+  }
+}
