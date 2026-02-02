@@ -474,23 +474,21 @@ function buildEmojiDatabase(
   }
 
   const aliasMap = new Map<string, string[]>();
-  const keywordCounts = new Map<string, number>();
+  // Track unique emojis per word (names + keywords combined).
+  // Used for promoting unique keywords.
+  const keywordCounts = new Map<string, Set<string>>();
+  // Track unique emojis per CLDR keyword only (not names).
+  // Used to filter generic keywords.
+  const keywordOnlyCounts = new Map<string, Set<string>>();
 
   // =========================================================================
-  // PHASE 1: Count word frequency and collect promotion candidates
+  // PHASE 1a: Count word frequency across ALL emojis first
   // =========================================================================
-  // Problem: CLDR keywords like "dog" are useful for search but aren't in
-  // the emoji's names array. We want to promote some keywords to names.
-  //
-  // However, naive promotion causes conflicts: "cake" appears in both
-  // "fish cake" and "birthday cake" TTS names. Without coordination,
-  // whichever emoji processes first claims "cake".
-  //
-  // Solution: Two-phase approach. First, collect ALL potential promotions
-  // with metadata (TTS length, exact match). Then in Phase 2, pick winners.
+  // We need complete frequency counts BEFORE generating candidates, so we can
+  // filter out generic keywords like "face" that appear in 100+ emojis.
+  // If we count and filter in the same loop, early entries would see incomplete
+  // counts and incorrectly pass the frequency filter.
   // =========================================================================
-  const promotionCandidates = new Map<string, PromotionCandidate[]>();
-
   for (const entry of entries) {
     const baseEmoji = emojiByKey.get(
       normalizeEmojiKey(stripSkinTone(entry.emoji))
@@ -508,11 +506,25 @@ function buildEmojiDatabase(
       continue; // Skip skin tone variants for counting
     }
 
-    // Count how many emojis use each word (in names or keywords).
+    // Track unique emojis that use each word (in names or keywords).
     // Used later to: (1) promote unique keywords, (2) filter overly common ones
     const countWord = (word: string) => {
       const lower = word.toLowerCase();
-      keywordCounts.set(lower, (keywordCounts.get(lower) || 0) + 1);
+      if (!keywordCounts.has(lower)) {
+        keywordCounts.set(lower, new Set());
+      }
+      keywordCounts.get(lower)!.add(entry.emoji);
+    };
+
+    // Track keywords separately - words in CLDR keyword lists only.
+    // This is used to filter generic keywords like "body" that appear
+    // as keywords for many different emojis.
+    const countKeywordOnly = (word: string) => {
+      const lower = word.toLowerCase();
+      if (!keywordOnlyCounts.has(lower)) {
+        keywordOnlyCounts.set(lower, new Set());
+      }
+      keywordOnlyCounts.get(lower)!.add(entry.emoji);
     };
 
     for (const locale of LOCALES) {
@@ -531,7 +543,46 @@ function buildEmojiDatabase(
       );
       for (const keyword of localeKeywords) {
         countWord(keyword);
+        countKeywordOnly(keyword);
       }
+    }
+  }
+
+  // =========================================================================
+  // PHASE 1b: Collect promotion candidates using complete frequency counts
+  // =========================================================================
+  // Problem: CLDR keywords like "dog" are useful for search but aren't in
+  // the emoji's names array. We want to promote some keywords to names.
+  //
+  // However, naive promotion causes conflicts: "cake" appears in both
+  // "fish cake" and "birthday cake" TTS names. Without coordination,
+  // whichever emoji processes first claims "cake".
+  //
+  // Solution: Collect ALL potential promotions with metadata (TTS length,
+  // exact match). Then in Phase 2, pick winners.
+  // =========================================================================
+  const promotionCandidates = new Map<string, PromotionCandidate[]>();
+
+  // Skip generic keywords that appear as CLDR keywords for too many emojis.
+  // Threshold chosen based on actual keyword frequency:
+  // - party: 73 → maps to 🎉 ✓
+  // - heart: 84 → would wrongly map to 💔 (not ❤️) due to semantic similarity
+  // - food: 55 → maps to 🥫 ✓
+  // - face: 162, hand: 138 → too generic, filtered
+  // Threshold 75 keeps useful keywords while filtering problematic ones.
+  const MAX_KEYWORD_FREQUENCY = 75;
+
+
+  for (const entry of entries) {
+    const baseEmoji = emojiByKey.get(
+      normalizeEmojiKey(stripSkinTone(entry.emoji))
+    );
+    const entryKey = normalizeEmojiKey(entry.emoji);
+    const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
+
+    // Skip skin tone variants (already processed in Phase 1a)
+    if (baseEmoji && baseKey && baseKey !== entryKey) {
+      continue;
     }
 
     // Skip internal categories (e.g., "internal:family") for keyword promotion.
@@ -556,6 +607,13 @@ function buildEmojiDatabase(
 
     for (const keyword of allKeywords) {
       const lowerKeyword = keyword.toLowerCase();
+
+      // Filter out overly generic keywords using pre-computed counts
+      const keywordFreq = keywordOnlyCounts.get(lowerKeyword)?.size || 0;
+      if (keywordFreq > MAX_KEYWORD_FREQUENCY) {
+        continue;
+      }
+
       // Check if keyword exactly matches one of emoji's existing names
       const isNameMatch = existingNames.has(lowerKeyword);
 
@@ -568,8 +626,8 @@ function buildEmojiDatabase(
 
       // Threshold tuned empirically:
       // - 0.45 accepts "clover" ↔ "four leaf clover" (0.49)
-      // - Lower values accept more candidates but risk false positives
-      // - Higher values miss valid matches like cherry ↔ cherries (0.55)
+      // - Higher values miss valid matches
+      // - Unique keywords (count=1) are promoted separately regardless
       const SYNONYM_THRESHOLD = 0.45;
       if (synonymScore >= SYNONYM_THRESHOLD) {
         if (!promotionCandidates.has(lowerKeyword)) {
@@ -684,7 +742,7 @@ function buildEmojiDatabase(
       }
 
       // Always promote unique keywords (count=1) - no conflict possible
-      const isUnique = keywordCounts.get(lowerKeyword) === 1;
+      const isUnique = keywordCounts.get(lowerKeyword)?.size === 1;
       if (isUnique) {
         names.add(keyword);
         lowerNames.add(lowerKeyword);
@@ -694,7 +752,7 @@ function buildEmojiDatabase(
     // Keep keywords with count 2-10 for similarity detection.
     // Too common (>10) creates false positives; unique (=1) already promoted.
     const keywords = allKeywords.filter((k) => {
-      const count = keywordCounts.get(k.toLowerCase());
+      const count = keywordCounts.get(k.toLowerCase())?.size;
       return count !== undefined && count > 1 && count <= 10;
     });
 
