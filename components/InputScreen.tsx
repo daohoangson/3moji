@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Sparkles, ArrowRight, Search } from "lucide-react";
-import { unlockAudio } from "@/lib/audio";
+import { unlockAudio, playPopSound } from "@/lib/audio";
 
 interface InputScreenProps {
   inputWord: string;
@@ -23,8 +23,14 @@ export function InputScreen({
 }: InputScreenProps) {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && inputWord.trim() && !isLoading) {
+      playPopSound();
       onStart();
     }
+  };
+
+  const handleStart = () => {
+    playPopSound();
+    onStart();
   };
 
   return (
@@ -60,7 +66,10 @@ export function InputScreen({
               key={word}
               href={`/find/${encodeURIComponent(word)}`}
               prefetch={true}
-              onClick={() => unlockAudio()}
+              onClick={() => {
+                unlockAudio();
+                playPopSound();
+              }}
               className={`group relative overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md touch-manipulation active:translate-y-0 ${
                 isLoading ? "pointer-events-none opacity-50" : ""
               } ${
@@ -103,7 +112,7 @@ export function InputScreen({
           )}
 
           <button
-            onClick={onStart}
+            onClick={handleStart}
             disabled={!inputWord.trim() || isLoading}
             className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 py-5 text-xl font-black text-white shadow-xl shadow-sky-500/30 touch-manipulation transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
           >

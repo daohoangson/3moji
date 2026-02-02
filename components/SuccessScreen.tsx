@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { RefreshCw, PartyPopper } from "lucide-react";
 import { Confetti } from "./Confetti";
-import { playSuccessSound } from "@/lib/audio";
+import { playSuccessSound, playPopSound } from "@/lib/audio";
 
 interface SuccessScreenProps {
   inputWord: string;
@@ -52,6 +52,7 @@ export function SuccessScreen({
 
   const handleTargetTap = () => {
     playSuccessSound();
+    playPopSound();
     setConfettiKey((prev) => prev + 1);
   };
 
@@ -107,6 +108,7 @@ export function SuccessScreen({
               key={word}
               href={`/find/${encodeURIComponent(word)}`}
               prefetch={true}
+              onClick={() => playPopSound()}
               className={`rounded-xl px-4 py-2 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md touch-manipulation active:translate-y-0 ${
                 i % 2 === 0
                   ? "bg-white text-sky-600 shadow-sm ring-1 ring-sky-100 hover:bg-sky-50"
@@ -121,6 +123,7 @@ export function SuccessScreen({
         <Link
           href="/"
           prefetch={true}
+          onClick={() => playPopSound()}
           className="group flex shrink-0 items-center gap-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-10 py-5 text-xl font-black text-white shadow-xl shadow-emerald-500/30 transition-all hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/40 touch-manipulation focus:ring-4 focus:ring-emerald-500/30 focus:outline-none active:translate-y-1 active:scale-95 sm:text-2xl"
         >
           <RefreshCw className="h-7 w-7 transition-transform group-hover:rotate-180" />

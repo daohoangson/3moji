@@ -49,8 +49,8 @@ export function playSuccessSound(): void {
 
       // Volume envelope
       gain.gain.setValueAtTime(0, startTime);
-      gain.gain.linearRampToValueAtTime(0.2, startTime + 0.05); // Attack
-      gain.gain.linearRampToValueAtTime(0.01, startTime + duration); // Decay
+      gain.gain.linearRampToValueAtTime(0.15, startTime + 0.05); // Attack
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration); // Natural decay
 
       osc.connect(gain);
       gain.connect(ctx.destination);
@@ -60,6 +60,40 @@ export function playSuccessSound(): void {
     });
   } catch (e) {
     console.error("Audio play failed", e);
+  }
+}
+
+/**
+ * Plays a short, gentle "pop" sound for UI interactions.
+ */
+export function playPopSound(): void {
+  try {
+    const ctx = getAudioContext();
+    if (ctx.state === "suspended") {
+      ctx.resume();
+    }
+
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = "sine";
+    // Quick pitch drop for "bubble" effect
+    osc.frequency.setValueAtTime(800, now);
+    osc.frequency.exponentialRampToValueAtTime(100, now + 0.1);
+
+    // Short envelope
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.1, now + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.15);
+  } catch (e) {
+    // Ignore errors for UI sounds
   }
 }
 

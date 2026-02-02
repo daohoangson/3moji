@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Volume2 } from "lucide-react";
 import { isSpeechAvailable, speakWord } from "@/lib/speech";
+import { playPopSound } from "@/lib/audio";
 
 export interface GameItem {
   id: string;
@@ -72,6 +73,7 @@ export function GameScreen({
   }, [inputWord, speechAvailable]);
 
   const handleSpeakClick = () => {
+    playPopSound();
     speakWord(inputWord);
   };
 
@@ -82,6 +84,7 @@ export function GameScreen({
         <Link
           href="/"
           prefetch={true}
+          onClick={() => playPopSound()}
           aria-label="Go back"
           className="rounded-full bg-white/80 p-3 text-slate-400 shadow-sm backdrop-blur-md transition-all hover:scale-105 hover:bg-white hover:text-sky-600 hover:shadow-md focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-95"
         >
