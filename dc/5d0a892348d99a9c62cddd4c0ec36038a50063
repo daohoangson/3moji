@@ -1,0 +1,23 @@
+components/GameScreen.tsx
+  b84368c10459cc1f 93,97,99,101-105,108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "dc5d0a892348d99a9c62cddd4c0ec36038a50063",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 32,
+      "total_deletions": 29,
+      "accepted_lines": 9,
+      "overriden_lines": 0
+    }
+  }
+}
