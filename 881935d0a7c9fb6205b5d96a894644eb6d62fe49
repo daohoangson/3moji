@@ -1,0 +1,31 @@
+app/globals.css
+  b84368c10459cc1f 19-22
+components/InputScreen.tsx
+  b84368c10459cc1f 64,90,108
+components/SuccessScreen.tsx
+  b84368c10459cc1f 92,110,124
+app/layout.tsx
+  b84368c10459cc1f 1,10-16
+components/GameScreen.tsx
+  b84368c10459cc1f 119
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "881935d0a7c9fb6205b5d96a894644eb6d62fe49",
+  "prompts": {
+    "b84368c10459cc1f": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "739dc7e1-27c3-40d5-ad58-35ea63ce5d2a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 20,
+      "total_deletions": 8,
+      "accepted_lines": 20,
+      "overriden_lines": 0
+    }
+  }
+}
