@@ -89,7 +89,7 @@ export default function HomeClient({
                 href={`/find/${encodeURIComponent(word)}`}
                 prefetch={true}
                 onClick={() => unlockAudio()}
-                className={`rounded-xl px-4 py-2 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 ${
+                className={`rounded-2xl px-4 py-2 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 ${
                   i % 3 === 0
                     ? "bg-sky-100 text-sky-700 hover:bg-sky-200"
                     : i % 3 === 1
@@ -112,7 +112,7 @@ export default function HomeClient({
                 value={inputWord}
                 onChange={(e) => setInputWord(e.target.value)}
                 placeholder="Type a word..."
-                className="w-full rounded-xl border-4 border-slate-100 bg-slate-50 py-4 pr-4 pl-12 text-lg font-bold text-slate-800 placeholder-slate-300 transition-all hover:border-sky-200 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/20 focus:outline-none sm:rounded-2xl sm:py-5 sm:pl-14 sm:text-2xl"
+                className="w-full rounded-2xl border-4 border-slate-100 bg-slate-50 py-4 pr-4 pl-12 text-lg font-bold text-slate-800 placeholder-slate-300 transition-all hover:border-sky-200 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/20 focus:outline-none sm:rounded-2xl sm:py-5 sm:pl-14 sm:text-2xl"
                 autoFocus
               />
             </div>
@@ -120,7 +120,7 @@ export default function HomeClient({
             <button
               type="submit"
               disabled={!inputWord.trim()}
-              className="group relative flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 py-4 text-lg font-black text-white shadow-xl shadow-sky-500/30 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none sm:rounded-2xl sm:py-5 sm:text-xl"
+              className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 py-4 text-lg font-black text-white shadow-xl shadow-sky-500/30 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none sm:rounded-2xl sm:py-5 sm:text-xl"
             >
               <span className="drop-shadow-md">Let&apos;s Play!</span>
               <ArrowRight className="h-6 w-6 stroke-[3px] transition-transform group-hover:translate-x-1 sm:h-7 sm:w-7" />
