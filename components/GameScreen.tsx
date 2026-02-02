@@ -90,19 +90,22 @@ export function GameScreen({
         >
           <ArrowLeft className="h-6 w-6 stroke-[3px]" />
         </Link>
-        <div className="mx-4 flex max-w-[70%] items-center gap-2 truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-6 py-3 shadow-lg backdrop-blur-md sm:px-8">
+        <div className="relative mx-4 flex max-w-[70%] items-center justify-center truncate rounded-full border-b-4 border-sky-100 bg-white/90 py-3 pl-10 pr-10 shadow-lg backdrop-blur-md transition-all duration-500 ease-out sm:px-12">
           <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
             Find: <span className="text-sky-600 capitalize">{inputWord}</span>
           </h2>
-          {speechAvailable && (
-            <button
-              onClick={handleSpeakClick}
-              aria-label={`Listen to ${inputWord}`}
-              className="ml-1 shrink-0 rounded-full p-2 text-sky-400 transition-all hover:bg-sky-50 hover:text-sky-600 focus:ring-2 focus:ring-sky-500 focus:outline-none active:scale-90"
-            >
-              <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" />
-            </button>
-          )}
+          <button
+            onClick={handleSpeakClick}
+            disabled={!speechAvailable}
+            aria-label={`Listen to ${inputWord}`}
+            className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full p-2 text-sky-400 transition-opacity duration-500 focus:ring-2 focus:ring-sky-500 focus:outline-none ${
+              speechAvailable
+                ? "opacity-100 hover:bg-sky-50 hover:text-sky-600 active:scale-90"
+                : "pointer-events-none opacity-0"
+            }`}
+          >
+            <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
         </div>
         <div className="w-12" /> {/* Spacer for centering */}
       </div>
