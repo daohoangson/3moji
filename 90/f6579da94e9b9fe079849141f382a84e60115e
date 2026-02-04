@@ -1,0 +1,49 @@
+app/topics/[topicId]/page.tsx
+  1380291913b4241c 5,96
+components/index.ts
+  1380291913b4241c 10
+app/topics/loading.tsx
+  1380291913b4241c 1-2,6
+app/home-client.tsx
+  b02cd9b2433edd59 34
+  1380291913b4241c 7,32-33
+app/topics/page.tsx
+  1380291913b4241c 2,28
+components/PageHeader.tsx
+  1380291913b4241c 1-121
+app/topics/[topicId]/loading.tsx
+  1380291913b4241c 1-2,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "90f6579da94e9b9fe079849141f382a84e60115e",
+  "prompts": {
+    "1380291913b4241c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b26088cb-6486-4a0d-8796-ade055ba9e96",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 139,
+      "total_deletions": 57,
+      "accepted_lines": 138,
+      "overriden_lines": 0
+    },
+    "b02cd9b2433edd59": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "bea1fff2-c470-46ec-8417-df52d7fe441a",
+        "model": "gemini-3-pro-preview"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 25,
+      "total_deletions": 18,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    }
+  }
+}
