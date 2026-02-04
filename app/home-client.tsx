@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Sparkles, ArrowRight, Search, ChevronRight } from "lucide-react";
-import { TopicCard } from "@/components";
+import { TopicCard, PageHeader } from "@/components";
 import { unlockAudio, playPopSound } from "@/lib/audio";
 import type { Topic } from "@/lib/topics";
 
@@ -29,7 +29,13 @@ export default function HomeClient({
   };
 
   return (
-    <main className="min-h-screen overflow-y-auto bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 px-4 py-8 text-slate-900 sm:px-6 sm:py-12">
+    <main className="relative min-h-screen overflow-y-auto bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 text-slate-900">
+      <PageHeader
+        sticky={false}
+        showBackground={false}
+        className="absolute top-0 right-0 left-0"
+      />
+
       {/* Background decoration */}
       <div className="animate-bounce-gentle fixed top-10 left-10 h-32 w-32 rounded-full bg-sky-300 opacity-20 blur-3xl" />
       <div
@@ -37,7 +43,7 @@ export default function HomeClient({
         style={{ animationDelay: "1s" }}
       />
 
-      <div className="relative z-10 mx-auto max-w-4xl">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12">
         {/* Header */}
         <header className="mb-8 text-center sm:mb-12">
           <div className="mb-4 flex justify-center">
@@ -64,7 +70,7 @@ export default function HomeClient({
               href="/topics"
               prefetch={true}
               onClick={() => playPopSound()}
-              className="flex items-center gap-1 touch-manipulation text-sm font-bold text-sky-600 transition-colors hover:text-sky-700"
+              className="flex touch-manipulation items-center gap-1 text-sm font-bold text-sky-600 transition-colors hover:text-sky-700"
             >
               See All
               <ChevronRight className="h-4 w-4" />
@@ -94,7 +100,7 @@ export default function HomeClient({
                   playPopSound();
                   unlockAudio();
                 }}
-                className={`rounded-2xl px-4 py-2 touch-manipulation text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 ${
+                className={`touch-manipulation rounded-2xl px-4 py-2 text-sm font-bold transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-0 ${
                   i % 3 === 0
                     ? "bg-sky-100 text-sky-700 hover:bg-sky-200"
                     : i % 3 === 1
@@ -125,7 +131,7 @@ export default function HomeClient({
             <button
               type="submit"
               disabled={!inputWord.trim()}
-              className="group relative flex w-full items-center justify-center gap-3 touch-manipulation rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 py-4 text-lg font-black text-white shadow-xl shadow-sky-500/30 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none sm:rounded-2xl sm:py-5 sm:text-xl"
+              className="group relative flex w-full touch-manipulation items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 py-4 text-lg font-black text-white shadow-xl shadow-sky-500/30 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none sm:rounded-2xl sm:py-5 sm:text-xl"
             >
               <span className="drop-shadow-md">Let&apos;s Play!</span>
               <ArrowRight className="h-6 w-6 stroke-[3px] transition-transform group-hover:translate-x-1 sm:h-7 sm:w-7" />
