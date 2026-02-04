@@ -4,7 +4,7 @@ import Link from "next/link";
 import { RefreshCw, Home, PartyPopper, Star } from "lucide-react";
 import { Confetti } from "./Confetti";
 import { playPopSound } from "@/lib/audio";
-import { SoundToggle } from "./SoundToggle";
+import { PageHeader } from "./PageHeader";
 
 interface SessionSummaryProps {
   topicId: string;
@@ -39,9 +39,11 @@ export function SessionSummary({
     <main className="fixed inset-0 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 p-6">
       <Confetti />
 
-      <div className="absolute top-4 right-4 z-50">
-        <SoundToggle />
-      </div>
+      <PageHeader
+        sticky={false}
+        showBackground={false}
+        className="absolute top-0 right-0 left-0 z-50"
+      />
 
       {/* Background decoration */}
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full overflow-hidden">
