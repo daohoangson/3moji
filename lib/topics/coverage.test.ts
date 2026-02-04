@@ -1,28 +1,31 @@
 import { describe, it, expect } from "vitest";
-import { generateLocalContent } from "../game-content";
-import { getAllTopics } from "./index";
+import { getCategoryByEmoji } from "../emoji-data";
+import { getAllTopics, isEmojiItem } from "./index";
 import { generateTopicSession, DEFAULT_SESSION_LENGTH } from "./session";
 
-describe("topic word coverage", () => {
+describe("topic coverage", () => {
   const topics = getAllTopics();
+  const emojiTopics = topics.filter((t) => t.items.some(isEmojiItem));
 
-  it.each(topics.map((t) => [t.id, t]))(
-    "topic %s has all words in emoji database",
+  it.each(emojiTopics.map((t) => [t.id, t]))(
+    "emoji topic %s has all emojis in emoji database",
     (_, topic) => {
       const failed: string[] = [];
-      for (const word of topic.words) {
-        if (!generateLocalContent(word)) {
-          failed.push(word);
+      for (const item of topic.items) {
+        if (!isEmojiItem(item)) continue;
+        const category = getCategoryByEmoji(item.emoji);
+        if (!category) {
+          failed.push(`${item.word} (${item.emoji})`);
         }
       }
-      expect(failed, `Missing words: ${failed.join(", ")}`).toHaveLength(0);
+      expect(failed, `Missing emojis: ${failed.join(", ")}`).toHaveLength(0);
     },
   );
 
   it.each(topics.map((t) => [t.id, t]))(
-    "topic %s has at least %i words for full session",
+    "topic %s has at least %i items for full session",
     (_, topic) => {
-      expect(topic.words.length).toBeGreaterThanOrEqual(DEFAULT_SESSION_LENGTH);
+      expect(topic.items.length).toBeGreaterThanOrEqual(DEFAULT_SESSION_LENGTH);
     },
   );
 

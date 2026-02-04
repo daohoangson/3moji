@@ -3,7 +3,7 @@ import {
   getAllTopics,
   getTopicById,
   getTopicsByLevel,
-  getRandomWordsFromTopic,
+  getRandomItemsFromTopic,
   TOPICS,
 } from "./index";
 
@@ -55,28 +55,32 @@ describe("topics utilities", () => {
     });
   });
 
-  describe("getRandomWordsFromTopic", () => {
-    it("returns requested number of words", () => {
-      const words = getRandomWordsFromTopic("animal-friends", 5);
-      expect(words.length).toBe(5);
+  describe("getRandomItemsFromTopic", () => {
+    it("returns requested number of items", () => {
+      const items = getRandomItemsFromTopic("animal-friends", 5);
+      expect(items.length).toBe(5);
     });
 
-    it("returns all words if count exceeds available", () => {
+    it("returns all items if count exceeds available", () => {
       const topic = getTopicById("animal-friends");
-      const words = getRandomWordsFromTopic("animal-friends", 100);
-      expect(words.length).toBe(topic?.words.length);
+      const items = getRandomItemsFromTopic("animal-friends", 100);
+      expect(items.length).toBe(topic?.items.length);
     });
 
     it("returns empty array for unknown topic", () => {
-      const words = getRandomWordsFromTopic("unknown", 5);
-      expect(words).toEqual([]);
+      const items = getRandomItemsFromTopic("unknown", 5);
+      expect(items).toEqual([]);
     });
 
-    it("returns words from the topic word list", () => {
+    it("returns items from the topic items list", () => {
       const topic = getTopicById("animal-friends")!;
-      const words = getRandomWordsFromTopic("animal-friends", 3);
-      words.forEach((word) => {
-        expect(topic.words).toContain(word);
+      const items = getRandomItemsFromTopic("animal-friends", 3);
+      items.forEach((item) => {
+        const itemKey = "emoji" in item ? item.emoji : item.color;
+        const topicKeys = topic.items.map((i) =>
+          "emoji" in i ? i.emoji : i.color,
+        );
+        expect(topicKeys).toContain(itemKey);
       });
     });
   });

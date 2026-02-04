@@ -2,210 +2,210 @@
 
 exports[`topic session generation (deterministic) > snapshot preview for animal-friends 1`] = `
 [
-  "cat -> 🐈 | distractors: 🦖, 🦊",
-  "chicken -> 🐔 | distractors: 🐕‍🦺, 🐯",
-  "fish -> 🐟 | distractors: 🐞, 🐦‍⬛",
   "dog -> 🐕 | distractors: 🦧, 🐟",
-  "cow -> 🐄 | distractors: 🐎, 🦀",
-  "duck -> 🦆 | distractors: 🐲, 🦏",
-  "rabbit -> 🐇 | distractors: 🪼, 🦟",
-  "sheep -> 🐏 | distractors: 🐉, 🐻‍❄️",
-  "pig -> 🐖 | distractors: 🦭, 🐐",
+  "hamster -> 🐹 | distractors: 🪼, 🦟",
+  "turkey -> 🦃 | distractors: 🦟, 🐌",
+  "sheep -> 🐑 | distractors: 🦄, 🦐",
   "horse -> 🐎 | distractors: 🪽, 🐹",
+  "bee -> 🐝 | distractors: 🐵, 🐌",
+  "cat -> 🐈 | distractors: 🦖, 🦊",
+  "fish -> 🐟 | distractors: 🐞, 🐦‍⬛",
+  "peacock -> 🦚 | distractors: 🫍, 🐂",
+  "ant -> 🐜 | distractors: 🦈, 🦞",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for celebrations 1`] = `
 [
-  "fireworks -> 🎆 | distractors: 🎈, 🎉",
-  "cake -> 🎂 | distractors: 🌮, 🍡",
-  "balloon -> 🎈 | distractors: 🧨, 🎎",
-  "party -> 🎉 | distractors: 🧨, 🎎",
-  "ghost -> 👻 | distractors: 🕳️, 💔",
-  "gift -> 🎁 | distractors: 🎋, 🧨",
-  "christmas -> 🎄 | distractors: 🎍, 🎐",
   "sparkler -> 🎇 | distractors: 🧧, 🎐",
-  "birthday -> 🎂 | distractors: 🌮, 🍡",
-  "confetti -> 🎊 | distractors: 🎗️, 🧧",
+  "ghost -> 👻 | distractors: 🕳️, 💔",
+  "heart -> ❤️ | distractors: 💗, 🥵",
+  "party -> 🎉 | distractors: 🧨, 🎎",
+  "ribbon -> 🎀 | distractors: 🎋, 🎫",
+  "disco ball -> 🪩 | distractors: ♣️, 🕹️",
+  "trophy -> 🏆 | distractors: 🛒, 💡",
+  "fireworks -> 🎆 | distractors: 🎈, 🎉",
+  "Christmas -> 🎄 | distractors: 🎍, 🎐",
+  "balloon -> 🎈 | distractors: 🧨, 🎎",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for clothing 1`] = `
 [
-  "boot -> 🥾 | distractors: 👑, 💍",
-  "hat -> 🎩 | distractors: 👢, 🩱",
-  "jeans -> 👖 | distractors: 👙, 👠",
   "dress -> 👗 | distractors: 🧢, 🧤",
   "gloves -> 🧤 | distractors: 🕶️, 👟",
-  "scarf -> 🧣 | distractors: 🪖, 💄",
-  "shoe -> 👞 | distractors: 🪭, 🦺",
+  "high heel -> 👠 | distractors: 🎓, 🪭",
   "socks -> 🧦 | distractors: 🎒, 🥾",
-  "coat -> 🧥 | distractors: 💎, 🩳",
-  "t-shirt -> 👕 | distractors: 🎒, 🩳",
+  "pants -> 👖 | distractors: 👙, 👠",
+  "boots -> 🥾 | distractors: 👑, 💍",
+  "sandal -> 🩴 | distractors: 🪭, 🩳",
+  "purse -> 👛 | distractors: ⛑️, 👖",
+  "tie -> 👔 | distractors: 👖, 🎒",
+  "shirt -> 👕 | distractors: 🎒, 🩳",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for colors 1`] = `
 [
-  "red -> red | distractors: gray, aqua",
-  "green -> green | distractors: orange, aqua",
-  "blue -> blue | distractors: olive, orange",
-  "yellow -> yellow | distractors: magenta, purple",
-  "brown -> brown | distractors: navy, green",
-  "black -> black | distractors: blue, gold",
-  "pink -> pink | distractors: gray, aqua",
-  "purple -> purple | distractors: black, maroon",
-  "white -> white | distractors: gold, black",
-  "orange -> orange | distractors: gray, aqua",
+  "black -> black | distractors: navy, salmon",
+  "green -> green | distractors: black, yellow",
+  "indigo -> indigo | distractors: khaki, silver",
+  "salmon -> salmon | distractors: cyan, yellow",
+  "olive -> olive | distractors: maroon, brown",
+  "gold -> gold | distractors: lime, navy",
+  "pink -> pink | distractors: khaki, tan",
+  "coral -> coral | distractors: cyan, maroon",
+  "lime -> lime | distractors: navy, blue",
+  "khaki -> khaki | distractors: cyan, maroon",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for emotions 1`] = `
 [
-  "worried -> 😟 | distractors: 🥰, 😂",
-  "sleepy -> 😪 | distractors: 🗨️, 💕",
-  "smiling -> ☺️ | distractors: 😘, 🤩",
-  "sad -> 😥 | distractors: 🤯, 🥴",
-  "fearful -> 😨 | distractors: 😮, 😎",
-  "confused -> 😕 | distractors: 💋, 😓",
-  "thinking -> 🤔 | distractors: ☺️, 🥵",
+  "love -> 🥰 | distractors: 🫪, 💨",
+  "sad -> 😢 | distractors: 🩶, 🗨️",
+  "shy -> 😳 | distractors: 🥶, 👺",
+  "happy -> 😊 | distractors: ☺️, 👽",
   "angry -> 😠 | distractors: ☹️, 😢",
-  "crying -> 😢 | distractors: 🩶, 🗨️",
-  "love -> 💌 | distractors: 💋, 🤒",
+  "thinking -> 🤔 | distractors: ☺️, 🥵",
+  "winking -> 😉 | distractors: ☹️, 😯",
+  "cool -> 😎 | distractors: 😈, 💓",
+  "scared -> 😨 | distractors: 😮, 😎",
+  "worried -> 😟 | distractors: 🥰, 😂",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for flags 1`] = `
 [
-  "United Kingdom -> 🇬🇧 | distractors: 🇯🇪, 🇺🇸",
-  "Canada -> 🇨🇦 | distractors: 🇹🇻, 🇰🇮",
-  "Australia -> 🇦🇺 | distractors: 🇧🇿, 🇲🇷",
-  "United States -> 🇺🇸 | distractors: 🇲🇩, 🇦🇸",
-  "Germany -> 🇩🇪 | distractors: 🇹🇹, 🇰🇼",
-  "Brazil -> 🇧🇷 | distractors: 🇩🇬, 🇫🇰",
-  "Mexico -> 🇲🇽 | distractors: 🇬🇪, 🇮🇸",
-  "Japan -> 🇯🇵 | distractors: 🇸🇱, 🇮🇳",
-  "France -> 🇫🇷 | distractors: 🇸🇸, 🇲🇰",
   "China -> 🇨🇳 | distractors: 🇰🇾, 🇨🇼",
+  "Canada -> 🇨🇦 | distractors: 🇹🇻, 🇰🇮",
+  "Russia -> 🇷🇺 | distractors: 🇷🇼, 🇸🇩",
+  "United States -> 🇺🇸 | distractors: 🇲🇩, 🇦🇸",
+  "Australia -> 🇦🇺 | distractors: 🇧🇿, 🇲🇷",
+  "Greece -> 🇬🇷 | distractors: 🇲🇲, 🇬🇭",
+  "South Africa -> 🇿🇦 | distractors: 🇨🇶, 🇫🇲",
+  "United Kingdom -> 🇬🇧 | distractors: 🇯🇪, 🇺🇸",
+  "Brazil -> 🇧🇷 | distractors: 🇩🇬, 🇫🇰",
+  "Italy -> 🇮🇹 | distractors: 🇰🇷, 🇬🇾",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for food 1`] = `
 [
-  "rice -> 🍛 | distractors: 🍯, 🍤",
-  "popcorn -> 🍿 | distractors: 🍚, 🍢",
-  "cheese -> 🧀 | distractors: 🥯, 🍖",
-  "egg -> 🥚 | distractors: 🫓, 🥨",
-  "doughnut -> 🍩 | distractors: 🫓, 🥨",
-  "cake -> 🎂 | distractors: 🌮, 🍡",
-  "noodle -> 🍜 | distractors: 🍘, 🫔",
-  "pizza -> 🍕 | distractors: 🍩, 🍪",
-  "cookie -> 🍪 | distractors: 🥖, 🍚",
+  "rice -> 🍚 | distractors: 🍯, 🍤",
+  "chocolate -> 🍫 | distractors: 🍰, 🍣",
+  "bread -> 🍞 | distractors: 🍛, 🥘",
   "hamburger -> 🍔 | distractors: 🥚, 🍫",
+  "pancakes -> 🥞 | distractors: 🫓, 🥨",
+  "waffle -> 🧇 | distractors: 🫓, 🥨",
+  "sushi -> 🍣 | distractors: 🍝, 🥨",
+  "taco -> 🌮 | distractors: 🍔, 🍡",
+  "pie -> 🥧 | distractors: 🍛, 🥙",
+  "noodles -> 🍜 | distractors: 🍘, 🫔",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for fruits 1`] = `
 [
-  "watermelon -> 🍉 | distractors: 🍇, 🥥",
-  "pear -> 🍐 | distractors: 🍊, 🍉",
-  "orange -> orange | distractors: gray, aqua",
-  "grapes -> 🍇 | distractors: 🍊, 🥭",
-  "lemon -> 🍋 | distractors: 🥭, 🥥",
+  "blueberries -> 🫐 | distractors: 🍋‍🟩, 🍍",
   "banana -> 🍌 | distractors: 🍋‍🟩, 🍏",
-  "cherry -> 🌸 | distractors: ☘️, 🪴",
-  "apple -> 🍏 | distractors: 🍉, 🥝",
-  "strawberry -> 🍓 | distractors: 🍑, 🍈",
+  "melon -> 🍈 | distractors: 🍓, 🥥",
+  "orange -> 🍊 | distractors: 🥭, 🥥",
+  "watermelon -> 🍉 | distractors: 🍇, 🥥",
+  "mango -> 🥭 | distractors: 🍇, 🥥",
+  "coconut -> 🥥 | distractors: 🍏, 🫐",
   "peach -> 🍑 | distractors: 🍇, 🍈",
+  "strawberry -> 🍓 | distractors: 🍑, 🍈",
+  "kiwi -> 🥝 | distractors: 🍊, 🍅",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for nature 1`] = `
 [
-  "rainbow -> 🌈 | distractors: ☃️, 🔥",
+  "shell -> 🐚 | distractors: 🐶, 🐦‍⬛",
+  "clover -> 🍀 | distractors: 💮, 🍄",
   "rain -> 🌧️ | distractors: ☃️, 🔥",
-  "tree -> 🌴 | distractors: 🌾, 🌺",
-  "volcano -> 🌋 | distractors: 🏬, 🎡",
-  "sun -> ☀️ | distractors: 🌖, 🌒",
-  "mountain -> ⛰️ | distractors: 🏝️, 🏯",
-  "rose -> 🌹 | distractors: 🪴, 🍃",
-  "sunflower -> 🌻 | distractors: 💐, 🌵",
-  "snow -> 🌨️ | distractors: 🌂, 🌛",
-  "star -> ⭐ | distractors: 🌠, 🌌",
+  "sunrise -> 🌅 | distractors: ⛪, 🏫",
+  "wave -> 🌊 | distractors: 🌠, 🌘",
+  "mushroom -> 🍄 | distractors: 🌾, 🪺",
+  "fire -> 🔥 | distractors: 🌗, ⭐",
+  "snowman -> ⛄ | distractors: 🌂, 🌛",
+  "lightning -> ⚡ | distractors: 🌊, 🌫️",
+  "moon -> 🌙 | distractors: ⛄, ☄️",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for professions 1`] = `
 [
-  "scientist -> 🧑‍🔬 | distractors: 🧔‍♀️, 🧑‍🍼",
-  "artist -> 🧑‍🎨 | distractors: 👰‍♂️, 👳‍♀️",
-  "astronaut -> 🧑‍🚀 | distractors: 🤷‍♀️, ✍️",
-  "teacher -> 🧑‍🏫 | distractors: 👨‍⚖️, 👨‍🌾",
-  "firefighter -> 🧑‍🚒 | distractors: 🧑‍🦱, 👨‍🏭",
-  "pilot -> 🧑‍✈️ | distractors: 👨‍🦲, 👩‍🚀",
-  "police officer -> 👮 | distractors: 👨, 👨‍🔧",
-  "health worker -> 🧑‍⚕️ | distractors: 👵, 🙆‍♀️",
-  "cook -> 🧑‍🍳 | distractors: 🙍, 👨‍🦳",
-  "farmer -> 🧑‍🌾 | distractors: 🤦‍♂️, 👨‍💻",
+  "mechanic -> 👨‍🔧 | distractors: 👨‍✈️, 👨‍🎓",
+  "construction -> 👷 | distractors: 🧑‍🚀, 💂",
+  "artist -> 👨‍🎨 | distractors: 👰‍♂️, 👳‍♀️",
+  "scientist -> 👨‍🔬 | distractors: 🧔‍♀️, 🧑‍🍼",
+  "office worker -> 👨‍💼 | distractors: 🤵‍♀️, 👨‍🚒",
+  "pilot -> 👨‍✈️ | distractors: 👨‍🦲, 👩‍🚀",
+  "student -> 👨‍🎓 | distractors: 👳‍♂️, 🛀",
+  "judge -> 👨‍⚖️ | distractors: 👨, 👨‍🔧",
+  "cook -> 👨‍🍳 | distractors: 🙍, 👨‍🦳",
+  "singer -> 👨‍🎤 | distractors: 🙇‍♀️, 🧑‍🎨",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for shapes 1`] = `
 [
-  "white circle -> ⚪ | distractors: ▪️, 🟨",
-  "diamond -> 🔹 | distractors: ⚪, 🟥",
-  "red square -> 🟥 | distractors: 🟦, 🔴",
-  "star -> ⭐ | distractors: 🌠, 🌌",
-  "circle -> ⚫ | distractors: 🔻, 🔷",
-  "triangle -> 📐 | distractors: 📋, 📓",
-  "square -> 🟩 | distractors: ⚫, 🟣",
-  "black circle -> ⚫ | distractors: 🔻, 🔷",
-  "blue square -> 🟦 | distractors: 🟫, 🔴",
-  "red heart -> ❤️ | distractors: 💗, 🥵",
+  "red circle -> 🔴 | distractors: ▫️, 🟧",
+  "orange circle -> 🟠 | distractors: ◾, 🟡",
+  "pink heart -> 💗 | distractors: 🤥, 😶‍🌫️",
+  "purple heart -> 💜 | distractors: 😨, 🤠",
+  "brown circle -> 🟤 | distractors: ⚫, ◼️",
+  "green heart -> 💚 | distractors: 😖, 😰",
+  "orange square -> 🟧 | distractors: ◾, 🟡",
+  "orange diamond -> 🔶 | distractors: 🔳, 🟡",
+  "purple circle -> 🟣 | distractors: 🟥, 🔸",
+  "blue heart -> 💙 | distractors: 😳, 💫",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for sports 1`] = `
 [
-  "volleyball -> 🏐 | distractors: 🚴‍♂️, 👩🏽‍🫯‍👩🏾",
-  "hockey -> 🏒 | distractors: 🤽, 👨🏻‍🫯‍👨🏾",
-  "skier -> ⛷️ | distractors: 👨🏾‍🫯‍👨🏻, 🤽",
-  "tennis -> 🎾 | distractors: 🧑🏻‍🫯‍🧑🏾, ⛹️",
-  "baseball -> ⚾ | distractors: 👨🏽‍🫯‍👨🏾, 🤹‍♀️",
+  "diving -> 🤿 | distractors: 🏊, 🧑🏽‍🫯‍🧑🏾",
+  "skiing -> ⛷️ | distractors: 👨🏾‍🫯‍👨🏻, 🤽",
+  "snowboard -> 🏂 | distractors: 👨🏾‍🫯‍👨🏻, 🤽",
+  "swimming -> 🏊 | distractors: 🧑🏾‍🫯‍🧑🏽, 👩🏿‍🫯‍👩🏼",
+  "medal -> 🏅 | distractors: 💵, 🛏️",
+  "badminton -> 🏸 | distractors: 🤼‍♂️, 🚵‍♀️",
+  "wrestling -> 🤼 | distractors: 🚣‍♀️, 🏌️‍♂️",
   "basketball -> 🏀 | distractors: 👨🏼‍🫯‍👨🏽, 🤾‍♀️",
-  "bowling -> 🎳 | distractors: 🤹, 🧑🏿‍🫯‍🧑🏾",
-  "person golfing -> 🏌️ | distractors: 👩🏻‍🫯‍👩🏿, ⛸️",
-  "american football -> 🏈 | distractors: 👨🏻‍🫯‍👨🏽, 🥋",
-  "soccer -> ⚽ | distractors: 👨🏻‍🫯‍👨🏽, 🥋",
+  "hockey -> 🏒 | distractors: 🤽, 👨🏻‍🫯‍👨🏾",
+  "skateboard -> 🛹 | distractors: 🛬, 🚇",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for vehicles 1`] = `
 [
-  "bus -> 🚌 | distractors: 🚚, 🛺",
-  "airplane -> ✈️ | distractors: ⛽, 🚇",
-  "motorcycle -> 🏍️ | distractors: 🚎, 🚑",
-  "truck -> 🛻 | distractors: 🚃, 🚔",
-  "car -> 🏎️ | distractors: 🚓, 🚟",
-  "boat -> 🚢 | distractors: 🚝, 🛻",
-  "tractor -> 🚜 | distractors: 🚲, 🚟",
-  "train -> 🚆 | distractors: 💺, 🚥",
-  "helicopter -> 🚁 | distractors: 🛴, 🛢️",
   "bicycle -> 🚲 | distractors: 🚇, 🚁",
+  "airplane -> ✈️ | distractors: ⛽, 🚇",
+  "truck -> 🚚 | distractors: 🛢️, 🛟",
+  "sailboat -> ⛵ | distractors: 🛣️, 🚟",
+  "metro -> 🚇 | distractors: 🛤️, 🚅",
+  "fire truck -> 🚒 | distractors: 🛰️, 🛹",
+  "helicopter -> 🚁 | distractors: 🛴, 🛢️",
+  "tractor -> 🚜 | distractors: 🚲, 🚟",
+  "train -> 🚂 | distractors: ⚓, 🚢",
+  "pickup truck -> 🛻 | distractors: 🚃, 🚔",
 ]
 `;
 
 exports[`topic session generation (deterministic) > snapshot preview for wild-animals 1`] = `
 [
-  "kangaroo -> 🦘 | distractors: 🐄, 🐲",
-  "zebra -> 🦓 | distractors: 🐇, 🐕‍🦺",
-  "monkey -> 🐒 | distractors: 🐧, 🦫",
-  "octopus -> 🐙 | distractors: 🦈, 🦟",
-  "bear -> 🐻 | distractors: 🐞, 🦩",
-  "shark -> 🦈 | distractors: 🐷, 🐹",
-  "giraffe -> 🦒 | distractors: 🪼, 🦖",
-  "penguin -> 🐧 | distractors: 🦤, 🐅",
+  "butterfly -> 🦋 | distractors: 🫍, 🐂",
+  "crab -> 🦀 | distractors: 🦊, 🦓",
   "lion -> 🦁 | distractors: 🦨, 🐵",
-  "elephant -> 🐘 | distractors: 🐌, 🐢",
+  "shark -> 🦈 | distractors: 🐷, 🐹",
+  "owl -> 🦉 | distractors: 🦍, 🐫",
+  "monkey -> 🐵 | distractors: 🐧, 🦫",
+  "lobster -> 🦞 | distractors: 🕷️, 🐘",
+  "jellyfish -> 🪼 | distractors: 🪶, 🦫",
+  "bat -> 🦇 | distractors: 🦝, 🐴",
+  "whale -> 🐋 | distractors: 🦇, 🐈‍⬛",
 ]
 `;

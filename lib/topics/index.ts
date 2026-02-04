@@ -1,10 +1,17 @@
 import { TOPICS } from "./data";
 import { shuffle } from "../shuffle";
-import type { Topic, TopicLevel } from "./schema";
+import type { Topic, TopicLevel, TopicItem } from "./schema";
 
 export { TOPICS } from "./data";
 export { LEVELS, getLevelInfo } from "./levels";
-export type { Topic, TopicLevel } from "./schema";
+export { isEmojiItem, isColorItem } from "./schema";
+export type {
+  Topic,
+  TopicLevel,
+  TopicItem,
+  EmojiItem,
+  ColorItem,
+} from "./schema";
 export type { LevelInfo } from "./levels";
 
 export function getAllTopics(): Topic[] {
@@ -19,14 +26,14 @@ export function getTopicsByLevel(level: TopicLevel): Topic[] {
   return TOPICS.filter((topic) => topic.level === level);
 }
 
-export function getRandomWordsFromTopic(
+export function getRandomItemsFromTopic(
   topicId: string,
   count: number,
-): string[] {
+): TopicItem[] {
   const topic = getTopicById(topicId);
   if (!topic) {
     return [];
   }
-  const shuffled = shuffle([...topic.words]);
-  return shuffled.slice(0, Math.min(count, topic.words.length));
+  const shuffled = shuffle([...topic.items]);
+  return shuffled.slice(0, Math.min(count, topic.items.length));
 }
