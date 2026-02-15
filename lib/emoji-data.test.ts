@@ -149,6 +149,39 @@ describe("findEmojiByName", () => {
     const result = findEmojiByName("rose");
     expect(result?.category).toBe("nature");
   });
+
+  it("should find common animals by simple names", () => {
+    expect(findEmojiByName("cat")?.emoji).toBe("🐈");
+    expect(findEmojiByName("horse")?.emoji).toBe("🐎");
+    expect(findEmojiByName("cow")?.emoji).toBe("🐄");
+    expect(findEmojiByName("bird")?.emoji).toBe("🐦");
+    expect(findEmojiByName("fish")?.emoji).toBe("🐟");
+    expect(findEmojiByName("bunny")?.emoji).toBe("🐇");
+  });
+
+  it("should find common objects and nature by simple names", () => {
+    expect(findEmojiByName("sun")).not.toBeNull();
+    expect(findEmojiByName("moon")).not.toBeNull();
+    expect(findEmojiByName("star")).not.toBeNull();
+    expect(findEmojiByName("fire")).not.toBeNull();
+    expect(findEmojiByName("key")).not.toBeNull();
+    expect(findEmojiByName("bell")).not.toBeNull();
+    expect(findEmojiByName("book")).not.toBeNull();
+  });
+
+  it("should find food by common names", () => {
+    expect(findEmojiByName("cake")).not.toBeNull();
+    expect(findEmojiByName("pizza")).not.toBeNull();
+    expect(findEmojiByName("apple")).not.toBeNull();
+  });
+
+  it("should not map internal-category emojis to common words", () => {
+    // "love" should not map to 💏 (internal:family)
+    const love = findEmojiByName("love");
+    if (love) {
+      expect(love.category).not.toMatch(/^internal:/);
+    }
+  });
 });
 
 describe("getShortestEmojiNames", () => {
