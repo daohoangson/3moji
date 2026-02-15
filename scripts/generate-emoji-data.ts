@@ -15,7 +15,6 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import moby from "moby";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,6 +34,236 @@ const OUTPUT_PATH = path.join(repoRoot, "lib", "emoji-data.generated.ts");
 const CACHE_DIR = path.join(repoRoot, ".cache", "emoji-data");
 
 const INCLUDE_STATUSES = new Set(["fully-qualified", "component"]);
+
+// Synonym-based keyword→emoji overrides, extracted from moby thesaurus.
+// These map common words to emojis when the word is a synonym of an emoji name.
+// To regenerate: install moby, run the extraction, and update this map.
+const SYNONYM_OVERRIDES: Record<string, string> = {
+  active: "🤸",
+  actor: "🎭",
+  aeroplane: "✈️",
+  alcohol: "🍹",
+  angelic: "😇",
+  angle: "📏",
+  archer: "♐",
+  architect: "🧑‍💼",
+  autumn: "🍂",
+  awesome: "😃",
+  bacteria: "🦠",
+  bathroom: "🚽",
+  bearer: "♒",
+  beat: "🪘",
+  berry: "🍓",
+  bike: "🚲",
+  bill: "💴",
+  biologist: "🧑‍🔬",
+  blank: "😐",
+  blessed: "😇",
+  blow: "😮‍💨",
+  body: "👃",
+  boom: "💣",
+  booze: "🍹",
+  break: "⛓️‍💥",
+  breakfast: "🍴",
+  build: "👷",
+  burn: "❤️‍🔥",
+  cabbage: "🥬",
+  call: "📲",
+  cancel: "❌",
+  cash: "💰",
+  catch: "🪝",
+  celebrate: "🎉",
+  cell: "📱",
+  chef: "🧑‍🍳",
+  chemist: "🧑‍🔬",
+  chop: "🥩",
+  christian: "☦️",
+  clap: "🪭",
+  cleaning: "🧹",
+  clue: "🗝️",
+  condiment: "🧂",
+  cop: "👮",
+  cosmetics: "💅",
+  crazy: "😜",
+  cruise: "🚣",
+  cry: "🥹",
+  cute: "🩷",
+  cycle: "🚲",
+  dance: "🪩",
+  day: "🌞",
+  death: "💀",
+  delicious: "😋",
+  devil: "👿",
+  dinner: "🍴",
+  dinosaur: "🦕",
+  direction: "⬆️",
+  disappear: "🫠",
+  disbelief: "🤨",
+  do: "⛔",
+  doctor: "😷",
+  doubt: "🫤",
+  dracula: "🧛",
+  drip: "💦",
+  drive: "🚕",
+  drunk: "🥴",
+  earthquake: "🛘",
+  eat: "😋",
+  elderly: "🧓",
+  embarrassed: "😳",
+  evil: "👿",
+  exhausted: "🫩",
+  experiment: "🧪",
+  extraterrestrial: "👽",
+  fancy: "🧐",
+  fever: "🤧",
+  fix: "👷",
+  flip: "🩴",
+  formal: "🤵",
+  fungus: "🍄",
+  funny: "😜",
+  gardener: "👨‍🌾",
+  gasp: "😮‍💨",
+  gay: "🏳️‍🌈",
+  glad: "😊",
+  gold: "💰",
+  graduate: "🧑‍🎓",
+  grain: "🍞",
+  graph: "💹",
+  gray: "🩶",
+  gross: "😝",
+  heat: "🥵",
+  hero: "🦸‍♀️",
+  hidden: "🫥",
+  home: "🛖",
+  hurt: "🩼",
+  idea: "💭",
+  infant: "👶",
+  ink: "🔏",
+  instructor: "🧑‍🏫",
+  intelligent: "🤓",
+  jacket: "🥼",
+  job: "🏢",
+  juggle: "🤹",
+  juice: "🧃",
+  justice: "🧑‍⚖️",
+  kid: "🧒",
+  king: "🤴",
+  kitten: "🐱",
+  lavatory: "🚹",
+  law: "👮",
+  legume: "🫛",
+  lesbian: "🏳️‍🌈",
+  library: "📚",
+  lift: "🛗",
+  like: "🩷",
+  lips: "👄",
+  lumber: "🪵",
+  mad: "😖",
+  makeup: "💅",
+  mammal: "🫎",
+  mother: "👩‍🍼",
+  nanny: "👩‍🍼",
+  nap: "😴",
+  negative: "🧲",
+  nervous: "😟",
+  newborn: "👶",
+  nice: "😀",
+  nurse: "👩‍⚕️",
+  oberon: "🧚‍♂️",
+  orchestra: "🪈",
+  pad: "🗓️",
+  paddle: "🚣",
+  paid: "💰",
+  painting: "🖼️",
+  panic: "🫪",
+  pants: "👖",
+  pastry: "🥧",
+  peep: "🫣",
+  pixie: "🧚",
+  plane: "✈️",
+  pork: "🐷",
+  poseidon: "🧜‍♂️",
+  prize: "🏆",
+  proud: "🦚",
+  pulse: "💓",
+  punctuation: "‼️",
+  puppy: "🐶",
+  queen: "👸",
+  queer: "🏳️‍🌈",
+  quiet: "🤫",
+  raft: "🚣",
+  ranch: "🏡",
+  rancher: "🧑‍🌾",
+  reading: "📚",
+  rich: "🧐",
+  riding: "🚴",
+  rise: "🐦‍🔥",
+  row: "🚣",
+  royal: "🫅",
+  royalty: "🫅",
+  scared: "😨",
+  scuba: "🤿",
+  see: "👀",
+  serpent: "🐍",
+  shade: "🙄",
+  sheep: "🐏",
+  shining: "🌟",
+  shock: "🫢",
+  shot: "💉",
+  sick: "🤒",
+  silent: "😶",
+  silly: "🪿",
+  silver: "🩶",
+  simple: "🏡",
+  siren: "🧜‍♂️",
+  skeleton: "🦴",
+  skeptical: "🤨",
+  ski: "🎿",
+  sleuth: "🕵️",
+  sly: "😏",
+  smart: "🤓",
+  smell: "👃",
+  smoke: "😮‍💨",
+  smooch: "😘",
+  snap: "📷",
+  sneeze: "🤧",
+  soar: "🪽",
+  soldier: "🥷",
+  son: "👦",
+  sorcerer: "🧙",
+  sour: "🍋",
+  spill: "🫗",
+  spring: "🌸",
+  sprout: "🌱",
+  spy: "🕵️",
+  stick: "🩼",
+  suburban: "🏡",
+  surprise: "🫢",
+  surprised: "😯",
+  swell: "🏄‍♂️",
+  talk: "💬",
+  taste: "🧂",
+  teeth: "🦷",
+  throw: "🤮",
+  thunder: "⛈️",
+  tick: "✅",
+  tie: "🪢",
+  titania: "🧚‍♀️",
+  toy: "🧸",
+  trip: "🛄",
+  upset: "😠",
+  vegetarian: "🫜",
+  victory: "🏆",
+  virus: "🦠",
+  win: "🏆",
+  wizard: "🧙",
+  wool: "🦙",
+  workout: "💦",
+  yes: "🙂‍↕️",
+  yummy: "😋",
+  zero: "0️⃣",
+  zip: "🤐",
+};
 
 // =============================================================================
 // Types
@@ -699,70 +928,12 @@ function buildEmojiDatabase(
     }
   }
 
-  // =========================================================================
-  // PHASE 5: Moby-based keyword promotion
-  // =========================================================================
-  // For keywords that aren't already names, check if their moby synonyms
-  // match any of the emoji's existing names or compound name words.
-  // This promotes keywords like "sheep" when moby says sheep ↔ ewe.
-  // =========================================================================
-  console.log("  - Running moby-based keyword promotion...");
-  let mobyPromotions = 0;
-
-  for (const cat of database) {
-    if (isInternalCategory(cat.category)) continue;
-    for (const item of cat.items) {
-      const existingNames = new Set(item.names.map((n) => n.toLowerCase()));
-      const allKeywords =
-        emojiToKeywordsMap.get(normalizeEmojiKey(item.emoji)) || [];
-
-      // Words from compound names (e.g., "beverage" from "beverage box")
-      const compoundNameWords = new Set<string>();
-      for (const name of item.names) {
-        const words = name.toLowerCase().split(/\s+/);
-        if (words.length >= 2) {
-          for (const word of words) {
-            if (word.length >= 3) compoundNameWords.add(word);
-          }
-        }
-      }
-
-      for (const keyword of allKeywords) {
-        const lowerKeyword = keyword.toLowerCase();
-        if (existingNames.has(lowerKeyword)) continue;
-        if (lowerKeyword in nameToEmoji) continue;
-
-        const synonyms = moby.search(keyword) as string[] | null;
-        if (!synonyms) continue;
-
-        const synonymSet = new Set(synonyms.map((s) => s.toLowerCase().trim()));
-
-        // Check if any synonym matches an existing name
-        let found = false;
-        for (const name of existingNames) {
-          if (synonymSet.has(name)) {
-            nameToEmoji[lowerKeyword] = item.emoji;
-            mobyPromotions++;
-            found = true;
-            break;
-          }
-        }
-
-        // Check compound name words
-        if (!found && compoundNameWords.size > 0) {
-          for (const word of compoundNameWords) {
-            if (synonymSet.has(word)) {
-              nameToEmoji[lowerKeyword] = item.emoji;
-              mobyPromotions++;
-              break;
-            }
-          }
-        }
-      }
+  // Apply synonym overrides (only if not already registered)
+  for (const [word, emoji] of Object.entries(SYNONYM_OVERRIDES)) {
+    if (!(word in nameToEmoji)) {
+      nameToEmoji[word] = emoji;
     }
   }
-
-  console.log(`  - Moby promotions: ${mobyPromotions} keywords promoted`);
 
   const shortestNames = new Set<string>();
   for (const cat of database) {
