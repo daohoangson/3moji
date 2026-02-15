@@ -16,14 +16,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import moby from "moby";
-import winkNLP from "wink-nlp";
-import model from "wink-eng-lite-web-model";
-import vectors from "wink-embeddings-sg-100d";
-// @ts-expect-error - wink-nlp types don't export similarity
-import similarity from "wink-nlp/utilities/similarity.js";
-
-// Initialize wink-nlp with word embeddings
-const nlp = winkNLP(model, [], vectors);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -79,66 +71,28 @@ interface EmojiCategory {
   items: EmojiItem[];
 }
 
-interface PromotionCandidate {
-  emoji: string;
-  tts: string;
-  isNameMatch: boolean; // keyword exactly matches one of emoji's names
-  synonymScore: number; // semantic similarity between keyword and TTS (0-1)
-}
-
 // =============================================================================
-// Semantic similarity using wink-nlp word embeddings
-// =============================================================================
-// Problem: CLDR keywords like "car" don't always match emoji TTS names exactly.
-// For example, 🚗 has TTS "automobile" but users search for "car".
-//
-// Solution: Use word embeddings to compute semantic similarity between keywords
-// and TTS names. Words with similar meanings (car ↔ automobile) get high scores.
-//
-// Trade-off: Embeddings favor word overlap, so "cherry blossom" scores higher
-// than "cherries" for the keyword "cherry". This is a known limitation.
-//
-// Technical: Uses wink-nlp's 100D embeddings with cosine similarity.
-// For phrases, we average word vectors to get a single phrase vector.
+// Simple word matching for keyword promotion
 // =============================================================================
 
-function getWordVector(text: string): number[] | null {
-  // Try single word first
-  const singleVec = nlp.vectorOf(text);
-  if (singleVec && singleVec.length > 0 && singleVec.some((v: number) => v !== 0)) {
-    return singleVec;
-  }
+/** Check if keyword appears as a word in the TTS name */
+function keywordMatchesTts(keyword: string, tts: string): boolean {
+  const lowerKeyword = keyword.toLowerCase();
+  const ttsWords = tts.toLowerCase().split(/\s+/);
 
-  // For phrases, average word vectors
-  const doc = nlp.readDoc(text);
-  const tokens = doc.tokens();
-  const wordVectors: number[][] = [];
+  // Exact word match: "car" in "racing car"
+  if (ttsWords.includes(lowerKeyword)) return true;
 
-  tokens.each((token: { out: () => string }) => {
-    const vec = nlp.vectorOf(token.out());
-    if (vec && vec.length > 0 && vec.some((v: number) => v !== 0)) {
-      wordVectors.push(vec);
-    }
-  });
-
-  if (wordVectors.length === 0) return null;
-
-  // Average the vectors
-  const dim = wordVectors[0].length;
-  const avg = new Array(dim).fill(0);
-  for (const vec of wordVectors) {
-    for (let i = 0; i < dim; i++) {
-      avg[i] += vec[i] / wordVectors.length;
+  // Prefix/stem match: "cherry" matches "cherries" (min 4 chars)
+  if (lowerKeyword.length >= 4) {
+    for (const word of ttsWords) {
+      if (word.startsWith(lowerKeyword) || lowerKeyword.startsWith(word)) {
+        return true;
+      }
     }
   }
-  return avg;
-}
 
-function semanticSimilarity(word1: string, word2: string): number {
-  const vec1 = getWordVector(word1);
-  const vec2 = getWordVector(word2);
-  if (!vec1 || !vec2) return 0;
-  return similarity.vector.cosine(vec1, vec2) as number;
+  return false;
 }
 
 // =============================================================================
@@ -158,13 +112,16 @@ async function fetchText(url: string): Promise<string> {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(
-      `HTTP ${response.status} ${response.statusText} while fetching ${url}`
+      `HTTP ${response.status} ${response.statusText} while fetching ${url}`,
     );
   }
   return response.text();
 }
 
-async function fetchTextCached(url: string, cacheFile: string): Promise<string> {
+async function fetchTextCached(
+  url: string,
+  cacheFile: string,
+): Promise<string> {
   const cachePath = path.join(CACHE_DIR, cacheFile);
   if (fs.existsSync(cachePath)) {
     return fs.readFileSync(cachePath, "utf8");
@@ -236,7 +193,7 @@ function parseEmojiTest(text: string): EmojiTestEntry[] {
 
 function parseAnnotations(
   jsonText: string,
-  rootKey: string
+  rootKey: string,
 ): Map<string, AnnotationData> {
   const parsed = JSON.parse(jsonText);
   const root = parsed[rootKey];
@@ -261,7 +218,7 @@ function parseAnnotations(
 
 function getLocaleEntry(
   localeData: Map<string, AnnotationData>,
-  emoji: string
+  emoji: string,
 ): AnnotationData | null {
   const exact = localeData.get(emoji);
   if (exact) return exact;
@@ -289,7 +246,10 @@ function collectLocaleNames(localeData: LocaleData, emoji: string): string[] {
   return names;
 }
 
-function collectLocaleKeywords(localeData: LocaleData, emoji: string): string[] {
+function collectLocaleKeywords(
+  localeData: LocaleData,
+  emoji: string,
+): string[] {
   const keywords: string[] = [];
   const annotation = getLocaleEntry(localeData.annotations, emoji);
   const derived = getLocaleEntry(localeData.derived, emoji);
@@ -460,7 +420,7 @@ interface BuildResult {
 
 function buildEmojiDatabase(
   entries: EmojiTestEntry[],
-  localeData: Record<string, LocaleData>
+  localeData: Record<string, LocaleData>,
 ): BuildResult {
   const categories = new Map<string, EmojiItem[]>();
   const seen = new Set<string>();
@@ -491,7 +451,7 @@ function buildEmojiDatabase(
   // =========================================================================
   for (const entry of entries) {
     const baseEmoji = emojiByKey.get(
-      normalizeEmojiKey(stripSkinTone(entry.emoji))
+      normalizeEmojiKey(stripSkinTone(entry.emoji)),
     );
     const entryKey = normalizeEmojiKey(entry.emoji);
     const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
@@ -539,7 +499,7 @@ function buildEmojiDatabase(
 
       const localeKeywords = collectLocaleKeywords(
         localeData[locale],
-        entry.emoji
+        entry.emoji,
       );
       for (const keyword of localeKeywords) {
         countWord(keyword);
@@ -549,55 +509,34 @@ function buildEmojiDatabase(
   }
 
   // =========================================================================
-  // PHASE 1b: Collect promotion candidates using complete frequency counts
+  // PHASE 1b: Collect keyword promotion candidates
   // =========================================================================
-  // Problem: CLDR keywords like "dog" are useful for search but aren't in
-  // the emoji's names array. We want to promote some keywords to names.
-  //
-  // However, naive promotion causes conflicts: "cake" appears in both
-  // "fish cake" and "birthday cake" TTS names. Without coordination,
-  // whichever emoji processes first claims "cake".
-  //
-  // Solution: Collect ALL potential promotions with metadata (TTS length,
-  // exact match). Then in Phase 2, pick winners.
+  // CLDR keywords like "dog" are useful for search but aren't in the emoji's
+  // names. We promote keywords that match the emoji's TTS name (word
+  // containment or prefix/stem match). When multiple emojis compete for the
+  // same keyword, the emoji with the shorter TTS name wins (more specific).
   // =========================================================================
-  const promotionCandidates = new Map<string, PromotionCandidate[]>();
-
-  // Skip generic keywords that appear as CLDR keywords for too many emojis.
-  // Threshold chosen based on actual keyword frequency:
-  // - party: 73 → maps to 🎉 ✓
-  // - heart: 84 → would wrongly map to 💔 (not ❤️) due to semantic similarity
-  // - food: 55 → maps to 🥫 ✓
-  // - face: 162, hand: 138 → too generic, filtered
-  // Threshold 75 keeps useful keywords while filtering problematic ones.
+  const promotionCandidates = new Map<
+    string,
+    { emoji: string; tts: string; isNameMatch: boolean }[]
+  >();
   const MAX_KEYWORD_FREQUENCY = 75;
-
 
   for (const entry of entries) {
     const baseEmoji = emojiByKey.get(
-      normalizeEmojiKey(stripSkinTone(entry.emoji))
+      normalizeEmojiKey(stripSkinTone(entry.emoji)),
     );
     const entryKey = normalizeEmojiKey(entry.emoji);
     const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
 
-    // Skip skin tone variants (already processed in Phase 1a)
-    if (baseEmoji && baseKey && baseKey !== entryKey) {
-      continue;
-    }
+    if (baseEmoji && baseKey && baseKey !== entryKey) continue;
 
-    // Skip internal categories (e.g., "internal:family") for keyword promotion.
-    // These emojis are hidden from users in the app, so promoting their keywords
-    // would cause words like "love" to map to 💏 (kiss) which is in internal:family,
-    // instead of visible emojis like 🏩 (love hotel) or 💌 (love letter).
     const category = mapCategory(entry.group, entry.subgroup);
-    if (isInternalCategory(category)) {
-      continue; // Still counted words above, but don't promote keywords
-    }
+    if (isInternalCategory(category)) continue;
 
     const englishTts = getEnglishName(localeData["en"], entry.emoji) || "";
     const allKeywords = collectLocaleKeywords(localeData["en"], entry.emoji);
 
-    // Collect all existing names for this emoji (for isNameMatch check)
     const existingNames = new Set<string>();
     for (const locale of LOCALES) {
       for (const name of collectLocaleNames(localeData[locale], entry.emoji)) {
@@ -608,28 +547,11 @@ function buildEmojiDatabase(
     for (const keyword of allKeywords) {
       const lowerKeyword = keyword.toLowerCase();
 
-      // Filter out overly generic keywords using pre-computed counts
       const keywordFreq = keywordOnlyCounts.get(lowerKeyword)?.size || 0;
-      if (keywordFreq > MAX_KEYWORD_FREQUENCY) {
-        continue;
-      }
+      if (keywordFreq > MAX_KEYWORD_FREQUENCY) continue;
 
-      // Check if keyword exactly matches one of emoji's existing names
       const isNameMatch = existingNames.has(lowerKeyword);
-
-      // Compute semantic similarity between keyword and TTS name.
-      // This allows keyword promotion even when words don't match exactly:
-      // - "car" → 🚗 "automobile" (synonyms)
-      // - "cherry" → 🍒 "cherries" (inflection)
-      // - "clover" → 🍀 "four leaf clover" (phrase containing word)
-      const synonymScore = semanticSimilarity(lowerKeyword, englishTts.toLowerCase());
-
-      // Threshold tuned empirically:
-      // - 0.45 accepts "clover" ↔ "four leaf clover" (0.49)
-      // - Higher values miss valid matches
-      // - Unique keywords (count=1) are promoted separately regardless
-      const SYNONYM_THRESHOLD = 0.45;
-      if (synonymScore >= SYNONYM_THRESHOLD) {
+      if (isNameMatch || keywordMatchesTts(lowerKeyword, englishTts)) {
         if (!promotionCandidates.has(lowerKeyword)) {
           promotionCandidates.set(lowerKeyword, []);
         }
@@ -637,48 +559,19 @@ function buildEmojiDatabase(
           emoji: entry.emoji,
           tts: englishTts,
           isNameMatch,
-          synonymScore,
         });
       }
     }
   }
 
-  // =========================================================================
-  // PHASE 2: Pick one winner per keyword
-  // =========================================================================
-  // When multiple emojis compete for the same keyword, we need deterministic
-  // tiebreakers. For example, "cake" appears in both "birthday cake" 🎂 and
-  // "moon cake" 🥮 - which one should "cake" map to?
-  //
-  // Ranking criteria (in priority order):
-  // 1. Name match wins - if keyword is already an emoji's name, that's exact
-  // 2. Higher synonym score wins - semantic similarity as computed by embeddings
-  // 3. Shorter TTS wins - "automobile" (11 chars) beats "police car" (10 chars)
-  //
-  // Note: We previously tried inflection matching (cherry ↔ cherries) and
-  // modifier frequency ranking, but semantic similarity handles most cases
-  // and keeps the code simpler.
-  // =========================================================================
+  // Pick one winner per keyword: name match first, then shorter TTS wins
   const keywordWinners = new Map<string, string>();
-
-  for (const [, candidates] of promotionCandidates) {
+  for (const [keyword, candidates] of promotionCandidates) {
     candidates.sort((a, b) => {
-      // 1. Name match wins (keyword is already one of emoji's names)
       if (a.isNameMatch && !b.isNameMatch) return -1;
       if (!a.isNameMatch && b.isNameMatch) return 1;
-
-      // 2. Higher synonym score wins (car ↔ automobile via semantic similarity)
-      if (a.synonymScore !== b.synonymScore) {
-        return b.synonymScore - a.synonymScore; // Higher score wins
-      }
-
-      // 3. Shorter TTS wins (more specific emoji)
       return a.tts.length - b.tts.length;
     });
-  }
-
-  // Now set the winners using the original keywords
-  for (const [keyword, candidates] of promotionCandidates) {
     keywordWinners.set(keyword, candidates[0].emoji);
   }
 
@@ -690,7 +583,7 @@ function buildEmojiDatabase(
 
   for (const entry of entries) {
     const baseEmoji = emojiByKey.get(
-      normalizeEmojiKey(stripSkinTone(entry.emoji))
+      normalizeEmojiKey(stripSkinTone(entry.emoji)),
     );
     const entryKey = normalizeEmojiKey(entry.emoji);
     const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
@@ -810,12 +703,8 @@ function buildEmojiDatabase(
   // PHASE 5: Moby-based keyword promotion
   // =========================================================================
   // For keywords that aren't already names, check if their moby synonyms
-  // match any of the emoji's existing names. This systematically promotes
-  // keywords like "sheep" when moby says sheep ↔ ewe (and "ewe" is a name).
-  //
-  // Also handles compound names: if keyword's synonym matches a word within
-  // the emoji's own compound TTS name (e.g., "juice" → "beverage" matches
-  // "beverage box" for 🧃).
+  // match any of the emoji's existing names or compound name words.
+  // This promotes keywords like "sheep" when moby says sheep ↔ ewe.
   // =========================================================================
   console.log("  - Running moby-based keyword promotion...");
   let mobyPromotions = 0;
@@ -824,54 +713,47 @@ function buildEmojiDatabase(
     if (isInternalCategory(cat.category)) continue;
     for (const item of cat.items) {
       const existingNames = new Set(item.names.map((n) => n.toLowerCase()));
-      const allKeywords = emojiToKeywordsMap.get(normalizeEmojiKey(item.emoji)) || [];
+      const allKeywords =
+        emojiToKeywordsMap.get(normalizeEmojiKey(item.emoji)) || [];
 
-      // Build set of words from this emoji's compound names (names with 2+ words)
+      // Words from compound names (e.g., "beverage" from "beverage box")
       const compoundNameWords = new Set<string>();
       for (const name of item.names) {
         const words = name.toLowerCase().split(/\s+/);
         if (words.length >= 2) {
           for (const word of words) {
-            if (word.length >= 3) {
-              compoundNameWords.add(word);
-            }
+            if (word.length >= 3) compoundNameWords.add(word);
           }
         }
       }
 
       for (const keyword of allKeywords) {
         const lowerKeyword = keyword.toLowerCase();
-        // Skip if already a name for this or any emoji
         if (existingNames.has(lowerKeyword)) continue;
         if (lowerKeyword in nameToEmoji) continue;
 
-        // Get moby synonyms for this keyword
         const synonyms = moby.search(keyword) as string[] | null;
         if (!synonyms) continue;
 
-        // Check if any synonym matches one of this emoji's names (exact match)
         const synonymSet = new Set(synonyms.map((s) => s.toLowerCase().trim()));
-        let foundMatch = false;
+
+        // Check if any synonym matches an existing name
+        let found = false;
         for (const name of existingNames) {
           if (synonymSet.has(name)) {
-            // The keyword's synonyms include this emoji's name
-            // So the keyword is semantically equivalent - promote it
             nameToEmoji[lowerKeyword] = item.emoji;
             mobyPromotions++;
-            foundMatch = true;
+            found = true;
             break;
           }
         }
 
-        // If no exact match, check if synonym matches a word in THIS emoji's compound names
-        if (!foundMatch && compoundNameWords.size > 0) {
-          for (const syn of synonyms) {
-            const lowerSyn = syn.toLowerCase().trim();
-            if (compoundNameWords.has(lowerSyn)) {
-              // The keyword's synonym is part of this emoji's compound name
+        // Check compound name words
+        if (!found && compoundNameWords.size > 0) {
+          for (const word of compoundNameWords) {
+            if (synonymSet.has(word)) {
               nameToEmoji[lowerKeyword] = item.emoji;
               mobyPromotions++;
-              foundMatch = true;
               break;
             }
           }
@@ -887,7 +769,7 @@ function buildEmojiDatabase(
     if (isInternalCategory(cat.category)) continue;
     for (const item of cat.items) {
       const shortest = item.names.reduce((a, b) =>
-        a.length <= b.length ? a : b
+        a.length <= b.length ? a : b,
       );
       shortestNames.add(shortest);
     }
@@ -966,11 +848,11 @@ async function main(): Promise<void> {
   for (const locale of LOCALES) {
     const annotationsText = await fetchTextCached(
       annotationsUrl(locale),
-      `annotations.${locale}.json`
+      `annotations.${locale}.json`,
     );
     const derivedText = await fetchTextCached(
       annotationsDerivedUrl(locale),
-      `annotationsDerived.${locale}.json`
+      `annotationsDerived.${locale}.json`,
     );
     localeData[locale] = {
       annotations: parseAnnotations(annotationsText, "annotations"),
@@ -991,7 +873,7 @@ async function main(): Promise<void> {
     `Generated ${OUTPUT_PATH}:\n` +
       `  - ${emojiCount} emojis across ${categoryCount} categories\n` +
       `  - ${nameCount} name lookups\n` +
-      `  - ${result.shortestEmojiNames.length} unique shortest names`
+      `  - ${result.shortestEmojiNames.length} unique shortest names`,
   );
 }
 

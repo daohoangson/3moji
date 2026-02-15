@@ -156,7 +156,7 @@ describe("findEmojiByName", () => {
     expect(findEmojiByName("cow")?.emoji).toBe("🐄");
     expect(findEmojiByName("bird")?.emoji).toBe("🐦");
     expect(findEmojiByName("fish")?.emoji).toBe("🐟");
-    expect(findEmojiByName("bunny")?.emoji).toBe("🐇");
+    expect(findEmojiByName("rabbit")?.emoji).toBe("🐇");
   });
 
   it("should find common objects and nature by simple names", () => {
