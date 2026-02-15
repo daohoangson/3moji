@@ -20,9 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 
-// =============================================================================
 // Configuration
-// =============================================================================
 
 const EMOJI_TEST_URL =
   "https://www.unicode.org/Public/emoji/latest/emoji-test.txt";
@@ -265,9 +263,7 @@ const SYNONYM_OVERRIDES: Record<string, string> = {
   zip: "🤐",
 };
 
-// =============================================================================
 // Types
-// =============================================================================
 
 interface EmojiTestEntry {
   emoji: string;
@@ -300,9 +296,7 @@ interface EmojiCategory {
   items: EmojiItem[];
 }
 
-// =============================================================================
 // Simple word matching for keyword promotion
-// =============================================================================
 
 /** Check if keyword appears as a word in the TTS name */
 function keywordMatchesTts(keyword: string, tts: string): boolean {
@@ -324,18 +318,14 @@ function keywordMatchesTts(keyword: string, tts: string): boolean {
   return false;
 }
 
-// =============================================================================
 // URL helpers
-// =============================================================================
 
 const annotationsUrl = (locale: string) =>
   `${CLDR_JSON_BASE_URL}/cldr-annotations-full/annotations/${locale}/annotations.json`;
 const annotationsDerivedUrl = (locale: string) =>
   `${CLDR_JSON_BASE_URL}/cldr-annotations-derived-full/annotationsDerived/${locale}/annotations.json`;
 
-// =============================================================================
 // Fetch helpers
-// =============================================================================
 
 async function fetchText(url: string): Promise<string> {
   const response = await fetch(url);
@@ -361,9 +351,7 @@ async function fetchTextCached(
   return text;
 }
 
-// =============================================================================
 // Parsing
-// =============================================================================
 
 const SKIN_TONE_REGEX = /[\u{1F3FB}-\u{1F3FF}]/gu;
 
@@ -441,9 +429,7 @@ function parseAnnotations(
   return result;
 }
 
-// =============================================================================
 // Locale data helpers
-// =============================================================================
 
 function getLocaleEntry(
   localeData: Map<string, AnnotationData>,
@@ -487,9 +473,7 @@ function collectLocaleKeywords(
   return keywords;
 }
 
-// =============================================================================
 // Category mapping
-// =============================================================================
 
 const CATEGORY_BY_GROUP: Record<string, Record<string, string>> = {
   "Smileys & Emotion": {
@@ -635,9 +619,7 @@ function isInternalCategory(category: string): boolean {
   return category.startsWith("internal:");
 }
 
-// =============================================================================
 // Database building
-// =============================================================================
 
 interface BuildResult {
   database: EmojiCategory[];
@@ -651,121 +633,72 @@ function buildEmojiDatabase(
   entries: EmojiTestEntry[],
   localeData: Record<string, LocaleData>,
 ): BuildResult {
-  const categories = new Map<string, EmojiItem[]>();
-  const seen = new Set<string>();
   const emojiByKey = new Map<string, string>();
-
-  for (const entry of entries) {
-    const key = normalizeEmojiKey(entry.emoji);
-    if (!emojiByKey.has(key)) {
-      emojiByKey.set(key, entry.emoji);
-    }
-  }
-
   const aliasMap = new Map<string, string[]>();
-  // Track unique emojis per word (names + keywords combined).
-  // Used for promoting unique keywords.
   const keywordCounts = new Map<string, Set<string>>();
-  // Track unique emojis per CLDR keyword only (not names).
-  // Used to filter generic keywords.
   const keywordOnlyCounts = new Map<string, Set<string>>();
+  const MAX_KEYWORD_FREQUENCY = 75;
 
-  // =========================================================================
-  // PHASE 1a: Count word frequency across ALL emojis first
-  // =========================================================================
-  // We need complete frequency counts BEFORE generating candidates, so we can
-  // filter out generic keywords like "face" that appear in 100+ emojis.
-  // If we count and filter in the same loop, early entries would see incomplete
-  // counts and incorrectly pass the frequency filter.
-  // =========================================================================
-  for (const entry of entries) {
-    const baseEmoji = emojiByKey.get(
-      normalizeEmojiKey(stripSkinTone(entry.emoji)),
-    );
-    const entryKey = normalizeEmojiKey(entry.emoji);
-    const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
-
-    // Skin tone variants (👋🏻, 👋🏿) should share the base emoji's names,
-    // not compete for keywords separately
-    if (baseEmoji && baseKey && baseKey !== entryKey) {
-      if (!aliasMap.has(baseEmoji)) {
-        aliasMap.set(baseEmoji, []);
-      }
-      aliasMap.get(baseEmoji)!.push(entry.emoji);
-      continue; // Skip skin tone variants for counting
-    }
-
-    // Track unique emojis that use each word (in names or keywords).
-    // Used later to: (1) promote unique keywords, (2) filter overly common ones
-    const countWord = (word: string) => {
-      const lower = word.toLowerCase();
-      if (!keywordCounts.has(lower)) {
-        keywordCounts.set(lower, new Set());
-      }
-      keywordCounts.get(lower)!.add(entry.emoji);
-    };
-
-    // Track keywords separately - words in CLDR keyword lists only.
-    // This is used to filter generic keywords like "body" that appear
-    // as keywords for many different emojis.
-    const countKeywordOnly = (word: string) => {
-      const lower = word.toLowerCase();
-      if (!keywordOnlyCounts.has(lower)) {
-        keywordOnlyCounts.set(lower, new Set());
-      }
-      keywordOnlyCounts.get(lower)!.add(entry.emoji);
-    };
-
-    for (const locale of LOCALES) {
-      const localeNames = collectLocaleNames(localeData[locale], entry.emoji);
-      for (const name of localeNames) {
-        // Tokenize "dog face" → ["dog", "face"] so both words get counted
-        const words = name.split(/[^a-zA-Z0-9]+/).filter(Boolean);
-        for (const word of words) {
-          countWord(word);
-        }
-      }
-
-      const localeKeywords = collectLocaleKeywords(
-        localeData[locale],
-        entry.emoji,
-      );
-      for (const keyword of localeKeywords) {
-        countWord(keyword);
-        countKeywordOnly(keyword);
-      }
-    }
-  }
-
-  // =========================================================================
-  // PHASE 1b: Collect keyword promotion candidates
-  // =========================================================================
-  // CLDR keywords like "dog" are useful for search but aren't in the emoji's
-  // names. We promote keywords that match the emoji's TTS name (word
-  // containment or prefix/stem match). When multiple emojis compete for the
-  // same keyword, the emoji with the shorter TTS name wins (more specific).
-  // =========================================================================
+  // Promotion candidates: keyword → [{emoji, tts, isNameMatch}]
   const promotionCandidates = new Map<
     string,
     { emoji: string; tts: string; isNameMatch: boolean }[]
   >();
-  const MAX_KEYWORD_FREQUENCY = 75;
 
+  // Pass 1: Count word frequencies, collect aliases, collect promotion candidates.
   for (const entry of entries) {
+    const key = normalizeEmojiKey(entry.emoji);
+    if (!emojiByKey.has(key)) emojiByKey.set(key, entry.emoji);
+
     const baseEmoji = emojiByKey.get(
       normalizeEmojiKey(stripSkinTone(entry.emoji)),
     );
     const entryKey = normalizeEmojiKey(entry.emoji);
     const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
 
+    if (baseEmoji && baseKey && baseKey !== entryKey) {
+      if (!aliasMap.has(baseEmoji)) aliasMap.set(baseEmoji, []);
+      aliasMap.get(baseEmoji)!.push(entry.emoji);
+      continue;
+    }
+
+    const countWord = (word: string, keywordOnly: boolean) => {
+      const lower = word.toLowerCase();
+      if (!keywordCounts.has(lower)) keywordCounts.set(lower, new Set());
+      keywordCounts.get(lower)!.add(entry.emoji);
+      if (keywordOnly) {
+        if (!keywordOnlyCounts.has(lower))
+          keywordOnlyCounts.set(lower, new Set());
+        keywordOnlyCounts.get(lower)!.add(entry.emoji);
+      }
+    };
+
+    for (const locale of LOCALES) {
+      for (const name of collectLocaleNames(localeData[locale], entry.emoji)) {
+        for (const word of name.split(/[^a-zA-Z0-9]+/).filter(Boolean)) {
+          countWord(word, false);
+        }
+      }
+      for (const kw of collectLocaleKeywords(localeData[locale], entry.emoji)) {
+        countWord(kw, true);
+      }
+    }
+  }
+
+  // Collect promotion candidates (needs complete frequency counts from above).
+  // We must collect ALL candidates before picking winners to avoid order bias.
+  for (const entry of entries) {
+    const baseEmoji = emojiByKey.get(
+      normalizeEmojiKey(stripSkinTone(entry.emoji)),
+    );
+    const entryKey = normalizeEmojiKey(entry.emoji);
+    const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
     if (baseEmoji && baseKey && baseKey !== entryKey) continue;
 
     const category = mapCategory(entry.group, entry.subgroup);
     if (isInternalCategory(category)) continue;
 
     const englishTts = getEnglishName(localeData["en"], entry.emoji) || "";
-    const allKeywords = collectLocaleKeywords(localeData["en"], entry.emoji);
-
     const existingNames = new Set<string>();
     for (const locale of LOCALES) {
       for (const name of collectLocaleNames(localeData[locale], entry.emoji)) {
@@ -773,18 +706,15 @@ function buildEmojiDatabase(
       }
     }
 
-    for (const keyword of allKeywords) {
-      const lowerKeyword = keyword.toLowerCase();
+    for (const kw of collectLocaleKeywords(localeData["en"], entry.emoji)) {
+      const lower = kw.toLowerCase();
+      const freq = keywordOnlyCounts.get(lower)?.size || 0;
+      if (freq > MAX_KEYWORD_FREQUENCY) continue;
 
-      const keywordFreq = keywordOnlyCounts.get(lowerKeyword)?.size || 0;
-      if (keywordFreq > MAX_KEYWORD_FREQUENCY) continue;
-
-      const isNameMatch = existingNames.has(lowerKeyword);
-      if (isNameMatch || keywordMatchesTts(lowerKeyword, englishTts)) {
-        if (!promotionCandidates.has(lowerKeyword)) {
-          promotionCandidates.set(lowerKeyword, []);
-        }
-        promotionCandidates.get(lowerKeyword)!.push({
+      const isNameMatch = existingNames.has(lower);
+      if (isNameMatch || keywordMatchesTts(lower, englishTts)) {
+        if (!promotionCandidates.has(lower)) promotionCandidates.set(lower, []);
+        promotionCandidates.get(lower)!.push({
           emoji: entry.emoji,
           tts: englishTts,
           isNameMatch,
@@ -804,9 +734,9 @@ function buildEmojiDatabase(
     keywordWinners.set(keyword, candidates[0].emoji);
   }
 
-  // =========================================================================
-  // PHASE 3: Build emoji items with promoted names
-  // =========================================================================
+  // Pass 2: Build emoji items with promoted names and collect all maps.
+  const categories = new Map<string, EmojiItem[]>();
+  const seen = new Set<string>();
   const emojiToKeywordsMap = new Map<string, string[]>();
   const emojiToCategoryMap = new Map<string, string>();
 
@@ -816,63 +746,47 @@ function buildEmojiDatabase(
     );
     const entryKey = normalizeEmojiKey(entry.emoji);
     const baseKey = baseEmoji ? normalizeEmojiKey(baseEmoji) : null;
-    if (baseEmoji && baseKey && baseKey !== entryKey) {
-      continue;
-    }
+    if (baseEmoji && baseKey && baseKey !== entryKey) continue;
     if (seen.has(entry.emoji)) continue;
     seen.add(entry.emoji);
 
     const category = mapCategory(entry.group, entry.subgroup);
+
+    // Collect names from all locales
     const names = new Set<string>();
-
     for (const locale of LOCALES) {
-      const localeNames = collectLocaleNames(localeData[locale], entry.emoji);
-      for (const name of localeNames) {
-        // Strip " face" suffix for face emojis so "grinning face" becomes
-        // searchable as just "grinning"
-        if (category === "faces") {
-          if (name.endsWith(" face")) {
-            names.add(name.slice(0, -5));
-            continue;
-          }
+      for (const name of collectLocaleNames(localeData[locale], entry.emoji)) {
+        if (category === "faces" && name.endsWith(" face")) {
+          names.add(name.slice(0, -5));
         } else if (category === "country") {
-          // Strip "flag: " prefix so "flag: Japan" becomes searchable as "Japan"
-          const withoutPrefixName = name.replace(/^[^:]+:\s+/, "").trim();
-          if (withoutPrefixName) {
-            names.add(name.replace(/^[^:]+:\s+/, ""));
-            continue;
-          }
+          names.add(name.replace(/^[^:]+:\s+/, ""));
+        } else {
+          names.add(name);
         }
-        names.add(name);
       }
     }
 
-    // Promote keywords to names so they become searchable via findEmojiByName()
+    // Promote CLDR keywords to searchable names
+    if (!isInternalCategory(category)) {
+      const allKeywords = collectLocaleKeywords(localeData["en"], entry.emoji);
+      const lowerNames = new Set([...names].map((n) => n.toLowerCase()));
+
+      for (const keyword of allKeywords) {
+        const lowerKeyword = keyword.toLowerCase();
+        if (lowerNames.has(lowerKeyword)) continue;
+
+        // Promote if this emoji won the keyword, or if the keyword is unique
+        const isWinner = keywordWinners.get(lowerKeyword) === entry.emoji;
+        const isUnique = keywordCounts.get(lowerKeyword)?.size === 1;
+        if (isWinner || isUnique) {
+          names.add(keyword);
+          lowerNames.add(lowerKeyword);
+        }
+      }
+    }
+
+    // Keywords with count 2-10 are kept for similarity detection
     const allKeywords = collectLocaleKeywords(localeData["en"], entry.emoji);
-    const lowerNames = new Set([...names].map((n) => n.toLowerCase()));
-
-    for (const keyword of allKeywords) {
-      const lowerKeyword = keyword.toLowerCase();
-      if (lowerNames.has(lowerKeyword)) continue;
-
-      // Only promote if this emoji won the keyword in Phase 2
-      const winner = keywordWinners.get(lowerKeyword);
-      if (winner === entry.emoji) {
-        names.add(keyword);
-        lowerNames.add(lowerKeyword);
-        continue;
-      }
-
-      // Always promote unique keywords (count=1) - no conflict possible
-      const isUnique = keywordCounts.get(lowerKeyword)?.size === 1;
-      if (isUnique) {
-        names.add(keyword);
-        lowerNames.add(lowerKeyword);
-      }
-    }
-
-    // Keep keywords with count 2-10 for similarity detection.
-    // Too common (>10) creates false positives; unique (=1) already promoted.
     const keywords = allKeywords.filter((k) => {
       const count = keywordCounts.get(k.toLowerCase())?.size;
       return count !== undefined && count > 1 && count <= 10;
@@ -885,64 +799,46 @@ function buildEmojiDatabase(
     };
 
     const aliases = aliasMap.get(entry.emoji);
-    if (aliases && aliases.length > 0) {
-      item.emoji_alias = aliases;
-    }
+    if (aliases && aliases.length > 0) item.emoji_alias = aliases;
 
-    if (!categories.has(category)) {
-      categories.set(category, []);
-    }
+    if (!categories.has(category)) categories.set(category, []);
     categories.get(category)!.push(item);
 
-    const emojiKey = normalizeEmojiKey(entry.emoji);
-    emojiToKeywordsMap.set(emojiKey, keywords);
-    emojiToCategoryMap.set(emojiKey, category);
+    emojiToKeywordsMap.set(normalizeEmojiKey(entry.emoji), keywords);
+    emojiToCategoryMap.set(normalizeEmojiKey(entry.emoji), category);
   }
 
-  // =========================================================================
-  // PHASE 4: Build lookup maps for runtime use
-  // =========================================================================
-  // Pre-compute these at build time so emoji-data.ts doesn't need to
-  // iterate the entire database on every import.
-  // =========================================================================
+  // Build output maps
   const database = [...categories.entries()].map(([category, items]) => ({
     category,
     items,
   }));
 
-  // Internal categories (cat-face, hands, etc.) group similar-looking emojis
-  // for similarity detection, but shouldn't be directly searchable.
-  // e.g., 😺 is in internal:cat-face - we don't want "cat" → 😺
+  // nameToEmoji: skip internal categories (e.g., cat-face, hands)
   const nameToEmoji: Record<string, string> = {};
   for (const cat of database) {
     if (isInternalCategory(cat.category)) continue;
     for (const item of cat.items) {
       for (const name of item.names) {
         const lowerName = name.toLowerCase().trim();
-        if (!lowerName) continue;
-        // First emoji to register a name wins (database order)
-        if (!(lowerName in nameToEmoji)) {
+        if (lowerName && !(lowerName in nameToEmoji)) {
           nameToEmoji[lowerName] = item.emoji;
         }
       }
     }
   }
 
-  // Apply synonym overrides (only if not already registered)
   for (const [word, emoji] of Object.entries(SYNONYM_OVERRIDES)) {
-    if (!(word in nameToEmoji)) {
-      nameToEmoji[word] = emoji;
-    }
+    if (!(word in nameToEmoji)) nameToEmoji[word] = emoji;
   }
 
   const shortestNames = new Set<string>();
   for (const cat of database) {
     if (isInternalCategory(cat.category)) continue;
     for (const item of cat.items) {
-      const shortest = item.names.reduce((a, b) =>
-        a.length <= b.length ? a : b,
+      shortestNames.add(
+        item.names.reduce((a, b) => (a.length <= b.length ? a : b)),
       );
-      shortestNames.add(shortest);
     }
   }
 
@@ -955,9 +851,7 @@ function buildEmojiDatabase(
   };
 }
 
-// =============================================================================
 // Output generation
-// =============================================================================
 
 function writeOutput(result: BuildResult): void {
   const header = `/**
@@ -1007,9 +901,7 @@ export const SHORTEST_EMOJI_NAMES: string[] = ${JSON.stringify(result.shortestEm
   fs.writeFileSync(OUTPUT_PATH, header + types + body, "utf8");
 }
 
-// =============================================================================
 // Main
-// =============================================================================
 
 async function main(): Promise<void> {
   const emojiTestText = await fetchTextCached(EMOJI_TEST_URL, "emoji-test.txt");
