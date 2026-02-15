@@ -1,0 +1,25 @@
+lib/emoji-data.test.ts
+  62f2c2be427c0a17 159
+scripts/generate-emoji-data.ts
+  62f2c2be427c0a17 75,78-81,83-84,86-91,95,706-707,716-717,719,725,739-741,746
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "5572f7dca334309e8875f9a092483570bd8d8fe5",
+  "prompts": {
+    "62f2c2be427c0a17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e4ab3cd4-89ec-4f12-9497-c55b9a8f2c83",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 148,
+      "total_deletions": 276,
+      "accepted_lines": 81,
+      "overriden_lines": 0
+    }
+  }
+}
