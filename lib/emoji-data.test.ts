@@ -150,36 +150,159 @@ describe("findEmojiByName", () => {
     expect(result?.category).toBe("nature");
   });
 
-  it("should find common animals by simple names", () => {
+  // Common noun coverage from google-10000-english.txt
+  // Grouped by category to document what the emoji database covers.
+
+  it("should find animals by common names", () => {
     expect(findEmojiByName("cat")?.emoji).toBe("🐈");
+    expect(findEmojiByName("dog")?.emoji).toBe("🐕");
+    expect(findEmojiByName("fish")?.emoji).toBe("🐟");
     expect(findEmojiByName("horse")?.emoji).toBe("🐎");
     expect(findEmojiByName("cow")?.emoji).toBe("🐄");
     expect(findEmojiByName("bird")?.emoji).toBe("🐦");
-    expect(findEmojiByName("fish")?.emoji).toBe("🐟");
     expect(findEmojiByName("rabbit")?.emoji).toBe("🐇");
+    expect(findEmojiByName("sheep")?.emoji).toBe("🐏");
+    expect(findEmojiByName("dinosaur")?.emoji).toBe("🦕");
+    expect(findEmojiByName("puppy")?.emoji).toBe("🐶");
+    expect(findEmojiByName("kitten")?.emoji).toBe("🐱");
+    expect(findEmojiByName("serpent")?.emoji).toBe("🐍");
   });
 
-  it("should find common objects and nature by simple names", () => {
-    expect(findEmojiByName("sun")).not.toBeNull();
-    expect(findEmojiByName("moon")).not.toBeNull();
-    expect(findEmojiByName("star")).not.toBeNull();
-    expect(findEmojiByName("fire")).not.toBeNull();
-    expect(findEmojiByName("key")).not.toBeNull();
-    expect(findEmojiByName("bell")).not.toBeNull();
-    expect(findEmojiByName("book")).not.toBeNull();
+  it("should find people by common roles and relations", () => {
+    expect(findEmojiByName("baby")?.emoji).toBe("👶");
+    expect(findEmojiByName("boy")?.emoji).toBe("👦");
+    expect(findEmojiByName("girl")?.emoji).toBe("👧");
+    expect(findEmojiByName("man")?.emoji).toBe("👨");
+    expect(findEmojiByName("woman")?.emoji).toBe("👩");
+    expect(findEmojiByName("child")?.emoji).toBe("🧒");
+    expect(findEmojiByName("mother")?.emoji).toBe("👩‍🍼");
+    expect(findEmojiByName("son")?.emoji).toBe("👦");
+    expect(findEmojiByName("king")?.emoji).toBe("🤴");
+    expect(findEmojiByName("queen")?.emoji).toBe("👸");
+    expect(findEmojiByName("teacher")?.emoji).toBe("🧑‍🏫");
+    expect(findEmojiByName("artist")?.emoji).toBe("🧑‍🎨");
+    expect(findEmojiByName("chef")?.emoji).toBe("🧑‍🍳");
+    expect(findEmojiByName("doctor")?.emoji).toBe("😷");
+    expect(findEmojiByName("nurse")?.emoji).toBe("👩‍⚕️");
+    expect(findEmojiByName("graduate")?.emoji).toBe("🧑‍🎓");
   });
 
-  it("should find food by common names", () => {
-    expect(findEmojiByName("cake")).not.toBeNull();
+  it("should find places by common names", () => {
+    expect(findEmojiByName("home")?.emoji).toBe("🛖");
+    expect(findEmojiByName("hotel")?.emoji).toBe("🏨");
+    expect(findEmojiByName("school")?.emoji).toBe("🏫");
+    expect(findEmojiByName("church")?.emoji).toBe("⛪");
+    expect(findEmojiByName("hospital")?.emoji).toBe("🏥");
+    expect(findEmojiByName("city")?.emoji).toBe("🏙️");
+    expect(findEmojiByName("beach")?.emoji).toBe("🏖️");
+    expect(findEmojiByName("island")?.emoji).toBe("🏝️");
+    expect(findEmojiByName("mountain")?.emoji).toBe("⛰️");
+    expect(findEmojiByName("park")?.emoji).toBe("🏞️");
+    expect(findEmojiByName("bank")?.emoji).toBe("🏦");
+    expect(findEmojiByName("wedding")?.emoji).toBe("💒");
+    expect(findEmojiByName("store")?.emoji).toBe("🏬");
+  });
+
+  it("should find weather and nature by common names", () => {
+    expect(findEmojiByName("sun")?.emoji).toBe("☀️");
+    expect(findEmojiByName("star")?.emoji).toBe("⭐");
+    expect(findEmojiByName("fire")?.emoji).toBe("🔥");
+    expect(findEmojiByName("water")?.emoji).toBe("🌊");
+    expect(findEmojiByName("wind")?.emoji).toBe("🌬️");
+    expect(findEmojiByName("tree")?.emoji).toBe("🌴");
+    expect(findEmojiByName("spring")?.emoji).toBe("🌸");
+    expect(findEmojiByName("fall")?.emoji).toBe("🍂");
+    expect(findEmojiByName("winter")?.emoji).toBe("🪾");
+    expect(findEmojiByName("ice")?.emoji).toBe("🧊");
+  });
+
+  it("should find food and drinks by common names", () => {
+    expect(findEmojiByName("apple")?.emoji).toBe("🍎");
     expect(findEmojiByName("pizza")).not.toBeNull();
-    expect(findEmojiByName("apple")).not.toBeNull();
+    expect(findEmojiByName("cake")).not.toBeNull();
+    expect(findEmojiByName("coffee")?.emoji).toBe("☕");
+    expect(findEmojiByName("wine")?.emoji).toBe("🍷");
+    expect(findEmojiByName("cup")?.emoji).toBe("🥤");
+    expect(findEmojiByName("glass")?.emoji).toBe("🍷");
+  });
+
+  it("should find common objects by name", () => {
+    expect(findEmojiByName("phone")?.emoji).toBe("📱");
+    expect(findEmojiByName("book")?.emoji).toBe("📚");
+    expect(findEmojiByName("camera")?.emoji).toBe("📷");
+    expect(findEmojiByName("key")?.emoji).toBe("🔑");
+    expect(findEmojiByName("door")?.emoji).toBe("🚪");
+    expect(findEmojiByName("bed")?.emoji).toBe("🛏️");
+    expect(findEmojiByName("chair")?.emoji).toBe("🪑");
+    expect(findEmojiByName("bell")).not.toBeNull();
+    expect(findEmojiByName("ring")?.emoji).toBe("💍");
+    expect(findEmojiByName("battery")?.emoji).toBe("🔋");
+    expect(findEmojiByName("window")?.emoji).toBe("🪟");
+    expect(findEmojiByName("basket")?.emoji).toBe("🧺");
+  });
+
+  it("should find vehicles and transport by common names", () => {
+    expect(findEmojiByName("bus")?.emoji).toBe("🚌");
+    expect(findEmojiByName("ship")?.emoji).toBe("🚢");
+    expect(findEmojiByName("van")?.emoji).toBe("🚐");
+    expect(findEmojiByName("bike")?.emoji).toBe("🚲");
+    expect(findEmojiByName("plane")?.emoji).toBe("✈️");
+  });
+
+  it("should find celebrations and events", () => {
+    expect(findEmojiByName("christmas")?.emoji).toBe("🎄");
+    expect(findEmojiByName("party")?.emoji).toBe("🎉");
+    expect(findEmojiByName("gift")?.emoji).toBe("🎁");
+  });
+
+  it("should find countries by name", () => {
+    expect(findEmojiByName("canada")?.emoji).toBe("🇨🇦");
+    expect(findEmojiByName("china")?.emoji).toBe("🇨🇳");
+    expect(findEmojiByName("france")?.emoji).toBe("🇫🇷");
+    expect(findEmojiByName("germany")?.emoji).toBe("🇩🇪");
+    expect(findEmojiByName("india")?.emoji).toBe("🇮🇳");
+    expect(findEmojiByName("italy")?.emoji).toBe("🇮🇹");
+    expect(findEmojiByName("japan")?.emoji).toBe("🇯🇵");
+    expect(findEmojiByName("australia")?.emoji).toBe("🇦🇺");
+    expect(findEmojiByName("mexico")?.emoji).toBe("🇲🇽");
+    expect(findEmojiByName("spain")?.emoji).toBe("🇪🇸");
+  });
+
+  it("should find sports and activities", () => {
+    expect(findEmojiByName("golf")).not.toBeNull();
+    expect(findEmojiByName("football")).not.toBeNull();
+    expect(findEmojiByName("dance")?.emoji).toBe("🪩");
+    expect(findEmojiByName("ski")?.emoji).toBe("🎿");
+    expect(findEmojiByName("scuba")?.emoji).toBe("🤿");
+  });
+
+  it("should find music and arts", () => {
+    expect(findEmojiByName("music")?.emoji).toBe("🎵");
+    expect(findEmojiByName("picture")?.emoji).toBe("🖼️");
+  });
+
+  it("should find synonym-override words", () => {
+    // These come from the SYNONYM_OVERRIDES static map
+    expect(findEmojiByName("celebrate")?.emoji).toBe("🎉");
+    expect(findEmojiByName("alcohol")?.emoji).toBe("🍹");
+    expect(findEmojiByName("crazy")?.emoji).toBe("😜");
+    expect(findEmojiByName("scared")?.emoji).toBe("😨");
+    expect(findEmojiByName("smart")?.emoji).toBe("🤓");
+    expect(findEmojiByName("spy")?.emoji).toBe("🕵️");
+    expect(findEmojiByName("toy")?.emoji).toBe("🧸");
+    expect(findEmojiByName("wizard")?.emoji).toBe("🧙");
+    expect(findEmojiByName("skeleton")?.emoji).toBe("🦴");
+    expect(findEmojiByName("sour")?.emoji).toBe("🍋");
   });
 
   it("should not map internal-category emojis to common words", () => {
-    // "love" should not map to 💏 (internal:family)
-    const love = findEmojiByName("love");
-    if (love) {
-      expect(love.category).not.toMatch(/^internal:/);
+    // Words must not resolve to internal categories
+    const wordsToCheck = ["love", "talk", "think", "see", "look"];
+    for (const word of wordsToCheck) {
+      const result = findEmojiByName(word);
+      if (result) {
+        expect(result.category).not.toMatch(/^internal:/);
+      }
     }
   });
 });
