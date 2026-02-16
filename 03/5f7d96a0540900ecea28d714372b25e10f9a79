@@ -1,0 +1,23 @@
+lib/emoji-data.test.ts
+  62f2c2be427c0a17 153-156,158-159,164-168,171-187,190-220,222-295,299-305
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "035f7d96a0540900ecea28d714372b25e10f9a79",
+  "prompts": {
+    "62f2c2be427c0a17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e4ab3cd4-89ec-4f12-9497-c55b9a8f2c83",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 140,
+      "total_deletions": 17,
+      "accepted_lines": 140,
+      "overriden_lines": 0
+    }
+  }
+}
