@@ -1,0 +1,23 @@
+app/sitemap.ts
+  33e129c17d7719b2 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "90101c1458f10bd81e0eb2630efb7fa8cdc4a964",
+  "prompts": {
+    "33e129c17d7719b2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dbff7b5-c631-4199-a3a4-b9f2ab72b8fc",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
