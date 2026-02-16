@@ -3,8 +3,7 @@ import "server-only";
 /**
  * Emoji database API for generating game content without LLM.
  *
- * All lookup maps are pre-computed at build time by scripts/generate-emoji-data.ts.
- * This includes moby-based synonym expansion for common words.
+ * Lookup maps are maintained directly in lib/emoji-data.generated.ts.
  */
 import { shuffle } from "./shuffle";
 import {
@@ -43,7 +42,7 @@ const isInternalCategory = (category: string | null | undefined): boolean =>
  * - Common word expansions (via moby dominant-category at generation time)
  */
 export function findEmojiByName(
-  name: string
+  name: string,
 ): { emoji: string; category: string } | null {
   const normalized = normalizeName(name);
 
@@ -92,7 +91,7 @@ export function areVisuallySimilar(emoji1: string, emoji2: string): boolean {
 export function getDistractors(
   targetEmoji: string,
   category: string,
-  count: number = 2
+  count: number = 2,
 ): string[] {
   const categoryItems = getEmojisByCategory(category);
   const targetKey = normalizeEmoji(targetEmoji);
