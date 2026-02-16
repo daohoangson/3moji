@@ -433,7 +433,7 @@ emoji,words,category
 🍗,poultry leg | chicken | drumstick,food prepared
 🍘,rice cracker | cracker | food | rice,food asian
 🍙,rice ball | food,food asian
-🍚,cooked rice | cooked | food | rice,food asian
+🍚,cooked rice | food | rice,food asian
 🍛,curry rice | curry | food | rice,food asian
 🍜,steaming bowl | food,food asian
 🍝,spaghetti | food | meatballs | pasta,food asian
@@ -788,7 +788,7 @@ emoji,words,category
 💙,blue heart | heart,heart
 💚,green heart | heart,heart
 💛,yellow heart | cardiac | heart,heart
-💜,purple heart | bestest | heart,heart
+💜,purple heart | heart,heart
 💝,heart with ribbon | heart,heart
 💞,revolving hearts | hearts | love,heart
 💟,heart decoration | decoration | heart,heart
@@ -800,13 +800,13 @@ emoji,words,category
 💦,sweat droplets | drip | droplet,emotion
 💧,droplet,sky and weather
 💨,dashing away | away,emotion
-💩,pile of poo | bs | doo,face costume
-💪,flexed biceps | arm | beast | bench,body parts
+💩,pile of poo,face costume
+💪,flexed biceps | arm | bench,body parts
 💬,speech balloon | balloon,emotion
 💭,thought balloon | balloon | cartoon,emotion
 💮,white flower | flower,plant flower
 💯,hundred points | agree | clearly | definitely,emotion
-💰,money bag | bet,money
+💰,money bag,money
 💱,currency exchange | currency | exchange,currency
 💲,heavy dollar sign | billion | cash,currency
 💳,credit card | card | cash,money
@@ -832,7 +832,7 @@ emoji,words,category
 📈,chart increasing | chart | data | graph,office
 📉,chart decreasing | chart | data | decreasing,office
 📊,bar chart | chart | data,office
-📋,clipboard | do | list | notes,office
+📋,clipboard | list | notes,office
 📌,pushpin | collage,office
 📍,round pushpin | location | map,office
 📎,paperclip,office
@@ -853,7 +853,7 @@ emoji,words,category
 📟,pager,phone
 📠,fax machine | fax | machine,phone
 📡,satellite antenna | aliens | antenna | contact,science
-📢,loudspeaker | address | loud,sound
+📢,loudspeaker | loud,sound
 📣,megaphone | cheering | sound,sound
 📤,outbox tray | email | letter,mail
 📥,inbox tray | email | inbox,mail
@@ -869,9 +869,9 @@ emoji,words,category
 📰,newspaper | news | paper,book paper
 📱,mobile phone | cell | mobile,phone
 📷,camera | photo | snap,light and video
-📹,video camera | camcorder | camera | tbt,light and video
+📹,video camera | camcorder | camera,light and video
 📺,television | tv | video,light and video
-📻,radio | tbt | video,music
+📻,radio,music
 📼,videocassette | old | school | tape,light and video
 📽,film projector | cinema | film | movie,light and video
 📿,prayer beads | beads | clothing | necklace,clothing
@@ -885,13 +885,13 @@ emoji,words,category
 🔌,electric plug | electricity | plug,computer
 🔍,magnifying glass tilted left | lab,light and video
 🔎,magnifying glass tilted right | contact | lab,light and video
-🔑,key | keys | lock | major,lock
+🔑,key | keys | lock,lock
 🔒,locked | lock | private,lock
 🔔,bell | break | sound,sound
 🔖,bookmark,book paper
 🔗,link | links,tool
 🔘,radio button | geometric | radio,geometric
-🔥,fire | af | burn | flame,sky and weather
+🔥,fire | burn | flame,sky and weather
 🔦,flashlight | light | tool,light and video
 🔧,wrench | spanner,tool
 🔨,hammer | repairs,tool
@@ -975,7 +975,7 @@ emoji,words,category
 🗺,world map | map | world,place map
 🗻,mount fuji | fuji | mount | mountain,place geographic
 🗼,tokyo tower | tokyo | tower,place building
-🗽,statue of liberty | liberty | new | ny,place building
+🗽,statue of liberty | liberty,place building
 🗾,map of japan | japan | map,place map
 🗿,moai | moyai | statue,objects
 🤌,pinched fingers | fingers | gesture,hand fingers partial
@@ -1021,7 +1021,7 @@ emoji,words,category
 🤵‍♀,woman in tuxedo | formal | tuxedo | wedding,person role
 🤵‍♂,man in tuxedo | formal | groom,person role
 🤶,celebration | christmas | claus,person fantasy
-🤷,person shrugging | doubt | dunno | guess,person gesture
+🤷,person shrugging | doubt | guess,person gesture
 🤸,person cartwheeling | active | cartwheel | cartwheeling,person sport
 🤹,person juggling | act | balancing,person sport
 🤺,person fencing | fencer | fencing | sword,person sport
@@ -1069,7 +1069,7 @@ emoji,words,category
 🥩,cut of meat | lambchop,food prepared
 🥪,sandwich | bread,food prepared
 🥫,canned food | can | canned | food,food prepared
-🥬,leafy green | bok | burgers | cabbage,food vegetable
+🥬,leafy green | bok | cabbage,food vegetable
 🥭,mango | food | fruit | tropical,food fruit
 🥮,moon cake | autumn | cake | festival,food asian
 🥯,bagel | bakery | bread | breakfast,food prepared
@@ -1078,12 +1078,12 @@ emoji,words,category
 🥲,smiling face with tear | glad | grateful,face affection
 🥳,partying | bday | birthday | celebrate,face hat
 🥴,woozy | dizzy | tired,face unwell
-🥵,dying | feverish,face unwell
+🥵,feverish,face unwell
 🥶,cold | blue-faced,face unwell
 🥷,ninja | assassin | fight | fighter,person role
 🥸,disguised | disguise | eyebrow,face hat
 🥹,face holding back tears | admiration | aww,face concerned
-🥺,pleading | begging | big,face concerned
+🥺,pleading | begging,face concerned
 🥻,sari | clothing | dress,clothing
 🥼,lab coat | clothes | coat | doctor,clothing
 🥽,goggles | dive | protection,clothing
@@ -1118,11 +1118,11 @@ emoji,words,category
 🦚,peacock | animal | bird | colorful,animal bird
 🦛,hippopotamus | animal | hippo,animal mammal
 🦜,parrot | animal | bird | tropical,animal bird
-🦝,raccoon | animal | curious | sly,animal mammal
+🦝,raccoon | animal | curious,animal mammal
 🦞,lobster | animal | bisque | claws,animal marine
 🦟,mosquito,animal bug
 🦠,microbe | amoeba | bacteria | science,animal bug
-🦡,badger | animal | honey | pester,animal mammal
+🦡,badger | animal | honey,animal mammal
 🦢,swan | animal | bird | cygnet,animal bird
 🦣,mammoth | animal | extinction | large,animal mammal
 🦤,dodo | animal | bird | extinction,animal bird
@@ -1155,12 +1155,12 @@ emoji,words,category
 🦿,mechanical leg | accessibility | leg | mechanical,body parts
 🧀,cheese wedge | cheese | wedge,food prepared
 🧁,cupcake | bakery | dessert | sprinkles,food sweet
-🧂,salt | condiment | flavor | mad,food prepared
+🧂,salt | condiment | flavor,food prepared
 🧃,beverage box | beverage | juice,drink
 🧄,garlic | flavoring,food vegetable
 🧅,onion | flavoring,food vegetable
 🧆,falafel | chickpea | meatball,food prepared
-🧇,waffle | breakfast | indecisive | iron,food prepared
+🧇,waffle | breakfast | iron,food prepared
 🧈,butter | dairy,food prepared
 🧉,mate | drink,drink
 🧊,ice | cube | iceberg,drink
@@ -1192,9 +1192,9 @@ emoji,words,category
 🧓,older person | elderly | grandparent,person
 🧔,beard | bearded | whiskers,person
 🧕,woman with headscarf | bandana | head | headscarf,person role
-🧖,person in steamy room | day | luxurious | pamper,person activity
+🧖,person in steamy room | luxurious | pamper,person activity
 🧗,person climbing | climb | climber | climbing,person activity
-🧘,person in lotus position | legged | legs,person resting
+🧘,person in lotus position | legs,person resting
 🧙,mage | magic,person fantasy
 🧙‍♀,woman mage | mage | magic,person fantasy
 🧙‍♂,man mage | mage | magic,person fantasy
@@ -1221,7 +1221,7 @@ emoji,words,category
 🧢,billed cap | baseball | bent | billed,clothing
 🧣,scarf | bundle | neck,clothing
 🧤,gloves,clothing
-🧥,coat | brr | bundle,clothing
+🧥,coat | bundle,clothing
 🧦,socks | stocking,clothing
 🧧,red envelope | envelope | gift,event
 🧨,firecracker | dynamite | explosive | fire,event
@@ -1250,7 +1250,7 @@ emoji,words,category
 🧿,nazar amulet | amulet | bead,objects
 🩰,ballet shoes | ballet | dance | shoes,clothing
 🩱,one-piece swimsuit | one-piece,clothing
-🩲,briefs | one-piece,clothing
+🩲,briefs,clothing
 🩳,shorts | pants,clothing
 🩴,thong sandal | beach | flip | flop,clothing
 🩵,light blue heart | cute | cyan,heart
@@ -1266,9 +1266,9 @@ emoji,words,category
 🪂,parachute | hang-glide | parasail | skydive,transport air
 🪃,boomerang | rebound | repercussion | weapon,tool
 🪄,magic wand | magic | magician | wand,game
-🪅,candy | celebrate | celebration | cinco,game
+🪅,candy | celebrate | celebration,game
 🪆,nesting dolls | babooshka | baboushka | babushka,game
-🪇,maracas | cha | dance | instrument,musical instrument
+🪇,maracas | dance | instrument,musical instrument
 🪈,flute | band | fife | flautist,musical instrument
 🪉,harp | cupid | instrument | love,musical instrument
 🪊,trombone | brass | instrument | jazz,musical instrument
@@ -1331,7 +1331,7 @@ emoji,words,category
 🫈,hairy creature | bigfoot | cryptid | forest,person fantasy
 🫍,orca | marine | ocean | whale,animal marine
 🫎,moose | alces | animal | antlers,animal mammal
-🫏,donkey | animal | ass | burro,animal mammal
+🫏,donkey | animal | burro,animal mammal
 🫐,blueberries | berries | berry | bilberry,food fruit
 🫑,bell pepper | capsicum | food,food vegetable
 🫒,olive | food,food fruit
@@ -1353,32 +1353,32 @@ emoji,words,category
 🫤,face with diagonal mouth | confused | confusion | diagonal,face concerned
 🫥,dotted line | depressed | disappear | dotted,face neutral skeptical
 🫦,biting lip | anxious | bite | biting,body parts
-🫧,bubbles | burp,household
+🫧,bubbles,household
 🫨,shaking | crazy | daze | earthquake,face neutral skeptical
 🫩,face with bags under eyes | exhausted,face sleepy
 😀,grinning | cheerful | cheery,face smiling
 😁,beaming face with smiling eyes | beaming,face smiling
-😂,face with tears of joy | crying | feels,face smiling
+😂,face with tears of joy | crying,face smiling
 😃,grinning face with big eyes | big,face smiling
 😄,grinning face with smiling eyes,face smiling
 😅,grinning face with sweat | dejected | excited,face smiling
 😆,grinning squinting,face smiling
 😇,smiling face with halo | angel | angelic | angels,face smiling
 😈,smiling face with horns | demon | devil,face negative
-😉,winking | flirt | heartbreaker,face smiling
+😉,winking | flirt,face smiling
 😊,smiling face with smiling eyes | blush,face smiling
 😋,face savoring food | delicious,face tongue
 😌,relieved | calm,face sleepy
 😍,smiling face with heart-eyes | love,face affection
 😎,smiling face with sunglasses | beach,face glasses
-😏,smirking | boss | dapper,face neutral skeptical
+😏,smirking | dapper,face neutral skeptical
 😐,neutral | blank | deadpan,face neutral skeptical
 😑,expressionless | dead,face neutral skeptical
-😒,unamused | fine,face neutral skeptical
-😓,downcast face with sweat | close | downcast,face concerned
+😒,unamused,face neutral skeptical
+😓,downcast face with sweat | downcast,face concerned
 😔,pensive | dejected,face sleepy
-😕,confused | befuddled | confusing | dunno,face concerned
-😖,confounded | annoyed | confused | cringe,face concerned
+😕,confused | befuddled | confusing,face concerned
+😖,confounded | annoyed | confused,face concerned
 😗,kissing | date | dating,face affection
 😘,face blowing a kiss | kiss | blowing | love,face affection
 😙,kissing face with smiling eyes | date | dating,face affection
@@ -1397,16 +1397,16 @@ emoji,words,category
 😦,frowning face with open mouth | caught | frown,face concerned
 😧,anguished | forgot | scared,face concerned
 😨,fearful | afraid | anxious,face concerned
-😩,weary | crying | fail,face concerned
+😩,weary | crying,face concerned
 😪,sleepy | crying,face sleepy
-😫,tired | cost | feels,face concerned
-😬,grimacing | awk | dentist,face neutral skeptical
+😫,tired,face concerned
+😬,grimacing | dentist,face neutral skeptical
 😭,loudly crying | bawling | cry | crying,face concerned
 😮,face with open mouth | believe | forgot,face concerned
-😯,hushed | omg,face concerned
+😯,hushed,face concerned
 😰,anxious face with sweat | anxious,face concerned
 😱,face screaming in fear | fear,face concerned
-😲,astonished | cost,face concerned
+😲,astonished,face concerned
 😳,flushed | amazed | crazy,face concerned
 😴,sleeping | bedtime,face sleepy
 😵,face with crossed-out eyes | crossed-out | dead | dizzy,face unwell
@@ -1437,7 +1437,7 @@ emoji,words,category
 🙎,person pouting | disappointed | downtrodden | frown,person gesture
 🙏,folded hands | appreciate | ask | beg,hands
 🚀,rocket | launch | rockets,transport air
-🚁,helicopter | copter | roflcopter | travel,transport air
+🚁,helicopter | copter | travel,transport air
 🚂,locomotive | caboose | engine | railway,transport ground
 🚃,railway car | car | railway,transport ground
 🚄,high-speed train | high-speed | railway | shinkansen,transport ground
@@ -1455,10 +1455,10 @@ emoji,words,category
 🚐,minibus | bus | van,transport ground
 🚑,ambulance | emergency | vehicle,transport ground
 🚒,fire engine | engine | fire | truck,transport ground
-🚓,police car | car | cops | patrol,transport ground
+🚓,police car | car | patrol,transport ground
 🚔,oncoming police car | car | oncoming | police,transport ground
-🚕,taxi | cab | cabbie | car,transport ground
-🚖,oncoming taxi | cab | cabbie,transport ground
+🚕,taxi | cab | car,transport ground
+🚖,oncoming taxi | cab,transport ground
 🚗,automobile | car | driving | vehicle,transport ground
 🚘,oncoming automobile | automobile | car | cars,transport ground
 🚙,sport utility vehicle | car | recreational,transport ground
@@ -1472,8 +1472,8 @@ emoji,words,category
 🚡,aerial tramway | aerial | cable | car,transport air
 🚢,ship | boat | passenger | travel,transport water
 🚣,person rowing boat | boat | canoe | cruise,person sport
-🚤,speedboat | billionaire | boat | lake,transport water
-🚦,vertical traffic light | drove | intersection,transport ground
+🚤,speedboat | boat | lake,transport water
+🚦,vertical traffic light | intersection,transport ground
 🚧,construction | barrier,transport ground
 🚨,police car light | alarm | alert | beacon,transport ground
 🚩,triangular flag | construction | golf | post,flag
@@ -1483,7 +1483,7 @@ emoji,words,category
 🚭,no smoking | forbidden | not,warning
 🚯,no littering | forbidden | litter | littering,warning
 🚱,non-potable water | dry | non-drinking | non-potable,warning
-🚲,bicycle | bike | class | cycle,transport ground
+🚲,bicycle | bike | cycle,transport ground
 🚳,no bicycles | bicycle | bicycles,warning
 🚴,person biking | bicycle | bicyclist,person sport
 🚵,person mountain biking | bicycle | bicyclist,person sport
@@ -1494,11 +1494,11 @@ emoji,words,category
 🚿,shower,household
 🛀,person taking bath | bath | bathtub | taking,person resting
 🛁,bathtub | bath,household
-🛋,couch and lamp | couch | hotel | lamp,household
+🛋,couch and lamp | couch | lamp,household
 🛌,person in bed | bedtime,person resting
-🛍,shopping bags | bags | hotel,clothing
+🛍,shopping bags | bags,clothing
 🛎,bellhop bell | bellhop | hotel,hotel
-🛏,bed | hotel | sleep,household
+🛏,bed | sleep,household
 🛐,place of worship | place | pray | religion,religion
 🛑,stop sign | octagonal | stop,transport ground
 🛒,shopping cart | cart | shopping | trolley,household
@@ -1525,7 +1525,7 @@ emoji,words,category
 🛵,motor scooter | motor | scooter,transport ground
 🛶,canoe | boat,transport water
 🛷,sled | luge | sledge | sleigh,sport
-🛸,flying saucer | aliens | extra,transport air
+🛸,flying saucer | aliens,transport air
 🛹,skateboard | board | skate | skater,transport ground
 🛺,auto rickshaw | auto | rickshaw | tuk,transport ground
 🛻,pickup truck | automobile | car | flatbed,transport ground
