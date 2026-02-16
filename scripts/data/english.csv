@@ -388,7 +388,7 @@ emoji,words,category
 🌪,tornado | cloud | weather | whirlwind,sky and weather
 🌫,fog | cloud | weather,sky and weather
 🌬,wind face | blow | cloud,sky and weather
-🌭,hot dog | dog | frankfurter,food prepared
+🌭,hot dog | frankfurter,food prepared
 🌮,taco,food prepared
 🌯,burrito | wrap,food prepared
 🌰,chestnut | almond | plant,food vegetable
@@ -518,7 +518,7 @@ emoji,words,category
 🎱,pool 8 ball | 8ball,game
 🎲,game die | dice | die,game
 🎳,bowling | game | sport,sport
-🎴,flower playing cards | card | cards | flower,game
+🎴,flower playing cards | card | cards,game
 🎵,musical note | music | musical,music
 🎶,musical notes | music | musical,music
 🎷,saxophone | instrument | music | sax,musical instrument
@@ -567,7 +567,7 @@ emoji,words,category
 🏢,office building | office | work,place building
 🏣,japanese post office | office,place building
 🏤,post office | european | office,place building
-🏥,hospital | doctor | medicine,place building
+🏥,hospital | medicine,place building
 🏦,bank,place building
 🏧,atm sign | atm | automated,transport sign
 🏨,hotel,place building
@@ -769,8 +769,8 @@ emoji,words,category
 💆,person getting massage | getting | headache,person activity
 💇,person getting haircut | barber,person activity
 💈,barber pole | barber | fresh,place other
-💉,syringe | doctor | flu | medicine,medical
-💊,pill | doctor | drugs | medicated,medical
+💉,syringe | medicine,medical
+💊,pill | drugs | medicated,medical
 💋,kiss mark | dating | heart,emotion
 💌,love letter | heart | letter | love,heart
 💍,ring | diamond | engaged | engagement,clothing
@@ -799,7 +799,7 @@ emoji,words,category
 💥,collision | bomb | collide,emotion
 💦,sweat droplets | drip | droplet,emotion
 💧,droplet,sky and weather
-💨,dashing away | away | cloud,emotion
+💨,dashing away | away,emotion
 💩,pile of poo | bs | doo,face costume
 💪,flexed biceps | arm | beast | bench,body parts
 💬,speech balloon | balloon,emotion
@@ -868,7 +868,7 @@ emoji,words,category
 📯,postal horn | horn | post | postal,sound
 📰,newspaper | news | paper,book paper
 📱,mobile phone | cell | mobile,phone
-📷,camera | photo | selfie | snap,light and video
+📷,camera | photo | snap,light and video
 📹,video camera | camcorder | camera | tbt,light and video
 📺,television | tv | video,light and video
 📻,radio | tbt | video,music
@@ -1003,7 +1003,7 @@ emoji,words,category
 🤤,drooling,face sleepy
 🤥,lying | liar | lie,face neutral skeptical
 🤦,person facepalming | again | bewilder | disbelief,person gesture
-🤧,sneezing | fever | flu,face unwell
+🤧,sneezing,face unwell
 🤨,face with raised eyebrow | disapproval | disbelief | distrust,face neutral skeptical
 🤩,star-struck | excited,face affection
 🤪,zany | crazy,face tongue
@@ -1015,7 +1015,7 @@ emoji,words,category
 🤰,pregnant woman | pregnant,person role
 🤱,breast-feeding | breast | feeding,person role
 🤲,palms up together | cupped | dua | hands,hands
-🤳,selfie | camera | phone,hand prop
+🤳,selfie,hand prop
 🤴,prince | crown,person role
 🤵,person in tuxedo | formal | tuxedo | wedding,person role
 🤵‍♀,woman in tuxedo | formal | tuxedo | wedding,person role
@@ -1120,7 +1120,7 @@ emoji,words,category
 🦜,parrot | animal | bird | tropical,animal bird
 🦝,raccoon | animal | curious | sly,animal mammal
 🦞,lobster | animal | bisque | claws,animal marine
-🦟,mosquito | bite | disease | fever,animal bug
+🦟,mosquito,animal bug
 🦠,microbe | amoeba | bacteria | science,animal bug
 🦡,badger | animal | honey | pester,animal mammal
 🦢,swan | animal | bird | cygnet,animal bird
@@ -1258,8 +1258,8 @@ emoji,words,category
 🩷,pink heart | adorable | cute,heart
 🩸,drop of blood | bleed | blood | donation,medical
 🩹,adhesive bandage | adhesive | bandage,medical
-🩺,stethoscope | doctor | heart | medicine,medical
-🩻,x-ray | bones | doctor | medical,medical
+🩺,stethoscope | medicine,medical
+🩻,x-ray | bones | medical,medical
 🩼,crutch | cane | disability,medical
 🪀,yo-yo | fluctuate | toy,game
 🪁,kite | soar,game
