@@ -9,7 +9,11 @@ import {
   getEmojisByCategory,
 } from "./emoji-data";
 import { shuffle } from "./shuffle";
-import { GameContentSchema, type GameContent } from "./schema";
+import {
+  GameContentSchema,
+  type GameContent,
+  validateWordInput,
+} from "./schema";
 
 const LLM_SYSTEM_PROMPT = `You are a helpful assistant for a children's educational game called "Find It!".
 A parent has entered a word, and you need to generate game content for their child to find.
@@ -119,7 +123,11 @@ export function generateLocalContent(word: string): GameContent | null {
   // Check if it's an emoji name
   const emojiMatch = findEmojiByName(normalizedWord);
   if (emojiMatch) {
-    const distractors = getDistractors(emojiMatch.emoji, emojiMatch.category, 2);
+    const distractors = getDistractors(
+      emojiMatch.emoji,
+      emojiMatch.category,
+      2,
+    );
 
     // If we don't have enough distractors in the same category, return null
     // (let LLM handle it)
@@ -211,6 +219,12 @@ export function fixVisuallySimilarEmojis(content: GameContent): GameContent {
 export async function generateGameContent(
   word: string,
 ): Promise<GameContent | null> {
+  // Validate input as defense-in-depth (callers should validate too)
+  const validation = validateWordInput(word);
+  if (!validation.success) {
+    return null;
+  }
+
   // Try local generation first (fast, no API cost)
   const localContent = generateLocalContent(word);
   if (localContent) {

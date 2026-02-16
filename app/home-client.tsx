@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Sparkles, ArrowRight, Search, ChevronRight } from "lucide-react";
 import { TopicCard, PageHeader } from "@/components";
 import { unlockAudio, playPopSound } from "@/lib/audio";
+import { validateWordInput } from "@/lib/schema";
 import type { Topic } from "@/lib/topics";
 
 interface HomeClientProps {
@@ -20,12 +21,15 @@ export default function HomeClient({
   const router = useRouter();
   const [inputWord, setInputWord] = useState("");
 
+  const validation = validateWordInput(inputWord);
+  const showHint = inputWord.length > 0 && !validation.success;
+
   const handleStart = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    if (!inputWord.trim()) return;
+    if (!validation.success) return;
     playPopSound();
     await unlockAudio();
-    router.push(`/find/${encodeURIComponent(inputWord.trim())}`);
+    router.push(`/find/${encodeURIComponent(validation.data)}`);
   };
 
   return (
@@ -123,14 +127,21 @@ export default function HomeClient({
                 value={inputWord}
                 onChange={(e) => setInputWord(e.target.value)}
                 placeholder="Type a word..."
+                maxLength={50}
                 className="w-full rounded-2xl border-4 border-slate-100 bg-slate-50 py-4 pr-4 pl-12 text-lg font-bold text-slate-800 placeholder-slate-300 transition-all hover:border-sky-200 focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/20 focus:outline-none sm:rounded-2xl sm:py-5 sm:pl-14 sm:text-2xl"
                 autoFocus
               />
             </div>
 
+            <p
+              className={`text-center text-sm font-medium text-amber-600 transition-all duration-200 ${showHint ? "max-h-8 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}
+            >
+              Try using just letters and spaces
+            </p>
+
             <button
               type="submit"
-              disabled={!inputWord.trim()}
+              disabled={!validation.success}
               className="group relative flex w-full touch-manipulation items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 py-4 text-lg font-black text-white shadow-xl shadow-sky-500/30 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-500/40 focus:ring-4 focus:ring-sky-500/30 focus:outline-none active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none sm:rounded-2xl sm:py-5 sm:text-xl"
             >
               <span className="drop-shadow-md">Let&apos;s Play!</span>

@@ -10,3 +10,15 @@ export const GameContentSchema = z.object({
 });
 
 export type GameContent = z.infer<typeof GameContentSchema>;
+
+export const WordInputSchema = z
+  .string()
+  .trim()
+  .min(1)
+  .max(50)
+  .regex(/\p{L}/u) // must contain at least one letter
+  .regex(/^[\p{L}\p{N}\s'.\-:]+$/u); // allowed characters only
+
+export function validateWordInput(input: string) {
+  return WordInputSchema.safeParse(input);
+}
