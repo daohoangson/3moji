@@ -1,0 +1,29 @@
+app/find/[word]/page.tsx
+  33e129c17d7719b2 5,26-41
+lib/schema.ts
+  33e129c17d7719b2 13-24
+lib/game-content.ts
+  33e129c17d7719b2 12
+app/home-client.tsx
+  33e129c17d7719b2 9,24-26,29,32,130,136-141,144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "2ebba8d2248b337d3d32f6229855953f0aca4be9",
+  "prompts": {
+    "33e129c17d7719b2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dbff7b5-c631-4199-a3a4-b9f2ab72b8fc",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 50,
+      "total_deletions": 5,
+      "accepted_lines": 50,
+      "overriden_lines": 0
+    }
+  }
+}
