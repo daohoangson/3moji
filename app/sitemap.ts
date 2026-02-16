@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllTopics } from "@/lib/topics";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://find-it.app";
+  const baseUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "localhost:3000"}`;
 
   const topics = getAllTopics();
 
