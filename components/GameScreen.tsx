@@ -120,7 +120,7 @@ export function GameScreen({
   const wordButton = (
     <button
       onClick={handleSpeakClick}
-      className="mx-4 flex max-w-[70%] cursor-pointer touch-manipulation items-center justify-center truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-8 py-3 shadow-lg backdrop-blur-md transition-all hover:scale-105 hover:border-sky-200 active:scale-95 sm:px-10"
+      className="mx-4 flex max-w-[85%] cursor-pointer touch-manipulation items-center justify-center truncate rounded-full border-b-4 border-sky-100 bg-white/90 px-8 py-3 shadow-lg backdrop-blur-md transition-all hover:scale-105 hover:border-sky-200 active:scale-95 sm:px-10"
     >
       <h2 className="truncate text-xl font-black tracking-tight text-slate-800 sm:text-3xl">
         Find:{" "}
