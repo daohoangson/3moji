@@ -1,0 +1,23 @@
+scripts/generate-coverage-test.ts
+  62f2c2be427c0a17 1-138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "2a4a5206e93d11e2b040d12d17166cfac85129ab",
+  "prompts": {
+    "62f2c2be427c0a17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e4ab3cd4-89ec-4f12-9497-c55b9a8f2c83",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 139,
+      "total_deletions": 1,
+      "accepted_lines": 138,
+      "overriden_lines": 0
+    }
+  }
+}
