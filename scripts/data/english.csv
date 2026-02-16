@@ -109,7 +109,6 @@ emoji,words,category
 ⛏,pick | hammer | mining | tool,tool
 ⛑,rescue helmet | aid | helmet | safety,clothing
 ⛓,chains | chain,tool
-⛓‍💥,broken chain | break | breaking | broken,tool
 ⛔,no entry | forbidden | prohibited | stop,warning
 ⛩,shinto shrine | religion | shinto | shrine,place religious
 ⛪,church | bless | chapel | christian,place religious
@@ -122,8 +121,6 @@ emoji,words,category
 ⛷,skier | ski | snow,person sport
 ⛸,ice skate | ice | skate | skating,sport
 ⛹,person bouncing ball | athletic | ball | basketball,person sport
-⛹‍♀,woman bouncing ball | athletic | ball | basketball,person sport
-⛹‍♂,man bouncing ball | athletic | ball | basketball,person sport
 ⛺,tent | camping,place other
 ⛽,fuel pump | fuel | gas | station,transport ground
 🇦🇨,ascension island,country flag
@@ -412,8 +409,6 @@ emoji,words,category
 ❗,red exclamation mark | exclamation | mark | punctuation,punctuation
 ❣,heart exclamation | exclamation | heart | heavy,heart
 ❤,red heart | emotion | heart | love,heart
-❤‍🔥,heart on fire | burn | fire | heart,heart
-❤‍🩹,mending heart | healthier | heart | improving,heart
 ➕,plus,math
 ➖,minus | heavy | math | sign,math
 ➗,divide | division | heavy | math,math
@@ -498,7 +493,6 @@ emoji,words,category
 🍂,fallen leaf | autumn | fall | fallen,plant other
 🍃,leaf fluttering in wind | blow | flutter | fluttering,plant other
 🍄,mushroom | fungus | toadstool,plant other
-🍄‍🟫,brown mushroom | food | fungi | fungus,food vegetable
 🍅,tomato | food | fruit | vegetable,food fruit
 🍆,eggplant | aubergine | vegetable,food vegetable
 🍇,grapes | fruit | grape | bunch,food fruit
@@ -506,7 +500,6 @@ emoji,words,category
 🍉,watermelon | fruit,food fruit
 🍊,tangerine | citrus | fruit | nectarine,food fruit
 🍋,lemon | citrus | fruit | sour,food fruit
-🍋‍🟩,lime | citrus | fruit | sour,food fruit
 🍌,banana | fruit | potassium,food fruit
 🍍,pineapple | fruit | tropical | sweet,food fruit
 🍎,red apple | apple | fruit | red,food fruit
@@ -622,28 +615,15 @@ emoji,words,category
 🏁,chequered flag | checkered | chequered | finish,flag
 🏂,snowboarder | ski | snow | snowboard,person sport
 🏃,person running | fast | hurry | marathon,person activity
-🏃‍♀,woman running | fast | hurry | marathon,person activity
-🏃‍♀‍➡,woman running right | running | fast | race,person activity
-🏃‍♂,man running | fast | hurry | man,person activity
-🏃‍♂‍➡,man running right | running | fast | race,person activity
-🏃‍➡,person running right | running | fast | race,person activity
 🏄,person surfing | beach | ocean | sport,person sport
-🏄‍♀,woman surfing | beach | ocean | sport,person sport
-🏄‍♂,man surfing | beach | man | ocean,person sport
 🏅,sports medal | award | gold | medal,award medal
 🏆,trophy | champion | champs | prize,award medal
 🏇,horse racing | horse | jockey | racehorse,person sport
 🏈,american football | american | ball | bowl,sport
 🏉,rugby football | ball | football | rugby,sport
 🏊,person swimming | freestyle | sport | swim,person sport
-🏊‍♀,woman swimming | freestyle | swim | sport,person sport
-🏊‍♂,man swimming | freestyle | swim | sport,person sport
 🏋,person lifting weights | barbell | bodybuilder | deadlift,person sport
-🏋‍♀,woman lifting weights | barbell | bodybuilder | deadlift,person sport
-🏋‍♂,man lifting weights | barbell | bodybuilder | deadlift,person sport
 🏌,person golfing | ball | birdie | caddy,person sport
-🏌‍♀,woman golfing | ball | birdie | caddy,person sport
-🏌‍♂,man golfing | ball | birdie | caddy,person sport
 🏍,motorcycle | racing,transport ground
 🏎,racing car | car | racing | zoom,transport ground
 🏏,cricket game | ball | bat | cricket,sport
@@ -702,7 +682,6 @@ emoji,words,category
 🐆,leopard | animal | big | cat,animal mammal
 🐇,rabbit | animal | bunny | pet,animal mammal
 🐈,cat | animal | animals | cats,animal mammal
-🐈‍⬛,black cat | animal | black | cat,animal mammal
 🐉,dragon | animal | fairy | fairytale,animal reptile
 🐊,crocodile | animal | zoo,animal reptile
 🐋,whale | animal | beach | ocean,animal marine
@@ -716,7 +695,6 @@ emoji,words,category
 🐓,rooster | bird | farm | chicken,animal bird
 🐔,chicken | bird | farm | hen,animal bird
 🐕,dog | animal | animals | dogs,animal mammal
-🐕‍🦺,service dog | accessibility | animal | assistance,animal mammal
 🐖,pig | animal | bacon | farm,animal mammal
 🐗,boar | animal | pig,animal mammal
 🐘,elephant | animal,animal mammal
@@ -734,8 +712,6 @@ emoji,words,category
 🐤,baby chick | animal | baby | bird,animal bird
 🐥,front-facing baby chick | animal | baby | bird,animal bird
 🐦,bird | animal | wings | fly,animal bird
-🐦‍⬛,black bird | animal | beak | bird,animal bird
-🐦‍🔥,phoenix | firebird | rebirth | legend,animal bird
 🐧,penguin | animal | antarctica | bird,animal bird
 🐨,koala | animal | australia | bear,animal mammal
 🐩,poodle | animal | dog | fluffy,animal mammal
@@ -757,14 +733,12 @@ emoji,words,category
 🐹,hamster | animal | face | pet,animal mammal
 🐺,wolf | animal | face,animal mammal
 🐻,bear | animal | face | grizzly,animal mammal
-🐻‍❄,polar bear | animal | arctic | bear,animal mammal
 🐼,panda | animal | bamboo | face,animal mammal
 🐽,pig nose | animal | face | farm,animal mammal
 🐾,paw prints | feet | paw | paws,animal mammal
 🐿,chipmunk | animal | squirrel,animal mammal
 👀,eyes | body | eye | face,body parts
 👁,eye | one | body,body parts
-👁‍🗨,eye in speech bubble | balloon | bubble | eye,emotion
 👂,ear | body | ears | hear,body parts
 👃,nose | body | smell | noses,body parts
 👄,mouth | beauty | body | kiss,body parts
@@ -807,8 +781,6 @@ emoji,words,category
 👨‍⚕,man health worker | doctor | health | healthcare,person role
 👨‍⚖,man judge | judge | justice | law,person role
 👨‍✈,man pilot | man | pilot | plane,person role
-👨‍❤‍👨,men couple with heart | couple | heart | love,family
-👨‍❤‍💋‍👨,men kiss | couple | kiss | love,family
 👨‍🌾,man farmer | farmer | gardener | man,person role
 👨‍🍳,man cook | chef | cook | man,person role
 👨‍🍼,man feeding baby | baby | dad | father,person role
@@ -817,45 +789,16 @@ emoji,words,category
 👨‍🎨,man artist | artist | man | palette,person role
 👨‍🏫,man teacher | instructor | lecturer | man,person role
 👨‍🏭,man factory worker | assembly | factory | industrial,person role
-👨‍👦,family man boy | family | father | son,family
-👨‍👦‍👦,family man boys | family | father | children,family
-👨‍👧,family man girl | family | father | daughter,family
-👨‍👧‍👦,family man girl boy | family | father | children,family
-👨‍👧‍👧,family man girls | family | father | children,family
-👨‍👨‍👦,family men boy | family | parents | child,family
-👨‍👨‍👦‍👦,family men boys | family | parents | children,family
-👨‍👨‍👧,family men girl | family | parents | child,family
-👨‍👨‍👧‍👦,family men girl boy | family | parents | children,family
-👨‍👨‍👧‍👧,family men girls | family | parents | children,family
-👨‍👩‍👦,family man woman boy | family | parents | child,family
-👨‍👩‍👦‍👦,family man woman boys | family | parents | children,family
-👨‍👩‍👧,family man woman girl | family | parents | child,family
-👨‍👩‍👧‍👦,family man woman girl boy | family | parents | children,family
-👨‍👩‍👧‍👧,family man woman girls | family | parents | children,family
 👨‍💻,man technologist | coder | computer | developer,person role
 👨‍💼,man office worker | architect | business | man,person role
 👨‍🔧,man mechanic | electrician | man | mechanic,person role
 👨‍🔬,man scientist | biologist | chemist | engineer,person role
-👨‍🦯,man with white cane | accessibility | blind | cane,person activity
-👨‍🦯‍➡,man with white cane right | blind | cane | accessibility,person activity
-👨‍🦰,man red hair | man | red hair | adult,person
-👨‍🦱,man curly hair | man | curly hair | adult,person
-👨‍🦲,man bald | man | bald | adult,person
-👨‍🦳,man white hair | man | white hair | adult,person
-👨‍🦼,man in motorized wheelchair | accessibility | man | motorized,person activity
-👨‍🦼‍➡,man motorized wheelchair right | wheelchair | motorized | accessibility,person activity
-👨‍🦽,man in manual wheelchair | accessibility | man | manual,person activity
-👨‍🦽‍➡,man manual wheelchair right | wheelchair | manual | accessibility,person activity
 👨‍🚀,man astronaut | astronaut | man | rocket,person role
 👨‍🚒,man firefighter | fire | firefighter | firetruck,person role
 👩,woman | adult | lady,person
 👩‍⚕,woman health worker | doctor | health | healthcare,person role
 👩‍⚖,woman judge | judge | justice | law,person role
 👩‍✈,woman pilot | pilot | plane | woman,person role
-👩‍❤‍👨,couple woman man with heart | couple | heart | love,family
-👩‍❤‍👩,couple women with heart | couple | heart | love,family
-👩‍❤‍💋‍👨,kiss woman man | couple | kiss | love,family
-👩‍❤‍💋‍👩,kiss women | couple | kiss | love,family
 👩‍🌾,woman farmer | farmer | gardener | rancher,person role
 👩‍🍳,woman cook | chef | cook | woman,person role
 👩‍🍼,woman feeding baby | baby | feed | feeding,person role
@@ -864,30 +807,10 @@ emoji,words,category
 👩‍🎨,woman artist | artist | palette | woman,person role
 👩‍🏫,woman teacher | instructor | lecturer | professor,person role
 👩‍🏭,woman factory worker | assembly | factory | industrial,person role
-👩‍👦,family woman boy | family | mother | child,family
-👩‍👦‍👦,family woman boys | family | mother | children,family
-👩‍👧,family woman girl | family | mother | child,family
-👩‍👧‍👦,family woman girl boy | family | mother | children,family
-👩‍👧‍👧,family woman girls | family | mother | children,family
-👩‍👩‍👦,family women boy | family | parents | child,family
-👩‍👩‍👦‍👦,family women boys | family | parents | children,family
-👩‍👩‍👧,family women girl | family | parents | child,family
-👩‍👩‍👧‍👦,family women girl boy | family | parents | children,family
-👩‍👩‍👧‍👧,family women girls | family | parents | children,family
 👩‍💻,woman technologist | coder | computer | developer,person role
 👩‍💼,woman office worker | architect | business | manager,person role
 👩‍🔧,woman mechanic | electrician | mechanic | plumber,person role
 👩‍🔬,woman scientist | biologist | chemist | engineer,person role
-👩‍🦯,woman with white cane | accessibility | blind | cane,person activity
-👩‍🦯‍➡,woman with white cane right | blind | cane | accessibility,person activity
-👩‍🦰,woman red hair | woman | red hair | adult,person
-👩‍🦱,woman curly hair | woman | curly hair | adult,person
-👩‍🦲,woman bald | woman | bald | adult,person
-👩‍🦳,woman white hair | woman | white hair | adult,person
-👩‍🦼,woman in motorized wheelchair | accessibility | motorized | wheelchair,person activity
-👩‍🦼‍➡,woman motorized wheelchair right | wheelchair | motorized | accessibility,person activity
-👩‍🦽,woman in manual wheelchair | accessibility | manual | wheelchair,person activity
-👩‍🦽‍➡,woman manual wheelchair right | wheelchair | manual | accessibility,person activity
 👩‍🚀,woman astronaut | astronaut | rocket | space,person role
 👩‍🚒,woman firefighter | fire | firefighter | firetruck,person role
 👪,family | child,person symbol
@@ -898,14 +821,10 @@ emoji,words,category
 👮‍♀,woman police officer | police | officer | law,person role
 👮‍♂,man police officer | police | officer | law,person role
 👯,people with bunny ears | bunny | dance | party,person activity
-👯‍♀,women with bunny ears | bunny | dance | party,person activity
-👯‍♂,men with bunny ears | bunny | dance | party,person activity
 👰,person with veil | veil | wedding,person role
 👰‍♀,woman with veil | bride | veil | wedding,person role
 👰‍♂,man with veil | man | veil | wedding,person role
 👱,blond | blond hair | blond-haired | human,person
-👱‍♀,blond | blond-haired | blonde | hair,person
-👱‍♂,blond | blond-haired | hair | man,person
 👲,person with skullcap | cap | hat | skullcap,person role
 👳,person wearing turban | turban | wearing,person role
 👳‍♀,woman wearing turban | turban | wearing | woman,person role
@@ -926,8 +845,6 @@ emoji,words,category
 👿,angry face with horns | angry | demon | devil,face negative
 💀,skull | body | dead | death,face negative
 💁,person tipping hand | fetch | flick | flip,person gesture
-💁‍♀,woman tipping hand | fetch | flick | flip,person gesture
-💁‍♂,man tipping hand | fetch | flick | flip,person gesture
 💂,guard | buckingham | helmet | london,person role
 💂‍♀,woman guard | buckingham | guard | helmet,person role
 💂‍♂,man guard | buckingham | guard | helmet,person role
@@ -935,11 +852,7 @@ emoji,words,category
 💄,lipstick | cosmetics | date | makeup,clothing
 💅,nail polish | bored | care | cosmetics,hand prop
 💆,person getting massage | face | getting | headache,person activity
-💆‍♀,woman getting massage | face | getting | headache,person activity
-💆‍♂,man getting massage | face | getting | headache,person activity
 💇,person getting haircut | barber | beauty | chop,person activity
-💇‍♀,woman getting haircut | barber | beauty | chop,person activity
-💇‍♂,man getting haircut | barber | beauty | chop,person activity
 💈,barber pole | barber | cut | fresh,place other
 💉,syringe | doctor | flu | medicine,medical
 💊,pill | doctor | drugs | medicated,medical
@@ -1224,8 +1137,6 @@ emoji,words,category
 🤤,drooling | face,face sleepy
 🤥,lying | face | liar | lie,face neutral skeptical
 🤦,person facepalming | again | bewilder | disbelief,person gesture
-🤦‍♀,woman facepalming | again | bewilder | disbelief,person gesture
-🤦‍♂,man facepalming | again | bewilder | disbelief,person gesture
 🤧,sneezing | face | fever | flu,face unwell
 🤨,face with raised eyebrow | disapproval | disbelief | distrust,face neutral skeptical
 🤩,star-struck | excited | eyes | face,face affection
@@ -1245,24 +1156,12 @@ emoji,words,category
 🤵‍♂,man in tuxedo | formal | groom | man,person role
 🤶,celebration | christmas | claus | fairy,person fantasy
 🤷,person shrugging | doubt | dunno | guess,person gesture
-🤷‍♀,woman shrugging | doubt | dunno | guess,person gesture
-🤷‍♂,man shrugging | doubt | dunno | guess,person gesture
 🤸,person cartwheeling | active | cartwheel | cartwheeling,person sport
-🤸‍♀,woman cartwheeling | active | cartwheel | cartwheeling,person sport
-🤸‍♂,man cartwheeling | active | cartwheel | cartwheeling,person sport
 🤹,person juggling | act | balance | balancing,person sport
-🤹‍♀,woman juggling | act | balance | balancing,person sport
-🤹‍♂,man juggling | act | balance | balancing,person sport
 🤺,person fencing | fencer | fencing | sword,person sport
 🤼,people wrestling | combat | duel | grapple,person sport
-🤼‍♀,women wrestling | combat | duel | grapple,person sport
-🤼‍♂,men wrestling | combat | duel | grapple,person sport
 🤽,person playing water polo | playing | polo | sport,person sport
-🤽‍♀,woman playing water polo | playing | polo | sport,person sport
-🤽‍♂,man playing water polo | man | playing | polo,person sport
 🤾,person playing handball | athletics | ball | catch,person sport
-🤾‍♀,woman playing handball | athletics | ball | catch,person sport
-🤾‍♂,man playing handball | athletics | ball | catch,person sport
 🤿,diving mask | diving | mask | scuba,sport
 🥀,wilted flower | dying | flower | wilted,plant flower
 🥁,drum | drumsticks | music,musical instrument
@@ -1405,17 +1304,8 @@ emoji,words,category
 🧋,bubble tea | boba | bubble | food,drink
 🧌,troll | fairy | fantasy | monster,person fantasy
 🧍,person standing | stand | standing,person activity
-🧍‍♀,woman standing | stand | standing | woman,person activity
-🧍‍♂,man standing | man | stand | standing,person activity
 🧎,person kneeling | kneel | kneeling | knees,person activity
-🧎‍♀,woman kneeling | kneel | kneeling | knees,person activity
-🧎‍♀‍➡,facing | kneel | kneeling | knees,person activity
-🧎‍♂,man kneeling | kneel | kneeling | knees,person activity
-🧎‍♂‍➡,facing | kneel | kneeling | knees,person activity
-🧎‍➡,facing | kneel | kneeling | knees,person activity
 🧏,deaf person | accessibility | deaf | ear,person gesture
-🧏‍♀,deaf woman | accessibility | deaf | ear,person gesture
-🧏‍♂,deaf man | accessibility | deaf | ear,person gesture
 🧐,face with monocle | classy | face | fancy,face glasses
 🧑,adult,person
 🧑‍⚕,health worker | doctor | health | healthcare,person role
@@ -1434,39 +1324,15 @@ emoji,words,category
 🧑‍💼,office worker | architect | business | manager,person role
 🧑‍🔧,mechanic | electrician | plumber | tradesperson,person role
 🧑‍🔬,scientist | biologist | chemist | engineer,person role
-🧑‍🤝‍🧑,people holding hands | friends | hand | together,family
-🧑‍🦯,person with white cane | accessibility | blind | cane,person activity
-🧑‍🦯‍➡,accessibility | blind | cane | facing,person activity
-🧑‍🦰,adult | red hair,person
-🧑‍🦱,adult | curly hair,person
-🧑‍🦲,adult | bald,person
-🧑‍🦳,adult | white hair,person
-🧑‍🦼,person in motorized wheelchair | accessibility | motorized | wheelchair,person activity
-🧑‍🦼‍➡,accessibility | facing | motorized | right,person activity
-🧑‍🦽,person in manual wheelchair | accessibility | manual | wheelchair,person activity
-🧑‍🦽‍➡,accessibility | facing | manual | right,person activity
-🧑‍🧑‍🧒,adult | child | family,person symbol
-🧑‍🧑‍🧒‍🧒,adult | child | family,person symbol
-🧑‍🧒,adult | child | family,person symbol
-🧑‍🧒‍🧒,adult | child | family,person symbol
-🧑‍🩰,ballet dancer | ballet | dancer,person activity
 🧑‍🚀,astronaut | rocket | space,person role
 🧑‍🚒,firefighter | fire | firetruck,person role
 🧒,child | bright-eyed | grandchild | kid,person
 🧓,older person | adult | elderly | grandparent,person
 🧔,beard | bearded | whiskers,person
-🧔‍♀,beard | bearded | whiskers | woman,person
-🧔‍♂,beard | bearded | man | whiskers,person
 🧕,woman with headscarf | bandana | head | headscarf,person role
 🧖,person in steamy room | day | luxurious | pamper,person activity
-🧖‍♀,woman in steamy room | day | luxurious | pamper,person activity
-🧖‍♂,man in steamy room | day | luxurious | man,person activity
 🧗,person climbing | climb | climber | climbing,person activity
-🧗‍♀,woman climbing | climb | climber | climbing,person activity
-🧗‍♂,man climbing | climb | climber | climbing,person activity
 🧘,person in lotus position | cross | legged | legs,person resting
-🧘‍♀,woman in lotus position | cross | legged | legs,person resting
-🧘‍♂,man in lotus position | cross | legged | legs,person resting
 🧙,mage | fantasy | magic | play,person fantasy
 🧙‍♀,woman mage | fantasy | mage | magic,person fantasy
 🧙‍♂,man mage | fantasy | mage | magic,person fantasy
@@ -1687,7 +1553,6 @@ emoji,words,category
 😬,grimacing | awk | awkward | dentist,face neutral skeptical
 😭,loudly crying | bawling | cry | crying,face concerned
 😮,face with open mouth | believe | face | forgot,face concerned
-😮‍💨,face exhaling | blow | blowing | exhale,face neutral skeptical
 😯,hushed | epic | face | omg,face concerned
 😰,anxious face with sweat | anxious | blue | cold,face concerned
 😱,face screaming in fear | epic | face | fear,face concerned
@@ -1695,9 +1560,7 @@ emoji,words,category
 😳,flushed | amazed | awkward | crazy,face concerned
 😴,sleeping | bed | bedtime | face,face sleepy
 😵,face with crossed-out eyes | crossed-out | dead | dizzy,face unwell
-😵‍💫,face with spiral eyes | confused | dizzy | eyes,face unwell
 😶,face without mouth | awkward | blank | expressionless,face neutral skeptical
-😶‍🌫,face in clouds | absentminded | clouds | face,face neutral skeptical
 😷,face with medical mask | cold | dentist | dermatologist,face unwell
 😸,grinning cat with smiling eyes | animal | cat | eye,cat face
 😹,cat with tears of joy | animal | cat | face,cat face
@@ -1710,32 +1573,18 @@ emoji,words,category
 🙀,weary cat | animal | cat | face,cat face
 🙁,slightly frowning | face | frown | frowning,face concerned
 🙂,slightly smiling | face | happy | slightly,face smiling
-🙂‍↔,head shaking horizontally | head | horizontally | no,face neutral skeptical
-🙂‍↕,head shaking vertically | head | nod | shaking,face neutral skeptical
 🙃,upside-down | face | hehe | smile,face smiling
 🙄,face with rolling eyes | eyeroll | eyes | face,face neutral skeptical
 🙅,person gesturing no | forbidden | gesture | hand,person gesture
-🙅‍♀,woman gesturing no | forbidden | gesture | hand,person gesture
-🙅‍♂,man gesturing no | forbidden | gesture | hand,person gesture
 🙆,person gesturing ok | exercise | gesture | gesturing,person gesture
-🙆‍♀,woman gesturing ok | exercise | gesture | gesturing,person gesture
-🙆‍♂,man gesturing ok | exercise | gesture | gesturing,person gesture
 🙇,person bowing | apology | ask | beg,person gesture
-🙇‍♀,woman bowing | apology | ask | beg,person gesture
-🙇‍♂,man bowing | apology | ask | beg,person gesture
 🙈,see-no-evil monkey | embarrassed | evil | face,monkey face
 🙉,hear-no-evil monkey | animal | ears | evil,monkey face
 🙊,speak-no-evil monkey | animal | evil | face,monkey face
 🙋,person raising hand | gesture | hand | here,person gesture
-🙋‍♀,woman raising hand | gesture | hand | here,person gesture
-🙋‍♂,man raising hand | gesture | hand | here,person gesture
 🙌,raising hands | celebration | gesture | hand,hands
 🙍,person frowning | annoyed | disappointed | disgruntled,person gesture
-🙍‍♀,woman frowning | annoyed | disappointed | disgruntled,person gesture
-🙍‍♂,man frowning | annoyed | disappointed | disgruntled,person gesture
 🙎,person pouting | disappointed | downtrodden | frown,person gesture
-🙎‍♀,woman pouting | disappointed | downtrodden | frown,person gesture
-🙎‍♂,man pouting | disappointed | downtrodden | frown,person gesture
 🙏,folded hands | appreciate | ask | beg,hands
 🚀,rocket | launch | rockets | space,transport air
 🚁,helicopter | copter | roflcopter | travel,transport air
@@ -1773,8 +1622,6 @@ emoji,words,category
 🚡,aerial tramway | aerial | cable | car,transport air
 🚢,ship | boat | passenger | travel,transport water
 🚣,person rowing boat | boat | canoe | cruise,person sport
-🚣‍♀,woman rowing boat | boat | canoe | cruise,person sport
-🚣‍♂,man rowing boat | boat | canoe | cruise,person sport
 🚤,speedboat | billionaire | boat | lake,transport water
 🚥,horizontal traffic light | horizontal | intersection | light,transport ground
 🚦,vertical traffic light | drove | intersection | light,transport ground
@@ -1792,17 +1639,8 @@ emoji,words,category
 🚲,bicycle | bike | class | cycle,transport ground
 🚳,no bicycles | bicycle | bicycles | bike,warning
 🚴,person biking | bicycle | bicyclist | bike,person sport
-🚴‍♀,woman biking | bicycle | bicyclist | bike,person sport
-🚴‍♂,man biking | bicycle | bicyclist | bike,person sport
 🚵,person mountain biking | bicycle | bicyclist | bike,person sport
-🚵‍♀,woman mountain biking | bicycle | bicyclist | bike,person sport
-🚵‍♂,man mountain biking | bicycle | bicyclist | bike,person sport
 🚶,person walking | amble | gait | hike,person activity
-🚶‍♀,woman walking | amble | gait | hike,person activity
-🚶‍♀‍➡,amble | facing | gait | hike,person activity
-🚶‍♂,man walking | amble | gait | hike,person activity
-🚶‍♂‍➡,amble | facing | gait | hike,person activity
-🚶‍➡,amble | facing | gait | hike,person activity
 🚷,no pedestrians | forbidden | no | not,warning
 🚸,children crossing | child | children | crossing,warning
 🚹,bathroom | lavatory | man | restroom,transport sign
