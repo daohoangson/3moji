@@ -374,3 +374,320 @@ describe("visual similarity edge cases", () => {
     expect(areVisuallySimilar("🌙", "🌛")).toBe(false); // no shared keywords
   });
 });
+
+describe("google-10000-english coverage", () => {
+  // Comprehensive coverage test with explicit word→emoji pairs from google-10000-english.txt
+  // This documents common noun coverage and asserts >50% match rate.
+
+  const WORD_EMOJI_PAIRS: Array<[string, string]> = [
+    // People
+    ["man", "👨"],
+    ["woman", "👩"],
+    ["baby", "👶"],
+    ["child", "🧒"],
+    ["boy", "👦"],
+    ["girl", "👧"],
+    ["mother", "👩‍🍼"],
+    ["son", "👦"],
+    ["daughter", "👧"],
+    ["king", "🤴"],
+    ["queen", "👸"],
+    ["teacher", "🧑‍🏫"],
+    ["student", "🧑‍🎓"],
+    ["artist", "🧑‍🎨"],
+    ["manager", "👨‍💼"],
+    ["officer", "👮"],
+    ["judge", "🧑‍⚖️"],
+    ["graduate", "🧑‍🎓"],
+    ["doctor", "😷"],
+    ["parent", "🧑‍🍼"],
+
+    // Places
+    ["home", "🛖"],
+    ["house", "🏠"],
+    ["hotel", "🏨"],
+    ["school", "🏫"],
+    ["church", "⛪"],
+    ["hospital", "🏥"],
+    ["city", "🏙️"],
+    ["beach", "🏖️"],
+    ["island", "🏝️"],
+    ["mountain", "⛰️"],
+    ["park", "🏞️"],
+    ["bank", "🏦"],
+    ["store", "🏬"],
+    ["office", "🏤"],
+    ["building", "🏢"],
+    ["wedding", "💒"],
+    ["bridge", "🌉"],
+    ["factory", "🏭"],
+    ["garden", "🏡"],
+
+    // Animals
+    ["dog", "🐕"],
+    ["cat", "🐈"],
+    ["fish", "🐟"],
+    ["horse", "🐎"],
+    ["bird", "🐦"],
+    ["bear", "🐻"],
+    ["mouse", "🐁"],
+    ["bug", "🐛"],
+    ["turkey", "🦃"],
+    ["fly", "🪰"],
+
+    // Nature & Weather
+    ["sun", "☀️"],
+    ["moon", "🌑"],
+    ["star", "⭐"],
+    ["fire", "🔥"],
+    ["water", "🌊"],
+    ["wind", "🌬️"],
+    ["tree", "🌴"],
+    ["spring", "🌸"],
+    ["fall", "🍂"],
+    ["winter", "🪾"],
+    ["ice", "🧊"],
+    ["snow", "☃️"],
+    ["rain", "🌈"],
+    ["flower", "💮"],
+    ["rose", "🌹"],
+    ["plant", "🪴"],
+
+    // Food & Drinks
+    ["apple", "🍎"],
+    ["coffee", "☕"],
+    ["tea", "🧋"],
+    ["wine", "🍷"],
+    ["drink", "🍹"],
+    ["glass", "🍷"],
+    ["cup", "🥤"],
+    ["food", "🍲"],
+    ["breakfast", "🍴"],
+    ["dinner", "🍴"],
+    ["birthday", "🎂"],
+    ["cream", "🍨"],
+
+    // Objects
+    ["phone", "📱"],
+    ["book", "📚"],
+    ["camera", "📷"],
+    ["key", "🔑"],
+    ["door", "🚪"],
+    ["window", "🪟"],
+    ["bed", "🛏️"],
+    ["chair", "🪑"],
+    ["ring", "💍"],
+    ["battery", "🔋"],
+    ["basket", "🧺"],
+    ["box", "🍱"],
+    ["computer", "💽"],
+    ["laptop", "💻"],
+    ["printer", "🖨️"],
+    ["tv", "📺"],
+    ["clock", "⏰"],
+    ["watch", "⌚"],
+    ["calendar", "📅"],
+    ["money", "💰"],
+    ["cash", "💰"],
+    ["gold", "💰"],
+    ["dollar", "💵"],
+    ["credit", "💳"],
+
+    // Vehicles
+    ["car", "🚋"],
+    ["bus", "🚌"],
+    ["train", "🚆"],
+    ["ship", "🚢"],
+    ["van", "🚐"],
+    ["truck", "🛻"],
+    ["bike", "🚲"],
+    ["police", "🚓"],
+
+    // Celebrations
+    ["party", "🎉"],
+    ["gift", "🎁"],
+    ["christmas", "🎄"],
+    ["santa", "🎅"],
+    ["jack", "🎃"],
+
+    // Countries
+    ["canada", "🇨🇦"],
+    ["china", "🇨🇳"],
+    ["france", "🇫🇷"],
+    ["germany", "🇩🇪"],
+    ["india", "🇮🇳"],
+    ["italy", "🇮🇹"],
+    ["japan", "🇯🇵"],
+    ["australia", "🇦🇺"],
+    ["mexico", "🇲🇽"],
+    ["spain", "🇪🇸"],
+    ["ireland", "🇮🇪"],
+    ["brazil", "🇧🇷"],
+
+    // Sports & Games
+    ["game", "🎲"],
+    ["golf", "🏌️‍♂️"],
+    ["football", "🏉"],
+    ["soccer", "⚽"],
+    ["basketball", "🏀"],
+    ["baseball", "⚾"],
+    ["tennis", "🎾"],
+    ["ski", "🎿"],
+    ["dance", "🪩"],
+    ["goal", "🥅"],
+    ["casino", "🎰"],
+    ["magic", "🪄"],
+    ["target", "🎯"],
+    ["toy", "🧸"],
+    ["finish", "🏁"],
+    ["win", "🏆"],
+
+    // Music & Arts
+    ["music", "🎵"],
+    ["guitar", "🎸"],
+    ["beat", "🪘"],
+    ["picture", "🖼️"],
+    ["arts", "🎭"],
+    ["theater", "🎭"],
+    ["creative", "🎨"],
+
+    // Clothing
+    ["shoes", "👞"],
+    ["dress", "👗"],
+    ["shirt", "🎽"],
+    ["clothes", "👚"],
+    ["fashion", "👠"],
+    ["hair", "🪮"],
+
+    // Medical
+    ["health", "🧑‍⚕️"],
+    ["medical", "⚕️"],
+    ["test", "🧪"],
+    ["shot", "💉"],
+    ["drugs", "💊"],
+    ["blood", "🩸"],
+    ["virus", "🦠"],
+
+    // Symbols
+    ["information", "ℹ️"],
+    ["check", "✔️"],
+    ["cross", "❌"],
+    ["question", "❓"],
+    ["copyright", "©️"],
+    ["trademark", "™️"],
+    ["zero", "0️⃣"],
+    ["ok", "🆗"],
+    ["warning", "⚠️"],
+    ["peace", "☮️"],
+
+    // Directions
+    ["up", "⬆️"],
+    ["down", "⬇️"],
+    ["left", "⬅️"],
+    ["right", "➡️"],
+    ["back", "🔙"],
+    ["next", "⏭️"],
+    ["forward", "⏩"],
+    ["end", "🔚"],
+
+    // Time
+    ["day", "🌞"],
+    ["night", "🌉"],
+    ["one", "🕐"],
+    ["two", "💕"],
+    ["three", "🕞"],
+    ["four", "🕟"],
+    ["five", "🕠"],
+    ["six", "🕕"],
+
+    // Emotions
+    ["love", "🏩"],
+    ["like", "🩷"],
+    ["hot", "🥵"],
+    ["cold", "🥶"],
+    ["red", "❤️"],
+    ["yellow", "💛"],
+    ["pink", "🩷"],
+    ["brown", "🤎"],
+    ["nice", "😀"],
+    ["think", "💭"],
+    ["idea", "💭"],
+    ["dream", "💭"],
+    ["message", "💬"],
+    ["talk", "💬"],
+    ["death", "💀"],
+    ["expert", "🤓"],
+    ["smart", "🤓"],
+    ["funny", "😜"],
+    ["eat", "😋"],
+
+    // Body
+    ["body", "👃"],
+    ["eye", "👁️"],
+    ["eyes", "👀"],
+    ["foot", "🦶"],
+
+    // Tools
+    ["tool", "🧰"],
+    ["gear", "⚙️"],
+    ["scale", "⚖️"],
+    ["saw", "🪚"],
+  ];
+
+  it("should match >50% of documented word→emoji pairs from google-10000-english", () => {
+    let matched = 0;
+    let failed = 0;
+    const failures: Array<{
+      word: string;
+      expected: string;
+      actual: string | null;
+    }> = [];
+
+    for (const [word, expectedEmoji] of WORD_EMOJI_PAIRS) {
+      const result = findEmojiByName(word);
+      if (result && result.emoji === expectedEmoji) {
+        matched++;
+      } else {
+        failed++;
+        failures.push({
+          word,
+          expected: expectedEmoji,
+          actual: result?.emoji || null,
+        });
+      }
+    }
+
+    const total = WORD_EMOJI_PAIRS.length;
+    const percentage = (matched / total) * 100;
+
+    console.log("\n" + "=".repeat(80));
+    console.log("GOOGLE-10000-ENGLISH EMOJI COVERAGE REPORT");
+    console.log("=".repeat(80));
+    console.log(`Total word→emoji pairs tested: ${total}`);
+    console.log(`Matched: ${matched}`);
+    console.log(`Failed: ${failed}`);
+    console.log(`Coverage: ${percentage.toFixed(2)}%`);
+    console.log("=".repeat(80));
+
+    if (failures.length > 0 && failures.length <= 30) {
+      console.log("\nFailures:");
+      failures.forEach(({ word, expected, actual }) => {
+        console.log(
+          `  ${word.padEnd(20)} → expected ${expected} got ${actual || "null"}`,
+        );
+      });
+    } else if (failures.length > 30) {
+      console.log(`\nFirst 30 failures (out of ${failures.length}):`);
+      failures.slice(0, 30).forEach(({ word, expected, actual }) => {
+        console.log(
+          `  ${word.padEnd(20)} → expected ${expected} got ${actual || "null"}`,
+        );
+      });
+    }
+    console.log("=".repeat(80) + "\n");
+
+    // Assert >50% coverage
+    expect(percentage).toBeGreaterThan(50);
+    expect(matched).toBeGreaterThan(total / 2);
+  });
+});
