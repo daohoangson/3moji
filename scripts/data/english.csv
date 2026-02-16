@@ -57,7 +57,7 @@ emoji,words,category
 ☦,orthodox cross | christian | cross | orthodox,religion
 ☪,star and crescent | crescent | islam | muslim,religion
 ☮,peace symbol | healing | peace | peaceful,religion
-☯,yin yang | difficult | lives | religion,religion
+☯,yin yang | tao | balance | symbol,religion
 ☸,wheel of dharma | buddhist | dharma | religion,religion
 ☹,frowning | face | frown | sad,face concerned
 ☺,smiling | face | happy | outlined,face affection
@@ -75,12 +75,12 @@ emoji,words,category
 ♑,capricorn | goat | horoscope | zodiac,zodiac
 ♒,aquarius | bearer | horoscope | water,zodiac
 ♓,pisces | fish | horoscope | zodiac,zodiac
-♟,chess pawn | chess | dupe | expendable,game
+♟,chess pawn | chess | piece | game,game
 ♠,spade suit | card | game | spade,game
 ♣,club suit | card | club | clubs,game
 ♥,heart suit | card | emotion | game,game
 ♦,diamond suit | card | diamond | game,game
-♨,hot springs | hot | hotsprings | springs,place other
+♨,hot springs | hot | springs | steam,place other
 ♻,recycling symbol | recycle | recycling,symbols
 ♾,infinity | forever | unbounded | universal,math
 ♿,wheelchair symbol | access | handicap | wheelchair,transport sign
@@ -91,7 +91,7 @@ emoji,words,category
 ⚖,balance scale | balance | justice | libra,tool
 ⚗,alembic | chemistry | tool,science
 ⚙,gear | cog | cogwheel | tool,tool
-⚛,atom symbol | atheist | atom,religion
+⚛,atom symbol | atom | science,religion
 ⚜,fleur-de-lis | knights,symbols
 ⚠,warning | caution,warning
 ⚡,high voltage | danger | electric | electricity,sky and weather
@@ -107,10 +107,10 @@ emoji,words,category
 ⛈,cloud with lightning and rain | cloud | lightning | rain,sky and weather
 ⛎,ophiuchus | bearer | serpent | snake,zodiac
 ⛏,pick | hammer | mining | tool,tool
-⛑,aid | cross | face | hat,clothing
+⛑,rescue helmet | aid | helmet | safety,clothing
 ⛓,chains | chain,tool
 ⛓‍💥,broken chain | break | breaking | broken,tool
-⛔,no entry | do | entry | fail,warning
+⛔,no entry | forbidden | prohibited | stop,warning
 ⛩,shinto shrine | religion | shinto | shrine,place religious
 ⛪,church | bless | chapel | christian,place religious
 ⛰,mountain,place geographic
@@ -125,7 +125,7 @@ emoji,words,category
 ⛹‍♀,woman bouncing ball | athletic | ball | basketball,person sport
 ⛹‍♂,man bouncing ball | athletic | ball | basketball,person sport
 ⛺,tent | camping,place other
-⛽,fuel pump | diesel | fuel | fuelpump,transport ground
+⛽,fuel pump | fuel | gas | station,transport ground
 🇦🇨,ascension island,country flag
 🇦🇩,andorra,country flag
 🇦🇪,united arab emirates,country flag
@@ -398,7 +398,7 @@ emoji,words,category
 ✔,check mark | check | checked | checkmark,symbols
 ✖,multiply | cancel | multiplication | sign,math
 ✝,latin cross | christ | christian | cross,religion
-✡,star of david | david | jew | jewish,religion
+✡,star of david | judaism | religion | star,religion
 ✨,sparkles | asterisk | magic | sparkle,event
 ✳,eight-spoked asterisk | asterisk | eight-spoked,symbols
 ✴,eight-pointed star | asterisk | eight-pointed | star,symbols
@@ -437,10 +437,10 @@ emoji,words,category
 🌃,night with stars | night | star | stars,place other
 🌄,sunrise over mountains | morning | mountains | over,place other
 🌅,sunrise | morning | nature | sun,place other
-🌆,cityscape at dusk | at | building | city,place other
+🌆,cityscape at dusk | city | dusk | skyline,place other
 🌇,sunset | building | dusk | sun,place other
-🌈,rainbow | gay | genderqueer | glbt,sky and weather
-🌉,bridge at night | at | bridge | night,place other
+🌈,rainbow | rain | weather | colors,sky and weather
+🌉,bridge at night | bridge | night | lights,place other
 🌊,water wave | nature | ocean | surf,sky and weather
 🌋,volcano | eruption | mountain | nature,place geographic
 🌌,milky way | milky | space | way,sky and weather
@@ -449,7 +449,7 @@ emoji,words,category
 🌏,globe showing asia-australia | asia | asia-australia | australia,place map
 🌐,globe with meridians | earth | globe | internet,place map
 🌑,new moon | dark | moon | new,sky and weather
-🌒,waxing crescent moon | crescent | dreams | moon,sky and weather
+🌒,waxing crescent moon | crescent | moon | night,sky and weather
 🌓,first quarter moon | first | moon | quarter,sky and weather
 🌔,waxing gibbous moon | gibbous | moon | space,sky and weather
 🌕,full moon | full | moon | space,sky and weather
@@ -459,7 +459,7 @@ emoji,words,category
 🌙,crescent moon | crescent | moon | ramadan,sky and weather
 🌚,new moon face | face | moon | new,sky and weather
 🌛,first quarter moon face | face | first | moon,sky and weather
-🌜,last quarter moon face | dreams | face | last,sky and weather
+🌜,last quarter moon face | face | moon | last,sky and weather
 🌝,full moon face | bright | face | full,sky and weather
 🌞,sun with face | beach | bright | day,sky and weather
 🌟,glowing star | glittery | glow | glowing,sky and weather
@@ -501,15 +501,15 @@ emoji,words,category
 🍄‍🟫,brown mushroom | food | fungi | fungus,food vegetable
 🍅,tomato | food | fruit | vegetable,food fruit
 🍆,eggplant | aubergine | vegetable,food vegetable
-🍇,grapes | dionysus | fruit | grape,food fruit
+🍇,grapes | fruit | grape | bunch,food fruit
 🍈,melon | cantaloupe | fruit,food fruit
 🍉,watermelon | fruit,food fruit
 🍊,tangerine | citrus | fruit | nectarine,food fruit
 🍋,lemon | citrus | fruit | sour,food fruit
-🍋‍🟩,lime | acidity | citrus | cocktail,food fruit
+🍋‍🟩,lime | citrus | fruit | sour,food fruit
 🍌,banana | fruit | potassium,food fruit
-🍍,pineapple | colada | fruit | pina,food fruit
-🍎,red apple | apple | diet | food,food fruit
+🍍,pineapple | fruit | tropical | sweet,food fruit
+🍎,red apple | apple | fruit | red,food fruit
 🍏,green apple | apple | fruit | green,food fruit
 🍐,pear | fruit,food fruit
 🍑,peach | fruit,food fruit
@@ -529,33 +529,33 @@ emoji,words,category
 🍟,french fries | fast | food | french,food prepared
 🍠,roasted sweet potato | food | potato | roasted,food asian
 🍡,dango | dessert | japanese | skewer,food asian
-🍢,oden | food | kebab | restaurant,food asian
+🍢,oden | skewer | soup | japanese,food asian
 🍣,sushi | food,food asian
 🍤,fried shrimp | fried | prawn | shrimp,food asian
 🍥,fish cake with swirl | cake | fish | food,food asian
 🍦,soft ice cream | cream | dessert | food,food sweet
-🍧,shaved ice | dessert | ice | restaurant,food sweet
+🍧,shaved ice | dessert | ice | sweet,food sweet
 🍨,ice cream | cream | dessert | food,food sweet
 🍩,doughnut | breakfast | dessert | donut,food sweet
 🍪,cookie | chip | chocolate | dessert,food sweet
 🍫,chocolate bar | bar | candy | chocolate,food sweet
-🍬,candy | cavities | dessert | halloween,food sweet
+🍬,candy | sweet | treat | dessert,food sweet
 🍭,lollipop | candy | dessert | food,food sweet
 🍮,custard | dessert | pudding | sweet,food sweet
 🍯,honey pot | barrel | bear | food,food sweet
 🍰,shortcake | cake | dessert | pastry,food sweet
 🍱,bento box | bento | box | food,food asian
 🍲,pot of food | food | pot | soup,food prepared
-🍳,cooking | breakfast | easy | egg,food prepared
-🍴,fork and knife | breakfast | breaky | cooking,dishware
+🍳,cooking | egg | pan | breakfast,food prepared
+🍴,fork and knife | cutlery | eat | meal,dishware
 🍵,teacup without handle | beverage | cup | drink,drink
-🍶,sake | bar | beverage | bottle,drink
-🍷,wine glass | alcohol | bar | beverage,drink
-🍸,cocktail glass | alcohol | bar | booze,drink
-🍹,tropical drink | alcohol | bar | booze,drink
-🍺,beer mug | alcohol | ale | bar,drink
-🍻,clinking beer mugs | alcohol | bar | beer,drink
-🍼,baby bottle | babies | baby | birth,drink
+🍶,sake | bottle | drink | rice,drink
+🍷,wine glass | wine | glass | drink,drink
+🍸,cocktail glass | drink | glass | martini,drink
+🍹,tropical drink | fruit | juice | drink,drink
+🍺,beer mug | beer | mug | drink,drink
+🍻,clinking beer mugs | cheers | mugs | beer,drink
+🍼,baby bottle | baby | milk | bottle,drink
 🍽,fork and knife with plate | cooking | dinner | eat,dishware
 🍾,bottle with popping cork | bar | bottle | cork,drink
 🍿,popcorn | corn | movie | pop,food prepared
@@ -568,7 +568,7 @@ emoji,words,category
 🎆,fireworks | boom | celebration | entertainment,event
 🎇,sparkler | boom | celebration | fireworks,event
 🎈,balloon | birthday | celebrate | celebration,event
-🎉,party popper | awesome | birthday | celebrate,event
+🎉,party popper | party | birthday | celebrate,event
 🎊,confetti ball | ball | celebrate | celebration,event
 🎋,tanabata tree | banner | celebration | japanese,event
 🎌,crossed flags | celebration | cross | crossed,flag
@@ -591,18 +591,18 @@ emoji,words,category
 🎢,roller coaster | amusement | coaster | park,place other
 🎣,fishing pole | entertainment | fish | fishing,sport
 🎤,microphone | karaoke | mic | music,music
-🎥,movie camera | bollywood | camera | cinema,light and video
+🎥,movie camera | camera | cinema | film,light and video
 🎦,cinema | camera | film | movie,av symbol
 🎧,headphone | earbud | sound,music
-🎨,artist palette | art | artist | artsy,arts and crafts
+🎨,artist palette | art | artist | painting,arts and crafts
 🎩,top hat | clothes | clothing | fancy,clothing
 🎪,circus tent | circus | tent,place other
 🎫,ticket | admission | stub,event
 🎬,clapper board | action | board | clapper,light and video
 🎭,performing arts | actor | actress | art,arts and crafts
 🎮,video game | controller | entertainment | game,game
-🎯,bullseye | bull | dart | direct,game
-🎰,slot machine | casino | gamble | gambling,game
+🎯,bullseye | dart | target | hit,game
+🎰,slot machine | casino | game | slots,game
 🎱,pool 8 ball | eight | 8ball | ball,game
 🎲,game die | dice | die | entertainment,game
 🎳,bowling | ball | game | sport,sport
@@ -610,12 +610,12 @@ emoji,words,category
 🎵,musical note | music | musical | note,music
 🎶,musical notes | music | musical | note,music
 🎷,saxophone | instrument | music | sax,musical instrument
-🎸,guitar | instrument | music | strat,musical instrument
+🎸,guitar | instrument | music | strings,musical instrument
 🎹,musical keyboard | instrument | keyboard | music,musical instrument
 🎺,trumpet | instrument | music,musical instrument
 🎻,violin | instrument | music,musical instrument
 🎼,musical score | music | musical | note,music
-🎽,running shirt | athletics | running | sash,sport
+🎽,running shirt | athletics | running | shirt,sport
 🎾,tennis | ball | racquet | sport,sport
 🎿,skis | ski | snow | sport,sport
 🏀,basketball | ball | hoop | sport,sport
@@ -623,10 +623,10 @@ emoji,words,category
 🏂,snowboarder | ski | snow | snowboard,person sport
 🏃,person running | fast | hurry | marathon,person activity
 🏃‍♀,woman running | fast | hurry | marathon,person activity
-🏃‍♀‍➡,facing | fast | hurry | marathon,person activity
+🏃‍♀‍➡,woman running right | running | fast | race,person activity
 🏃‍♂,man running | fast | hurry | man,person activity
-🏃‍♂‍➡,facing | fast | hurry | man,person activity
-🏃‍➡,facing | fast | hurry | marathon,person activity
+🏃‍♂‍➡,man running right | running | fast | race,person activity
+🏃‍➡,person running right | running | fast | race,person activity
 🏄,person surfing | beach | ocean | sport,person sport
 🏄‍♀,woman surfing | beach | ocean | sport,person sport
 🏄‍♂,man surfing | beach | man | ocean,person sport
@@ -636,8 +636,8 @@ emoji,words,category
 🏈,american football | american | ball | bowl,sport
 🏉,rugby football | ball | football | rugby,sport
 🏊,person swimming | freestyle | sport | swim,person sport
-🏊‍♀,woman swimming | freestyle | man | sport,person sport
-🏊‍♂,man swimming | freestyle | man | sport,person sport
+🏊‍♀,woman swimming | freestyle | swim | sport,person sport
+🏊‍♂,man swimming | freestyle | swim | sport,person sport
 🏋,person lifting weights | barbell | bodybuilder | deadlift,person sport
 🏋‍♀,woman lifting weights | barbell | bodybuilder | deadlift,person sport
 🏋‍♂,man lifting weights | barbell | bodybuilder | deadlift,person sport
@@ -663,9 +663,9 @@ emoji,words,category
 🏝,desert island | desert | island,place geographic
 🏞,national park | national | park,place geographic
 🏟,stadium,place building
-🏠,house | building | country | heart,place building
-🏡,house with garden | building | country | garden,place building
-🏢,office building | building | city | cubical,place building
+🏠,house | home | building | family,place building
+🏡,house with garden | home | garden | yard,place building
+🏢,office building | office | building | work,place building
 🏣,japanese post office | building | japanese | office,place building
 🏤,post office | building | european | office,place building
 🏥,hospital | building | doctor | medicine,place building
@@ -677,22 +677,22 @@ emoji,words,category
 🏫,school | building,place building
 🏬,department store | building | department | store,place building
 🏭,factory | building,place building
-🏮,red paper lantern | bar | lantern | light,light and video
+🏮,red paper lantern | lantern | light | paper,light and video
 🏯,japanese castle | building | castle | japanese,place building
 🏰,castle | building | european,place building
 🏳,white flag | waving | white,flag
-🏳‍⚧,transgender flag | blue | light | pink,flag
-🏳‍🌈,rainbow flag | bisexual | gay | genderqueer,flag
+🏳‍⚧,transgender flag | blue | pink | white,flag
+🏳‍🌈,rainbow flag | rainbow | pride | flag,flag
 🏴,black flag | black | waving,flag
 🏴󠁧󠁢󠁥󠁮󠁧󠁿,england,subdivision flag
 🏴󠁧󠁢󠁳󠁣󠁴󠁿,scotland,subdivision flag
 🏴󠁧󠁢󠁷󠁬󠁳󠁿,wales,subdivision flag
-🏴‍☠,pirate flag | jolly | pirate | plunder,flag
+🏴‍☠,pirate flag | jolly | pirate | treasure,flag
 🏵,rosette | plant,plant flower
 🏷,label | tag,book paper
 🏸,badminton | birdie | game | racquet,sport
 🏹,bow and arrow | archer | archery | arrow,tool
-🏺,amphora | aquarius | cooking | drink,dishware
+🏺,amphora | jar | pottery | vase,dishware
 🐀,rat | animal,animal mammal
 🐁,mouse | animal | animals,animal mammal
 🐂,ox | animal | animals | bull,animal mammal
@@ -706,15 +706,15 @@ emoji,words,category
 🐉,dragon | animal | fairy | fairytale,animal reptile
 🐊,crocodile | animal | zoo,animal reptile
 🐋,whale | animal | beach | ocean,animal marine
-🐌,snail | animal | escargot | garden,animal bug
-🐍,snake | animal | bearer | ophiuchus,animal reptile
+🐌,snail | shell | garden | slow,animal bug
+🐍,snake | reptile | slither | animal,animal reptile
 🐎,horse | animal | equestrian | farm,animal mammal
 🐏,ram | animal | aries | horns,animal mammal
 🐐,goat | animal | capricorn | farm,animal mammal
 🐑,ewe | animal | baa | farm,animal mammal
 🐒,monkey | animal | banana,animal mammal
-🐓,rooster | animal | bird | ornithology,animal bird
-🐔,chicken | animal | bird | ornithology,animal bird
+🐓,rooster | bird | farm | chicken,animal bird
+🐔,chicken | bird | farm | hen,animal bird
 🐕,dog | animal | animals | dogs,animal mammal
 🐕‍🦺,service dog | accessibility | animal | assistance,animal mammal
 🐖,pig | animal | bacon | farm,animal mammal
@@ -726,16 +726,16 @@ emoji,words,category
 🐜,ant | animal | garden | insect,animal bug
 🐝,honeybee | animal | bee | bumblebee,animal bug
 🐞,lady beetle | animal | beetle | garden,animal bug
-🐟,fish | animal | dinner | fishes,animal marine
+🐟,fish | animal | ocean | swimming,animal marine
 🐠,tropical fish | animal | fish | fishes,animal marine
 🐡,blowfish | animal | fish,animal marine
 🐢,turtle | animal | terrapin | tortoise,animal reptile
 🐣,hatching chick | animal | baby | bird,animal bird
 🐤,baby chick | animal | baby | bird,animal bird
 🐥,front-facing baby chick | animal | baby | bird,animal bird
-🐦,bird | animal | ornithology,animal bird
+🐦,bird | animal | wings | fly,animal bird
 🐦‍⬛,black bird | animal | beak | bird,animal bird
-🐦‍🔥,phoenix | ascend | ascension | emerge,animal bird
+🐦‍🔥,phoenix | firebird | rebirth | legend,animal bird
 🐧,penguin | animal | antarctica | bird,animal bird
 🐨,koala | animal | australia | bear,animal mammal
 🐩,poodle | animal | dog | fluffy,animal mammal
@@ -751,7 +751,7 @@ emoji,words,category
 🐳,spouting whale | animal | beach | face,animal marine
 🐴,horse face | animal | dressage | equine,animal mammal
 🐵,monkey face | animal | banana | face,animal mammal
-🐶,dog face | adorbs | animal | dog,animal mammal
+🐶,dog face | dog | puppy | pet,animal mammal
 🐷,pig face | animal | bacon | face,animal mammal
 🐸,frog | animal | face,animal amphibian
 🐹,hamster | animal | face | pet,animal mammal
@@ -766,22 +766,22 @@ emoji,words,category
 👁,eye | one | body,body parts
 👁‍🗨,eye in speech bubble | balloon | bubble | eye,emotion
 👂,ear | body | ears | hear,body parts
-👃,nose | body | noses | nosey,body parts
+👃,nose | body | smell | noses,body parts
 👄,mouth | beauty | body | kiss,body parts
 👅,tongue | body | lick | slurp,body parts
 👆,backhand index pointing up | backhand | finger | hand,hand single finger
 👇,backhand index pointing down | backhand | down | finger,hand single finger
 👈,backhand index pointing left | backhand | finger | hand,hand single finger
 👉,backhand index pointing right | backhand | finger | hand,hand single finger
-👊,oncoming fist | absolutely | agree | boom,hand fingers closed
-👋,waving hand | bye | cya | g2g,hand fingers open
-👌,ok hand | awesome | bet | dope,hand fingers partial
+👊,oncoming fist | fist | punch | hand,hand fingers closed
+👋,waving hand | hello | hi | wave,hand fingers open
+👌,ok hand | okay | hand | signal,hand fingers partial
 👍,thumbs up | good | hand | like,hand fingers closed
 👎,thumbs down | bad | dislike | down,hand fingers closed
-👏,clapping hands | applause | approval | awesome,hands
+👏,clapping hands | applause | clap | cheer,hands
 👐,open hands | hand | hands | hug,hands
-👑,crown | clothing | family | king,clothing
-👒,clothes | clothing | garden | hat,clothing
+👑,crown | king | queen | royal,clothing
+👒,womans hat | hat | clothing | fashion,clothing
 👓,glasses | clothing | eye | eyeglasses,clothing
 👔,necktie | clothing | employed | serious,clothing
 👕,t-shirt | blue | casual | clothes,clothing
@@ -793,22 +793,22 @@ emoji,words,category
 👛,purse | clothes | clothing | coin,clothing
 👜,handbag | bag | clothes | clothing,clothing
 👝,clutch bag | bag | clothes | clothing,clothing
-👞,brown | clothes | clothing | feet,clothing
+👞,mans shoe | shoe | leather | foot,clothing
 👟,running shoe | athletic | clothes | clothing,clothing
 👠,high-heeled shoe | clothes | clothing | dress,clothing
-👡,clothing | sandal | shoe | woman,clothing
-👢,boot | clothes | clothing | dress,clothing
-👣,footprints | barefoot | clothing | footprint,person symbol
+👡,womans sandal | sandal | shoe | foot,clothing
+👢,womans boot | boot | shoe | foot,clothing
+👣,footprints | footprint | feet | walk,person symbol
 👤,bust in silhouette | bust | mysterious | shadow,person symbol
-👥,busts in silhouette | bff | bust | busts,person symbol
+👥,busts in silhouette | people | group | friends,person symbol
 👦,boy | bright-eyed | child | grandson,person
 👧,girl | bright-eyed | child | daughter,person
-👨,man | adult | bro,person
+👨,man | adult | person | male,person
 👨‍⚕,man health worker | doctor | health | healthcare,person role
 👨‍⚖,man judge | judge | justice | law,person role
 👨‍✈,man pilot | man | pilot | plane,person role
-👨‍❤‍👨,anniversary | babe | bae | couple,family
-👨‍❤‍💋‍👨,anniversary | babe | bae | couple,family
+👨‍❤‍👨,men couple with heart | couple | heart | love,family
+👨‍❤‍💋‍👨,men kiss | couple | kiss | love,family
 👨‍🌾,man farmer | farmer | gardener | man,person role
 👨‍🍳,man cook | chef | cook | man,person role
 👨‍🍼,man feeding baby | baby | dad | father,person role
@@ -817,45 +817,45 @@ emoji,words,category
 👨‍🎨,man artist | artist | man | palette,person role
 👨‍🏫,man teacher | instructor | lecturer | man,person role
 👨‍🏭,man factory worker | assembly | factory | industrial,person role
-👨‍👦,boy | child | family | man,family
-👨‍👦‍👦,boy | child | family | man,family
-👨‍👧,child | family | girl | man,family
-👨‍👧‍👦,boy | child | family | girl,family
-👨‍👧‍👧,child | family | girl | man,family
-👨‍👨‍👦,boy | child | family | man,family
-👨‍👨‍👦‍👦,boy | child | family | man,family
-👨‍👨‍👧,child | family | girl | man,family
-👨‍👨‍👧‍👦,boy | child | family | girl,family
-👨‍👨‍👧‍👧,child | family | girl | man,family
-👨‍👩‍👦,boy | child | family | man,family
-👨‍👩‍👦‍👦,boy | child | family | man,family
-👨‍👩‍👧,child | family | girl | man,family
-👨‍👩‍👧‍👦,boy | child | family | girl,family
-👨‍👩‍👧‍👧,child | family | girl | man,family
+👨‍👦,family man boy | family | father | son,family
+👨‍👦‍👦,family man boys | family | father | children,family
+👨‍👧,family man girl | family | father | daughter,family
+👨‍👧‍👦,family man girl boy | family | father | children,family
+👨‍👧‍👧,family man girls | family | father | children,family
+👨‍👨‍👦,family men boy | family | parents | child,family
+👨‍👨‍👦‍👦,family men boys | family | parents | children,family
+👨‍👨‍👧,family men girl | family | parents | child,family
+👨‍👨‍👧‍👦,family men girl boy | family | parents | children,family
+👨‍👨‍👧‍👧,family men girls | family | parents | children,family
+👨‍👩‍👦,family man woman boy | family | parents | child,family
+👨‍👩‍👦‍👦,family man woman boys | family | parents | children,family
+👨‍👩‍👧,family man woman girl | family | parents | child,family
+👨‍👩‍👧‍👦,family man woman girl boy | family | parents | children,family
+👨‍👩‍👧‍👧,family man woman girls | family | parents | children,family
 👨‍💻,man technologist | coder | computer | developer,person role
 👨‍💼,man office worker | architect | business | man,person role
 👨‍🔧,man mechanic | electrician | man | mechanic,person role
 👨‍🔬,man scientist | biologist | chemist | engineer,person role
 👨‍🦯,man with white cane | accessibility | blind | cane,person activity
-👨‍🦯‍➡,accessibility | blind | cane | facing,person activity
-👨‍🦰,adult | bro | man | red hair,person
-👨‍🦱,adult | bro | curly hair | man,person
-👨‍🦲,adult | bald | bro | man,person
-👨‍🦳,adult | bro | man | white hair,person
+👨‍🦯‍➡,man with white cane right | blind | cane | accessibility,person activity
+👨‍🦰,man red hair | man | red hair | adult,person
+👨‍🦱,man curly hair | man | curly hair | adult,person
+👨‍🦲,man bald | man | bald | adult,person
+👨‍🦳,man white hair | man | white hair | adult,person
 👨‍🦼,man in motorized wheelchair | accessibility | man | motorized,person activity
-👨‍🦼‍➡,accessibility | facing | man | motorized,person activity
+👨‍🦼‍➡,man motorized wheelchair right | wheelchair | motorized | accessibility,person activity
 👨‍🦽,man in manual wheelchair | accessibility | man | manual,person activity
-👨‍🦽‍➡,accessibility | facing | man | manual,person activity
+👨‍🦽‍➡,man manual wheelchair right | wheelchair | manual | accessibility,person activity
 👨‍🚀,man astronaut | astronaut | man | rocket,person role
 👨‍🚒,man firefighter | fire | firefighter | firetruck,person role
 👩,woman | adult | lady,person
 👩‍⚕,woman health worker | doctor | health | healthcare,person role
 👩‍⚖,woman judge | judge | justice | law,person role
 👩‍✈,woman pilot | pilot | plane | woman,person role
-👩‍❤‍👨,anniversary | babe | bae | couple,family
-👩‍❤‍👩,anniversary | babe | bae | couple,family
-👩‍❤‍💋‍👨,anniversary | babe | bae | couple,family
-👩‍❤‍💋‍👩,anniversary | babe | bae | couple,family
+👩‍❤‍👨,couple woman man with heart | couple | heart | love,family
+👩‍❤‍👩,couple women with heart | couple | heart | love,family
+👩‍❤‍💋‍👨,kiss woman man | couple | kiss | love,family
+👩‍❤‍💋‍👩,kiss women | couple | kiss | love,family
 👩‍🌾,woman farmer | farmer | gardener | rancher,person role
 👩‍🍳,woman cook | chef | cook | woman,person role
 👩‍🍼,woman feeding baby | baby | feed | feeding,person role
@@ -864,55 +864,55 @@ emoji,words,category
 👩‍🎨,woman artist | artist | palette | woman,person role
 👩‍🏫,woman teacher | instructor | lecturer | professor,person role
 👩‍🏭,woman factory worker | assembly | factory | industrial,person role
-👩‍👦,boy | child | family | woman,family
-👩‍👦‍👦,boy | child | family | woman,family
-👩‍👧,child | family | girl | woman,family
-👩‍👧‍👦,boy | child | family | girl,family
-👩‍👧‍👧,child | family | girl | woman,family
-👩‍👩‍👦,boy | child | family | woman,family
-👩‍👩‍👦‍👦,boy | child | family | woman,family
-👩‍👩‍👧,child | family | girl | woman,family
-👩‍👩‍👧‍👦,boy | child | family | girl,family
-👩‍👩‍👧‍👧,child | family | girl | woman,family
+👩‍👦,family woman boy | family | mother | child,family
+👩‍👦‍👦,family woman boys | family | mother | children,family
+👩‍👧,family woman girl | family | mother | child,family
+👩‍👧‍👦,family woman girl boy | family | mother | children,family
+👩‍👧‍👧,family woman girls | family | mother | children,family
+👩‍👩‍👦,family women boy | family | parents | child,family
+👩‍👩‍👦‍👦,family women boys | family | parents | children,family
+👩‍👩‍👧,family women girl | family | parents | child,family
+👩‍👩‍👧‍👦,family women girl boy | family | parents | children,family
+👩‍👩‍👧‍👧,family women girls | family | parents | children,family
 👩‍💻,woman technologist | coder | computer | developer,person role
 👩‍💼,woman office worker | architect | business | manager,person role
 👩‍🔧,woman mechanic | electrician | mechanic | plumber,person role
 👩‍🔬,woman scientist | biologist | chemist | engineer,person role
 👩‍🦯,woman with white cane | accessibility | blind | cane,person activity
-👩‍🦯‍➡,accessibility | blind | cane | facing,person activity
-👩‍🦰,adult | lady | red hair | woman,person
-👩‍🦱,adult | curly hair | lady | woman,person
-👩‍🦲,adult | bald | lady | woman,person
-👩‍🦳,adult | lady | white hair | woman,person
+👩‍🦯‍➡,woman with white cane right | blind | cane | accessibility,person activity
+👩‍🦰,woman red hair | woman | red hair | adult,person
+👩‍🦱,woman curly hair | woman | curly hair | adult,person
+👩‍🦲,woman bald | woman | bald | adult,person
+👩‍🦳,woman white hair | woman | white hair | adult,person
 👩‍🦼,woman in motorized wheelchair | accessibility | motorized | wheelchair,person activity
-👩‍🦼‍➡,accessibility | facing | motorized | right,person activity
+👩‍🦼‍➡,woman motorized wheelchair right | wheelchair | motorized | accessibility,person activity
 👩‍🦽,woman in manual wheelchair | accessibility | manual | wheelchair,person activity
-👩‍🦽‍➡,accessibility | facing | manual | right,person activity
+👩‍🦽‍➡,woman manual wheelchair right | wheelchair | manual | accessibility,person activity
 👩‍🚀,woman astronaut | astronaut | rocket | space,person role
 👩‍🚒,woman firefighter | fire | firefighter | firetruck,person role
 👪,family | child,person symbol
-👫,woman and man holding hands | bae | bestie | bff,family
-👬,men holding hands | bae | bestie | bff,family
-👭,women holding hands | bae | bestie | bff,family
-👮,police officer | apprehend | arrest | citation,person role
-👮‍♀,woman police officer | apprehend | arrest | citation,person role
-👮‍♂,man police officer | apprehend | arrest | citation,person role
-👯,people with bunny ears | bestie | bff | bunny,person activity
-👯‍♀,women with bunny ears | bestie | bff | bunny,person activity
-👯‍♂,men with bunny ears | bestie | bff | bunny,person activity
+👫,woman and man holding hands | couple | friends | hand,family
+👬,men holding hands | couple | friends | hand,family
+👭,women holding hands | couple | friends | hand,family
+👮,police officer | police | officer | law,person role
+👮‍♀,woman police officer | police | officer | law,person role
+👮‍♂,man police officer | police | officer | law,person role
+👯,people with bunny ears | bunny | dance | party,person activity
+👯‍♀,women with bunny ears | bunny | dance | party,person activity
+👯‍♂,men with bunny ears | bunny | dance | party,person activity
 👰,person with veil | veil | wedding,person role
 👰‍♀,woman with veil | bride | veil | wedding,person role
 👰‍♂,man with veil | man | veil | wedding,person role
 👱,blond | blond hair | blond-haired | human,person
 👱‍♀,blond | blond-haired | blonde | hair,person
 👱‍♂,blond | blond-haired | hair | man,person
-👲,person with skullcap | cap | chinese | gua,person role
+👲,person with skullcap | cap | hat | skullcap,person role
 👳,person wearing turban | turban | wearing,person role
 👳‍♀,woman wearing turban | turban | wearing | woman,person role
 👳‍♂,man wearing turban | man | turban | wearing,person role
 👴,old man | adult | bald | elderly,person
 👵,old woman | adult | elderly | grandma,person
-👶,baby | babies | children | goo,person
+👶,baby | infant | newborn | child,person
 👷,construction worker | build | construction | fix,person role
 👷‍♀,woman construction worker | build | construction | fix,person role
 👷‍♂,man construction worker | build | construction | fix,person role
@@ -947,22 +947,22 @@ emoji,words,category
 💌,love letter | heart | letter | love,heart
 💍,ring | diamond | engaged | engagement,clothing
 💎,gem stone | diamond | engagement | gem,clothing
-💏,kiss | anniversary | babe | bae,family
+💏,kiss | couple | love | heart,family
 💐,bouquet | anniversary | birthday | date,plant flower
-💑,couple with heart | anniversary | babe | bae,family
+💑,couple with heart | couple | love | romance,family
 💒,wedding | chapel | hitched | nuptials,place building
 💓,beating heart | beating | cardio | emotion,heart
 💔,broken heart | break | broken | crushed,heart
 💕,two hearts | anniversary | date | dating,heart
 💖,sparkling heart | emotion | excited | good,heart
 💗,growing heart | emotion | excited | growing,heart
-💘,heart with arrow | adorbs | arrow | cupid,heart
+💘,heart with arrow | arrow | cupid | love,heart
 💙,blue heart | blue | emotion | heart,heart
 💚,green heart | emotion | green | heart,heart
 💛,yellow heart | cardiac | emotion | heart,heart
 💜,purple heart | bestest | emotion | heart,heart
 💝,heart with ribbon | anniversary | emotion | heart,heart
-💞,revolving hearts | adorbs | anniversary | emotion,heart
+💞,revolving hearts | hearts | love | emotion,heart
 💟,heart decoration | decoration | emotion | heart,heart
 💠,diamond with a dot | comic | diamond | dot,geometric
 💡,light bulb | bulb | comic | electric,light and video
@@ -1122,7 +1122,7 @@ emoji,words,category
 🔼,upwards button | arrow | red | up,av symbol
 🔽,downwards button | arrow | down | downwards,av symbol
 🕉,om | hindu | religion,religion
-🕊,dove | bird | fly | ornithology,animal bird
+🕊,dove | bird | fly | peace,animal bird
 🕋,kaaba | hajj | islam | muslim,place religious
 🕌,mosque | islam | masjid | muslim,place religious
 🕍,synagogue | jew | jewish | judaism,place religious
@@ -1315,7 +1315,7 @@ emoji,words,category
 🥱,yawning | bedtime | bored | face,face concerned
 🥲,smiling face with tear | face | glad | grateful,face affection
 🥳,partying | bday | birthday | celebrate,face hat
-🥴,woozy | dizzy | drunk | eyes,face unwell
+🥴,woozy | dizzy | face | tired,face unwell
 🥵,hot | dying | face | feverish,face unwell
 🥶,cold | blue | blue-faced | face,face unwell
 🥷,ninja | assassin | fight | fighter,person role
@@ -1332,11 +1332,11 @@ emoji,words,category
 🦂,scorpion | scorpio | scorpius | zodiac,animal bug
 🦃,turkey | bird | gobble | thanksgiving,animal bird
 🦄,unicorn | face,animal mammal
-🦅,eagle | animal | bird | ornithology,animal bird
-🦆,duck | animal | bird | ornithology,animal bird
+🦅,eagle | animal | bird | wings,animal bird
+🦆,duck | animal | bird | pond,animal bird
 🦇,bat | animal | vampire,animal mammal
 🦈,shark | animal | fish,animal marine
-🦉,owl | animal | bird | ornithology,animal bird
+🦉,owl | animal | bird | night,animal bird
 🦊,fox | animal | face,animal mammal
 🦋,butterfly | insect | pretty,animal bug
 🦌,deer | animal,animal mammal
@@ -1355,7 +1355,7 @@ emoji,words,category
 🦙,llama | alpaca | animal | guanaco,animal mammal
 🦚,peacock | animal | bird | colorful,animal bird
 🦛,hippopotamus | animal | hippo,animal mammal
-🦜,parrot | animal | bird | ornithology,animal bird
+🦜,parrot | animal | bird | tropical,animal bird
 🦝,raccoon | animal | curious | sly,animal mammal
 🦞,lobster | animal | bisque | claws,animal marine
 🦟,mosquito | bite | disease | fever,animal bug
@@ -1434,7 +1434,7 @@ emoji,words,category
 🧑‍💼,office worker | architect | business | manager,person role
 🧑‍🔧,mechanic | electrician | plumber | tradesperson,person role
 🧑‍🔬,scientist | biologist | chemist | engineer,person role
-🧑‍🤝‍🧑,people holding hands | bae | bestie | bff,family
+🧑‍🤝‍🧑,people holding hands | friends | hand | together,family
 🧑‍🦯,person with white cane | accessibility | blind | cane,person activity
 🧑‍🦯‍➡,accessibility | blind | cane | facing,person activity
 🧑‍🦰,adult | red hair,person
@@ -1470,7 +1470,7 @@ emoji,words,category
 🧙,mage | fantasy | magic | play,person fantasy
 🧙‍♀,woman mage | fantasy | mage | magic,person fantasy
 🧙‍♂,man mage | fantasy | mage | magic,person fantasy
-🧚,fairy | fairytale | fantasy | myth,person fantasy
+🧚,fairy | magic | fantasy | wings,person fantasy
 🧚‍♀,woman fairy | fairy | fairytale | fantasy,person fantasy
 🧚‍♂,man fairy | fairy | fairytale | fantasy,person fantasy
 🧛,vampire | blood | dracula | fangs,person fantasy
@@ -1653,7 +1653,7 @@ emoji,words,category
 😊,smiling face with smiling eyes | blush | eye | eyes,face smiling
 😋,face savoring food | delicious | eat | face,face tongue
 😌,relieved | calm | face | peace,face sleepy
-😍,smiling face with heart-eyes | bae | eye | face,face affection
+😍,smiling face with heart-eyes | eyes | love | face,face affection
 😎,smiling face with sunglasses | awesome | beach | bright,face glasses
 😏,smirking | boss | dapper | face,face neutral skeptical
 😐,neutral | awkward | blank | deadpan,face neutral skeptical
@@ -1664,9 +1664,9 @@ emoji,words,category
 😕,confused | befuddled | confusing | dunno,face concerned
 😖,confounded | annoyed | confused | cringe,face concerned
 😗,kissing | date | dating | face,face affection
-😘,face blowing a kiss | adorbs | bae | blowing,face affection
+😘,face blowing a kiss | kiss | blowing | love,face affection
 😙,kissing face with smiling eyes | closed | date | dating,face affection
-😚,kissing face with closed eyes | bae | blush | closed,face affection
+😚,kissing face with closed eyes | kiss | blush | closed,face affection
 😛,face with tongue | awesome | cool | face,face tongue
 😜,winking face with tongue | crazy | epic | eye,face tongue
 😝,squinting face with tongue | closed | eye | eyes,face tongue
