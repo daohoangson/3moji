@@ -153,8 +153,14 @@ export function GameScreen({
             <button
               key={`${item.id}-${item.status}`}
               onPointerDown={(e) => {
-                if (!isClickable) return;
+                // Fire on touch contact for toddler-friendly instant response;
+                // mouse/keyboard/AT clicks are handled by onClick below
+                if (!isClickable || e.pointerType !== "touch") return;
                 e.preventDefault();
+                onItemClick(item.id);
+              }}
+              onClick={() => {
+                if (!isClickable) return;
                 onItemClick(item.id);
               }}
               disabled={isWrong || hasCorrectAnswer}
