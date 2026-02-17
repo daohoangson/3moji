@@ -152,18 +152,30 @@ export function GameScreen({
         {items.map((item, index) => {
           const isWrong = item.status === "wrong";
           const isCorrect = item.status === "correct";
+          const isClickable =
+            !isWrong && !isCorrect && !hasCorrectAnswer;
 
           return (
             <button
               key={`${item.id}-${item.status}`}
-              onClick={() => onItemClick(item.id)}
+              onPointerDown={(e) => {
+                // Fire on touch contact for toddler-friendly instant response;
+                // mouse/keyboard/AT clicks are handled by onClick below
+                if (!isClickable || e.pointerType !== "touch") return;
+                e.preventDefault();
+                onItemClick(item.id);
+              }}
+              onClick={() => {
+                if (!isClickable) return;
+                onItemClick(item.id);
+              }}
               disabled={isWrong || hasCorrectAnswer}
               aria-label={`Option: ${item.value}`}
               style={{
                 animationDelay:
                   item.status === "normal" ? `${index * 150}ms` : "0ms",
               }}
-              className={`relative min-h-0 min-w-0 flex-1 cursor-pointer touch-manipulation overflow-hidden rounded-3xl border-b-[8px] focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px] ${
+              className={`relative min-h-0 min-w-0 flex-1 cursor-pointer touch-none overflow-hidden rounded-3xl border-b-[8px] focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px] ${
                 isWrong
                   ? "cursor-not-allowed border-transparent bg-slate-100 opacity-50 shadow-none grayscale"
                   : "transform transition-all duration-300"
@@ -172,7 +184,7 @@ export function GameScreen({
                   ? "animate-pop-in border-slate-200 bg-white shadow-xl"
                   : ""
               } ${
-                !isWrong && !isCorrect && !hasCorrectAnswer
+                isClickable
                   ? "hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl focus:ring-4 focus:ring-sky-500/30 active:translate-y-0 active:scale-[0.98] active:border-b-4"
                   : ""
               } ${
