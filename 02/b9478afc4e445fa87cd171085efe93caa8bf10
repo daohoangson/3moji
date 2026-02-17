@@ -1,0 +1,23 @@
+components/GameScreen.tsx
+  07c07927642f57a1 3,61,150-151,156-170,177,186
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "02b9478afc4e445fa87cd171085efe93caa8bf10",
+  "prompts": {
+    "07c07927642f57a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "322d95a9-8704-494d-be63-be664a2d1930",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 21,
+      "total_deletions": 4,
+      "accepted_lines": 21,
+      "overriden_lines": 0
+    }
+  }
+}
