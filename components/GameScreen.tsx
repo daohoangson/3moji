@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { isSpeechAvailable, speakWord } from "@/lib/speech";
 import { playPopSound } from "@/lib/audio";
@@ -58,7 +58,6 @@ export function GameScreen({
   const hasCorrectAnswer = items.some((item) => item.status === "correct");
   const { soundEnabled } = useSoundSettings();
   const router = useRouter();
-  const pressedRef = useRef<string | null>(null);
 
   // Keyboard navigation
   useEffect(() => {
@@ -156,17 +155,7 @@ export function GameScreen({
               onPointerDown={(e) => {
                 if (!isClickable) return;
                 e.preventDefault();
-                pressedRef.current = item.id;
                 onItemClick(item.id);
-              }}
-              onPointerUp={() => {
-                pressedRef.current = null;
-              }}
-              onPointerCancel={() => {
-                pressedRef.current = null;
-              }}
-              onPointerLeave={() => {
-                pressedRef.current = null;
               }}
               disabled={isWrong || hasCorrectAnswer}
               aria-label={`Option: ${item.value}`}
