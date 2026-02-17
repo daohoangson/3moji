@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { LoadingScreen } from "@/components";
 import { generateGameContent } from "@/lib/game-content";
+import { validateWordInput } from "@/lib/schema";
 import { shuffle } from "@/lib/shuffle";
 import { getRandomSuggestions } from "@/lib/suggestions";
 import GameClient, { type GameItem } from "./game";
@@ -22,7 +23,22 @@ export default async function FindPage({ params }: PageProps) {
 }
 
 async function GameContent({ word }: { word: string }) {
-  const data = await generateGameContent(word);
+  const validation = validateWordInput(word);
+  if (!validation.success) {
+    return (
+      <div className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-gradient-to-b from-sky-200 to-sky-100 text-slate-900 select-none">
+        <p className="text-xl">Could not find game for &quot;{word}&quot;</p>
+        <Link
+          href="/"
+          className="rounded-full bg-sky-500 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-sky-600"
+        >
+          Try Another Word
+        </Link>
+      </div>
+    );
+  }
+
+  const data = await generateGameContent(validation.data);
 
   if (!data) {
     return (
