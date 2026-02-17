@@ -103,7 +103,6 @@ export default function TopicSession({
       <SessionProgress
         currentRound={currentRound}
         totalRounds={totalRounds}
-        topicIcon={topicIcon}
       />
 
       <GameScreen
