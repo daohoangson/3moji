@@ -99,7 +99,7 @@ export default function TopicSession({
   }
 
   return (
-    <div className="h-screen w-screen overflow-hidden text-slate-900 select-none">
+    <div className="h-dvh w-screen overflow-hidden text-slate-900 select-none">
       <SessionProgress
         currentRound={currentRound}
         totalRounds={totalRounds}

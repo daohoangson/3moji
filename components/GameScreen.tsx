@@ -59,6 +59,12 @@ export function GameScreen({
   const { soundEnabled } = useSoundSettings();
   const router = useRouter();
 
+  // Lock body scrolling on Android to prevent viewport overflow
+  useEffect(() => {
+    document.documentElement.classList.add("game-active");
+    return () => document.documentElement.classList.remove("game-active");
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -142,7 +148,7 @@ export function GameScreen({
       />
 
       {/* Game Area */}
-      <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-4 p-4 sm:gap-8 sm:p-8 landscape:flex-row">
+      <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-4 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:gap-8 sm:p-8 landscape:flex-row">
         {items.map((item, index) => {
           const isWrong = item.status === "wrong";
           const isCorrect = item.status === "correct";
