@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildSession } from "@/app/topics/[topicId]/play/session";
+import { buildSession } from "./build-session";
 import { getAllTopics } from "./index";
 import { DEFAULT_SESSION_LENGTH } from "./session";
 import type { TopicItem } from "./schema";
