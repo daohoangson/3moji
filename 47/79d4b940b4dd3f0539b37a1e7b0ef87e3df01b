@@ -1,0 +1,27 @@
+app/home-client.tsx
+  e12bf0571bf649ab 12-16,20,25
+components/TopicCard.tsx
+  e12bf0571bf649ab 7-13,17,54
+app/page.tsx
+  e12bf0571bf649ab 7-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "4779d4b940b4dd3f0539b37a1e7b0ef87e3df01b",
+  "prompts": {
+    "e12bf0571bf649ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e94724d5-d940-4722-810d-5df48a158447",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 21,
+      "total_deletions": 7,
+      "accepted_lines": 21,
+      "overriden_lines": 0
+    }
+  }
+}
