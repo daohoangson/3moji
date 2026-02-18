@@ -333,6 +333,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "awe",
           "shock",
           "surprise",
+          "over",
         ],
         keywords: [
           "disbelief",
@@ -532,7 +533,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🫨",
-        names: ["shaking face", "shaking", "daze", "vibrate"],
+        names: ["shaking face", "shaking", "daze", "vibrate", "panic"],
         keywords: ["crazy", "earthquake", "shock", "surprise", "whoa", "wow"],
       },
       {
@@ -577,7 +578,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "😷",
-        names: ["face with medical mask", "dermatologist", "germs", "doctor"],
+        names: [
+          "face with medical mask",
+          "dermatologist",
+          "germs",
+          "doctor",
+          "medical",
+        ],
         keywords: [
           "dentist",
           "doctor",
@@ -658,6 +665,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "tipsy",
           "uneven",
           "drunk",
+          "wavy",
         ],
         keywords: ["dizzy", "tired", "drunk"],
       },
@@ -802,7 +810,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "☹️",
-        names: ["frowning face", "frowning"],
+        names: ["frowning face", "frowning", "frown"],
         keywords: ["frown", "frowning"],
       },
       {
@@ -867,6 +875,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "resist",
           "tears",
           "cry",
+          "back",
         ],
         keywords: [
           "back",
@@ -1087,6 +1096,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "cursing",
           "cussing",
           "swearing",
+          "symbols",
         ],
         keywords: ["mad", "pissed"],
       },
@@ -1358,6 +1368,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "go",
           "gone",
           "gotta",
+          "dash",
         ],
         keywords: ["fast", "running", "smoke"],
       },
@@ -1434,28 +1445,8 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         keywords: [],
       },
       {
-        emoji: "🙂‍↔️",
-        names: ["head shaking horizontally", "horizontally"],
-        keywords: [],
-      },
-      {
-        emoji: "🙂‍↕️",
-        names: ["head shaking vertically", "nod", "vertically", "yes"],
-        keywords: [],
-      },
-      {
         emoji: "😵‍💫",
         names: ["face with spiral eyes", "hypnotized", "trouble"],
-        keywords: [],
-      },
-      {
-        emoji: "🫪",
-        names: ["distorted", "anxiety", "vulnerable", "panic"],
-        keywords: [],
-      },
-      {
-        emoji: "☠️",
-        names: ["skull and crossbones", "crossbones"],
         keywords: [],
       },
       {
@@ -1506,11 +1497,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       {
         emoji: "💫",
         names: ["dizzy"],
-        keywords: [],
-      },
-      {
-        emoji: "👁️‍🗨️",
-        names: ["eye in speech bubble", "witness"],
         keywords: [],
       },
     ],
@@ -2030,19 +2016,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "👱",
-        names: ["person: blond hair", "blond hair", "human"],
+        names: [
+          "person: blond hair",
+          "blond hair",
+          "human",
+          "blond",
+          "blond-haired",
+        ],
         keywords: [],
         emoji_alias: ["👱🏻", "👱🏼", "👱🏽", "👱🏾", "👱🏿"],
       },
       {
         emoji: "👨",
-        names: ["man"],
+        names: ["man", "person"],
         keywords: ["male", "adult", "bro"],
         emoji_alias: ["👨🏻", "👨🏼", "👨🏽", "👨🏾", "👨🏿"],
       },
       {
         emoji: "🧔",
-        names: ["person: beard", "whiskers"],
+        names: ["person: beard", "whiskers", "beard", "bearded"],
         keywords: [],
         emoji_alias: ["🧔🏻", "🧔🏼", "🧔🏽", "🧔🏾", "🧔🏿"],
       },
@@ -2060,7 +2052,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "👴",
-        names: ["old man", "gramps", "grandfather", "grandpa", "old"],
+        names: ["old man", "gramps", "grandfather", "grandpa", "old", "bald"],
         keywords: ["elderly", "adult", "old", "wise"],
         emoji_alias: ["👴🏻", "👴🏼", "👴🏽", "👴🏾", "👴🏿"],
       },
@@ -2085,7 +2077,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🙎",
-        names: ["person pouting", "downtrodden", "scowl", "sulk", "whine"],
+        names: [
+          "person pouting",
+          "downtrodden",
+          "scowl",
+          "sulk",
+          "whine",
+          "pouting",
+        ],
         keywords: ["disappointed", "frown", "grimace", "pouting", "upset"],
         emoji_alias: ["🙎🏻", "🙎🏼", "🙎🏽", "🙎🏾", "🙎🏿"],
       },
@@ -2097,7 +2096,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🙆",
-        names: ["person gesturing OK", "person gesturing ok", "exercise"],
+        names: [
+          "person gesturing OK",
+          "person gesturing ok",
+          "exercise",
+          "gesturing",
+          "ok",
+        ],
         keywords: ["OK"],
         emoji_alias: ["🙆🏻", "🙆🏼", "🙆🏽", "🙆🏾", "🙆🏿"],
       },
@@ -2110,19 +2115,20 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "gossip",
           "sassy",
           "seriously",
+          "tipping",
         ],
         keywords: ["flip", "sarcasm", "sarcastic"],
         emoji_alias: ["💁🏻", "💁🏼", "💁🏽", "💁🏾", "💁🏿"],
       },
       {
         emoji: "🙋",
-        names: ["person raising hand", "here", "know", "raise"],
+        names: ["person raising hand", "here", "know", "raise", "raising"],
         keywords: ["me", "pick", "question", "raising"],
         emoji_alias: ["🙋🏻", "🙋🏼", "🙋🏽", "🙋🏾", "🙋🏿"],
       },
       {
         emoji: "🧏",
-        names: ["deaf person"],
+        names: ["deaf person", "deaf"],
         keywords: ["accessibility", "ear", "hear"],
         emoji_alias: ["🧏🏻", "🧏🏼", "🧏🏽", "🧏🏾", "🧏🏿"],
       },
@@ -2136,13 +2142,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "meditate",
           "pity",
           "regret",
+          "bowing",
         ],
         keywords: ["ask", "beg", "bow", "meditation", "sorry"],
         emoji_alias: ["🙇🏻", "🙇🏼", "🙇🏽", "🙇🏾", "🙇🏿"],
       },
       {
         emoji: "🤦",
-        names: ["person facepalming", "bewilder", "exasperation"],
+        names: ["person facepalming", "bewilder", "exasperation", "facepalm"],
         keywords: ["again", "disbelief", "oh", "shock", "smh"],
         emoji_alias: ["🤦🏻", "🤦🏼", "🤦🏽", "🤦🏾", "🤦🏿"],
       },
@@ -2157,6 +2164,8 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "knows",
           "maybe",
           "who",
+          "shrug",
+          "shrugging",
         ],
         keywords: ["doubt", "dunno"],
         emoji_alias: ["🤷🏻", "🤷🏼", "🤷🏽", "🤷🏾", "🤷🏿"],
@@ -2820,7 +2829,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🧘",
-        names: ["person in lotus position", "legs", "legged", "yoga", "yogi"],
+        names: [
+          "person in lotus position",
+          "legs",
+          "legged",
+          "yoga",
+          "yogi",
+          "position",
+        ],
         keywords: [
           "cross",
           "lotus",
@@ -2857,201 +2873,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗣️",
         names: ["speaking head", "silhouette", "speak", "speaking"],
         keywords: ["head", "speak"],
-      },
-      {
-        emoji: "🧔‍♂️",
-        names: ["man: beard", "beard", "bearded"],
-        keywords: [],
-      },
-      {
-        emoji: "🧔‍♀️",
-        names: ["woman: beard"],
-        keywords: [],
-      },
-      {
-        emoji: "👨‍🦰",
-        names: ["man: red hair", "red hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👨‍🦱",
-        names: ["man: curly hair", "curly hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👨‍🦳",
-        names: ["man: white hair", "white hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👨‍🦲",
-        names: ["man: bald", "bald"],
-        keywords: [],
-      },
-      {
-        emoji: "👩‍🦰",
-        names: ["woman: red hair"],
-        keywords: [],
-      },
-      {
-        emoji: "🧑‍🦰",
-        names: ["person: red hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👩‍🦱",
-        names: ["woman: curly hair"],
-        keywords: [],
-      },
-      {
-        emoji: "🧑‍🦱",
-        names: ["person: curly hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👩‍🦳",
-        names: ["woman: white hair"],
-        keywords: [],
-      },
-      {
-        emoji: "🧑‍🦳",
-        names: ["person: white hair"],
-        keywords: [],
-      },
-      {
-        emoji: "👩‍🦲",
-        names: ["woman: bald"],
-        keywords: [],
-      },
-      {
-        emoji: "🧑‍🦲",
-        names: ["person: bald"],
-        keywords: [],
-      },
-      {
-        emoji: "👱‍♀️",
-        names: ["woman: blond hair", "blonde"],
-        keywords: [],
-      },
-      {
-        emoji: "👱‍♂️",
-        names: ["man: blond hair", "blond", "blond-haired"],
-        keywords: [],
-      },
-      {
-        emoji: "🙍‍♂️",
-        names: ["man frowning", "frown"],
-        keywords: [],
-      },
-      {
-        emoji: "🙍‍♀️",
-        names: ["woman frowning"],
-        keywords: [],
-      },
-      {
-        emoji: "🙎‍♂️",
-        names: ["man pouting", "pouting"],
-        keywords: [],
-      },
-      {
-        emoji: "🙎‍♀️",
-        names: ["woman pouting"],
-        keywords: [],
-      },
-      {
-        emoji: "🙅‍♂️",
-        names: ["man gesturing no"],
-        keywords: [],
-      },
-      {
-        emoji: "🙅‍♀️",
-        names: ["woman gesturing no"],
-        keywords: [],
-      },
-      {
-        emoji: "🙆‍♂️",
-        names: ["man gesturing ok", "gesturing"],
-        keywords: [],
-      },
-      {
-        emoji: "🙆‍♀️",
-        names: ["woman gesturing ok"],
-        keywords: [],
-      },
-      {
-        emoji: "💁‍♂️",
-        names: ["man tipping hand", "tipping"],
-        keywords: [],
-      },
-      {
-        emoji: "💁‍♀️",
-        names: ["woman tipping hand"],
-        keywords: [],
-      },
-      {
-        emoji: "🙋‍♂️",
-        names: ["man raising hand", "raising"],
-        keywords: [],
-      },
-      {
-        emoji: "🙋‍♀️",
-        names: ["woman raising hand"],
-        keywords: [],
-      },
-      {
-        emoji: "🧏‍♂️",
-        names: ["deaf man", "deaf"],
-        keywords: [],
-      },
-      {
-        emoji: "🧏‍♀️",
-        names: ["deaf woman"],
-        keywords: [],
-      },
-      {
-        emoji: "🙇‍♂️",
-        names: ["man bowing", "bowing"],
-        keywords: [],
-      },
-      {
-        emoji: "🙇‍♀️",
-        names: ["woman bowing"],
-        keywords: [],
-      },
-      {
-        emoji: "🤦‍♂️",
-        names: ["man facepalming", "facepalm"],
-        keywords: [],
-      },
-      {
-        emoji: "🤦‍♀️",
-        names: ["woman facepalming"],
-        keywords: [],
-      },
-      {
-        emoji: "🤷‍♂️",
-        names: ["man shrugging", "shrug", "shrugging"],
-        keywords: [],
-      },
-      {
-        emoji: "🤷‍♀️",
-        names: ["woman shrugging"],
-        keywords: [],
-      },
-      {
-        emoji: "🧘‍♂️",
-        names: ["man in lotus position", "position"],
-        keywords: [],
-      },
-      {
-        emoji: "🧘‍♀️",
-        names: ["woman in lotus position"],
-        keywords: [],
-      },
-      {
-        emoji: "🧑",
-        names: ["person"],
-        keywords: [],
       },
     ],
   },
@@ -3563,13 +3384,22 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🏌️",
-        names: ["person golfing", "caddy", "pga", "putt", "range", "tee"],
+        names: [
+          "person golfing",
+          "caddy",
+          "pga",
+          "putt",
+          "range",
+          "tee",
+          "golf",
+          "golfing",
+        ],
         keywords: ["birdie", "driving", "golf", "green"],
         emoji_alias: ["🏌🏻", "🏌🏼", "🏌🏽", "🏌🏾", "🏌🏿"],
       },
       {
         emoji: "🏄",
-        names: ["person surfing", "waves"],
+        names: ["person surfing", "waves", "surf", "surfing", "swell"],
         keywords: ["beach", "surf", "surfer", "surfing"],
         emoji_alias: ["🏄🏻", "🏄🏼", "🏄🏽", "🏄🏾", "🏄🏿"],
       },
@@ -3584,19 +3414,33 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "row",
           "rowboat",
           "paddle",
+          "rowing",
         ],
         keywords: ["boat", "canoe", "fishing", "lake", "paddle"],
         emoji_alias: ["🚣🏻", "🚣🏼", "🚣🏽", "🚣🏾", "🚣🏿"],
       },
       {
         emoji: "🏊",
-        names: ["person swimming", "freestyle", "swimmer", "triathlon"],
+        names: [
+          "person swimming",
+          "freestyle",
+          "swimmer",
+          "triathlon",
+          "swim",
+          "swimming",
+        ],
         keywords: ["swim", "swimming"],
         emoji_alias: ["🏊🏻", "🏊🏼", "🏊🏽", "🏊🏾", "🏊🏿"],
       },
       {
         emoji: "⛹️",
-        names: ["person bouncing ball", "championship", "dribble", "player"],
+        names: [
+          "person bouncing ball",
+          "championship",
+          "dribble",
+          "player",
+          "bouncing",
+        ],
         keywords: ["athletic", "basketball", "net", "throw"],
         emoji_alias: ["⛹🏻", "⛹🏼", "⛹🏽", "⛹🏾", "⛹🏿"],
       },
@@ -3609,13 +3453,16 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "lifter",
           "powerlifting",
           "weightlifter",
+          "lifting",
+          "weight",
+          "weights",
         ],
         keywords: ["bodybuilder", "workout"],
         emoji_alias: ["🏋🏻", "🏋🏼", "🏋🏽", "🏋🏾", "🏋🏿"],
       },
       {
         emoji: "🚴",
-        names: ["person biking", "riding"],
+        names: ["person biking", "riding", "biking"],
         keywords: [
           "bicycle",
           "bicyclist",
@@ -3644,7 +3491,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🤸",
-        names: ["person cartwheeling", "active", "gymnastics", "somersault"],
+        names: [
+          "person cartwheeling",
+          "active",
+          "gymnastics",
+          "somersault",
+          "cartwheel",
+          "cartwheeling",
+        ],
         keywords: ["excited", "flip"],
         emoji_alias: ["🤸🏻", "🤸🏼", "🤸🏽", "🤸🏾", "🤸🏿"],
       },
@@ -3658,13 +3512,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "people",
           "tournament",
           "wrestle",
+          "wrestling",
         ],
         keywords: ["people", "ring"],
         emoji_alias: ["🤼🏻", "🤼🏼", "🤼🏽", "🤼🏾", "🤼🏿"],
       },
       {
         emoji: "🤽",
-        names: ["person playing water polo"],
+        names: ["person playing water polo", "polo", "waterpolo"],
         keywords: ["playing", "swimming"],
         emoji_alias: ["🤽🏻", "🤽🏼", "🤽🏽", "🤽🏾", "🤽🏿"],
       },
@@ -3677,6 +3532,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "lob",
           "pitch",
           "toss",
+          "handball",
         ],
         keywords: ["athletics", "catch", "playing", "throw"],
         emoji_alias: ["🤾🏻", "🤾🏼", "🤾🏽", "🤾🏾", "🤾🏿"],
@@ -3690,6 +3546,8 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "juggle",
           "multitask",
           "skill",
+          "juggling",
+          "manage",
         ],
         keywords: ["balance", "handle"],
         emoji_alias: ["🤹🏻", "🤹🏼", "🤹🏽", "🤹🏾", "🤹🏿"],
@@ -3835,136 +3693,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥌",
         names: ["curling stone", "curling"],
         keywords: ["rock", "stone"],
-      },
-      {
-        emoji: "🏌️‍♂️",
-        names: ["man golfing", "golf", "golfing"],
-        keywords: [],
-      },
-      {
-        emoji: "🏌️‍♀️",
-        names: ["woman golfing"],
-        keywords: [],
-      },
-      {
-        emoji: "🏄‍♂️",
-        names: ["man surfing", "surf", "surfing", "swell"],
-        keywords: [],
-      },
-      {
-        emoji: "🏄‍♀️",
-        names: ["woman surfing"],
-        keywords: [],
-      },
-      {
-        emoji: "🚣‍♂️",
-        names: ["man rowing boat", "rowing"],
-        keywords: [],
-      },
-      {
-        emoji: "🚣‍♀️",
-        names: ["woman rowing boat"],
-        keywords: [],
-      },
-      {
-        emoji: "🏊‍♂️",
-        names: ["man swimming", "swim", "swimming"],
-        keywords: [],
-      },
-      {
-        emoji: "🏊‍♀️",
-        names: ["woman swimming"],
-        keywords: [],
-      },
-      {
-        emoji: "⛹️‍♂️",
-        names: ["man bouncing ball", "bouncing"],
-        keywords: [],
-      },
-      {
-        emoji: "⛹️‍♀️",
-        names: ["woman bouncing ball"],
-        keywords: [],
-      },
-      {
-        emoji: "🏋️‍♂️",
-        names: ["man lifting weights", "lifting", "weight", "weights"],
-        keywords: [],
-      },
-      {
-        emoji: "🏋️‍♀️",
-        names: ["woman lifting weights"],
-        keywords: [],
-      },
-      {
-        emoji: "🚴‍♂️",
-        names: ["man biking", "biking"],
-        keywords: [],
-      },
-      {
-        emoji: "🚴‍♀️",
-        names: ["woman biking"],
-        keywords: [],
-      },
-      {
-        emoji: "🚵‍♂️",
-        names: ["man mountain biking"],
-        keywords: [],
-      },
-      {
-        emoji: "🚵‍♀️",
-        names: ["woman mountain biking"],
-        keywords: [],
-      },
-      {
-        emoji: "🤸‍♂️",
-        names: ["man cartwheeling", "cartwheel", "cartwheeling"],
-        keywords: [],
-      },
-      {
-        emoji: "🤸‍♀️",
-        names: ["woman cartwheeling"],
-        keywords: [],
-      },
-      {
-        emoji: "🤼‍♂️",
-        names: ["men wrestling", "men", "wrestling"],
-        keywords: [],
-      },
-      {
-        emoji: "🤼‍♀️",
-        names: ["women wrestling", "women"],
-        keywords: [],
-      },
-      {
-        emoji: "🤽‍♂️",
-        names: ["man playing water polo", "polo", "waterpolo"],
-        keywords: [],
-      },
-      {
-        emoji: "🤽‍♀️",
-        names: ["woman playing water polo"],
-        keywords: [],
-      },
-      {
-        emoji: "🤾‍♂️",
-        names: ["man playing handball", "handball", "playing"],
-        keywords: [],
-      },
-      {
-        emoji: "🤾‍♀️",
-        names: ["woman playing handball"],
-        keywords: [],
-      },
-      {
-        emoji: "🤹‍♂️",
-        names: ["man juggling", "juggling", "manage"],
-        keywords: [],
-      },
-      {
-        emoji: "🤹‍♀️",
-        names: ["woman juggling"],
-        keywords: [],
       },
     ],
   },
@@ -4718,11 +4446,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         keywords: ["bacteria", "science", "virus"],
       },
       {
-        emoji: "🐕‍🦺",
-        names: ["service dog", "assistance", "service"],
-        keywords: [],
-      },
-      {
         emoji: "🐈‍⬛",
         names: ["black cat", "feline", "meow", "unlucky", "black"],
         keywords: [],
@@ -5167,20 +4890,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "vegetarian",
         ],
         keywords: ["garden", "root", "salad", "vegetable"],
-      },
-      {
-        emoji: "🍄‍🟫",
-        names: [
-          "brown mushroom",
-          "fungi",
-          "portobello",
-          "shiitake",
-          "shroom",
-          "spore",
-          "toppings",
-          "truffle",
-        ],
-        keywords: [],
       },
     ],
   },
@@ -5894,7 +5603,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🎥",
-        names: ["movie camera", "bollywood", "hollywood", "movie"],
+        names: ["movie camera", "bollywood", "hollywood", "movie", "record"],
         keywords: ["camera", "cinema", "film", "movie"],
       },
       {
@@ -6137,7 +5846,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "📥",
-        names: ["inbox tray", "inbox", "tray"],
+        names: ["inbox tray", "inbox", "tray", "zero"],
         keywords: ["email", "letter", "mail", "receive", "tray"],
       },
       {
@@ -6189,7 +5898,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🔑",
-        names: ["key", "keys", "major", "password"],
+        names: ["key", "keys", "major", "password", "unlock"],
         keywords: ["lock", "key"],
       },
       {
@@ -6199,7 +5908,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🚪",
-        names: ["door", "front"],
+        names: ["door", "front", "closet"],
         keywords: ["back"],
       },
       {
@@ -6390,6 +6099,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "identification",
           "license",
           "security",
+          "id",
         ],
         keywords: ["document"],
       },
@@ -6406,51 +6116,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       {
         emoji: "🥉",
         names: ["3rd place medal", "3rd", "bronze", "third"],
-        keywords: [],
-      },
-      {
-        emoji: "📲",
-        names: ["mobile phone with arrow", "call"],
-        keywords: [],
-      },
-      {
-        emoji: "📸",
-        names: ["camera with flash", "flash"],
-        keywords: [],
-      },
-      {
-        emoji: "💹",
-        names: ["chart increasing with yen", "market", "graph"],
-        keywords: [],
-      },
-      {
-        emoji: "📩",
-        names: ["envelope with arrow", "outgoing", "send"],
-        keywords: [],
-      },
-      {
-        emoji: "🔓",
-        names: ["unlocked", "cracked", "unlock"],
-        keywords: [],
-      },
-      {
-        emoji: "🔏",
-        names: ["locked with pen", "privacy", "ink"],
-        keywords: [],
-      },
-      {
-        emoji: "🔐",
-        names: ["locked with key", "secure"],
-        keywords: [],
-      },
-      {
-        emoji: "⚰️",
-        names: ["coffin"],
-        keywords: [],
-      },
-      {
-        emoji: "⚱️",
-        names: ["funeral urn", "ashes", "funeral", "urn"],
         keywords: [],
       },
     ],
@@ -6726,6 +6391,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "nyc",
           "statue",
           "york",
+          "new",
         ],
         keywords: ["statue", "Statue"],
       },
@@ -6786,7 +6452,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🌇",
-        names: ["sunset"],
+        names: ["sunset", "dusk"],
         keywords: ["sun"],
       },
       {
@@ -6801,7 +6467,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🛝",
-        names: ["playground slide", "playground", "slide", "sliding"],
+        names: ["playground slide", "playground", "slide", "sliding", "play"],
         keywords: ["amusement", "park", "play", "playing", "slide", "theme"],
       },
       {
@@ -6833,26 +6499,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧳",
         names: ["luggage", "packing", "suitcase"],
         keywords: ["roller", "bag"],
-      },
-      {
-        emoji: "🌃",
-        names: ["night with stars"],
-        keywords: [],
-      },
-      {
-        emoji: "🌄",
-        names: ["sunrise over mountains", "mountains", "over"],
-        keywords: [],
-      },
-      {
-        emoji: "🌆",
-        names: ["cityscape at dusk", "evening", "landscape", "dusk"],
-        keywords: [],
-      },
-      {
-        emoji: "♨️",
-        names: ["hot springs", "hotsprings", "springs"],
-        keywords: [],
       },
     ],
   },
@@ -7277,11 +6923,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         keywords: ["aliens", "flying", "UFO"],
       },
       {
-        emoji: "🚥",
-        names: ["horizontal traffic light", "horizontal"],
-        keywords: [],
-      },
-      {
         emoji: "⚓",
         names: ["anchor"],
         keywords: [],
@@ -7461,7 +7102,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
     items: [
       {
         emoji: "🌕",
-        names: ["full moon", "full"],
+        names: ["full moon", "full", "moon"],
         keywords: ["moon", "full"],
       },
       {
@@ -7586,7 +7227,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "⚡",
-        names: ["high voltage", "high", "thunderbolt", "voltage", "zap"],
+        names: [
+          "high voltage",
+          "high",
+          "thunderbolt",
+          "voltage",
+          "zap",
+          "lightning",
+        ],
         keywords: ["danger", "electric", "electricity", "high"],
       },
       {
@@ -7625,56 +7273,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         keywords: ["surf", "surfer", "surfing", "wave"],
       },
       {
-        emoji: "🌑",
-        names: ["new moon", "moon", "new"],
-        keywords: [],
-      },
-      {
-        emoji: "🌒",
-        names: ["waxing crescent moon"],
-        keywords: [],
-      },
-      {
-        emoji: "🌓",
-        names: ["first quarter moon", "first"],
-        keywords: [],
-      },
-      {
-        emoji: "🌔",
-        names: ["waxing gibbous moon", "gibbous", "waxing"],
-        keywords: [],
-      },
-      {
-        emoji: "🌖",
-        names: ["waning gibbous moon", "waning"],
-        keywords: [],
-      },
-      {
-        emoji: "🌗",
-        names: ["last quarter moon", "last", "quarter"],
-        keywords: [],
-      },
-      {
-        emoji: "🌘",
-        names: ["waning crescent moon"],
-        keywords: [],
-      },
-      {
-        emoji: "🌚",
-        names: ["new moon face"],
-        keywords: [],
-      },
-      {
-        emoji: "🌛",
-        names: ["first quarter moon face"],
-        keywords: [],
-      },
-      {
-        emoji: "🌜",
-        names: ["last quarter moon face"],
-        keywords: [],
-      },
-      {
         emoji: "🌝",
         names: ["full moon face"],
         keywords: [],
@@ -7692,16 +7290,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       {
         emoji: "🌨️",
         names: ["cloud with snow"],
-        keywords: [],
-      },
-      {
-        emoji: "🌩️",
-        names: ["cloud with lightning", "lightning"],
-        keywords: [],
-      },
-      {
-        emoji: "🌂",
-        names: ["closed umbrella"],
         keywords: [],
       },
       {
@@ -7741,7 +7329,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "✨",
-        names: ["sparkles", "*"],
+        names: ["sparkles", "*", "sparkle"],
         keywords: ["magic", "sparkle"],
       },
       {
@@ -7860,7 +7448,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🎱",
-        names: ["pool 8 ball", "8ball", "billiard", "pool"],
+        names: ["pool 8 ball", "8ball", "billiard", "pool", "8"],
         keywords: ["8", "eight", "pool"],
       },
       {
@@ -7970,7 +7558,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🎴",
-        names: ["flower playing cards", "cards"],
+        names: ["flower playing cards", "cards", "playing"],
         keywords: ["Japanese", "playing"],
       },
     ],
@@ -8378,7 +7966,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🔉",
-        names: ["speaker medium volume"],
+        names: ["speaker medium volume", "medium"],
         keywords: ["speaker", "medium", "volume"],
       },
       {
@@ -8527,11 +8115,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         names: ["harp"],
         keywords: ["cupid", "orchestra"],
       },
-      {
-        emoji: "🔕",
-        names: ["bell with slash", "slash"],
-        keywords: [],
-      },
     ],
   },
   {
@@ -8594,7 +8177,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "📃",
-        names: ["page with curl", "page"],
+        names: ["page with curl", "page", "curl"],
         keywords: ["document", "page", "paper"],
       },
       {
@@ -8789,16 +8372,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         names: ["wastebasket", "garbage", "trash", "waste"],
         keywords: ["can"],
       },
-      {
-        emoji: "📔",
-        names: [
-          "notebook with decorative cover",
-          "cover",
-          "decorated",
-          "decorative",
-        ],
-        keywords: [],
-      },
     ],
   },
   {
@@ -8924,11 +8497,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         keywords: ["garden", "hole", "snow", "spade"],
       },
       {
-        emoji: "⚒️",
-        names: ["hammer and pick"],
-        keywords: [],
-      },
-      {
         emoji: "⚔️",
         names: ["crossed swords", "swords"],
         keywords: [],
@@ -8936,16 +8504,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       {
         emoji: "⚙️",
         names: ["gear", "cog", "cogwheel"],
-        keywords: [],
-      },
-      {
-        emoji: "⚖️",
-        names: ["balance scale", "balance", "scale", "scales"],
-        keywords: [],
-      },
-      {
-        emoji: "⛓️‍💥",
-        names: ["broken chain", "breaking", "cuffs", "freedom", "break"],
         keywords: [],
       },
     ],
@@ -8980,7 +8538,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "📡",
-        names: ["satellite antenna"],
+        names: ["satellite antenna", "antenna"],
         keywords: ["aliens", "contact", "dish", "satellite", "science"],
       },
       {
@@ -9025,11 +8583,6 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🩻",
         names: ["x-ray", "xray", "x-quang"],
         keywords: ["bones", "medical", "doctor", "skeleton", "skull"],
-      },
-      {
-        emoji: "⚗️",
-        names: ["alembic"],
-        keywords: [],
       },
     ],
   },
@@ -9151,7 +8704,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "↩️",
-        names: ["right arrow curving left"],
+        names: ["right arrow curving left", "curving"],
         keywords: ["curving", "left", "right"],
       },
       {
@@ -9228,7 +8781,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "☮️",
-        names: ["peace symbol", "healing", "peaceful", "peace"],
+        names: ["peace symbol", "healing", "peaceful", "peace", "symbol"],
         keywords: ["peaceful", "peace", "symbol"],
       },
       {
@@ -9390,7 +8943,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "💲",
-        names: ["heavy dollar sign"],
+        names: ["heavy dollar sign", "heavy"],
         keywords: [
           "billion",
           "cash",
@@ -9411,6 +8964,9 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "completed",
           "fixed",
           "tick",
+          "check",
+          "checked",
+          "checkmark",
         ],
         keywords: ["button", "done", "mark"],
       },
@@ -9429,638 +8985,12 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🫟",
-        names: ["splatter", "holi", "mess", "paint", "stain"],
+        names: ["splatter", "holi", "mess", "paint", "stain", "ink"],
         keywords: ["drip", "liquid", "spill"],
-      },
-      {
-        emoji: "0️⃣",
-        names: ["0", "keycap: 0", "zero"],
-        keywords: [],
-      },
-      {
-        emoji: "1️⃣",
-        names: ["1", "keycap: 1"],
-        keywords: [],
-      },
-      {
-        emoji: "2️⃣",
-        names: ["2", "keycap: 2"],
-        keywords: [],
-      },
-      {
-        emoji: "3️⃣",
-        names: ["3", "keycap: 3"],
-        keywords: [],
-      },
-      {
-        emoji: "4️⃣",
-        names: ["4", "keycap: 4"],
-        keywords: [],
-      },
-      {
-        emoji: "5️⃣",
-        names: ["5", "keycap: 5"],
-        keywords: [],
-      },
-      {
-        emoji: "6️⃣",
-        names: ["6", "keycap: 6"],
-        keywords: [],
-      },
-      {
-        emoji: "7️⃣",
-        names: ["7", "keycap: 7"],
-        keywords: [],
-      },
-      {
-        emoji: "9️⃣",
-        names: ["9", "keycap: 9"],
-        keywords: [],
-      },
-      {
-        emoji: "🔞",
-        names: [
-          "18",
-          "no one under eighteen",
-          "age",
-          "eighteen",
-          "restriction",
-          "underage",
-        ],
-        keywords: [],
-      },
-      {
-        emoji: "🔢",
-        names: ["1234", "input numbers", "input", "numbers"],
-        keywords: [],
-      },
-      {
-        emoji: "🚮",
-        names: ["litter in bin sign", "bin", "litterbin"],
-        keywords: [],
-      },
-      {
-        emoji: "🚰",
-        names: ["potable water", "potable"],
-        keywords: [],
-      },
-      {
-        emoji: "♿",
-        names: ["wheelchair symbol", "access", "handicap"],
-        keywords: [],
-      },
-      {
-        emoji: "🚹",
-        names: ["men’s room", "men’s", "room", "lavatory"],
-        keywords: [],
-      },
-      {
-        emoji: "🚺",
-        names: ["women’s room", "women’s"],
-        keywords: [],
-      },
-      {
-        emoji: "🚻",
-        names: ["restroom"],
-        keywords: [],
-      },
-      {
-        emoji: "🚼",
-        names: ["baby symbol", "changing", "symbol"],
-        keywords: [],
-      },
-      {
-        emoji: "🚾",
-        names: ["water closet", "wc", "closet"],
-        keywords: [],
-      },
-      {
-        emoji: "🛂",
-        names: ["passport control", "passport"],
-        keywords: [],
-      },
-      {
-        emoji: "🛃",
-        names: ["customs"],
-        keywords: [],
-      },
-      {
-        emoji: "🛄",
-        names: [
-          "baggage claim",
-          "baggage",
-          "claim",
-          "journey",
-          "ready",
-          "trip",
-        ],
-        keywords: [],
-      },
-      {
-        emoji: "🛅",
-        names: ["left luggage", "locker"],
-        keywords: [],
-      },
-      {
-        emoji: "⚠️",
-        names: ["warning", "caution"],
-        keywords: [],
-      },
-      {
-        emoji: "📵",
-        names: ["no mobile phones", "phones"],
-        keywords: [],
-      },
-      {
-        emoji: "⤴️",
-        names: ["right arrow curving up", "curving"],
-        keywords: [],
-      },
-      {
-        emoji: "⤵️",
-        names: ["right arrow curving down"],
-        keywords: [],
-      },
-      {
-        emoji: "🔙",
-        names: ["back arrow", "back"],
-        keywords: [],
-      },
-      {
-        emoji: "🔚",
-        names: ["end arrow", "end"],
-        keywords: [],
-      },
-      {
-        emoji: "🔛",
-        names: ["on! arrow", "on!"],
-        keywords: [],
-      },
-      {
-        emoji: "🔜",
-        names: ["soon arrow", "brb", "soon"],
-        keywords: [],
-      },
-      {
-        emoji: "🔝",
-        names: ["top arrow"],
-        keywords: [],
-      },
-      {
-        emoji: "⚛️",
-        names: ["atom symbol", "atheist", "atom"],
-        keywords: [],
-      },
-      {
-        emoji: "🔀",
-        names: ["shuffle tracks button", "shuffle", "tracks"],
-        keywords: [],
-      },
-      {
-        emoji: "🔁",
-        names: ["repeat button", "repeat"],
-        keywords: [],
-      },
-      {
-        emoji: "🔂",
-        names: ["repeat single button", "once", "single"],
-        keywords: [],
-      },
-      {
-        emoji: "▶️",
-        names: ["play button", "play"],
-        keywords: [],
-      },
-      {
-        emoji: "⏩",
-        names: ["fast-forward button", "fast-forward", "forward"],
-        keywords: [],
-      },
-      {
-        emoji: "⏭️",
-        names: ["next track button", "next"],
-        keywords: [],
-      },
-      {
-        emoji: "⏯️",
-        names: ["play or pause button"],
-        keywords: [],
-      },
-      {
-        emoji: "◀️",
-        names: ["reverse button", "reverse"],
-        keywords: [],
-      },
-      {
-        emoji: "⏪",
-        names: ["fast reverse button", "rewind"],
-        keywords: [],
-      },
-      {
-        emoji: "⏮️",
-        names: ["last track button", "previous"],
-        keywords: [],
-      },
-      {
-        emoji: "🔼",
-        names: ["upwards button", "upwards"],
-        keywords: [],
-      },
-      {
-        emoji: "⏫",
-        names: ["fast up button", "fast"],
-        keywords: [],
-      },
-      {
-        emoji: "🔽",
-        names: ["downwards button", "downwards"],
-        keywords: [],
-      },
-      {
-        emoji: "⏬",
-        names: ["fast down button"],
-        keywords: [],
-      },
-      {
-        emoji: "⏸️",
-        names: ["pause button", "pause"],
-        keywords: [],
-      },
-      {
-        emoji: "⏹️",
-        names: ["stop button"],
-        keywords: [],
-      },
-      {
-        emoji: "⏺️",
-        names: ["record button", "record"],
-        keywords: [],
-      },
-      {
-        emoji: "⏏️",
-        names: ["eject button", "eject"],
-        keywords: [],
-      },
-      {
-        emoji: "🔅",
-        names: ["dim button", "dim"],
-        keywords: [],
-      },
-      {
-        emoji: "🔆",
-        names: ["bright button", "bright", "brightness"],
-        keywords: [],
-      },
-      {
-        emoji: "📶",
-        names: ["antenna bars", "bars", "antenna"],
-        keywords: [],
-      },
-      {
-        emoji: "📳",
-        names: ["vibration mode", "mode", "vibration"],
-        keywords: [],
-      },
-      {
-        emoji: "📴",
-        names: ["mobile phone off", "off"],
-        keywords: [],
-      },
-      {
-        emoji: "⚧️",
-        names: ["transgender symbol"],
-        keywords: [],
-      },
-      {
-        emoji: "🟰",
-        names: [
-          "heavy equals sign",
-          "answer",
-          "equal",
-          "equality",
-          "equals",
-          "heavy",
-        ],
-        keywords: [],
-      },
-      {
-        emoji: "♾️",
-        names: ["infinity", "forever", "unbounded", "universal"],
-        keywords: [],
-      },
-      {
-        emoji: "‼️",
-        names: ["double exclamation mark", "!!", "bangbang", "punctuation"],
-        keywords: [],
-      },
-      {
-        emoji: "⁉️",
-        names: ["exclamation question mark", "!?", "interrobang"],
-        keywords: [],
-      },
-      {
-        emoji: "〰️",
-        names: ["wavy dash", "dash", "wavy"],
-        keywords: [],
-      },
-      {
-        emoji: "⚕️",
-        names: ["medical symbol", "aesculapius", "staff", "medical"],
-        keywords: [],
       },
       {
         emoji: "♻️",
         names: ["recycling symbol", "recycle", "recycling"],
-        keywords: [],
-      },
-      {
-        emoji: "⚜️",
-        names: ["fleur-de-lis"],
-        keywords: [],
-      },
-      {
-        emoji: "🔱",
-        names: ["trident emblem", "emblem", "trident"],
-        keywords: [],
-      },
-      {
-        emoji: "📛",
-        names: ["name badge", "badge", "name"],
-        keywords: [],
-      },
-      {
-        emoji: "🔰",
-        names: ["japanese symbol for beginner", "beginner", "chevron"],
-        keywords: [],
-      },
-      {
-        emoji: "⭕",
-        names: ["hollow red circle", "hollow"],
-        keywords: [],
-      },
-      {
-        emoji: "☑️",
-        names: ["check box with check"],
-        keywords: [],
-      },
-      {
-        emoji: "✔️",
-        names: ["check mark", "check", "checked", "checkmark"],
-        keywords: [],
-      },
-      {
-        emoji: "❎",
-        names: ["cross mark button"],
-        keywords: [],
-      },
-      {
-        emoji: "➰",
-        names: ["curly loop", "curly", "loop", "curl"],
-        keywords: [],
-      },
-      {
-        emoji: "➿",
-        names: ["double curly loop", "double"],
-        keywords: [],
-      },
-      {
-        emoji: "〽️",
-        names: ["part alternation mark", "alternation", "part"],
-        keywords: [],
-      },
-      {
-        emoji: "✳️",
-        names: ["eight-spoked asterisk", "asterisk", "eight-spoked"],
-        keywords: [],
-      },
-      {
-        emoji: "✴️",
-        names: ["eight-pointed star", "eight-pointed"],
-        keywords: [],
-      },
-      {
-        emoji: "©️",
-        names: ["copyright"],
-        keywords: [],
-      },
-      {
-        emoji: "®️",
-        names: ["registered"],
-        keywords: [],
-      },
-      {
-        emoji: "™️",
-        names: ["trade mark", "tm", "trade", "trademark"],
-        keywords: [],
-      },
-      {
-        emoji: "*️⃣",
-        names: ["keycap: *", "keycap"],
-        keywords: [],
-      },
-      {
-        emoji: "8️⃣",
-        names: ["keycap: 8", "8"],
-        keywords: [],
-      },
-      {
-        emoji: "🔟",
-        names: ["keycap: 10"],
-        keywords: [],
-      },
-      {
-        emoji: "🔠",
-        names: ["input latin uppercase", "uppercase"],
-        keywords: [],
-      },
-      {
-        emoji: "🔡",
-        names: ["input latin lowercase", "lowercase"],
-        keywords: [],
-      },
-      {
-        emoji: "🔣",
-        names: ["input symbols", "&", "%", "♪", "〒", "symbols"],
-        keywords: [],
-      },
-      {
-        emoji: "🔤",
-        names: ["input latin letters", "abc", "alphabet", "letters"],
-        keywords: [],
-      },
-      {
-        emoji: "🅰️",
-        names: ["a button (blood type)", "type"],
-        keywords: [],
-      },
-      {
-        emoji: "🆎",
-        names: ["ab button (blood type)", "ab"],
-        keywords: [],
-      },
-      {
-        emoji: "🅱️",
-        names: ["b button (blood type)", "b"],
-        keywords: [],
-      },
-      {
-        emoji: "🆑",
-        names: ["cl button", "cl"],
-        keywords: [],
-      },
-      {
-        emoji: "🆒",
-        names: ["cool button", "cool"],
-        keywords: [],
-      },
-      {
-        emoji: "🆓",
-        names: ["free button", "free"],
-        keywords: [],
-      },
-      {
-        emoji: "ℹ️",
-        names: ["information"],
-        keywords: [],
-      },
-      {
-        emoji: "🆔",
-        names: ["id button", "identity", "id"],
-        keywords: [],
-      },
-      {
-        emoji: "Ⓜ️",
-        names: ["circled m", "circled", "m", "circle"],
-        keywords: [],
-      },
-      {
-        emoji: "🆕",
-        names: ["new button"],
-        keywords: [],
-      },
-      {
-        emoji: "🆖",
-        names: ["ng button", "ng"],
-        keywords: [],
-      },
-      {
-        emoji: "🅾️",
-        names: ["o button (blood type)", "o"],
-        keywords: [],
-      },
-      {
-        emoji: "🆗",
-        names: ["ok button", "okay", "ok"],
-        keywords: [],
-      },
-      {
-        emoji: "🅿️",
-        names: ["p button", "p", "parking", "button"],
-        keywords: [],
-      },
-      {
-        emoji: "🆘",
-        names: ["sos button", "sos"],
-        keywords: [],
-      },
-      {
-        emoji: "🆙",
-        names: ["up! button", "up!"],
-        keywords: [],
-      },
-      {
-        emoji: "🆚",
-        names: ["vs button", "versus", "vs"],
-        keywords: [],
-      },
-      {
-        emoji: "🈁",
-        names: ["japanese “here” button"],
-        keywords: [],
-      },
-      {
-        emoji: "🈂️",
-        names: ["japanese “service charge” button", "charge"],
-        keywords: [],
-      },
-      {
-        emoji: "🈷️",
-        names: ["japanese “monthly amount” button", "amount", "monthly"],
-        keywords: [],
-      },
-      {
-        emoji: "🈶",
-        names: ["japanese “not free of charge” button"],
-        keywords: [],
-      },
-      {
-        emoji: "🈯",
-        names: ["japanese “reserved” button", "reserved"],
-        keywords: [],
-      },
-      {
-        emoji: "🉐",
-        names: ["japanese “bargain” button", "bargain"],
-        keywords: [],
-      },
-      {
-        emoji: "🈹",
-        names: ["japanese “discount” button", "discount"],
-        keywords: [],
-      },
-      {
-        emoji: "🈚",
-        names: ["japanese “free of charge” button"],
-        keywords: [],
-      },
-      {
-        emoji: "🈲",
-        names: ["japanese “prohibited” button"],
-        keywords: [],
-      },
-      {
-        emoji: "🉑",
-        names: ["japanese “acceptable” button", "acceptable"],
-        keywords: [],
-      },
-      {
-        emoji: "🈸",
-        names: ["japanese “application” button", "application"],
-        keywords: [],
-      },
-      {
-        emoji: "🈴",
-        names: ["japanese “passing grade” button", "grade", "passing"],
-        keywords: [],
-      },
-      {
-        emoji: "🈳",
-        names: ["japanese “vacancy” button"],
-        keywords: [],
-      },
-      {
-        emoji: "㊗️",
-        names: ["japanese “congratulations” button"],
-        keywords: [],
-      },
-      {
-        emoji: "㊙️",
-        names: ["japanese “secret” button"],
-        keywords: [],
-      },
-      {
-        emoji: "🈺",
-        names: ["japanese “open for business” button", "business"],
-        keywords: [],
-      },
-      {
-        emoji: "🈵",
-        names: ["japanese “no vacancy” button", "vacancy"],
-        keywords: [],
-      },
-      {
-        emoji: "❇️",
-        names: ["sparkle"],
         keywords: [],
       },
     ],
@@ -10070,7 +9000,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
     items: [
       {
         emoji: "🔴",
-        names: ["red circle"],
+        names: ["red circle", "circle"],
         keywords: ["circle"],
       },
       {
@@ -10180,63 +9110,8 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
       },
       {
         emoji: "🔘",
-        names: ["radio button"],
+        names: ["radio button", "button"],
         keywords: ["radio", "button"],
-      },
-      {
-        emoji: "🟢",
-        names: ["green circle"],
-        keywords: [],
-      },
-      {
-        emoji: "🟫",
-        names: ["brown square"],
-        keywords: [],
-      },
-      {
-        emoji: "◼️",
-        names: ["black medium square", "medium"],
-        keywords: [],
-      },
-      {
-        emoji: "◻️",
-        names: ["white medium square"],
-        keywords: [],
-      },
-      {
-        emoji: "◽",
-        names: ["white medium-small square"],
-        keywords: [],
-      },
-      {
-        emoji: "▪️",
-        names: ["black small square"],
-        keywords: [],
-      },
-      {
-        emoji: "▫️",
-        names: ["white small square"],
-        keywords: [],
-      },
-      {
-        emoji: "🔸",
-        names: ["small orange diamond"],
-        keywords: [],
-      },
-      {
-        emoji: "🔹",
-        names: ["small blue diamond"],
-        keywords: [],
-      },
-      {
-        emoji: "🔳",
-        names: ["white square button"],
-        keywords: [],
-      },
-      {
-        emoji: "🔲",
-        names: ["black square button"],
-        keywords: [],
       },
     ],
   },
