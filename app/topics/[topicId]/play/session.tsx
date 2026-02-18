@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   GameScreen,
   LoadingScreen,
@@ -43,6 +43,9 @@ export default function TopicSession({
     {},
   );
 
+  const elapsedMs = useRef(0);
+  const roundStartTime = useRef(Date.now());
+
   if (!rounds) {
     return <LoadingScreen />;
   }
@@ -68,6 +71,7 @@ export default function TopicSession({
 
     if (clickedItem.isCorrect) {
       playSuccessSound();
+      elapsedMs.current += Date.now() - roundStartTime.current;
       if (!hasWrongAttempt) {
         setCorrectCount((prev) => prev + 1);
       }
@@ -76,6 +80,7 @@ export default function TopicSession({
       // After delay, advance to next round or show summary
       setTimeout(() => {
         if (currentRound + 1 < totalRounds) {
+          roundStartTime.current = Date.now();
           setCurrentRound((prev) => prev + 1);
           setItemStatuses({});
         } else {
@@ -94,6 +99,8 @@ export default function TopicSession({
     setCurrentRound(0);
     setCorrectCount(0);
     setItemStatuses({});
+    elapsedMs.current = 0;
+    roundStartTime.current = Date.now();
   };
 
   if (screen === "summary") {
@@ -103,6 +110,7 @@ export default function TopicSession({
         topicIcon={topicIcon}
         correctCount={correctCount}
         totalRounds={totalRounds}
+        elapsedMs={elapsedMs.current}
         onRestart={handleRestart}
       />
     );
