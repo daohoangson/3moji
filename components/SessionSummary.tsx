@@ -7,27 +7,26 @@ import { playPopSound } from "@/lib/audio";
 import { PageHeader } from "./PageHeader";
 
 interface SessionSummaryProps {
-  topicId: string;
   topicName: string;
   topicIcon: string;
   correctCount: number;
   totalRounds: number;
+  onRestart: () => void;
 }
 
 export function SessionSummary({
-  topicId,
   topicName,
   topicIcon,
   correctCount,
   totalRounds,
+  onRestart,
 }: SessionSummaryProps) {
   const percentage = Math.round((correctCount / totalRounds) * 100);
   const isPerfect = correctCount === totalRounds;
 
   const handlePlayAgain = () => {
     playPopSound();
-    // Force a full page reload to bypass all client-side caching and get fresh rounds
-    window.location.href = `/topics/${topicId}/play`;
+    onRestart();
   };
 
   // Calculate stars

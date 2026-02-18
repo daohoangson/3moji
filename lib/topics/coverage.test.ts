@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { getCategoryByEmoji } from "../emoji-data";
 import { getAllTopics, isEmojiItem } from "./index";
-import { generateTopicSession, DEFAULT_SESSION_LENGTH } from "./session";
+import { DEFAULT_SESSION_LENGTH } from "./session";
 
 describe("topic coverage", () => {
   const topics = getAllTopics();
@@ -22,19 +22,15 @@ describe("topic coverage", () => {
     },
   );
 
-  it.each(topics.map((t) => [t.id, t]))(
-    "topic %s has at least %i items for full session",
-    (_, topic) => {
-      expect(topic.items.length).toBeGreaterThanOrEqual(DEFAULT_SESSION_LENGTH);
-    },
-  );
+  // buildSession needs DEFAULT_SESSION_LENGTH targets + 2 distractors that
+  // haven't been shown as targets yet. At the last round, all prior targets
+  // are excluded from the distractor pool, so minimum = session length + 2.
+  const MIN_ITEMS = DEFAULT_SESSION_LENGTH + 2;
 
   it.each(topics.map((t) => [t.id, t]))(
-    "topic %s generates full session",
+    "topic %s has at least %i items for full session with distractor exclusion",
     (_, topic) => {
-      const session = generateTopicSession(topic.id);
-      expect(session).not.toBeNull();
-      expect(session!.length).toBe(DEFAULT_SESSION_LENGTH);
+      expect(topic.items.length).toBeGreaterThanOrEqual(MIN_ITEMS);
     },
   );
 });
