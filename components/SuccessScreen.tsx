@@ -5,12 +5,13 @@ import Link from "next/link";
 import { RefreshCw, PartyPopper } from "lucide-react";
 import { Confetti } from "./Confetti";
 import { playSuccessSound, playPopSound } from "@/lib/audio";
+import { shuffle } from "@/lib/shuffle";
 
 interface SuccessScreenProps {
   inputWord: string;
   targetValue: string;
   type: "color" | "emoji";
-  suggestions: string[];
+  suggestionPool: string[];
 }
 
 function TargetDisplay({
@@ -46,9 +47,12 @@ export function SuccessScreen({
   inputWord,
   targetValue,
   type,
-  suggestions,
+  suggestionPool,
 }: SuccessScreenProps) {
   const [confettiKey, setConfettiKey] = useState(0);
+  const [suggestions] = useState(() =>
+    shuffle([...suggestionPool]).slice(0, 4),
+  );
 
   const handleTargetTap = () => {
     playSuccessSound();

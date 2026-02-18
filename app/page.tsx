@@ -1,19 +1,10 @@
-import { getRandomSuggestions } from "@/lib/suggestions";
-import { getAllTopics, type Topic } from "@/lib/topics";
-import { shuffle } from "@/lib/shuffle";
+import { getSuggestionPool } from "@/lib/suggestions";
+import { getAllTopics } from "@/lib/topics";
 import HomeClient from "./home-client";
 
-function getFeaturedTopics(count: number): Topic[] {
-  const topics = getAllTopics();
-  const shuffled = shuffle([...topics]);
-  return shuffled.slice(0, count);
-}
-
 export default function Home() {
-  const suggestions = getRandomSuggestions(4);
-  const featuredTopics = getFeaturedTopics(6);
+  const suggestionPool = getSuggestionPool();
+  const allTopics = getAllTopics();
 
-  return (
-    <HomeClient suggestions={suggestions} featuredTopics={featuredTopics} />
-  );
+  return <HomeClient suggestionPool={suggestionPool} allTopics={allTopics} />;
 }

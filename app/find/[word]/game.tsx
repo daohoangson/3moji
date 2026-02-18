@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { GameScreen, SuccessScreen } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
+import { shuffle } from "@/lib/shuffle";
 
 type Screen = "game" | "success";
 type ItemStatus = "normal" | "correct" | "wrong";
@@ -22,7 +23,7 @@ interface GameClientProps {
   type: "color" | "emoji";
   targetValue: string;
   initialItems: GameItem[];
-  suggestions: string[];
+  suggestionPool: string[];
 }
 
 export default function GameClient({
@@ -30,13 +31,16 @@ export default function GameClient({
   type,
   targetValue,
   initialItems,
-  suggestions,
+  suggestionPool,
 }: GameClientProps) {
   const [screen, setScreen] = useState<Screen>("game");
 
-  // Add status to items (status is client-only state)
+  // Shuffle items on mount for display-order randomness
   const [items, setItems] = useState<GameItemWithStatus[]>(() =>
-    initialItems.map((item) => ({ ...item, status: "normal" as ItemStatus })),
+    shuffle([...initialItems]).map((item) => ({
+      ...item,
+      status: "normal" as ItemStatus,
+    })),
   );
 
   const handleItemClick = (id: string) => {
@@ -79,7 +83,7 @@ export default function GameClient({
           inputWord={word}
           targetValue={targetValue}
           type={type}
-          suggestions={suggestions}
+          suggestionPool={suggestionPool}
         />
       )}
     </div>

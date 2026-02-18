@@ -4,22 +4,35 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Sparkles, ArrowRight, Search, ChevronRight } from "lucide-react";
-import { TopicCard, PageHeader } from "@/components";
+import { TopicCard, PageHeader, PageHeaderSkeleton } from "@/components";
 import { unlockAudio, playPopSound } from "@/lib/audio";
 import { validateWordInput } from "@/lib/schema";
+import { shuffle } from "@/lib/shuffle";
 import type { Topic } from "@/lib/topics";
 
 interface HomeClientProps {
+  suggestionPool: string[];
+  allTopics: Topic[];
+}
+
+interface ClientSelections {
   suggestions: string[];
   featuredTopics: Topic[];
 }
 
 export default function HomeClient({
-  suggestions,
-  featuredTopics,
+  suggestionPool,
+  allTopics,
 }: HomeClientProps) {
   const router = useRouter();
   const [inputWord, setInputWord] = useState("");
+  const [selections] = useState<ClientSelections | null>(() => {
+    if (typeof window === "undefined") return null;
+    return {
+      suggestions: shuffle([...suggestionPool]).slice(0, 4),
+      featuredTopics: shuffle([...allTopics]).slice(0, 6),
+    };
+  });
 
   const validation = validateWordInput(inputWord);
   const showHint = inputWord.length > 0 && !validation.success;
@@ -31,6 +44,14 @@ export default function HomeClient({
     await unlockAudio();
     router.push(`/find/${encodeURIComponent(validation.data)}`);
   };
+
+  if (!selections) {
+    return (
+      <main className="relative min-h-screen overflow-y-auto bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 text-slate-900">
+        <PageHeaderSkeleton />
+      </main>
+    );
+  }
 
   return (
     <main className="relative min-h-screen overflow-y-auto bg-gradient-to-br from-sky-100 via-blue-50 to-emerald-50 text-slate-900">
@@ -81,7 +102,7 @@ export default function HomeClient({
             </Link>
           </div>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
-            {featuredTopics.map((topic) => (
+            {selections.featuredTopics.map((topic) => (
               <TopicCard key={topic.id} topic={topic} variant="compact" />
             ))}
           </div>
@@ -95,7 +116,7 @@ export default function HomeClient({
 
           {/* Quick suggestions */}
           <div className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-3">
-            {suggestions.map((word, i) => (
+            {selections.suggestions.map((word, i) => (
               <Link
                 key={word}
                 href={`/find/${encodeURIComponent(word)}`}

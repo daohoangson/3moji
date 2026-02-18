@@ -1,5 +1,4 @@
 import { TOPICS } from "./data";
-import { shuffle } from "../shuffle";
 import type { Topic, TopicLevel, TopicItem } from "./schema";
 
 export { TOPICS } from "./data";
@@ -24,16 +23,4 @@ export function getTopicById(id: string): Topic | undefined {
 
 export function getTopicsByLevel(level: TopicLevel): Topic[] {
   return TOPICS.filter((topic) => topic.level === level);
-}
-
-export function getRandomItemsFromTopic(
-  topicId: string,
-  count: number,
-): TopicItem[] {
-  const topic = getTopicById(topicId);
-  if (!topic) {
-    return [];
-  }
-  const shuffled = shuffle([...topic.items]);
-  return shuffled.slice(0, Math.min(count, topic.items.length));
 }

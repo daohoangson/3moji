@@ -12,6 +12,7 @@ interface SessionSummaryProps {
   topicIcon: string;
   correctCount: number;
   totalRounds: number;
+  onRestart?: () => void;
 }
 
 export function SessionSummary({
@@ -20,14 +21,18 @@ export function SessionSummary({
   topicIcon,
   correctCount,
   totalRounds,
+  onRestart,
 }: SessionSummaryProps) {
   const percentage = Math.round((correctCount / totalRounds) * 100);
   const isPerfect = correctCount === totalRounds;
 
   const handlePlayAgain = () => {
     playPopSound();
-    // Force a full page reload to bypass all client-side caching and get fresh rounds
-    window.location.href = `/topics/${topicId}/play`;
+    if (onRestart) {
+      onRestart();
+    } else {
+      window.location.href = `/topics/${topicId}/play`;
+    }
   };
 
   // Calculate stars
