@@ -1,0 +1,45 @@
+lib/topics/coverage.test.ts
+  e12bf0571bf649ab 4
+components/SessionSummary.tsx
+  e12bf0571bf649ab 15,24,31-33,35
+lib/topics/build-session.test.ts
+  e12bf0571bf649ab 1-133
+app/find/[word]/game.tsx
+  e12bf0571bf649ab 6,26,34,38,40,42,86
+app/topics/[topicId]/play/page.tsx
+  e12bf0571bf649ab 2-3,10-15,30,34-35
+app/page.tsx
+  e12bf0571bf649ab 1-2,6-7,9
+lib/suggestions.ts
+  e12bf0571bf649ab 22-24,26,30-32,34
+app/topics/[topicId]/play/session.tsx
+  e12bf0571bf649ab 6,8,11-15,31,34-90,100,102,111,114-115,166-180
+components/SuccessScreen.tsx
+  e12bf0571bf649ab 8,14,50,53-55
+lib/topics/session.test.ts
+  e12bf0571bf649ab 2,4-6
+app/home-client.tsx
+  e12bf0571bf649ab 7,10,14-18,24-25,29-35,48-54,105,119
+app/find/[word]/page.tsx
+  e12bf0571bf649ab 6,56-57,73,75-76,84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "0e530907ea0652dba94d0e934617e9c0d2ffd670",
+  "prompts": {
+    "e12bf0571bf649ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e94724d5-d940-4722-810d-5df48a158447",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 323,
+      "total_deletions": 252,
+      "accepted_lines": 316,
+      "overriden_lines": 0
+    }
+  }
+}
