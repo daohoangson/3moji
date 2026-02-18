@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Play, Target, CheckCircle2 } from "lucide-react";
-import { PageHeader } from "@/components";
+import { Markdown, PageHeader, stripMarkdown } from "@/components";
 import {
   getAllTopics,
   getTopicById,
@@ -35,12 +35,14 @@ export async function generateMetadata({
 
   const levelInfo = getLevelInfo(topic.level);
 
+  const description = stripMarkdown(topic.descriptionMarkdown);
+
   return {
     title: `Learn ${topic.name} - Find It!`,
-    description: topic.description,
+    description,
     openGraph: {
       title: `Learn ${topic.name} - Find It!`,
-      description: topic.description,
+      description,
       type: "website",
     },
     other: {
@@ -67,7 +69,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: `Learn ${topic.name} - Find It!`,
-    description: topic.description,
+    description: stripMarkdown(topic.descriptionMarkdown),
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     offers: {
@@ -110,9 +112,9 @@ export default async function TopicDetailPage({ params }: PageProps) {
           <h1 className="mb-3 text-3xl font-black text-slate-800 sm:text-5xl">
             {topic.name}
           </h1>
-          <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-600">
-            {topic.description}
-          </p>
+          <Markdown className="mx-auto max-w-xl text-lg leading-relaxed text-slate-600">
+            {topic.descriptionMarkdown}
+          </Markdown>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">

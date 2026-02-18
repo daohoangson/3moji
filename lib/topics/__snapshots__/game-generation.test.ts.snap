@@ -75,18 +75,48 @@ exports[`topic session generation (deterministic) > snapshot preview for emotion
 ]
 `;
 
-exports[`topic session generation (deterministic) > snapshot preview for flags 1`] = `
+exports[`topic session generation (deterministic) > snapshot preview for flags-easy 1`] = `
 [
-  "China -> 🇨🇳 | distractors: 🇼🇫, 🇵🇾",
-  "Canada -> 🇨🇦 | distractors: 🇵🇾, 🇦🇬",
-  "Russia -> 🇷🇺 | distractors: 🇲🇷, 🇧🇮",
-  "United States -> 🇺🇸 | distractors: 🇸🇦, 🇦🇺",
-  "Australia -> 🇦🇺 | distractors: 🇱🇸, 🇵🇹",
-  "Greece -> 🇬🇷 | distractors: 🇳🇵, 🇿🇦",
-  "South Africa -> 🇿🇦 | distractors: 🇸🇸, 🇦🇷",
-  "United Kingdom -> 🇬🇧 | distractors: 🇳🇴, 🇳🇵",
+  "Finland -> 🇫🇮 | distractors: 🇨🇳, 🇲🇺",
+  "Turkey -> 🇹🇷 | distractors: 🇨🇶, 🇵🇰",
   "Brazil -> 🇧🇷 | distractors: 🇧🇩, 🇪🇷",
-  "Italy -> 🇮🇹 | distractors: 🇷🇴, 🇺🇦",
+  "Russia -> 🇷🇺 | distractors: 🇲🇷, 🇧🇮",
+  "South Korea -> 🇰🇷 | distractors: 🇸🇾, 🇦🇹",
+  "Sweden -> 🇸🇪 | distractors: 🇧🇧, 🇼🇫",
+  "Canada -> 🇨🇦 | distractors: 🇵🇾, 🇦🇬",
+  "Egypt -> 🇪🇬 | distractors: 🇧🇪, 🇮🇩",
+  "Portugal -> 🇵🇹 | distractors: 🇮🇷, 🇦🇱",
+  "France -> 🇫🇷 | distractors: 🇰🇭, 🇫🇯",
+]
+`;
+
+exports[`topic session generation (deterministic) > snapshot preview for flags-hard 1`] = `
+[
+  "Uruguay -> 🇺🇾 | distractors: 🇰🇵, 🇰🇷",
+  "Suriname -> 🇸🇷 | distractors: 🇫🇴, 🇭🇰",
+  "Moldova -> 🇲🇩 | distractors: 🇰🇬, 🇦🇿",
+  "Nepal -> 🇳🇵 | distractors: 🇬🇳, 🇸🇬",
+  "Montenegro -> 🇲🇪 | distractors: 🇱🇨, 🇺🇬",
+  "Qatar -> 🇶🇦 | distractors: 🇩🇿, 🇬🇬",
+  "El Salvador -> 🇸🇻 | distractors: 🇸🇨, 🇸🇲",
+  "Honduras -> 🇭🇳 | distractors: 🇵🇲, 🇳🇱",
+  "Paraguay -> 🇵🇾 | distractors: 🇬🇩, 🇲🇩",
+  "Myanmar -> 🇲🇲 | distractors: 🇸🇹, 🇨🇮",
+]
+`;
+
+exports[`topic session generation (deterministic) > snapshot preview for flags-medium 1`] = `
+[
+  "Jamaica -> 🇯🇲 | distractors: 🇧🇼, 🇸🇩",
+  "Peru -> 🇵🇪 | distractors: 🇨🇱, 🇸🇬",
+  "Israel -> 🇮🇱 | distractors: 🇨🇭, 🇪🇦",
+  "Nigeria -> 🇳🇬 | distractors: 🇺🇦, 🇦🇹",
+  "Pakistan -> 🇵🇰 | distractors: 🇿🇲, 🇵🇹",
+  "Dominican Republic -> 🇩🇴 | distractors: 🇸🇯, 🇸🇳",
+  "Tanzania -> 🇹🇿 | distractors: 🇻🇺, 🇸🇰",
+  "Morocco -> 🇲🇦 | distractors: 🇬🇷, 🇪🇪",
+  "Singapore -> 🇸🇬 | distractors: 🇭🇺, 🇸🇪",
+  "Czech Republic -> 🇨🇿 | distractors: 🇿🇦, 🇬🇼",
 ]
 `;
 
