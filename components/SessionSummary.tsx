@@ -7,16 +7,14 @@ import { playPopSound } from "@/lib/audio";
 import { PageHeader } from "./PageHeader";
 
 interface SessionSummaryProps {
-  topicId: string;
   topicName: string;
   topicIcon: string;
   correctCount: number;
   totalRounds: number;
-  onRestart?: () => void;
+  onRestart: () => void;
 }
 
 export function SessionSummary({
-  topicId,
   topicName,
   topicIcon,
   correctCount,
@@ -28,11 +26,7 @@ export function SessionSummary({
 
   const handlePlayAgain = () => {
     playPopSound();
-    if (onRestart) {
-      onRestart();
-    } else {
-      window.location.href = `/topics/${topicId}/play`;
-    }
+    onRestart();
   };
 
   // Calculate stars

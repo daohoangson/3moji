@@ -161,7 +161,6 @@ export default function TopicSession({
   if (screen === "summary") {
     return (
       <SessionSummary
-        topicId={topicId}
         topicName={topicName}
         topicIcon={topicIcon}
         correctCount={correctCount}
