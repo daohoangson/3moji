@@ -1,0 +1,23 @@
+lib/emoji-data.test.ts
+  45befd9838a61efe 380,382,2101,2129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "bb10f2ac6e017a3671a87f57de765cf983503217",
+  "prompts": {
+    "45befd9838a61efe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cc46140f-707e-489d-9d80-ef7734defc80",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 969,
+      "total_deletions": 104,
+      "accepted_lines": 864,
+      "overriden_lines": 5
+    }
+  }
+}
