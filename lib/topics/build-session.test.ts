@@ -103,9 +103,10 @@ describe("buildSession", () => {
     ];
     const rounds = buildSession(fewItems, 10);
     expect(rounds).not.toBeNull();
-    // With 4 items, can't make more than ~2 rounds (need 3 items per round: 1 target + 2 distractors from non-known pool)
-    expect(rounds!.length).toBeLessThanOrEqual(4);
-    expect(rounds!.length).toBeGreaterThan(0);
+    // With 4 items, the algorithm can deterministically make at most 2 rounds:
+    // once two targets have been played, there aren't enough non-known items left
+    // to form another round with 1 target + 2 distractors.
+    expect(rounds!.length).toBe(2);
   });
 
   it("each round has 2 unique distractors", () => {
