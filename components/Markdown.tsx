@@ -4,6 +4,7 @@ import { remark } from "remark";
 import stripMarkdownPlugin from "strip-markdown";
 
 const components: Components = {
+  p: ({ children }) => <span>{children}</span>,
   a: ({ href, children }) => {
     if (href?.startsWith("/")) {
       return (

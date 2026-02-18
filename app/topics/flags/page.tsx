@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Markdown } from "@/components";
+import { stripMarkdown } from "@/components";
 import { getTopicById, getLevelInfo, isEmojiItem } from "@/lib/topics";
 
 const FLAG_TOPIC_IDS = ["flags-easy", "flags-medium", "flags-hard"] as const;
@@ -100,9 +100,9 @@ export default function FlagsLandingPage() {
                         {style.difficulty}
                       </span>
                     </div>
-                    <Markdown className="mb-3 text-sm text-slate-600">
-                      {topic.descriptionMarkdown}
-                    </Markdown>
+                    <p className="mb-3 text-sm text-slate-600">
+                      {stripMarkdown(topic.descriptionMarkdown)}
+                    </p>
                     <div className="mb-3 flex items-center gap-2 text-xs font-medium text-slate-400">
                       <span>{topic.items.length} flags</span>
                       <span>·</span>
