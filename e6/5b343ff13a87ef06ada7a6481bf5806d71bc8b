@@ -1,0 +1,27 @@
+lib/topics/build-session.ts
+  e12bf0571bf649ab 1-64
+app/topics/[topicId]/play/session.tsx
+  e12bf0571bf649ab 13
+lib/topics/build-session.test.ts
+  e12bf0571bf649ab 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "e65b343ff13a87ef06ada7a6481bf5806d71bc8b",
+  "prompts": {
+    "e12bf0571bf649ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e94724d5-d940-4722-810d-5df48a158447",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 83,
+      "total_deletions": 81,
+      "accepted_lines": 83,
+      "overriden_lines": 0
+    }
+  }
+}
