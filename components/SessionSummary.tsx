@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { RefreshCw, Home, PartyPopper, Star } from "lucide-react";
+import { RefreshCw, Home, PartyPopper, Star, Timer } from "lucide-react";
 import { Confetti } from "./Confetti";
 import { playPopSound } from "@/lib/audio";
 import { PageHeader } from "./PageHeader";
@@ -12,6 +12,17 @@ interface SessionSummaryProps {
   topicIcon: string;
   correctCount: number;
   totalRounds: number;
+  elapsedMs: number;
+}
+
+function formatTime(ms: number): string {
+  const totalSeconds = ms / 1000;
+  if (totalSeconds < 60) {
+    return `${totalSeconds.toFixed(1)}s`;
+  }
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${seconds.toFixed(1).padStart(4, "0")}`;
 }
 
 export function SessionSummary({
@@ -20,6 +31,7 @@ export function SessionSummary({
   topicIcon,
   correctCount,
   totalRounds,
+  elapsedMs,
 }: SessionSummaryProps) {
   const percentage = Math.round((correctCount / totalRounds) * 100);
   const isPerfect = correctCount === totalRounds;
@@ -105,6 +117,13 @@ export function SessionSummary({
           </div>
           <div className="text-lg font-bold tracking-widest text-slate-400 uppercase">
             Correct
+          </div>
+
+          <div className="mt-4 flex items-center justify-center gap-2 border-t border-slate-100 pt-4">
+            <Timer className="h-5 w-5 text-slate-400" />
+            <span className="text-2xl font-black tabular-nums text-slate-500">
+              {formatTime(elapsedMs)}
+            </span>
           </div>
         </div>
 

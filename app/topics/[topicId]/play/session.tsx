@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GameScreen, SessionProgress, SessionSummary } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
 import type { RoundData } from "./page";
@@ -38,6 +38,9 @@ export default function TopicSession({
     })),
   );
 
+  const elapsedMs = useRef(0);
+  const roundStartTime = useRef(Date.now());
+
   const round = rounds[currentRound];
   const totalRounds = rounds.length;
 
@@ -53,6 +56,7 @@ export default function TopicSession({
 
     if (clickedItem.isCorrect) {
       playSuccessSound();
+      elapsedMs.current += Date.now() - roundStartTime.current;
       if (!hasWrongAttempt) {
         setCorrectCount((prev) => prev + 1);
       }
@@ -65,6 +69,7 @@ export default function TopicSession({
       // After delay, advance to next round or show summary
       setTimeout(() => {
         if (currentRound + 1 < totalRounds) {
+          roundStartTime.current = Date.now();
           setCurrentRound((prev) => prev + 1);
           setItems(
             rounds[currentRound + 1].items.map((item) => ({
@@ -94,6 +99,7 @@ export default function TopicSession({
         topicIcon={topicIcon}
         correctCount={correctCount}
         totalRounds={totalRounds}
+        elapsedMs={elapsedMs.current}
       />
     );
   }
