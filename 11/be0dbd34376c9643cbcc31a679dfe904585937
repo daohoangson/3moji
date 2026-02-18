@@ -1,0 +1,42 @@
+scripts/generate-coverage-test.ts
+  45befd9838a61efe 7,13-26
+scripts/enrich-emoji-database.ts
+  45befd9838a61efe 1-246
+lib/emoji-data.ts
+  45befd9838a61efe 6,28-60,70
+scripts/find-missing-emojis.ts
+  45befd9838a61efe 1,6-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "11be0dbd34376c9643cbcc31a679dfe904585937",
+  "prompts": {
+    "00625c88a9956dde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9f998381-aee5-4e8f-b37e-e254539c1cb3",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 105,
+      "total_deletions": 0,
+      "accepted_lines": 105,
+      "overriden_lines": 0
+    },
+    "45befd9838a61efe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cc46140f-707e-489d-9d80-ef7734defc80",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 747,
+      "total_deletions": 177,
+      "accepted_lines": 578,
+      "overriden_lines": 0
+    }
+  }
+}
