@@ -1,0 +1,25 @@
+components/Markdown.tsx
+  c2aa132ee21e479f 7
+app/topics/flags/page.tsx
+  c2aa132ee21e479f 3,103-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "ef5b549f51edabfe35bc5c2affd9d5b6524899f7",
+  "prompts": {
+    "c2aa132ee21e479f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3db11fe9-b10d-4c96-ba9d-568efcc57766",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 4,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
