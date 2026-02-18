@@ -1,0 +1,31 @@
+components/SuccessScreen.tsx
+  e12bf0571bf649ab 9,54,111
+app/home-client.tsx
+  e12bf0571bf649ab 11,30,33
+lib/use-is-client.ts
+  e12bf0571bf649ab 1-36
+app/topics/[topicId]/play/session.tsx
+  e12bf0571bf649ab 12-13,100,106,117-120,156
+app/find/[word]/game.tsx
+  e12bf0571bf649ab 4,7,37,39-40,43-45,47-52,62,66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "3dc0322225a46ca81d020f9ded8d3a6c9651231f",
+  "prompts": {
+    "e12bf0571bf649ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e94724d5-d940-4722-810d-5df48a158447",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 192,
+      "total_deletions": 177,
+      "accepted_lines": 81,
+      "overriden_lines": 0
+    }
+  }
+}
