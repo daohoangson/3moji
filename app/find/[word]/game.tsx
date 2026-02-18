@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { GameScreen, SuccessScreen } from "@/components";
+import { GameScreen, LoadingScreen, SuccessScreen } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
 import { shuffle } from "@/lib/shuffle";
+import { useClientValue } from "@/lib/use-is-client";
 
 type Screen = "game" | "success";
 type ItemStatus = "normal" | "correct" | "wrong";
@@ -33,15 +34,21 @@ export default function GameClient({
   initialItems,
   suggestionPool,
 }: GameClientProps) {
+  const [shuffledItems] = useClientValue(() => shuffle([...initialItems]));
   const [screen, setScreen] = useState<Screen>("game");
-
-  // Shuffle items on mount for display-order randomness
-  const [items, setItems] = useState<GameItemWithStatus[]>(() =>
-    shuffle([...initialItems]).map((item) => ({
-      ...item,
-      status: "normal" as ItemStatus,
-    })),
+  const [itemStatuses, setItemStatuses] = useState<Record<string, ItemStatus>>(
+    {},
   );
+
+  if (!shuffledItems) {
+    return <LoadingScreen />;
+  }
+
+  // Derive display items from shuffled order + status map
+  const items: GameItemWithStatus[] = shuffledItems.map((item) => ({
+    ...item,
+    status: itemStatuses[item.id] || "normal",
+  }));
 
   const handleItemClick = (id: string) => {
     const hasCorrectAnswer = items.some((item) => item.status === "correct");
@@ -52,19 +59,11 @@ export default function GameClient({
 
     if (clickedItem.isCorrect) {
       playSuccessSound();
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "correct" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "correct" }));
       setTimeout(() => setScreen("success"), 1500);
     } else {
       playErrorSound();
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "wrong" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "wrong" }));
     }
   };
 

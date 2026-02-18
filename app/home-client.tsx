@@ -8,6 +8,7 @@ import { TopicCard, PageHeader, PageHeaderSkeleton } from "@/components";
 import { unlockAudio, playPopSound } from "@/lib/audio";
 import { validateWordInput } from "@/lib/schema";
 import { shuffle } from "@/lib/shuffle";
+import { useClientValue } from "@/lib/use-is-client";
 import type { Topic } from "@/lib/topics";
 
 interface HomeClientProps {
@@ -26,13 +27,10 @@ export default function HomeClient({
 }: HomeClientProps) {
   const router = useRouter();
   const [inputWord, setInputWord] = useState("");
-  const [selections] = useState<ClientSelections | null>(() => {
-    if (typeof window === "undefined") return null;
-    return {
-      suggestions: shuffle([...suggestionPool]).slice(0, 4),
-      featuredTopics: shuffle([...allTopics]).slice(0, 6),
-    };
-  });
+  const [selections] = useClientValue(() => ({
+    suggestions: shuffle([...suggestionPool]).slice(0, 4),
+    featuredTopics: shuffle([...allTopics]).slice(0, 6),
+  }));
 
   const validation = validateWordInput(inputWord);
   const showHint = inputWord.length > 0 && !validation.success;

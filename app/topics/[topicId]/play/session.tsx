@@ -9,7 +9,8 @@ import {
 } from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
 import { shuffle } from "@/lib/shuffle";
-import { isColorItem, isEmojiItem } from "@/lib/topics";
+import { useClientValue } from "@/lib/use-is-client";
+import { isColorItem } from "@/lib/topics";
 import type { TopicItem } from "@/lib/topics";
 import type { RoundWithItems } from "@/lib/topics/session";
 import { DEFAULT_SESSION_LENGTH } from "@/lib/topics/session";
@@ -96,20 +97,13 @@ export default function TopicSession({
   topicIcon,
   topicItems,
 }: TopicSessionProps) {
-  const [rounds, setRounds] = useState<RoundWithItems[] | null>(() => {
-    if (typeof window === "undefined") return null;
-    return buildSession(topicItems);
-  });
+  const [rounds, resetRounds] = useClientValue(() => buildSession(topicItems));
   const [screen, setScreen] = useState<Screen>("game");
   const [currentRound, setCurrentRound] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
-  const [items, setItems] = useState<ItemWithStatus[]>(() => {
-    if (typeof window === "undefined" || !rounds) return [];
-    return rounds[0].items.map((item) => ({
-      ...item,
-      status: "normal" as ItemStatus,
-    }));
-  });
+  const [itemStatuses, setItemStatuses] = useState<Record<string, ItemStatus>>(
+    {},
+  );
 
   if (!rounds) {
     return <LoadingScreen />;
@@ -117,6 +111,12 @@ export default function TopicSession({
 
   const round = rounds[currentRound];
   const totalRounds = rounds.length;
+
+  // Derive display items from round data + status map
+  const items: ItemWithStatus[] = round.items.map((item) => ({
+    ...item,
+    status: itemStatuses[item.id] || "normal",
+  }));
 
   const handleItemClick = (id: string) => {
     const hasCorrectAnswer = items.some((item) => item.status === "correct");
@@ -133,50 +133,29 @@ export default function TopicSession({
       if (!hasWrongAttempt) {
         setCorrectCount((prev) => prev + 1);
       }
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "correct" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "correct" }));
 
       // After delay, advance to next round or show summary
       setTimeout(() => {
         if (currentRound + 1 < totalRounds) {
           setCurrentRound((prev) => prev + 1);
-          setItems(
-            rounds[currentRound + 1].items.map((item) => ({
-              ...item,
-              status: "normal" as ItemStatus,
-            })),
-          );
+          setItemStatuses({});
         } else {
           setScreen("summary");
         }
       }, 1500);
     } else {
       playErrorSound();
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "wrong" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "wrong" }));
     }
   };
 
   const handleRestart = () => {
-    const newRounds = buildSession(topicItems);
-    if (newRounds) {
-      setRounds(newRounds);
-      setScreen("game");
-      setCurrentRound(0);
-      setCorrectCount(0);
-      setItems(
-        newRounds[0].items.map((item) => ({
-          ...item,
-          status: "normal" as ItemStatus,
-        })),
-      );
-    }
+    resetRounds();
+    setScreen("game");
+    setCurrentRound(0);
+    setCorrectCount(0);
+    setItemStatuses({});
   };
 
   if (screen === "summary") {
