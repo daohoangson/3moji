@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ReactMarkdown, { type Components } from "react-markdown";
+import { remark } from "remark";
+import stripMarkdownPlugin from "strip-markdown";
 
 const components: Components = {
   a: ({ href, children }) => {
@@ -22,6 +24,12 @@ const components: Components = {
     );
   },
 };
+
+const processor = remark().use(stripMarkdownPlugin);
+
+export function stripMarkdown(text: string): string {
+  return String(processor.processSync(text)).trim();
+}
 
 export function Markdown({
   children,

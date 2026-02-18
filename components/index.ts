@@ -8,4 +8,4 @@ export { SessionProgress } from "./SessionProgress";
 export { SessionSummary } from "./SessionSummary";
 export { TopicCard } from "./TopicCard";
 export { PageHeader, PageHeaderSkeleton } from "./PageHeader";
-export { Markdown } from "./Markdown";
+export { Markdown, stripMarkdown } from "./Markdown";

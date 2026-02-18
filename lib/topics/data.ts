@@ -5,7 +5,7 @@ export const TOPICS: Topic[] = [
   {
     id: "animal-friends",
     name: "Animal Friends",
-    description:
+    descriptionMarkdown:
       "Meet friendly farm animals and pets! Perfect for little ones learning their first animal names.",
     learningGoals: [
       "Recognize common farm animals",
@@ -45,7 +45,7 @@ export const TOPICS: Topic[] = [
   {
     id: "fruits",
     name: "Fruits",
-    description:
+    descriptionMarkdown:
       "Discover colorful fruits from the kitchen! Learn to identify delicious fruits by their shapes and colors.",
     learningGoals: [
       "Identify common fruits",
@@ -77,7 +77,7 @@ export const TOPICS: Topic[] = [
   {
     id: "vehicles",
     name: "Vehicles",
-    description:
+    descriptionMarkdown:
       "Things that go! Explore cars, trucks, and more vehicles your child sees every day.",
     learningGoals: [
       "Name common vehicles",
@@ -115,7 +115,7 @@ export const TOPICS: Topic[] = [
   {
     id: "clothing",
     name: "Clothing",
-    description:
+    descriptionMarkdown:
       "What do we wear? Learn about everyday clothing items from head to toe.",
     learningGoals: [
       "Identify clothing items",
@@ -153,7 +153,7 @@ export const TOPICS: Topic[] = [
   {
     id: "colors",
     name: "Colors",
-    description:
+    descriptionMarkdown:
       "A rainbow of colors! Practice naming basic colors that are everywhere around us.",
     learningGoals: [
       "Recognize primary colors",
@@ -193,7 +193,7 @@ export const TOPICS: Topic[] = [
   {
     id: "flags-easy",
     name: "Famous Flags",
-    description:
+    descriptionMarkdown:
       "Discover the most famous flags in the world! Start your global adventure with flags everyone knows. Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Recognize the most iconic country flags",
@@ -240,7 +240,7 @@ export const TOPICS: Topic[] = [
   {
     id: "wild-animals",
     name: "Wild Animals",
-    description:
+    descriptionMarkdown:
       "Safari time! Discover amazing animals from jungles, oceans, and beyond.",
     learningGoals: [
       "Learn about animals from different habitats",
@@ -285,7 +285,7 @@ export const TOPICS: Topic[] = [
   {
     id: "food",
     name: "Food",
-    description:
+    descriptionMarkdown:
       "Yummy foods from around the world! From pizza to noodles, discover tasty treats.",
     learningGoals: [
       "Identify various foods",
@@ -330,7 +330,7 @@ export const TOPICS: Topic[] = [
   {
     id: "nature",
     name: "Nature",
-    description:
+    descriptionMarkdown:
       "Explore the natural world! From sunny skies to snowy mountains, discover nature's wonders.",
     learningGoals: [
       "Identify natural phenomena",
@@ -375,7 +375,7 @@ export const TOPICS: Topic[] = [
   {
     id: "emotions",
     name: "Emotions",
-    description:
+    descriptionMarkdown:
       "How do you feel? Learn to recognize and name different emotions and feelings.",
     learningGoals: [
       "Identify facial expressions",
@@ -410,7 +410,7 @@ export const TOPICS: Topic[] = [
   {
     id: "shapes",
     name: "Shapes",
-    description:
+    descriptionMarkdown:
       "Shapes are everywhere! Learn to spot circles, squares, and more geometric friends.",
     learningGoals: [
       "Recognize basic shapes",
@@ -450,7 +450,7 @@ export const TOPICS: Topic[] = [
   {
     id: "flags-medium",
     name: "World Flags",
-    description:
+    descriptionMarkdown:
       "Explore more flags from around the globe! Challenge yourself with flags from every continent. Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Identify flags from diverse regions",
@@ -502,7 +502,7 @@ export const TOPICS: Topic[] = [
   {
     id: "flags-hard",
     name: "Flag Expert Challenge",
-    description:
+    descriptionMarkdown:
       "The ultimate flag challenge! Can you identify these tricky flags from lesser-known countries and territories? Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Identify flags from lesser-known countries",
@@ -567,7 +567,7 @@ export const TOPICS: Topic[] = [
   {
     id: "celebrations",
     name: "Celebrations",
-    description:
+    descriptionMarkdown:
       "Party time! Discover symbols of holidays and celebrations throughout the year.",
     learningGoals: [
       "Recognize celebration symbols",
@@ -607,7 +607,7 @@ export const TOPICS: Topic[] = [
   {
     id: "sports",
     name: "Sports",
-    description:
+    descriptionMarkdown:
       "Game on! Learn about different sports and the equipment used to play them.",
     learningGoals: [
       "Identify sports and equipment",
@@ -647,7 +647,7 @@ export const TOPICS: Topic[] = [
   {
     id: "professions",
     name: "Professions",
-    description:
+    descriptionMarkdown:
       "What do you want to be? Explore different jobs and the people who help our community.",
     learningGoals: [
       "Identify different professions",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Play, Target, CheckCircle2 } from "lucide-react";
-import { Markdown, PageHeader } from "@/components";
+import { Markdown, PageHeader, stripMarkdown } from "@/components";
 import {
   getAllTopics,
   getTopicById,
@@ -35,12 +35,14 @@ export async function generateMetadata({
 
   const levelInfo = getLevelInfo(topic.level);
 
+  const description = stripMarkdown(topic.descriptionMarkdown);
+
   return {
     title: `Learn ${topic.name} - Find It!`,
-    description: topic.description,
+    description,
     openGraph: {
       title: `Learn ${topic.name} - Find It!`,
-      description: topic.description,
+      description,
       type: "website",
     },
     other: {
@@ -67,7 +69,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: `Learn ${topic.name} - Find It!`,
-    description: topic.description,
+    description: stripMarkdown(topic.descriptionMarkdown),
     applicationCategory: "EducationalApplication",
     operatingSystem: "Any",
     offers: {
@@ -111,7 +113,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
             {topic.name}
           </h1>
           <Markdown className="mx-auto max-w-xl text-lg leading-relaxed text-slate-600">
-            {topic.description}
+            {topic.descriptionMarkdown}
           </Markdown>
         </div>
 
@@ -133,7 +135,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
                   className="flex items-start gap-3 text-slate-700"
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                  <Markdown className="font-medium">{goal}</Markdown>
+                  <span className="font-medium">{goal}</span>
                 </li>
               ))}
             </ul>
