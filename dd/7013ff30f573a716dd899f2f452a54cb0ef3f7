@@ -1,0 +1,31 @@
+app/sitemap.ts
+  c2aa132ee21e479f 29-34
+app/topics/[topicId]/page.tsx
+  c2aa132ee21e479f 5,113,115,136
+components/index.ts
+  c2aa132ee21e479f 11
+components/Markdown.tsx
+  c2aa132ee21e479f 1-44
+lib/topics/data.ts
+  c2aa132ee21e479f 197,454,506
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "dd7013ff30f573a716dd899f2f452a54cb0ef3f7",
+  "prompts": {
+    "c2aa132ee21e479f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3db11fe9-b10d-4c96-ba9d-568efcc57766",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 66,
+      "total_deletions": 15,
+      "accepted_lines": 58,
+      "overriden_lines": 0
+    }
+  }
+}
