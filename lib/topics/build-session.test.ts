@@ -118,6 +118,39 @@ describe("buildSession", () => {
     }
   });
 
+  it("items array contains target and both distractors", () => {
+    const rounds = buildSession(colorItems, 5);
+    expect(rounds).not.toBeNull();
+
+    for (const round of rounds!) {
+      const itemValues = round.items.map((item) => item.value);
+      expect(itemValues).toContain(round.targetValue);
+      for (const distractor of round.distractors) {
+        expect(itemValues).toContain(distractor);
+      }
+    }
+  });
+
+  it("target is not repeated as a distractor in the same round", () => {
+    for (let attempt = 0; attempt < 10; attempt++) {
+      const rounds = buildSession(colorItems, 8);
+      expect(rounds).not.toBeNull();
+
+      for (const round of rounds!) {
+        expect(round.distractors).not.toContain(round.targetValue);
+      }
+    }
+  });
+
+  it("sets correct type for color items", () => {
+    const rounds = buildSession(colorItems, 3);
+    expect(rounds).not.toBeNull();
+
+    for (const round of rounds!) {
+      expect(round.type).toBe("color");
+    }
+  });
+
   describe("with real topic data", () => {
     const topics = getAllTopics();
 
