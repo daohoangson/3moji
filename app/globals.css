@@ -110,3 +110,9 @@ body {
 .animate-pulse-slow {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Lock scrolling when game screen is active (prevents Android viewport overflow) */
+html.game-active,
+html.game-active body {
+  overflow: hidden;
+}

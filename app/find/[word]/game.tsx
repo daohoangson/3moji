@@ -65,7 +65,7 @@ export default function GameClient({
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden text-slate-900 select-none">
+    <div className="h-dvh w-screen overflow-hidden text-slate-900 select-none">
       {screen === "game" && (
         <GameScreen
           inputWord={word}

@@ -59,6 +59,12 @@ export function GameScreen({
   const { soundEnabled } = useSoundSettings();
   const router = useRouter();
 
+  // Lock body scrolling on Android to prevent viewport overflow
+  useEffect(() => {
+    document.documentElement.classList.add("game-active");
+    return () => document.documentElement.classList.remove("game-active");
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -142,22 +148,34 @@ export function GameScreen({
       />
 
       {/* Game Area */}
-      <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-4 p-4 sm:gap-8 sm:p-8 landscape:flex-row">
+      <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col items-stretch justify-center gap-4 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:gap-8 sm:p-8 landscape:flex-row">
         {items.map((item, index) => {
           const isWrong = item.status === "wrong";
           const isCorrect = item.status === "correct";
+          const isClickable =
+            !isWrong && !isCorrect && !hasCorrectAnswer;
 
           return (
             <button
               key={`${item.id}-${item.status}`}
-              onClick={() => onItemClick(item.id)}
+              onPointerDown={(e) => {
+                // Fire on touch contact for toddler-friendly instant response;
+                // mouse/keyboard/AT clicks are handled by onClick below
+                if (!isClickable || e.pointerType !== "touch") return;
+                e.preventDefault();
+                onItemClick(item.id);
+              }}
+              onClick={() => {
+                if (!isClickable) return;
+                onItemClick(item.id);
+              }}
               disabled={isWrong || hasCorrectAnswer}
               aria-label={`Option: ${item.value}`}
               style={{
                 animationDelay:
                   item.status === "normal" ? `${index * 150}ms` : "0ms",
               }}
-              className={`relative min-h-0 min-w-0 flex-1 cursor-pointer touch-manipulation overflow-hidden rounded-3xl border-b-[8px] focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px] ${
+              className={`relative min-h-0 min-w-0 flex-1 cursor-pointer touch-none overflow-hidden rounded-3xl border-b-[8px] focus:outline-none sm:rounded-[2.5rem] sm:border-b-[12px] ${
                 isWrong
                   ? "cursor-not-allowed border-transparent bg-slate-100 opacity-50 shadow-none grayscale"
                   : "transform transition-all duration-300"
@@ -166,7 +184,7 @@ export function GameScreen({
                   ? "animate-pop-in border-slate-200 bg-white shadow-xl"
                   : ""
               } ${
-                !isWrong && !isCorrect && !hasCorrectAnswer
+                isClickable
                   ? "hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl focus:ring-4 focus:ring-sky-500/30 active:translate-y-0 active:scale-[0.98] active:border-b-4"
                   : ""
               } ${
