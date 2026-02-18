@@ -3,8 +3,7 @@ import Link from "next/link";
 import { LoadingScreen } from "@/components";
 import { generateGameContent } from "@/lib/game-content";
 import { validateWordInput } from "@/lib/schema";
-import { shuffle } from "@/lib/shuffle";
-import { getRandomSuggestions } from "@/lib/suggestions";
+import { getSuggestionPool } from "@/lib/suggestions";
 import GameClient, { type GameItem } from "./game";
 
 interface PageProps {
@@ -54,8 +53,8 @@ async function GameContent({ word }: { word: string }) {
     );
   }
 
-  // Build and shuffle items on server to avoid hydration mismatch
-  const items: GameItem[] = shuffle([
+  // Pass items in fixed order (target first) — client shuffles on mount
+  const items: GameItem[] = [
     {
       id: "target",
       value: data.targetValue,
@@ -71,10 +70,10 @@ async function GameContent({ word }: { word: string }) {
       value: data.distractors[1],
       isCorrect: false,
     },
-  ]);
+  ];
 
-  // Generate suggestions on server
-  const suggestions = getRandomSuggestions(4);
+  // Pass suggestion pool — client picks on mount
+  const suggestionPool = getSuggestionPool();
 
   return (
     <GameClient
@@ -82,7 +81,7 @@ async function GameContent({ word }: { word: string }) {
       type={data.type}
       targetValue={data.targetValue}
       initialItems={items}
-      suggestions={suggestions}
+      suggestionPool={suggestionPool}
     />
   );
 }

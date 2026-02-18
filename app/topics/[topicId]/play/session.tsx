@@ -1,9 +1,16 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { GameScreen, SessionProgress, SessionSummary } from "@/components";
+import {
+  GameScreen,
+  LoadingScreen,
+  SessionProgress,
+  SessionSummary,
+} from "@/components";
 import { playSuccessSound, playErrorSound } from "@/lib/audio";
-import type { RoundData } from "./page";
+import { useClientValue } from "@/lib/use-is-client";
+import type { TopicItem } from "@/lib/topics";
+import { buildSession } from "@/lib/topics/build-session";
 
 type ItemStatus = "normal" | "correct" | "wrong";
 type Screen = "game" | "summary";
@@ -19,30 +26,38 @@ interface TopicSessionProps {
   topicId: string;
   topicName: string;
   topicIcon: string;
-  rounds: RoundData[];
+  topicItems: TopicItem[];
 }
 
 export default function TopicSession({
   topicId,
   topicName,
   topicIcon,
-  rounds,
+  topicItems,
 }: TopicSessionProps) {
+  const [rounds, resetRounds] = useClientValue(() => buildSession(topicItems));
   const [screen, setScreen] = useState<Screen>("game");
   const [currentRound, setCurrentRound] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
-  const [items, setItems] = useState<ItemWithStatus[]>(() =>
-    rounds[0].items.map((item) => ({
-      ...item,
-      status: "normal" as ItemStatus,
-    })),
+  const [itemStatuses, setItemStatuses] = useState<Record<string, ItemStatus>>(
+    {},
   );
 
   const elapsedMs = useRef(0);
   const roundStartTime = useRef(Date.now());
 
+  if (!rounds) {
+    return <LoadingScreen />;
+  }
+
   const round = rounds[currentRound];
   const totalRounds = rounds.length;
+
+  // Derive display items from round data + status map
+  const items: ItemWithStatus[] = round.items.map((item) => ({
+    ...item,
+    status: itemStatuses[item.id] || "normal",
+  }));
 
   const handleItemClick = (id: string) => {
     const hasCorrectAnswer = items.some((item) => item.status === "correct");
@@ -60,56 +75,50 @@ export default function TopicSession({
       if (!hasWrongAttempt) {
         setCorrectCount((prev) => prev + 1);
       }
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "correct" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "correct" }));
 
       // After delay, advance to next round or show summary
       setTimeout(() => {
         if (currentRound + 1 < totalRounds) {
           roundStartTime.current = Date.now();
           setCurrentRound((prev) => prev + 1);
-          setItems(
-            rounds[currentRound + 1].items.map((item) => ({
-              ...item,
-              status: "normal" as ItemStatus,
-            })),
-          );
+          setItemStatuses({});
         } else {
           setScreen("summary");
         }
       }, 1500);
     } else {
       playErrorSound();
-      setItems((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, status: "wrong" } : item,
-        ),
-      );
+      setItemStatuses((prev) => ({ ...prev, [id]: "wrong" }));
     }
+  };
+
+  const handleRestart = () => {
+    resetRounds();
+    setScreen("game");
+    setCurrentRound(0);
+    setCorrectCount(0);
+    setItemStatuses({});
+    elapsedMs.current = 0;
+    roundStartTime.current = Date.now();
   };
 
   if (screen === "summary") {
     return (
       <SessionSummary
-        topicId={topicId}
         topicName={topicName}
         topicIcon={topicIcon}
         correctCount={correctCount}
         totalRounds={totalRounds}
         elapsedMs={elapsedMs.current}
+        onRestart={handleRestart}
       />
     );
   }
 
   return (
     <div className="h-dvh w-screen overflow-hidden text-slate-900 select-none">
-      <SessionProgress
-        currentRound={currentRound}
-        totalRounds={totalRounds}
-      />
+      <SessionProgress currentRound={currentRound} totalRounds={totalRounds} />
 
       <GameScreen
         inputWord={round.word}

@@ -19,13 +19,18 @@ const COLOR_NAMES = [
 ];
 
 /**
- * Returns n random unique suggestions (mix of colors and emoji names)
+ * Returns a shuffled pool of single-word suggestions (mix of colors and emoji names).
+ * The shuffle result gets cached — a different pool on each cache rebuild.
+ * Clients pick from this pool on mount for fresh randomness every visit.
  */
-export function getRandomSuggestions(count: number = 4): string[] {
+export function getSuggestionPool(count: number = 50): string[] {
   const emojiNames = getShortestEmojiNames();
   const allSuggestions = [...COLOR_NAMES, ...emojiNames];
 
+  // Filter to single words only (no spaces) for kid-friendliness
+  const singleWords = allSuggestions.filter((word) => !word.includes(" "));
+
   // Shuffle and take count items
-  const shuffled = shuffle([...allSuggestions]);
+  const shuffled = shuffle([...singleWords]);
   return shuffled.slice(0, count);
 }
