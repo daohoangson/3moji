@@ -1,0 +1,25 @@
+lib/topics/build-session.test.ts
+  e12bf0571bf649ab 121-153
+lib/topics/coverage.test.ts
+  e12bf0571bf649ab 25-29,31,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "e32b4400ca6eea31b20d21a3de86df9f9bee44dd",
+  "prompts": {
+    "e12bf0571bf649ab": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e94724d5-d940-4722-810d-5df48a158447",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 40,
+      "total_deletions": 2,
+      "accepted_lines": 40,
+      "overriden_lines": 0
+    }
+  }
+}
