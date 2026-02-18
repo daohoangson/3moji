@@ -1,0 +1,25 @@
+app/topics/[topicId]/play/session.tsx
+  35be11b632a01624 3,41-43,59,72,102
+components/SessionSummary.tsx
+  35be11b632a01624 4,15-25,34,121-127
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "d7bbd814bf6824e4b63237e2bc0e33707e653bba",
+  "prompts": {
+    "35be11b632a01624": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ddfb15cd-2ff7-41c0-ab40-bc46c307fc85",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 27,
+      "total_deletions": 2,
+      "accepted_lines": 27,
+      "overriden_lines": 0
+    }
+  }
+}
