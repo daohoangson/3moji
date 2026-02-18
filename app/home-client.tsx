@@ -9,16 +9,20 @@ import { unlockAudio, playPopSound } from "@/lib/audio";
 import { validateWordInput } from "@/lib/schema";
 import { shuffle } from "@/lib/shuffle";
 import { useClientValue } from "@/lib/use-is-client";
-import type { Topic } from "@/lib/topics";
+interface TopicSummary {
+  id: string;
+  name: string;
+  icon: string;
+}
 
 interface HomeClientProps {
   suggestionPool: string[];
-  allTopics: Topic[];
+  allTopics: TopicSummary[];
 }
 
 interface ClientSelections {
   suggestions: string[];
-  featuredTopics: Topic[];
+  featuredTopics: TopicSummary[];
 }
 
 export default function HomeClient({

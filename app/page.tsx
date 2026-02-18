@@ -4,7 +4,11 @@ import HomeClient from "./home-client";
 
 export default function Home() {
   const suggestionPool = getSuggestionPool();
-  const allTopics = getAllTopics();
+  const allTopics = getAllTopics().map(({ id, name, icon }) => ({
+    id,
+    name,
+    icon,
+  }));
 
   return <HomeClient suggestionPool={suggestionPool} allTopics={allTopics} />;
 }

@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { playPopSound } from "@/lib/audio";
-import type { Topic } from "@/lib/topics";
 import { stripMarkdown } from "./Markdown";
+
+interface TopicCardTopic {
+  id: string;
+  name: string;
+  icon: string;
+  descriptionMarkdown?: string;
+}
 
 type TopicCardVariant = "compact" | "full";
 
 interface TopicCardProps {
-  topic: Topic;
+  topic: TopicCardTopic;
   variant?: TopicCardVariant;
 }
 
@@ -45,7 +51,7 @@ export function TopicCard({ topic, variant = "full" }: TopicCardProps) {
         {topic.name}
       </h3>
       <p className="line-clamp-2 text-xs leading-relaxed text-slate-500 sm:text-sm">
-        {stripMarkdown(topic.descriptionMarkdown)}
+        {topic.descriptionMarkdown && stripMarkdown(topic.descriptionMarkdown)}
       </p>
     </Link>
   );
