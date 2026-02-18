@@ -194,7 +194,7 @@ export const TOPICS: Topic[] = [
     id: "flags-easy",
     name: "Famous Flags",
     description:
-      "Discover the most famous flags in the world! Start your global adventure with flags everyone knows.",
+      "Discover the most famous flags in the world! Start your global adventure with flags everyone knows. Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Recognize the most iconic country flags",
       "Learn names of famous countries",
@@ -451,7 +451,7 @@ export const TOPICS: Topic[] = [
     id: "flags-medium",
     name: "World Flags",
     description:
-      "Explore more flags from around the globe! Challenge yourself with flags from every continent.",
+      "Explore more flags from around the globe! Challenge yourself with flags from every continent. Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Identify flags from diverse regions",
       "Learn about countries across all continents",
@@ -503,7 +503,7 @@ export const TOPICS: Topic[] = [
     id: "flags-hard",
     name: "Flag Expert Challenge",
     description:
-      "The ultimate flag challenge! Can you identify these tricky flags from lesser-known countries and territories?",
+      "The ultimate flag challenge! Can you identify these tricky flags from lesser-known countries and territories? Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
       "Identify flags from lesser-known countries",
       "Distinguish similar-looking flags",

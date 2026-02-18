@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Play, Target, CheckCircle2 } from "lucide-react";
-import { PageHeader } from "@/components";
+import { Markdown, PageHeader } from "@/components";
 import {
   getAllTopics,
   getTopicById,
@@ -110,9 +110,9 @@ export default async function TopicDetailPage({ params }: PageProps) {
           <h1 className="mb-3 text-3xl font-black text-slate-800 sm:text-5xl">
             {topic.name}
           </h1>
-          <p className="mx-auto max-w-xl text-lg leading-relaxed text-slate-600">
+          <Markdown className="mx-auto max-w-xl text-lg leading-relaxed text-slate-600">
             {topic.description}
-          </p>
+          </Markdown>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -133,7 +133,7 @@ export default async function TopicDetailPage({ params }: PageProps) {
                   className="flex items-start gap-3 text-slate-700"
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                  <span className="font-medium">{goal}</span>
+                  <Markdown className="font-medium">{goal}</Markdown>
                 </li>
               ))}
             </ul>
