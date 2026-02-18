@@ -4,11 +4,26 @@
  * 2. Expected matches (words that SHOULD resolve but don't yet)
  */
 
-import { NAME_TO_EMOJI, EMOJI_TO_CATEGORY } from "../lib/emoji-data.generated";
+import { EMOJI_DATABASE } from "../lib/emoji-data.generated";
 import { readFileSync } from "fs";
 import { EXPECTED_EMOJI_MAPPINGS } from "./expected-emoji-mappings";
 
 const normalizeEmoji = (emoji: string) => emoji.replace(/[\uFE0E\uFE0F]/g, "");
+
+// Derive lookup maps from EMOJI_DATABASE
+const NAME_TO_EMOJI: Record<string, string> = {};
+const EMOJI_TO_CATEGORY: Record<string, string> = {};
+for (const cat of EMOJI_DATABASE) {
+  for (const item of cat.items) {
+    EMOJI_TO_CATEGORY[normalizeEmoji(item.emoji)] = cat.category;
+    if (!cat.category.startsWith("internal:")) {
+      for (const name of item.names) {
+        const lower = name.toLowerCase();
+        if (!(lower in NAME_TO_EMOJI)) NAME_TO_EMOJI[lower] = item.emoji;
+      }
+    }
+  }
+}
 
 function findEmojiByName(name: string) {
   const normalized = name.toLowerCase().trim();

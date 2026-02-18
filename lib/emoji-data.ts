@@ -3,15 +3,11 @@ import "server-only";
 /**
  * Emoji database API for generating game content without LLM.
  *
- * Lookup maps are maintained directly in lib/emoji-data.generated.ts.
+ * Derived lookup maps are computed once at module load from EMOJI_DATABASE.
  */
 import { shuffle } from "./shuffle";
 import {
   EMOJI_DATABASE,
-  NAME_TO_EMOJI,
-  EMOJI_TO_KEYWORDS,
-  EMOJI_TO_CATEGORY,
-  SHORTEST_EMOJI_NAMES,
   type EmojiItem,
   type EmojiCategory,
 } from "./emoji-data.generated";
@@ -29,6 +25,40 @@ const isInternalCategory = (category: string | null | undefined): boolean =>
   Boolean(category && category.startsWith("internal:"));
 
 // =============================================================================
+// Derived lookup maps (computed once at module load)
+// =============================================================================
+
+const NAME_TO_EMOJI: Record<string, string> = {};
+const EMOJI_TO_KEYWORDS: Record<string, string[]> = {};
+const EMOJI_TO_CATEGORY: Record<string, string> = {};
+const SHORTEST_EMOJI_NAMES: string[] = [];
+
+for (const cat of EMOJI_DATABASE) {
+  for (const item of cat.items) {
+    const key = normalizeEmoji(item.emoji);
+    EMOJI_TO_KEYWORDS[key] = item.keywords;
+    EMOJI_TO_CATEGORY[key] = cat.category;
+
+    if (!isInternalCategory(cat.category)) {
+      for (const name of item.names) {
+        const lower = name.toLowerCase();
+        // First definition wins (matches original behavior)
+        if (!(lower in NAME_TO_EMOJI)) {
+          NAME_TO_EMOJI[lower] = item.emoji;
+        }
+      }
+
+      // Track shortest name per emoji for suggestions
+      let shortest = item.names[0];
+      for (const name of item.names) {
+        if (name.length < shortest.length) shortest = name;
+      }
+      SHORTEST_EMOJI_NAMES.push(shortest);
+    }
+  }
+}
+
+// =============================================================================
 // Public API
 // =============================================================================
 
@@ -37,7 +67,7 @@ const isInternalCategory = (category: string | null | undefined): boolean =>
  * Returns the FIRST emoji that matches (by definition order)
  *
  * The NAME_TO_EMOJI map includes:
- * - Direct emoji names and TTS names
+ * - Direct emoji names
  * - Keyword promotions (via moby synonym matching at generation time)
  * - Common word expansions (via moby dominant-category at generation time)
  */
