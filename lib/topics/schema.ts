@@ -33,7 +33,7 @@ export function isColorItem(item: TopicItem): item is ColorItem {
 export const TopicSchema = z.object({
   id: z.string(),
   name: z.string(),
-  description: z.string(),
+  descriptionMarkdown: z.string(),
   learningGoals: z.array(z.string()),
   icon: z.string(),
   level: TopicLevelSchema,

@@ -5,7 +5,7 @@ export const TOPICS: Topic[] = [
   {
     id: "animal-friends",
     name: "Animal Friends",
-    description:
+    descriptionMarkdown:
       "Meet friendly farm animals and pets! Perfect for little ones learning their first animal names.",
     learningGoals: [
       "Recognize common farm animals",
@@ -45,7 +45,7 @@ export const TOPICS: Topic[] = [
   {
     id: "fruits",
     name: "Fruits",
-    description:
+    descriptionMarkdown:
       "Discover colorful fruits from the kitchen! Learn to identify delicious fruits by their shapes and colors.",
     learningGoals: [
       "Identify common fruits",
@@ -77,7 +77,7 @@ export const TOPICS: Topic[] = [
   {
     id: "vehicles",
     name: "Vehicles",
-    description:
+    descriptionMarkdown:
       "Things that go! Explore cars, trucks, and more vehicles your child sees every day.",
     learningGoals: [
       "Name common vehicles",
@@ -115,7 +115,7 @@ export const TOPICS: Topic[] = [
   {
     id: "clothing",
     name: "Clothing",
-    description:
+    descriptionMarkdown:
       "What do we wear? Learn about everyday clothing items from head to toe.",
     learningGoals: [
       "Identify clothing items",
@@ -153,7 +153,7 @@ export const TOPICS: Topic[] = [
   {
     id: "colors",
     name: "Colors",
-    description:
+    descriptionMarkdown:
       "A rainbow of colors! Practice naming basic colors that are everywhere around us.",
     learningGoals: [
       "Recognize primary colors",
@@ -190,12 +190,57 @@ export const TOPICS: Topic[] = [
       { color: "indigo" },
     ],
   },
+  {
+    id: "flags-easy",
+    name: "Famous Flags",
+    descriptionMarkdown:
+      "Discover the most famous flags in the world! Start your global adventure with flags everyone knows. Part of the [Flag Challenge](/topics/flags) series.",
+    learningGoals: [
+      "Recognize the most iconic country flags",
+      "Learn names of famous countries",
+      "Begin exploring the world map",
+    ],
+    icon: "🌍",
+    level: 1,
+    items: [
+      { word: "United States", emoji: "🇺🇸" },
+      { word: "Japan", emoji: "🇯🇵" },
+      { word: "Brazil", emoji: "🇧🇷" },
+      { word: "France", emoji: "🇫🇷" },
+      { word: "United Kingdom", emoji: "🇬🇧" },
+      { word: "Canada", emoji: "🇨🇦" },
+      { word: "Germany", emoji: "🇩🇪" },
+      { word: "Italy", emoji: "🇮🇹" },
+      { word: "China", emoji: "🇨🇳" },
+      { word: "Australia", emoji: "🇦🇺" },
+      { word: "Mexico", emoji: "🇲🇽" },
+      { word: "India", emoji: "🇮🇳" },
+      { word: "South Korea", emoji: "🇰🇷" },
+      { word: "Spain", emoji: "🇪🇸" },
+      { word: "Russia", emoji: "🇷🇺" },
+      { word: "Turkey", emoji: "🇹🇷" },
+      { word: "South Africa", emoji: "🇿🇦" },
+      { word: "Argentina", emoji: "🇦🇷" },
+      { word: "Sweden", emoji: "🇸🇪" },
+      { word: "Switzerland", emoji: "🇨🇭" },
+      { word: "Greece", emoji: "🇬🇷" },
+      { word: "Ireland", emoji: "🇮🇪" },
+      { word: "New Zealand", emoji: "🇳🇿" },
+      { word: "Denmark", emoji: "🇩🇰" },
+      { word: "Norway", emoji: "🇳🇴" },
+      { word: "Netherlands", emoji: "🇳🇱" },
+      { word: "Egypt", emoji: "🇪🇬" },
+      { word: "Portugal", emoji: "🇵🇹" },
+      { word: "Finland", emoji: "🇫🇮" },
+      { word: "Austria", emoji: "🇦🇹" },
+    ],
+  },
 
   // Level 2: Discoverer (3-5 years) - Categorization, emotions, attributes
   {
     id: "wild-animals",
     name: "Wild Animals",
-    description:
+    descriptionMarkdown:
       "Safari time! Discover amazing animals from jungles, oceans, and beyond.",
     learningGoals: [
       "Learn about animals from different habitats",
@@ -240,7 +285,7 @@ export const TOPICS: Topic[] = [
   {
     id: "food",
     name: "Food",
-    description:
+    descriptionMarkdown:
       "Yummy foods from around the world! From pizza to noodles, discover tasty treats.",
     learningGoals: [
       "Identify various foods",
@@ -285,7 +330,7 @@ export const TOPICS: Topic[] = [
   {
     id: "nature",
     name: "Nature",
-    description:
+    descriptionMarkdown:
       "Explore the natural world! From sunny skies to snowy mountains, discover nature's wonders.",
     learningGoals: [
       "Identify natural phenomena",
@@ -330,7 +375,7 @@ export const TOPICS: Topic[] = [
   {
     id: "emotions",
     name: "Emotions",
-    description:
+    descriptionMarkdown:
       "How do you feel? Learn to recognize and name different emotions and feelings.",
     learningGoals: [
       "Identify facial expressions",
@@ -365,7 +410,7 @@ export const TOPICS: Topic[] = [
   {
     id: "shapes",
     name: "Shapes",
-    description:
+    descriptionMarkdown:
       "Shapes are everywhere! Learn to spot circles, squares, and more geometric friends.",
     learningGoals: [
       "Recognize basic shapes",
@@ -402,52 +447,127 @@ export const TOPICS: Topic[] = [
       { word: "green heart", emoji: "💚" },
     ],
   },
-
-  // Level 3: Scholar (>5 years) - Complex symbols, global awareness
   {
-    id: "flags",
-    name: "Flags",
-    description:
-      "Travel the world through flags! Learn to recognize flags from different countries.",
+    id: "flags-medium",
+    name: "World Flags",
+    descriptionMarkdown:
+      "Explore more flags from around the globe! Challenge yourself with flags from every continent. Part of the [Flag Challenge](/topics/flags) series.",
     learningGoals: [
-      "Identify country flags",
-      "Learn about world geography",
-      "Appreciate global diversity",
+      "Identify flags from diverse regions",
+      "Learn about countries across all continents",
+      "Understand geographic diversity through flags",
     ],
-    icon: "🌍",
-    level: 3,
+    icon: "🗺️",
+    level: 2,
     items: [
-      { word: "United States", emoji: "🇺🇸" },
-      { word: "Japan", emoji: "🇯🇵" },
-      { word: "Brazil", emoji: "🇧🇷" },
-      { word: "France", emoji: "🇫🇷" },
-      { word: "United Kingdom", emoji: "🇬🇧" },
-      { word: "Germany", emoji: "🇩🇪" },
-      { word: "Italy", emoji: "🇮🇹" },
-      { word: "Canada", emoji: "🇨🇦" },
-      { word: "Australia", emoji: "🇦🇺" },
-      { word: "Mexico", emoji: "🇲🇽" },
-      { word: "China", emoji: "🇨🇳" },
-      { word: "India", emoji: "🇮🇳" },
-      { word: "South Korea", emoji: "🇰🇷" },
-      { word: "Spain", emoji: "🇪🇸" },
-      { word: "Russia", emoji: "🇷🇺" },
-      { word: "South Africa", emoji: "🇿🇦" },
-      { word: "Argentina", emoji: "🇦🇷" },
-      { word: "Egypt", emoji: "🇪🇬" },
       { word: "Thailand", emoji: "🇹🇭" },
       { word: "Vietnam", emoji: "🇻🇳" },
       { word: "Indonesia", emoji: "🇮🇩" },
-      { word: "Netherlands", emoji: "🇳🇱" },
-      { word: "Sweden", emoji: "🇸🇪" },
-      { word: "Switzerland", emoji: "🇨🇭" },
-      { word: "Greece", emoji: "🇬🇷" },
+      { word: "Poland", emoji: "🇵🇱" },
+      { word: "Belgium", emoji: "🇧🇪" },
+      { word: "Philippines", emoji: "🇵🇭" },
+      { word: "Colombia", emoji: "🇨🇴" },
+      { word: "Chile", emoji: "🇨🇱" },
+      { word: "Peru", emoji: "🇵🇪" },
+      { word: "Nigeria", emoji: "🇳🇬" },
+      { word: "Kenya", emoji: "🇰🇪" },
+      { word: "Israel", emoji: "🇮🇱" },
+      { word: "Saudi Arabia", emoji: "🇸🇦" },
+      { word: "Ukraine", emoji: "🇺🇦" },
+      { word: "Singapore", emoji: "🇸🇬" },
+      { word: "Malaysia", emoji: "🇲🇾" },
+      { word: "Pakistan", emoji: "🇵🇰" },
+      { word: "Cuba", emoji: "🇨🇺" },
+      { word: "Morocco", emoji: "🇲🇦" },
+      { word: "Jamaica", emoji: "🇯🇲" },
+      { word: "Czech Republic", emoji: "🇨🇿" },
+      { word: "Romania", emoji: "🇷🇴" },
+      { word: "Hungary", emoji: "🇭🇺" },
+      { word: "Croatia", emoji: "🇭🇷" },
+      { word: "Serbia", emoji: "🇷🇸" },
+      { word: "Iceland", emoji: "🇮🇸" },
+      { word: "Taiwan", emoji: "🇹🇼" },
+      { word: "Iran", emoji: "🇮🇷" },
+      { word: "Iraq", emoji: "🇮🇶" },
+      { word: "Bangladesh", emoji: "🇧🇩" },
+      { word: "Ethiopia", emoji: "🇪🇹" },
+      { word: "Ghana", emoji: "🇬🇭" },
+      { word: "Tanzania", emoji: "🇹🇿" },
+      { word: "Costa Rica", emoji: "🇨🇷" },
+      { word: "Dominican Republic", emoji: "🇩🇴" },
+    ],
+  },
+
+  // Level 3: Scholar (>5 years) - Complex symbols, global awareness
+  {
+    id: "flags-hard",
+    name: "Flag Expert Challenge",
+    descriptionMarkdown:
+      "The ultimate flag challenge! Can you identify these tricky flags from lesser-known countries and territories? Part of the [Flag Challenge](/topics/flags) series.",
+    learningGoals: [
+      "Identify flags from lesser-known countries",
+      "Distinguish similar-looking flags",
+      "Develop expert-level geography knowledge",
+    ],
+    icon: "🏴",
+    level: 3,
+    items: [
+      { word: "Nepal", emoji: "🇳🇵" },
+      { word: "Bhutan", emoji: "🇧🇹" },
+      { word: "Sri Lanka", emoji: "🇱🇰" },
+      { word: "Cambodia", emoji: "🇰🇭" },
+      { word: "Myanmar", emoji: "🇲🇲" },
+      { word: "Mongolia", emoji: "🇲🇳" },
+      { word: "Qatar", emoji: "🇶🇦" },
+      { word: "Bahrain", emoji: "🇧🇭" },
+      { word: "Mozambique", emoji: "🇲🇿" },
+      { word: "Eswatini", emoji: "🇸🇿" },
+      { word: "Brunei", emoji: "🇧🇳" },
+      { word: "Laos", emoji: "🇱🇦" },
+      { word: "Honduras", emoji: "🇭🇳" },
+      { word: "Guatemala", emoji: "🇬🇹" },
+      { word: "El Salvador", emoji: "🇸🇻" },
+      { word: "Panama", emoji: "🇵🇦" },
+      { word: "Uzbekistan", emoji: "🇺🇿" },
+      { word: "Kazakhstan", emoji: "🇰🇿" },
+      { word: "Azerbaijan", emoji: "🇦🇿" },
+      { word: "Georgia", emoji: "🇬🇪" },
+      { word: "North Macedonia", emoji: "🇲🇰" },
+      { word: "Montenegro", emoji: "🇲🇪" },
+      { word: "Moldova", emoji: "🇲🇩" },
+      { word: "Liechtenstein", emoji: "🇱🇮" },
+      { word: "Andorra", emoji: "🇦🇩" },
+      { word: "Suriname", emoji: "🇸🇷" },
+      { word: "Maldives", emoji: "🇲🇻" },
+      { word: "Fiji", emoji: "🇫🇯" },
+      { word: "Tonga", emoji: "🇹🇴" },
+      { word: "Barbados", emoji: "🇧🇧" },
+      { word: "Djibouti", emoji: "🇩🇯" },
+      { word: "Eritrea", emoji: "🇪🇷" },
+      { word: "Kyrgyzstan", emoji: "🇰🇬" },
+      { word: "Turkmenistan", emoji: "🇹🇲" },
+      { word: "Armenia", emoji: "🇦🇲" },
+      { word: "Bolivia", emoji: "🇧🇴" },
+      { word: "Paraguay", emoji: "🇵🇾" },
+      { word: "Uruguay", emoji: "🇺🇾" },
+      { word: "Madagascar", emoji: "🇲🇬" },
+      { word: "Senegal", emoji: "🇸🇳" },
+      { word: "Tunisia", emoji: "🇹🇳" },
+      { word: "Algeria", emoji: "🇩🇿" },
+      { word: "Jordan", emoji: "🇯🇴" },
+      { word: "Lebanon", emoji: "🇱🇧" },
+      { word: "Oman", emoji: "🇴🇲" },
+      { word: "Papua New Guinea", emoji: "🇵🇬" },
+      { word: "Belize", emoji: "🇧🇿" },
+      { word: "Trinidad and Tobago", emoji: "🇹🇹" },
+      { word: "Latvia", emoji: "🇱🇻" },
+      { word: "Lithuania", emoji: "🇱🇹" },
     ],
   },
   {
     id: "celebrations",
     name: "Celebrations",
-    description:
+    descriptionMarkdown:
       "Party time! Discover symbols of holidays and celebrations throughout the year.",
     learningGoals: [
       "Recognize celebration symbols",
@@ -487,7 +607,7 @@ export const TOPICS: Topic[] = [
   {
     id: "sports",
     name: "Sports",
-    description:
+    descriptionMarkdown:
       "Game on! Learn about different sports and the equipment used to play them.",
     learningGoals: [
       "Identify sports and equipment",
@@ -527,7 +647,7 @@ export const TOPICS: Topic[] = [
   {
     id: "professions",
     name: "Professions",
-    description:
+    descriptionMarkdown:
       "What do you want to be? Explore different jobs and the people who help our community.",
     learningGoals: [
       "Identify different professions",
