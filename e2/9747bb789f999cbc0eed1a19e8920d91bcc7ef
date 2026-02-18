@@ -1,0 +1,23 @@
+app/topics/flags/page.tsx
+  071bc9c02b647ae3 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "e29747bb789f999cbc0eed1a19e8920d91bcc7ef",
+  "prompts": {
+    "071bc9c02b647ae3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5baa296a-1774-4390-8671-daf8826046d3",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 153,
+      "total_deletions": 0,
+      "accepted_lines": 153,
+      "overriden_lines": 0
+    }
+  }
+}
