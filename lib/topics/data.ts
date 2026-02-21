@@ -162,6 +162,10 @@ export const TOPICS: Topic[] = [
     ],
     icon: "🌈",
     level: 1,
+    // 12 items minimum needed (session length 10 + 2 for distractor exclusion).
+    // Core 10 are the standard toddler colors. Gray and gold are added to meet
+    // the minimum — gray is common (elephants, clouds) and gold is familiar from
+    // stickers and picture books, while being visually distinct from yellow.
     items: [
       { color: "red" },
       { color: "blue" },
