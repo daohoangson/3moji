@@ -1,0 +1,23 @@
+lib/topics/data.ts
+  7cd2d4d95992abb4 451-488
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "cee2a99c3bb515ffcd452038b0ca69230b528752",
+  "prompts": {
+    "7cd2d4d95992abb4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6b8c3613-f121-4fe9-bb15-6449cb3351cf",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 39,
+      "total_deletions": 0,
+      "accepted_lines": 39,
+      "overriden_lines": 0
+    }
+  }
+}
