@@ -13,14 +13,17 @@ interface SuccessScreenProps {
   targetValue: string;
   type: "color" | "emoji";
   suggestionPool: string[];
+  animatedSrc?: string | null;
 }
 
 function TargetDisplay({
   targetValue,
   type,
+  animatedSrc,
 }: {
   targetValue: string;
   type: "color" | "emoji";
+  animatedSrc?: string | null;
 }) {
   if (type === "color") {
     return (
@@ -29,6 +32,16 @@ function TargetDisplay({
         style={{ backgroundColor: targetValue }}
         role="img"
         aria-label={`Color: ${targetValue}`}
+      />
+    );
+  }
+
+  if (animatedSrc) {
+    return (
+      <img
+        src={animatedSrc}
+        alt={targetValue}
+        className="h-full w-full object-contain"
       />
     );
   }
@@ -49,6 +62,7 @@ export function SuccessScreen({
   targetValue,
   type,
   suggestionPool,
+  animatedSrc,
 }: SuccessScreenProps) {
   const [confettiKey, setConfettiKey] = useState(0);
   const [suggestions] = useClientValue(() =>
@@ -99,7 +113,7 @@ export function SuccessScreen({
           aria-label="Tap to celebrate again!"
         >
           <div className="flex h-32 w-32 items-center justify-center rounded-3xl border-4 border-slate-100 bg-slate-50 sm:h-52 sm:w-52">
-            <TargetDisplay targetValue={targetValue} type={type} />
+            <TargetDisplay targetValue={targetValue} type={type} animatedSrc={animatedSrc} />
           </div>
         </button>
 

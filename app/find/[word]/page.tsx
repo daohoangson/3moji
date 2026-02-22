@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { LoadingScreen } from "@/components";
 import { generateGameContent } from "@/lib/game-content";
+import { getAnimatedEmojiPath } from "@/lib/emoji-data";
 import { validateWordInput } from "@/lib/schema";
 import { getSuggestionPool } from "@/lib/suggestions";
 import GameClient, { type GameItem } from "./game";
@@ -75,6 +76,10 @@ async function GameContent({ word }: { word: string }) {
   // Pass suggestion pool — client picks on mount
   const suggestionPool = getSuggestionPool();
 
+  // Resolve animated emoji path (server-only)
+  const animatedSrc =
+    data.type === "emoji" ? getAnimatedEmojiPath(data.targetValue) : null;
+
   return (
     <GameClient
       word={word}
@@ -82,6 +87,7 @@ async function GameContent({ word }: { word: string }) {
       targetValue={data.targetValue}
       initialItems={items}
       suggestionPool={suggestionPool}
+      animatedSrc={animatedSrc}
     />
   );
 }

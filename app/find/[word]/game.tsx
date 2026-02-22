@@ -25,6 +25,7 @@ interface GameClientProps {
   targetValue: string;
   initialItems: GameItem[];
   suggestionPool: string[];
+  animatedSrc?: string | null;
 }
 
 export default function GameClient({
@@ -33,6 +34,7 @@ export default function GameClient({
   targetValue,
   initialItems,
   suggestionPool,
+  animatedSrc,
 }: GameClientProps) {
   const [shuffledItems] = useClientValue(() => shuffle([...initialItems]));
   const [screen, setScreen] = useState<Screen>("game");
@@ -83,6 +85,7 @@ export default function GameClient({
           targetValue={targetValue}
           type={type}
           suggestionPool={suggestionPool}
+          animatedSrc={animatedSrc}
         />
       )}
     </div>

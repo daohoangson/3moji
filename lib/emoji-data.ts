@@ -115,3 +115,23 @@ export function getDistractors(
 export function getShortestEmojiNames(): string[] {
   return SHORTEST_EMOJI_NAMES;
 }
+
+// =============================================================================
+// Animated emoji lookup
+// =============================================================================
+
+const EMOJI_TO_ANIMATED: Record<string, string> = {};
+for (const cat of EMOJI_DATABASE) {
+  for (const item of cat.items) {
+    if (item.animated) {
+      EMOJI_TO_ANIMATED[normalizeEmoji(item.emoji)] = item.animated;
+    }
+  }
+}
+
+/**
+ * Get the animated WebP path for an emoji, or null if none exists.
+ */
+export function getAnimatedEmojiPath(emoji: string): string | null {
+  return EMOJI_TO_ANIMATED[normalizeEmoji(emoji)] ?? null;
+}

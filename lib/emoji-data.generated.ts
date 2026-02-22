@@ -8,6 +8,7 @@ export interface EmojiItem {
   names: string[];
   keywords: string[];
   emoji_alias?: string[];
+  animated?: string;
 }
 
 export interface EmojiCategory {
@@ -24,21 +25,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "😀",
         names: ["grinning face", "grinning", "cheerful", "cheery", "grin"],
         keywords: ["grin", "grinning", "laugh", "nice", "teeth"],
+        animated: "/animated/Smileys/grinning-face_1f600.webp",
       },
       {
         emoji: "😃",
         names: ["grinning face with big eyes", "big"],
         keywords: ["big", "awesome", "grin", "grinning", "teeth", "yay"],
+        animated: "/animated/Smileys/grinning-face-with-big-eyes_1f603.webp",
       },
       {
         emoji: "😄",
         names: ["grinning face with smiling eyes"],
         keywords: ["grin", "grinning", "laugh", "lol"],
+        animated: "/animated/Smileys/grinning-face-with-smiling-eyes_1f604.webp",
       },
       {
         emoji: "😁",
         names: ["beaming face with smiling eyes", "beaming"],
         keywords: ["grin", "grinning", "nice", "teeth"],
+        animated: "/animated/Smileys/beaming-face-with-smiling-eyes_1f601.webp",
       },
       {
         emoji: "😆",
@@ -57,6 +62,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "rofl",
           "squinting",
         ],
+        animated: "/animated/Smileys/grinning-squinting-face_1f606.webp",
       },
       {
         emoji: "😅",
@@ -70,6 +76,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "stressed",
           "sweat",
         ],
+        animated: "/animated/Smileys/grinning-face-with-sweat_1f605.webp",
       },
       {
         emoji: "🤣",
@@ -89,6 +96,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "rolling",
           "tear",
         ],
+        animated: "/animated/Smileys/rolling-on-the-floor-laughing_1f923.webp",
       },
       {
         emoji: "😂",
@@ -107,11 +115,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "roflmao",
           "tear",
         ],
+        animated: "/animated/Smileys/face-with-tears-of-joy_1f602.webp",
       },
       {
         emoji: "🙂",
         names: ["slightly smiling face", "slightly smiling", "slightly"],
         keywords: ["slightly"],
+        animated: "/animated/Smileys/slightly-smiling-face_1f642.webp",
       },
       {
         emoji: "🙃",
@@ -144,11 +154,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "winks",
         ],
         keywords: ["sexy", "slide", "wink", "winking"],
+        animated: "/animated/Smileys/winking-face_1f609.webp",
       },
       {
         emoji: "😊",
         names: ["smiling face with smiling eyes", "satisfied"],
         keywords: ["blush", "glad"],
+        animated: "/animated/Smileys/smiling-face-with-smiling-eyes_1f60a.webp",
       },
       {
         emoji: "😇",
@@ -160,11 +172,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "spirit",
         ],
         keywords: ["angel", "angelic", "blessed", "peaceful"],
+        animated: "/animated/Smileys/smiling-face-with-halo_1f607.webp",
       },
       {
         emoji: "🥰",
         names: ["smiling face with hearts", "adore", "crush"],
         keywords: ["3", "hearts", "you"],
+        animated: "/animated/Smileys/smiling-face-with-hearts_1f970.webp",
       },
       {
         emoji: "😍",
@@ -175,6 +189,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🤩",
         names: ["star-struck", "starry-eyed"],
         keywords: ["excited", "grinning", "wow"],
+        animated: "/animated/Smileys/star-struck_1f929.webp",
       },
       {
         emoji: "😘",
@@ -190,6 +205,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "xoxo",
           "you",
         ],
+        animated: "/animated/Smileys/face-blowing-a-kiss_1f618.webp",
       },
       {
         emoji: "😗",
@@ -203,11 +219,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "xoxo",
           "you",
         ],
+        animated: "/animated/Smileys/kissing-face_1f617.webp",
       },
       {
         emoji: "☺️",
         names: ["smiling face", "smiling"],
         keywords: ["outlined", "relaxed"],
+        animated: "/animated/Smileys/smiling-face_263a-fe0f.webp",
       },
       {
         emoji: "😚",
@@ -224,6 +242,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "smooches",
           "xoxo",
         ],
+        animated: "/animated/Smileys/kissing-face-with-closed-eyes_1f61a.webp",
       },
       {
         emoji: "😙",
@@ -234,16 +253,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥲",
         names: ["smiling face with tear", "pain", "smiley", "tear", "touched"],
         keywords: ["glad", "grateful", "joy", "proud", "relieved", "tear"],
+        animated: "/animated/Smileys/smiling-face-with-tear_1f972.webp",
       },
       {
         emoji: "😋",
         names: ["face savoring food", "savor", "tasty", "um"],
         keywords: ["delicious", "eat", "full", "hungry", "yum", "yummy"],
+        animated: "/animated/Smileys/face-savoring-food_1f60b.webp",
       },
       {
         emoji: "😛",
         names: ["face with tongue"],
         keywords: ["cool", "awesome", "nice", "stuck-out", "tongue"],
+        animated: "/animated/Smileys/face-with-tongue_1f61b.webp",
       },
       {
         emoji: "😜",
@@ -265,11 +287,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "winking",
           "yolo",
         ],
+        animated: "/animated/Smileys/winking-face-with-tongue_1f61c.webp",
       },
       {
         emoji: "🤪",
         names: ["zany face", "zany", "goofy"],
         keywords: ["crazy", "large", "small"],
+        animated: "/animated/Smileys/zany-face_1f92a.webp",
       },
       {
         emoji: "😝",
@@ -283,16 +307,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "tongue",
           "yolo",
         ],
+        animated: "/animated/Smileys/squinting-face-with-tongue_1f61d.webp",
       },
       {
         emoji: "🤑",
         names: ["money-mouth face", "money-mouth"],
         keywords: ["paid"],
+        animated: "/animated/Smileys/money-mouth-face_1f911.webp",
       },
       {
         emoji: "🤗",
         names: ["smiling face with open hands", "hands", "hugging"],
         keywords: ["hands", "hug"],
+        animated: "/animated/Smileys/hugging-face_1f917.webp",
       },
       {
         emoji: "🤭",
@@ -305,6 +332,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "whoops",
         ],
         keywords: ["oops", "secret", "shock", "surprise"],
+        animated: "/animated/Smileys/face-with-hand-over-mouth_1f92d.webp",
       },
       {
         emoji: "🫢",
@@ -324,6 +352,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "shock",
           "surprise",
         ],
+        animated: "/animated/Smileys/face-with-open-eyes-and-hand-over-mouth_1fae2.webp",
       },
       {
         emoji: "🫣",
@@ -336,11 +365,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "stare",
         ],
         keywords: ["embarrass", "hide", "peep", "scared", "shy"],
+        animated: "/animated/Smileys/face-with-peeking-eye_1fae3.webp",
       },
       {
         emoji: "🤫",
         names: ["shushing face", "shushing", "shush"],
         keywords: ["quiet", "shh"],
+        animated: "/animated/Smileys/shushing-face_1f92b.webp",
       },
       {
         emoji: "🤔",
@@ -354,6 +385,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "wondering",
         ],
         keywords: ["hmm"],
+        animated: "/animated/Smileys/thinking-face_1f914.webp",
       },
       {
         emoji: "🫡",
@@ -366,11 +398,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "troops",
         ],
         keywords: ["luck", "OK", "salute", "yes"],
+        animated: "/animated/Smileys/saluting-face_1fae1.webp",
       },
       {
         emoji: "🤐",
         names: ["zipper-mouth face", "zipper-mouth", "shut", "zipper"],
         keywords: ["keep", "quiet", "secret", "zip"],
+        animated: "/animated/Smileys/zipper-mouth-face_1f910.webp",
       },
       {
         emoji: "🤨",
@@ -394,6 +428,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "surprise",
           "what",
         ],
+        animated: "/animated/Smileys/face-with-raised-eyebrow_1f928.webp",
       },
       {
         emoji: "😐",
@@ -411,6 +446,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "unamused",
           "unimpressed",
         ],
+        animated: "/animated/Smileys/neutral-face_1f610.webp",
       },
       {
         emoji: "😑",
@@ -426,6 +462,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "straight",
           "unimpressed",
         ],
+        animated: "/animated/Smileys/expressionless-face_1f611.webp",
       },
       {
         emoji: "😶",
@@ -439,6 +476,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "secret",
           "silent",
         ],
+        animated: "/animated/Smileys/face-without-mouth_1f636.webp",
       },
       {
         emoji: "🫥",
@@ -452,6 +490,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "line",
         ],
         keywords: ["disappear", "dotted", "hidden", "hide", "meh", "wtv"],
+        animated: "/animated/Smileys/dotted-line-face_1fae5.webp",
       },
       {
         emoji: "😏",
@@ -470,6 +509,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "suspicious",
         ],
         keywords: ["homie", "shade", "sly", "swag"],
+        animated: "/animated/Smileys/smirking-face_1f60f.webp",
       },
       {
         emoji: "😒",
@@ -484,46 +524,55 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "ugh",
           "unamused",
         ],
+        animated: "/animated/Smileys/unamused-face_1f612.webp",
       },
       {
         emoji: "🙄",
         names: ["face with rolling eyes", "eyeroll", "rolling"],
         keywords: ["rolling", "shade", "ugh"],
+        animated: "/animated/Smileys/face-with-rolling-eyes_1f644.webp",
       },
       {
         emoji: "😬",
         names: ["grimacing face", "grimacing", "awk"],
         keywords: ["dentist", "awkward", "grimace", "grinning"],
+        animated: "/animated/Smileys/grimacing-face_1f62c.webp",
       },
       {
         emoji: "🤥",
         names: ["lying face", "lying", "liar", "lie", "pinocchio"],
         keywords: [],
+        animated: "/animated/Smileys/lying-face_1f925.webp",
       },
       {
         emoji: "🫨",
         names: ["shaking face", "shaking", "daze", "panic", "vibrate"],
         keywords: ["crazy", "earthquake", "shock", "surprise", "whoa", "wow"],
+        animated: "/animated/Smileys/shaking-face_1fae8.webp",
       },
       {
         emoji: "😌",
         names: ["relieved face", "relieved", "relief"],
         keywords: ["calm", "peace", "relieved", "zen"],
+        animated: "/animated/Smileys/relieved-face_1f60c.webp",
       },
       {
         emoji: "😔",
         names: ["pensive face", "pensive", "died", "lost", "sucks"],
         keywords: ["dejected", "awful", "bored", "disappointed", "losing"],
+        animated: "/animated/Smileys/pensive-face_1f614.webp",
       },
       {
         emoji: "😪",
         names: ["sleepy face", "sleepy", "sleep"],
         keywords: ["crying", "sleep", "sleeping", "sleepy", "tired"],
+        animated: "/animated/Smileys/sleepy-face_1f62a.webp",
       },
       {
         emoji: "🤤",
         names: ["drooling face", "drooling"],
         keywords: [],
+        animated: "/animated/Smileys/drooling-face_1f924.webp",
       },
       {
         emoji: "😴",
@@ -539,6 +588,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "yawn",
           "zzz",
         ],
+        animated: "/animated/Smileys/sleeping-face_1f634.webp",
       },
       {
         emoji: "🫩",
@@ -557,21 +607,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "medicine",
           "sick",
         ],
+        animated: "/animated/Smileys/face-with-medical-mask_1f637.webp",
       },
       {
         emoji: "🤒",
         names: ["face with thermometer", "ill"],
         keywords: ["sick", "thermometer"],
+        animated: "/animated/Smileys/face-with-thermometer_1f912.webp",
       },
       {
         emoji: "🤕",
         names: ["face with head-bandage", "head-bandage"],
         keywords: ["bandage", "hurt", "injury", "ouch"],
+        animated: "/animated/Smileys/face-with-head-bandage_1f915.webp",
       },
       {
         emoji: "🤢",
         names: ["nauseated face", "nauseated", "nasty"],
         keywords: ["gross", "sick", "vomit"],
+        animated: "/animated/Smileys/nauseated-face_1f922.webp",
       },
       {
         emoji: "🤮",
@@ -585,11 +639,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "vomiting",
         ],
         keywords: ["gross", "sick", "throw", "vomit"],
+        animated: "/animated/Smileys/face-vomiting_1f92e.webp",
       },
       {
         emoji: "🤧",
         names: ["sneezing face", "sneezing", "gesundheit"],
         keywords: ["fever", "flu", "sick", "sneeze"],
+        animated: "/animated/Smileys/sneezing-face_1f927.webp",
       },
       {
         emoji: "🥵",
@@ -603,6 +659,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "sweating",
         ],
         keywords: ["dying", "heat", "hot", "tongue"],
+        animated: "/animated/Smileys/hot-face_1f975.webp",
       },
       {
         emoji: "🥶",
@@ -616,6 +673,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "subzero",
         ],
         keywords: ["teeth"],
+        animated: "/animated/Smileys/cold-face_1f976.webp",
       },
       {
         emoji: "🥴",
@@ -628,21 +686,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "wavy",
         ],
         keywords: ["dizzy", "tired", "drunk"],
+        animated: "/animated/Smileys/woozy-face_1f974.webp",
       },
       {
         emoji: "😵",
         names: ["face with crossed-out eyes", "crossed-out", "knocked", "out"],
         keywords: ["dead", "dizzy", "sick", "tired"],
+        animated: "/animated/Smileys/dizzy-face_1f635.webp",
       },
       {
         emoji: "🤯",
         names: ["exploding head", "blown", "exploding", "mind", "mindblown"],
         keywords: ["explode", "head", "shocked", "way"],
+        animated: "/animated/Smileys/exploding-head_1f92f.webp",
       },
       {
         emoji: "🤠",
         names: ["cowboy hat face", "cowboy hat", "cowboy", "cowgirl"],
         keywords: [],
+        animated: "/animated/Smileys/cowboy-hat-face_1f920.webp",
       },
       {
         emoji: "🥳",
@@ -656,6 +718,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "horn",
           "partying",
         ],
+        animated: "/animated/Smileys/partying-face_1f973.webp",
       },
       {
         emoji: "🥸",
@@ -670,6 +733,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "tash",
         ],
         keywords: ["eyebrow", "glasses", "nose", "spy"],
+        animated: "/animated/Smileys/disguised-face_1f978.webp",
       },
       {
         emoji: "😎",
@@ -688,6 +752,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "swag",
           "win",
         ],
+        animated: "/animated/Smileys/smiling-face-with-sunglasses_1f60e.webp",
       },
       {
         emoji: "🤓",
@@ -701,16 +766,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "gifted",
         ],
         keywords: ["glasses", "intelligent", "smart"],
+        animated: "/animated/Smileys/nerd-face_1f913.webp",
       },
       {
         emoji: "🧐",
         names: ["face with monocle", "classy", "monocle", "stuffy", "wealthy"],
         keywords: ["fancy", "rich"],
+        animated: "/animated/Smileys/face-with-monocle_1f9d0.webp",
       },
       {
         emoji: "😕",
         names: ["confused face", "confused", "befuddled", "confusing", "hm"],
         keywords: ["confused", "dunno", "frown", "meh", "sorry", "sure"],
+        animated: "/animated/Smileys/confused-face_1f615.webp",
       },
       {
         emoji: "🫤",
@@ -731,6 +799,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "skeptical",
           "wtv",
         ],
+        animated: "/animated/Smileys/face-with-diagonal-mouth_1fae4.webp",
       },
       {
         emoji: "😟",
@@ -744,16 +813,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "worried",
           "worry",
         ],
+        animated: "/animated/Smileys/worried-face_1f61f.webp",
       },
       {
         emoji: "🙁",
         names: ["slightly frowning face", "slightly frowning"],
         keywords: ["frown", "frowning", "slightly"],
+        animated: "/animated/Smileys/slightly-frowning-face_1f641.webp",
       },
       {
         emoji: "☹️",
         names: ["frowning face", "frowning", "frown"],
         keywords: ["frown", "frowning"],
+        animated: "/animated/Smileys/frowning-face_2639-fe0f.webp",
       },
       {
         emoji: "😮",
@@ -770,11 +842,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "😯",
         names: ["hushed face", "hushed", "stunned"],
         keywords: ["epic", "surprised", "whoa", "woah"],
+        animated: "/animated/Smileys/hushed-face_1f62f.webp",
       },
       {
         emoji: "😲",
         names: ["astonished face", "astonished", "totally"],
         keywords: ["cost", "shocked", "way"],
+        animated: "/animated/Smileys/astonished-face_1f632.webp",
       },
       {
         emoji: "😳",
@@ -798,11 +872,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "what",
           "wow",
         ],
+        animated: "/animated/Smileys/flushed-face_1f633.webp",
       },
       {
         emoji: "🥺",
         names: ["pleading face", "pleading", "begging", "mercy", "why"],
         keywords: ["big", "please", "pretty", "puppy"],
+        animated: "/animated/Smileys/pleading-face_1f97a.webp",
       },
       {
         emoji: "🥹",
@@ -827,6 +903,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "proud",
           "tears",
         ],
+        animated: "/animated/Smileys/face-holding-back-tears_1f979.webp",
       },
       {
         emoji: "😦",
@@ -841,6 +918,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "what",
           "wow",
         ],
+        animated: "/animated/Smileys/frowning-face-with-open-mouth_1f626.webp",
       },
       {
         emoji: "😧",
@@ -854,16 +932,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "what",
           "wow",
         ],
+        animated: "/animated/Smileys/anguished-face_1f627.webp",
       },
       {
         emoji: "😨",
         names: ["fearful face", "fearful", "afraid", "fear"],
         keywords: ["anxious", "blame", "fear", "fearful", "scared", "worried"],
+        animated: "/animated/Smileys/fearful-face_1f628.webp",
       },
       {
         emoji: "😰",
         names: ["anxious face with sweat", "anxious", "eek", "rushed"],
         keywords: ["anxious", "nervous", "scared", "sweat", "yikes"],
+        animated: "/animated/Smileys/anxious-face-with-sweat_1f630.webp",
       },
       {
         emoji: "😥",
@@ -882,11 +963,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "relieved",
           "sweat",
         ],
+        animated: "/animated/Smileys/sad-but-relieved-face_1f625.webp",
       },
       {
         emoji: "😢",
         names: ["crying face", "crying", "triste"],
         keywords: ["cry", "awful", "crying", "miss", "tear"],
+        animated: "/animated/Smileys/crying-face_1f622.webp",
       },
       {
         emoji: "😭",
@@ -898,6 +981,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "sob",
         ],
         keywords: ["cry", "crying", "tear", "tears"],
+        animated: "/animated/Smileys/loudly-crying-face_1f62d.webp",
       },
       {
         emoji: "😱",
@@ -917,11 +1001,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "surprised",
           "woah",
         ],
+        animated: "/animated/Smileys/face-screaming-in-fear_1f631.webp",
       },
       {
         emoji: "😖",
         names: ["confounded face", "confounded", "cringe", "distraught"],
         keywords: ["annoyed", "confused", "frustrated", "mad"],
+        animated: "/animated/Smileys/confounded-face_1f616.webp",
       },
       {
         emoji: "😣",
@@ -934,6 +1020,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "persevere",
         ],
         keywords: ["headache"],
+        animated: "/animated/Smileys/persevering-face_1f623.webp",
       },
       {
         emoji: "😞",
@@ -946,11 +1033,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "fail",
           "losing",
         ],
+        animated: "/animated/Smileys/disappointed-face_1f61e.webp",
       },
       {
         emoji: "😓",
         names: ["downcast face with sweat", "downcast"],
         keywords: ["close", "headache", "nervous", "scared", "sweat", "yikes"],
+        animated: "/animated/Smileys/downcast-face-with-sweat_1f613.webp",
       },
       {
         emoji: "😩",
@@ -964,11 +1053,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "tired",
           "weary",
         ],
+        animated: "/animated/Smileys/weary-face_1f629.webp",
       },
       {
         emoji: "😫",
         names: ["tired face", "tired"],
         keywords: ["cost", "nap", "sneeze", "tired"],
+        animated: "/animated/Smileys/tired-face_1f62b.webp",
       },
       {
         emoji: "🥱",
@@ -984,6 +1075,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "yawn",
           "zzz",
         ],
+        animated: "/animated/Smileys/yawning-face_1f971.webp",
       },
       {
         emoji: "😤",
@@ -998,6 +1090,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "won",
         ],
         keywords: ["anger", "angry", "mad", "nose", "steam"],
+        animated: "/animated/Smileys/face-with-steam-from-nose_1f624.webp",
       },
       {
         emoji: "😡",
@@ -1012,6 +1105,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "shade",
           "upset",
         ],
+        animated: "/animated/Smileys/pouting-face_1f621.webp",
       },
       {
         emoji: "😠",
@@ -1027,6 +1121,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "shade",
           "upset",
         ],
+        animated: "/animated/Smileys/angry-face_1f620.webp",
       },
       {
         emoji: "🤬",
@@ -1039,11 +1134,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "symbols",
         ],
         keywords: ["mad", "pissed"],
+        animated: "/animated/Smileys/face-with-symbols-on-mouth_1f92c.webp",
       },
       {
         emoji: "😈",
         names: ["smiling face with horns"],
         keywords: ["demon", "devil", "evil", "horns", "purple", "shade"],
+        animated: "/animated/Smileys/smiling-face-with-horns_1f608.webp",
       },
       {
         emoji: "👿",
@@ -1057,11 +1154,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "purple",
           "shade",
         ],
+        animated: "/animated/Smileys/angry-face-with-horns_1f47f.webp",
       },
       {
         emoji: "💀",
         names: ["skull", "death", "i’m"],
         keywords: ["dead", "body", "lmao", "monster", "skull", "yolo"],
+        animated: "/animated/Smileys/skull_1f480.webp",
       },
       {
         emoji: "💩",
@@ -1080,21 +1179,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "turd",
         ],
         keywords: ["monster", "poop", "smh", "stink"],
+        animated: "/animated/Smileys/pile-of-poo_1f4a9.webp",
       },
       {
         emoji: "🤡",
         names: ["clown face", "clown"],
         keywords: [],
+        animated: "/animated/Smileys/clown-face_1f921.webp",
       },
       {
         emoji: "👹",
         names: ["ogre"],
         keywords: ["devil", "creature", "mask", "monster", "scary"],
+        animated: "/animated/Smileys/ogre_1f479.webp",
       },
       {
         emoji: "👺",
         names: ["goblin", "mean"],
         keywords: ["angry", "creature", "mask", "monster"],
+        animated: "/animated/Smileys/goblin_1f47a.webp",
       },
       {
         emoji: "👻",
@@ -1107,36 +1210,43 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "scary",
           "silly",
         ],
+        animated: "/animated/Smileys/ghost_1f47b.webp",
       },
       {
         emoji: "👽",
         names: ["alien"],
         keywords: ["alien", "creature", "extraterrestrial", "monster", "ufo"],
+        animated: "/animated/Smileys/alien_1f47d.webp",
       },
       {
         emoji: "👾",
         names: ["alien monster", "gamer", "games", "monster", "pixelated"],
         keywords: ["alien", "creature", "extraterrestrial", "monster", "ufo"],
+        animated: "/animated/Smileys/alien-monster_1f47e.webp",
       },
       {
         emoji: "🤖",
         names: ["robot"],
         keywords: ["monster"],
+        animated: "/animated/Smileys/robot_1f916.webp",
       },
       {
         emoji: "💌",
         names: ["love letter", "letter"],
         keywords: ["letter", "mail", "valentine"],
+        animated: "/animated/Symbols/love-letter_1f48c.webp",
       },
       {
         emoji: "💘",
         names: ["heart with arrow"],
         keywords: ["cupid", "adorbs", "date", "valentine"],
+        animated: "/animated/Symbols/heart-with-arrow_1f498.webp",
       },
       {
         emoji: "💝",
         names: ["heart with ribbon"],
         keywords: ["anniversary", "kisses", "ribbon", "valentine", "xoxo"],
+        animated: "/animated/Symbols/heart-with-ribbon_1f49d.webp",
       },
       {
         emoji: "💖",
@@ -1149,21 +1259,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "sparkling",
           "xoxo",
         ],
+        animated: "/animated/Symbols/sparkling-heart_1f496.webp",
       },
       {
         emoji: "💗",
         names: ["growing heart", "growing", "heartpulse"],
         keywords: ["excited", "kisses", "muah", "nervous", "pulse", "xoxo"],
+        animated: "/animated/Symbols/growing-heart_1f497.webp",
       },
       {
         emoji: "💓",
         names: ["beating heart", "beating", "cardio", "heartbeat", "pulsating"],
         keywords: ["heartbeat", "pulse"],
+        animated: "/animated/Symbols/beating-heart_1f493.webp",
       },
       {
         emoji: "💞",
         names: ["revolving hearts", "revolving"],
         keywords: ["hearts", "adorbs", "anniversary", "revolving"],
+        animated: "/animated/Symbols/revolving-hearts_1f49e.webp",
       },
       {
         emoji: "💕",
@@ -1177,76 +1291,91 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "two",
           "xoxo",
         ],
+        animated: "/animated/Symbols/two-hearts_1f495.webp",
       },
       {
         emoji: "💟",
         names: ["heart decoration", "hearth"],
         keywords: ["decoration", "purple"],
+        animated: "/animated/Symbols/heart-decoration_1f49f.webp",
       },
       {
         emoji: "❣️",
         names: ["heart exclamation", "exclamation"],
         keywords: ["exclamation", "heavy", "mark", "punctuation"],
+        animated: "/animated/Symbols/heart-exclamation_2763-fe0f.webp",
       },
       {
         emoji: "💔",
         names: ["broken heart", "broken", "crushed", "heartbroken", "lonely"],
         keywords: ["break"],
+        animated: "/animated/Symbols/broken-heart_1f494.webp",
       },
       {
         emoji: "❤️",
         names: ["red heart", "heart", "red"],
         keywords: [],
+        animated: "/animated/Symbols/red-heart_2764-fe0f.webp",
       },
       {
         emoji: "🩷",
         names: ["pink heart", "adorable", "pink"],
         keywords: ["cute", "like", "pink", "special"],
+        animated: "/animated/Symbols/pink-heart_1fa77.webp",
       },
       {
         emoji: "🧡",
         names: ["orange heart"],
         keywords: ["orange"],
+        animated: "/animated/Symbols/orange-heart_1f9e1.webp",
       },
       {
         emoji: "💛",
         names: ["yellow heart", "cardiac", "yellow"],
         keywords: ["yellow"],
+        animated: "/animated/Symbols/yellow-heart_1f49b.webp",
       },
       {
         emoji: "💚",
         names: ["green heart"],
         keywords: ["green", "romantic"],
+        animated: "/animated/Symbols/green-heart_1f49a.webp",
       },
       {
         emoji: "💙",
         names: ["blue heart"],
         keywords: [],
+        animated: "/animated/Symbols/blue-heart_1f499.webp",
       },
       {
         emoji: "🩵",
         names: ["light blue heart", "cyan", "sky", "teal"],
         keywords: ["cute", "like", "special"],
+        animated: "/animated/Symbols/light-blue-heart_1fa75.webp",
       },
       {
         emoji: "💜",
         names: ["purple heart", "bestest", "purple"],
         keywords: ["purple"],
+        animated: "/animated/Symbols/purple-heart_1f49c.webp",
       },
       {
         emoji: "🖤",
         names: ["black heart", "wicked"],
         keywords: ["black", "evil"],
+        animated: "/animated/Symbols/black-heart_1f5a4.webp",
       },
       {
         emoji: "🩶",
         names: ["grey heart", "gray", "grey", "slate"],
         keywords: ["silver", "special"],
+        animated: "/animated/Symbols/grey-heart_1fa76.webp",
       },
       {
         emoji: "💋",
         names: ["kiss mark", "kiss", "kissing", "mark"],
         keywords: ["dating", "kiss", "kissing", "lips", "mark", "sexy"],
+        animated: "/animated/Symbols/kiss-mark_1f48b.webp",
       },
       {
         emoji: "💯",
@@ -1264,11 +1393,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "yup",
         ],
         keywords: ["agree", "100", "fleek", "full", "keep", "point", "score"],
+        animated: "/animated/Symbols/hundred-points_1f4af.webp",
       },
       {
         emoji: "💥",
         names: ["collision", "collide"],
         keywords: ["bomb", "boom", "explode"],
+        animated: "/animated/Symbols/collision_1f4a5.webp",
       },
       {
         emoji: "💦",
@@ -1306,6 +1437,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💬",
         names: ["speech balloon", "message", "sms", "speech", "text", "typing"],
         keywords: ["balloon", "bubble", "dialog", "speech", "talk"],
+        animated: "/animated/Symbols/speech-balloon_1f4ac.webp",
       },
       {
         emoji: "🗨️",
@@ -1316,6 +1448,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗯️",
         names: ["right anger bubble", "anger"],
         keywords: ["anger", "angry", "balloon", "bubble", "mad", "right"],
+        animated: "/animated/Symbols/right-anger-bubble_1f5ef-fe0f.webp",
       },
       {
         emoji: "💭",
@@ -1333,11 +1466,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "wonder",
         ],
         keywords: ["balloon", "bubble", "idea"],
+        animated: "/animated/Symbols/thought-balloon_1f4ad.webp",
       },
       {
         emoji: "💤",
         names: ["ZZZ", "zzz"],
         keywords: ["goodnight", "sleep", "sleeping", "sleepy", "tired", "zzz"],
+        animated: "/animated/Symbols/zzz_1f4a4.webp",
       },
     ],
   },
@@ -1348,46 +1483,55 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "😺",
         names: ["grinning cat"],
         keywords: ["grinning"],
+        animated: "/animated/Smileys/grinning-cat_1f63a.webp",
       },
       {
         emoji: "😸",
         names: ["grinning cat with smiling eyes"],
         keywords: ["grin", "grinning"],
+        animated: "/animated/Smileys/grinning-cat-with-smiling-eyes_1f638.webp",
       },
       {
         emoji: "😹",
         names: ["cat with tears of joy"],
         keywords: ["joy", "laugh", "lol", "tear", "tears"],
+        animated: "/animated/Smileys/cat-with-tears-of-joy_1f639.webp",
       },
       {
         emoji: "😻",
         names: ["smiling cat with heart-eyes"],
         keywords: ["heart-eyes"],
+        animated: "/animated/Smileys/smiling-cat-with-heart-eyes_1f63b.webp",
       },
       {
         emoji: "😼",
         names: ["cat with wry smile"],
         keywords: [],
+        animated: "/animated/Smileys/cat-with-wry-smile_1f63c.webp",
       },
       {
         emoji: "😽",
         names: ["kissing cat"],
         keywords: ["closed", "kiss", "kissing"],
+        animated: "/animated/Smileys/kissing-cat_1f63d.webp",
       },
       {
         emoji: "🙀",
         names: ["weary cat"],
         keywords: ["oh", "surprised", "weary"],
+        animated: "/animated/Smileys/weary-cat_1f640.webp",
       },
       {
         emoji: "😿",
         names: ["crying cat"],
         keywords: ["cry", "crying", "tear"],
+        animated: "/animated/Smileys/crying-cat_1f63f.webp",
       },
       {
         emoji: "😾",
         names: ["pouting cat"],
         keywords: ["pouting"],
+        animated: "/animated/Smileys/pouting-cat_1f63e.webp",
       },
     ],
   },
@@ -1410,6 +1554,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "smh",
           "watch",
         ],
+        animated: "/animated/Smileys/see-no-evil-monkey_1f648.webp",
       },
       {
         emoji: "🙉",
@@ -1425,6 +1570,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "secret",
           "shh",
         ],
+        animated: "/animated/Smileys/hear-no-evil-monkey_1f649.webp",
       },
       {
         emoji: "🙊",
@@ -1440,6 +1586,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "speak",
           "stealth",
         ],
+        animated: "/animated/Smileys/speak-no-evil-monkey_1f64a.webp",
       },
     ],
   },
@@ -1450,30 +1597,35 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👋",
         names: ["waving hand"],
         keywords: ["wave", "ttyl", "you"],
+        animated: "/animated/People/waving-hand_1f44b.webp",
         emoji_alias: ["👋🏻", "👋🏼", "👋🏽", "👋🏾", "👋🏿"],
       },
       {
         emoji: "🤚",
         names: ["raised back of hand"],
         keywords: ["back", "backhand", "raised"],
+        animated: "/animated/People/raised-back-of-hand_1f91a.webp",
         emoji_alias: ["🤚🏻", "🤚🏼", "🤚🏽", "🤚🏾", "🤚🏿"],
       },
       {
         emoji: "🖐️",
         names: ["hand with fingers splayed"],
         keywords: ["fingers", "finger", "raised", "stop"],
+        animated: "/animated/People/hand-with-fingers-splayed_1f590-fe0f.webp",
         emoji_alias: ["🖐🏻", "🖐🏼", "🖐🏽", "🖐🏾", "🖐🏿"],
       },
       {
         emoji: "✋",
         names: ["raised hand"],
         keywords: ["high", "5", "five", "raised", "stop"],
+        animated: "/animated/People/raised-hand_270b.webp",
         emoji_alias: ["✋🏻", "✋🏼", "✋🏽", "✋🏾", "✋🏿"],
       },
       {
         emoji: "🖖",
         names: ["vulcan salute"],
         keywords: ["hands", "finger", "salute"],
+        animated: "/animated/People/vulcan-salute_1f596.webp",
         emoji_alias: ["🖖🏻", "🖖🏼", "🖖🏽", "🖖🏾", "🖖🏿"],
       },
       {
@@ -1489,6 +1641,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "sure",
           "three",
         ],
+        animated: "/animated/People/ok-hand_1f44c.webp",
         emoji_alias: ["👌🏻", "👌🏼", "👌🏽", "👌🏾", "👌🏿"],
       },
       {
@@ -1503,90 +1656,105 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "what",
           "zip",
         ],
+        animated: "/animated/People/pinched-fingers_1f90c.webp",
         emoji_alias: ["🤌🏻", "🤌🏼", "🤌🏽", "🤌🏾", "🤌🏿"],
       },
       {
         emoji: "🤏",
         names: ["pinching hand"],
         keywords: ["fingers", "small"],
+        animated: "/animated/People/pinching-hand_1f90f.webp",
         emoji_alias: ["🤏🏻", "🤏🏼", "🤏🏽", "🤏🏾", "🤏🏿"],
       },
       {
         emoji: "✌️",
         names: ["victory hand"],
         keywords: ["victory", "peace"],
+        animated: "/animated/People/victory-hand_270c-fe0f.webp",
         emoji_alias: ["✌🏻", "✌🏼", "✌🏽", "✌🏾", "✌🏿"],
       },
       {
         emoji: "🤞",
         names: ["crossed fingers"],
         keywords: ["cross", "crossed", "finger", "fingers", "luck"],
+        animated: "/animated/People/crossed-fingers_1f91e.webp",
         emoji_alias: ["🤞🏻", "🤞🏼", "🤞🏽", "🤞🏾", "🤞🏿"],
       },
       {
         emoji: "🤟",
         names: ["love-you gesture"],
         keywords: ["fingers", "three", "you"],
+        animated: "/animated/People/love-you-gesture_1f91f.webp",
         emoji_alias: ["🤟🏻", "🤟🏼", "🤟🏽", "🤟🏾", "🤟🏿"],
       },
       {
         emoji: "🤘",
         names: ["sign of the horns"],
         keywords: ["horns", "finger"],
+        animated: "/animated/People/sign-of-the-horns_1f918.webp",
         emoji_alias: ["🤘🏻", "🤘🏼", "🤘🏽", "🤘🏾", "🤘🏿"],
       },
       {
         emoji: "🤙",
         names: ["call me hand"],
         keywords: ["call", "me"],
+        animated: "/animated/People/call-me-hand_1f919.webp",
         emoji_alias: ["🤙🏻", "🤙🏼", "🤙🏽", "🤙🏾", "🤙🏿"],
       },
       {
         emoji: "👈",
         names: ["backhand index pointing left"],
         keywords: ["finger", "backhand", "index", "left", "point", "pointing"],
+        animated: "/animated/People/backhand-index-pointing-left_1f448.webp",
         emoji_alias: ["👈🏻", "👈🏼", "👈🏽", "👈🏾", "👈🏿"],
       },
       {
         emoji: "👉",
         names: ["backhand index pointing right"],
         keywords: ["finger", "backhand", "index", "point", "pointing", "right"],
+        animated: "/animated/People/backhand-index-pointing-right_1f449.webp",
         emoji_alias: ["👉🏻", "👉🏼", "👉🏽", "👉🏾", "👉🏿"],
       },
       {
         emoji: "👆",
         names: ["backhand index pointing up"],
         keywords: ["finger", "backhand", "index", "point", "pointing"],
+        animated: "/animated/People/backhand-index-pointing-up_1f446.webp",
         emoji_alias: ["👆🏻", "👆🏼", "👆🏽", "👆🏾", "👆🏿"],
       },
       {
         emoji: "🖕",
         names: ["middle finger"],
         keywords: ["finger"],
+        animated: "/animated/People/middle-finger_1f595.webp",
         emoji_alias: ["🖕🏻", "🖕🏼", "🖕🏽", "🖕🏾", "🖕🏿"],
       },
       {
         emoji: "👇",
         names: ["backhand index pointing down"],
         keywords: ["finger", "backhand", "down", "index", "point", "pointing"],
+        animated: "/animated/People/backhand-index-pointing-down_1f447.webp",
         emoji_alias: ["👇🏻", "👇🏼", "👇🏽", "👇🏾", "👇🏿"],
       },
       {
         emoji: "👍",
         names: ["thumbs up"],
         keywords: ["like", "thumb", "yes"],
+        animated: "/animated/People/thumbs-up_1f44d.webp",
         emoji_alias: ["👍🏻", "👍🏼", "👍🏽", "👍🏾", "👍🏿"],
       },
       {
         emoji: "👎",
         names: ["thumbs down"],
         keywords: ["bad", "down", "thumb"],
+        animated: "/animated/People/thumbs-down_1f44e.webp",
         emoji_alias: ["👎🏻", "👎🏼", "👎🏽", "👎🏾", "👎🏿"],
       },
       {
         emoji: "✊",
         names: ["raised fist"],
         keywords: ["clenched", "fist", "punch", "raised"],
+        animated: "/animated/People/raised-fist_270a.webp",
         emoji_alias: ["✊🏻", "✊🏼", "✊🏽", "✊🏾", "✊🏿"],
       },
       {
@@ -1604,48 +1772,56 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "rock",
           "ttyl",
         ],
+        animated: "/animated/People/oncoming-fist_1f44a.webp",
         emoji_alias: ["👊🏻", "👊🏼", "👊🏽", "👊🏾", "👊🏿"],
       },
       {
         emoji: "🤛",
         names: ["left-facing fist"],
         keywords: ["fist"],
+        animated: "/animated/People/left-facing-fist_1f91b.webp",
         emoji_alias: ["🤛🏻", "🤛🏼", "🤛🏽", "🤛🏾", "🤛🏿"],
       },
       {
         emoji: "🤜",
         names: ["right-facing fist"],
         keywords: ["fist"],
+        animated: "/animated/People/right-facing-fist_1f91c.webp",
         emoji_alias: ["🤜🏻", "🤜🏼", "🤜🏽", "🤜🏾", "🤜🏿"],
       },
       {
         emoji: "👏",
         names: ["clapping hands"],
         keywords: ["clap", "awesome", "excited", "homie", "job", "nice", "yay"],
+        animated: "/animated/People/clapping-hands_1f44f.webp",
         emoji_alias: ["👏🏻", "👏🏼", "👏🏽", "👏🏾", "👏🏿"],
       },
       {
         emoji: "🙌",
         names: ["raising hands"],
         keywords: ["hands", "hooray", "raised", "raising"],
+        animated: "/animated/People/raising-hands_1f64c.webp",
         emoji_alias: ["🙌🏻", "🙌🏼", "🙌🏽", "🙌🏾", "🙌🏿"],
       },
       {
         emoji: "👐",
         names: ["open hands"],
         keywords: ["hands", "hug", "jazz"],
+        animated: "/animated/People/open-hands_1f450.webp",
         emoji_alias: ["👐🏻", "👐🏼", "👐🏽", "👐🏾", "👐🏿"],
       },
       {
         emoji: "🤲",
         names: ["palms up together"],
         keywords: ["hands", "pray", "prayer", "together"],
+        animated: "/animated/People/palms-up-together_1f932.webp",
         emoji_alias: ["🤲🏻", "🤲🏼", "🤲🏽", "🤲🏾", "🤲🏿"],
       },
       {
         emoji: "🤝",
         names: ["handshake"],
         keywords: ["shake"],
+        animated: "/animated/People/handshake_1f91d.webp",
         emoji_alias: ["🤝🏻", "🤝🏼", "🤝🏽", "🤝🏾", "🤝🏿"],
       },
       {
@@ -1661,6 +1837,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "please",
           "pray",
         ],
+        animated: "/animated/People/folded-hands_1f64f.webp",
         emoji_alias: ["🙏🏻", "🙏🏼", "🙏🏽", "🙏🏾", "🙏🏿"],
       },
     ],
@@ -1672,6 +1849,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "✍️",
         names: ["writing hand", "write", "writing", "hand"],
         keywords: [],
+        animated: "/animated/People/writing-hand_270d-fe0f.webp",
         emoji_alias: ["✍🏻", "✍🏼", "✍🏽", "✍🏾", "✍🏿"],
       },
       {
@@ -1704,46 +1882,54 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "weightlift",
         ],
         keywords: ["arm", "bodybuilder", "bro", "strong"],
+        animated: "/animated/People/flexed-biceps_1f4aa.webp",
         emoji_alias: ["💪🏻", "💪🏼", "💪🏽", "💪🏾", "💪🏿"],
       },
       {
         emoji: "🦾",
         names: ["mechanical arm", "arm", "mechanical"],
         keywords: ["accessibility", "arm", "mechanical", "prosthetic"],
+        animated: "/animated/People/mechanical-arm_1f9be.webp",
       },
       {
         emoji: "🦿",
         names: ["mechanical leg"],
         keywords: ["accessibility", "leg", "mechanical", "prosthetic"],
+        animated: "/animated/People/mechanical-leg_1f9bf.webp",
       },
       {
         emoji: "🦵",
         names: ["leg", "knee", "limb"],
         keywords: ["bent", "foot", "kick", "leg"],
+        animated: "/animated/People/leg_1f9b5.webp",
         emoji_alias: ["🦵🏻", "🦵🏼", "🦵🏽", "🦵🏾", "🦵🏿"],
       },
       {
         emoji: "🦶",
         names: ["foot", "ankle", "stomp"],
         keywords: ["feet", "foot", "kick"],
+        animated: "/animated/People/foot_1f9b6.webp",
         emoji_alias: ["🦶🏻", "🦶🏼", "🦶🏽", "🦶🏾", "🦶🏿"],
       },
       {
         emoji: "👂",
         names: ["ear", "ears", "listening"],
         keywords: ["ears", "hear", "body", "ear", "hearing", "listen"],
+        animated: "/animated/People/ear_1f442.webp",
         emoji_alias: ["👂🏻", "👂🏼", "👂🏽", "👂🏾", "👂🏿"],
       },
       {
         emoji: "🦻",
         names: ["ear with hearing aid", "aid", "hard", "hearing"],
         keywords: ["accessibility", "aid", "ear", "hearing"],
+        animated: "/animated/People/ear-with-hearing-aid_1f9bb.webp",
         emoji_alias: ["🦻🏻", "🦻🏼", "🦻🏽", "🦻🏾", "🦻🏿"],
       },
       {
         emoji: "👃",
         names: ["nose", "noses", "nosey", "odor", "smells"],
         keywords: ["smell", "body", "nose"],
+        animated: "/animated/People/nose_1f443.webp",
         emoji_alias: ["👃🏻", "👃🏼", "👃🏽", "👃🏾", "👃🏿"],
       },
       {
@@ -1773,16 +1959,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦷",
         names: ["tooth", "pearly"],
         keywords: ["dentist", "teeth", "tooth"],
+        animated: "/animated/People/tooth_1f9b7.webp",
       },
       {
         emoji: "🦴",
         names: ["bone", "bones", "wishbone"],
         keywords: ["dog", "skeleton", "bone", "bones"],
+        animated: "/animated/People/bone_1f9b4.webp",
       },
       {
         emoji: "👀",
         names: ["eyes", "googly", "look", "looking", "seeing"],
         keywords: ["body", "peep", "see"],
+        animated: "/animated/People/eyes_1f440.webp",
       },
       {
         emoji: "👁️",
@@ -1793,11 +1982,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👅",
         names: ["tongue", "lick", "slurp"],
         keywords: ["body", "tongue"],
+        animated: "/animated/People/tongue_1f445.webp",
       },
       {
         emoji: "👄",
         names: ["mouth"],
         keywords: ["kiss", "beauty", "body", "kissing", "lips", "lipstick"],
+        animated: "/animated/People/mouth_1f444.webp",
       },
       {
         emoji: "🫦",
@@ -1813,6 +2004,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "worried",
           "worry",
         ],
+        animated: "/animated/People/biting-lip_1fae6.webp",
       },
       {
         emoji: "👶",
@@ -1826,6 +2018,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "pregnant",
           "young",
         ],
+        animated: "/animated/People/baby_1f476.webp",
         emoji_alias: ["👶🏻", "👶🏼", "👶🏽", "👶🏾", "👶🏿"],
       },
       {
@@ -1892,6 +2085,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👵",
         names: ["old woman", "grandma", "grandmother", "granny"],
         keywords: ["elderly", "adult", "lady", "old", "wise"],
+        animated: "/animated/People/old-woman_1f475.webp",
         emoji_alias: ["👵🏻", "👵🏼", "👵🏽", "👵🏾", "👵🏿"],
       },
       {
@@ -1983,6 +2177,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🤦",
         names: ["person facepalming", "bewilder", "exasperation", "facepalm"],
         keywords: ["again", "disbelief", "oh", "shock", "smh"],
+        animated: "/animated/People/person-facepalming_1f926.webp",
         emoji_alias: ["🤦🏻", "🤦🏼", "🤦🏽", "🤦🏾", "🤦🏿"],
       },
       {
@@ -2000,6 +2195,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "who",
         ],
         keywords: ["doubt", "dunno"],
+        animated: "/animated/People/person-shrugging_1f937.webp",
         emoji_alias: ["🤷🏻", "🤷🏼", "🤷🏽", "🤷🏾", "🤷🏿"],
       },
       {
@@ -2012,12 +2208,14 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👨‍⚕️",
         names: ["man health worker"],
         keywords: ["doctor", "healthcare", "health", "nurse", "therapist"],
+        animated: "/animated/People/man-health-worker_1f468-200d-2695-fe0f.webp",
         emoji_alias: ["👨🏻‍⚕", "👨🏼‍⚕", "👨🏽‍⚕", "👨🏾‍⚕", "👨🏿‍⚕"],
       },
       {
         emoji: "👩‍⚕️",
         names: ["woman health worker"],
         keywords: ["doctor", "healthcare", "health", "nurse", "therapist"],
+        animated: "/animated/People/woman-health-worker_1f469-200d-2695-fe0f.webp",
         emoji_alias: ["👩🏻‍⚕", "👩🏼‍⚕", "👩🏽‍⚕", "👩🏾‍⚕", "👩🏿‍⚕"],
       },
       {
@@ -2048,6 +2246,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👨‍🏫",
         names: ["man teacher"],
         keywords: ["instructor", "lecturer", "professor", "teacher"],
+        animated: "/animated/People/man-teacher_1f468-200d-1f3eb.webp",
         emoji_alias: ["👨🏻‍🏫", "👨🏼‍🏫", "👨🏽‍🏫", "👨🏾‍🏫", "👨🏿‍🏫"],
       },
       {
@@ -2231,6 +2430,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "software",
           "technologist",
         ],
+        animated: "/animated/People/technologist_1f9d1-200d-1f4bb.webp",
         emoji_alias: ["🧑🏻‍💻", "🧑🏼‍💻", "🧑🏽‍💻", "🧑🏾‍💻", "🧑🏿‍💻"],
       },
       {
@@ -2243,6 +2443,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "software",
           "technologist",
         ],
+        animated: "/animated/People/man-technologist_1f468-200d-1f4bb.webp",
         emoji_alias: ["👨🏻‍💻", "👨🏼‍💻", "👨🏽‍💻", "👨🏾‍💻", "👨🏿‍💻"],
       },
       {
@@ -2255,6 +2456,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "software",
           "technologist",
         ],
+        animated: "/animated/People/woman-technologist_1f469-200d-1f4bb.webp",
         emoji_alias: ["👩🏻‍💻", "👩🏼‍💻", "👩🏽‍💻", "👩🏾‍💻", "👩🏿‍💻"],
       },
       {
@@ -2379,6 +2581,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "pulled",
           "undercover",
         ],
+        animated: "/animated/People/man-police-officer_1f46e-200d-2642-fe0f.webp",
         emoji_alias: ["👮🏻‍♂", "👮🏼‍♂", "👮🏽‍♂", "👮🏾‍♂", "👮🏿‍♂"],
       },
       {
@@ -2396,6 +2599,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "pulled",
           "undercover",
         ],
+        animated: "/animated/People/woman-police-officer_1f46e-200d-2640-fe0f.webp",
         emoji_alias: ["👮🏻‍♀", "👮🏼‍♀", "👮🏽‍♀", "👮🏾‍♀", "👮🏿‍♀"],
       },
       {
@@ -2589,6 +2793,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🤰",
         names: ["pregnant woman"],
         keywords: ["pregnant"],
+        animated: "/animated/People/pregnant-woman_1f930.webp",
         emoji_alias: ["🤰🏻", "🤰🏼", "🤰🏽", "🤰🏾", "🤰🏿"],
       },
       {
@@ -2698,6 +2903,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗣️",
         names: ["speaking head", "head", "silhouette", "speak", "speaking"],
         keywords: ["head", "speak"],
+        animated: "/animated/People/speaking-head_1f5e3-fe0f.webp",
       },
     ],
   },
@@ -2723,6 +2929,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "santa",
           "xmas",
         ],
+        animated: "/animated/People/santa-claus_1f385.webp",
         emoji_alias: ["🎅🏻", "🎅🏼", "🎅🏽", "🎅🏾", "🎅🏿"],
       },
       {
@@ -2738,6 +2945,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "santa",
           "xmas",
         ],
+        animated: "/animated/People/mrs-claus_1f936.webp",
         emoji_alias: ["🤶🏻", "🤶🏼", "🤶🏽", "🤶🏾", "🤶🏿"],
       },
       {
@@ -2752,6 +2960,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "santa",
           "xmas",
         ],
+        animated: "/animated/People/mx-claus_1f9d1-200d-1f384.webp",
         emoji_alias: ["🧑🏻‍🎄", "🧑🏼‍🎄", "🧑🏽‍🎄", "🧑🏾‍🎄", "🧑🏿‍🎄"],
       },
       {
@@ -2893,6 +3102,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "undead",
           "vampire",
         ],
+        animated: "/animated/People/vampire_1f9db.webp",
         emoji_alias: ["🧛🏻", "🧛🏼", "🧛🏽", "🧛🏾", "🧛🏿"],
       },
       {
@@ -2908,6 +3118,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "undead",
           "vampire",
         ],
+        animated: "/animated/People/man-vampire_1f9db-200d-2642-fe0f.webp",
         emoji_alias: ["🧛🏻‍♂", "🧛🏼‍♂", "🧛🏽‍♂", "🧛🏾‍♂", "🧛🏿‍♂"],
       },
       {
@@ -2923,6 +3134,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "undead",
           "vampire",
         ],
+        animated: "/animated/People/woman-vampire_1f9db-200d-2640-fe0f.webp",
         emoji_alias: ["🧛🏻‍♀", "🧛🏼‍♀", "🧛🏽‍♀", "🧛🏾‍♀", "🧛🏿‍♀"],
       },
       {
@@ -3013,6 +3225,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "walking",
           "zombie",
         ],
+        animated: "/animated/People/zombie_1f9df.webp",
       },
       {
         emoji: "🧟‍♂️",
@@ -3027,6 +3240,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "walking",
           "zombie",
         ],
+        animated: "/animated/People/man-zombie_1f9df-200d-2642-fe0f.webp",
       },
       {
         emoji: "🧟‍♀️",
@@ -3041,6 +3255,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "walking",
           "zombie",
         ],
+        animated: "/animated/People/woman-zombie_1f9df-200d-2640-fe0f.webp",
       },
       {
         emoji: "🧌",
@@ -3127,6 +3342,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "salsa",
           "tango",
         ],
+        animated: "/animated/People/woman-dancing_1f483.webp",
         emoji_alias: ["💃🏻", "💃🏼", "💃🏽", "💃🏾", "💃🏿"],
       },
       {
@@ -3145,6 +3361,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "salsa",
           "tango",
         ],
+        animated: "/animated/People/man-dancing_1f57a.webp",
         emoji_alias: ["🕺🏻", "🕺🏼", "🕺🏽", "🕺🏾", "🕺🏿"],
       },
       {
@@ -3380,6 +3597,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "⚽",
         names: ["soccer ball", "futbol", "soccer"],
         keywords: ["football"],
+        animated: "/animated/Activity/soccer-ball_26bd.webp",
       },
       {
         emoji: "⚾",
@@ -3395,6 +3613,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🏀",
         names: ["basketball", "hoop"],
         keywords: ["basketball"],
+        animated: "/animated/Activity/basketball_1f3c0.webp",
       },
       {
         emoji: "🏐",
@@ -3619,6 +3838,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐵",
         names: ["monkey face"],
         keywords: ["banana", "monkey"],
+        animated: "/animated/Animals & Nature/monkey-face_1f435.webp",
       },
       {
         emoji: "🐒",
@@ -3629,6 +3849,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦍",
         names: ["gorilla"],
         keywords: [],
+        animated: "/animated/Animals & Nature/gorilla_1f98d.webp",
       },
       {
         emoji: "🦧",
@@ -3639,6 +3860,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐶",
         names: ["dog face", "puppies"],
         keywords: ["dog", "puppy", "pet", "adorbs"],
+        animated: "/animated/Animals & Nature/dog-face_1f436.webp",
       },
       {
         emoji: "🐕",
@@ -3664,46 +3886,55 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦊",
         names: ["fox"],
         keywords: [],
+        animated: "/animated/Animals & Nature/fox_1f98a.webp",
       },
       {
         emoji: "🦝",
         names: ["raccoon", "curious"],
         keywords: ["sly"],
+        animated: "/animated/Animals & Nature/raccoon_1f99d.webp",
       },
       {
         emoji: "🐱",
         names: ["cat face", "kitty"],
         keywords: ["kitten", "pet"],
+        animated: "/animated/Animals & Nature/cat-face_1f431.webp",
       },
       {
         emoji: "🐈",
         names: ["cat", "cats"],
         keywords: ["animals", "kitten", "pet"],
+        animated: "/animated/Animals & Nature/cat_1f408.webp",
       },
       {
         emoji: "🦁",
         names: ["lion", "alpha", "mane", "order", "rawr", "roar", "safari"],
         keywords: ["Leo", "lion", "strong"],
+        animated: "/animated/Animals & Nature/lion_1f981.webp",
       },
       {
         emoji: "🐯",
         names: ["tiger face"],
         keywords: ["big", "predator", "tiger"],
+        animated: "/animated/Animals & Nature/tiger-face_1f42f.webp",
       },
       {
         emoji: "🐅",
         names: ["tiger"],
         keywords: ["big", "predator", "tiger", "zoo"],
+        animated: "/animated/Animals & Nature/tiger_1f405.webp",
       },
       {
         emoji: "🐆",
         names: ["leopard"],
         keywords: ["big", "predator", "zoo"],
+        animated: "/animated/Animals & Nature/leopard_1f406.webp",
       },
       {
         emoji: "🐴",
         names: ["horse face", "dressage", "equine", "horses"],
         keywords: ["horse"],
+        animated: "/animated/Animals & Nature/horse-face_1f434.webp",
       },
       {
         emoji: "🫎",
@@ -3719,26 +3950,31 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐎",
         names: ["horse", "equestrian"],
         keywords: ["horse", "racehorse", "racing"],
+        animated: "/animated/Animals & Nature/horse_1f40e.webp",
       },
       {
         emoji: "🦄",
         names: ["unicorn"],
         keywords: [],
+        animated: "/animated/Animals & Nature/unicorn_1f984.webp",
       },
       {
         emoji: "🦓",
         names: ["zebra", "stripe"],
         keywords: [],
+        animated: "/animated/Animals & Nature/zebra_1f993.webp",
       },
       {
         emoji: "🦌",
         names: ["deer"],
         keywords: [],
+        animated: "/animated/Animals & Nature/deer_1f98c.webp",
       },
       {
         emoji: "🦬",
         names: ["bison", "herd", "wisent"],
         keywords: ["buffalo"],
+        animated: "/animated/Animals & Nature/bison_1f9ac.webp",
       },
       {
         emoji: "🐮",
@@ -3749,6 +3985,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐂",
         names: ["ox"],
         keywords: ["animals", "bull", "ox", "Taurus"],
+        animated: "/animated/Animals & Nature/ox_1f402.webp",
       },
       {
         emoji: "🐃",
@@ -3759,11 +3996,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐄",
         names: ["cow"],
         keywords: ["animals", "cow", "milk", "moo"],
+        animated: "/animated/Animals & Nature/cow_1f404.webp",
       },
       {
         emoji: "🐷",
         names: ["pig face"],
         keywords: ["bacon", "pig", "pork"],
+        animated: "/animated/Animals & Nature/pig-face_1f437.webp",
       },
       {
         emoji: "🐖",
@@ -3779,6 +4018,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐽",
         names: ["pig nose", "snout"],
         keywords: ["nose", "pig", "smell"],
+        animated: "/animated/Animals & Nature/pig-nose_1f43d.webp",
       },
       {
         emoji: "🐏",
@@ -3809,11 +4049,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦙",
         names: ["llama", "alpaca", "guanaco", "vicuña"],
         keywords: ["wool"],
+        animated: "/animated/Animals & Nature/llama_1f999.webp",
       },
       {
         emoji: "🦒",
         names: ["giraffe", "spots"],
         keywords: [],
+        animated: "/animated/Animals & Nature/giraffe_1f992.webp",
       },
       {
         emoji: "🐘",
@@ -3839,6 +4081,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐭",
         names: ["mouse face"],
         keywords: ["mouse"],
+        animated: "/animated/Animals & Nature/mouse-face_1f42d.webp",
       },
       {
         emoji: "🐁",
@@ -3854,16 +4097,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐹",
         names: ["hamster"],
         keywords: ["pet"],
+        animated: "/animated/Animals & Nature/hamster_1f439.webp",
       },
       {
         emoji: "🐰",
         names: ["rabbit face"],
         keywords: ["bunny", "pet", "rabbit"],
+        animated: "/animated/Animals & Nature/rabbit-face_1f430.webp",
       },
       {
         emoji: "🐇",
         names: ["rabbit"],
         keywords: ["bunny", "pet", "rabbit"],
+        animated: "/animated/Animals & Nature/rabbit_1f407.webp",
       },
       {
         emoji: "🐿️",
@@ -3879,26 +4125,31 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦔",
         names: ["hedgehog", "spiny"],
         keywords: [],
+        animated: "/animated/Animals & Nature/hedgehog_1f994.webp",
       },
       {
         emoji: "🦇",
         names: ["bat"],
         keywords: ["vampire", "bat"],
+        animated: "/animated/Animals & Nature/bat_1f987.webp",
       },
       {
         emoji: "🐻",
         names: ["bear", "grizzly", "growl"],
         keywords: ["bear", "honey"],
+        animated: "/animated/Animals & Nature/bear_1f43b.webp",
       },
       {
         emoji: "🐨",
         names: ["koala", "under"],
         keywords: ["australia", "bear", "down", "marsupial"],
+        animated: "/animated/Animals & Nature/koala_1f428.webp",
       },
       {
         emoji: "🐼",
         names: ["panda"],
         keywords: ["bamboo"],
+        animated: "/animated/Animals & Nature/panda_1f43c.webp",
       },
       {
         emoji: "🦥",
@@ -3919,6 +4170,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦘",
         names: ["kangaroo", "joey", "jump"],
         keywords: ["marsupial"],
+        animated: "/animated/Animals & Nature/kangaroo_1f998.webp",
       },
       {
         emoji: "🦡",
@@ -3929,16 +4181,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐾",
         names: ["paw prints", "paw", "paws", "print", "prints"],
         keywords: ["feet", "print"],
+        animated: "/animated/Animals & Nature/paw-prints_1f43e.webp",
       },
       {
         emoji: "🦃",
         names: ["turkey", "gobble", "thanksgiving"],
         keywords: ["turkey"],
+        animated: "/animated/Animals & Nature/turkey_1f983.webp",
       },
       {
         emoji: "🐔",
         names: ["chicken", "hen"],
         keywords: ["chicken"],
+        animated: "/animated/Animals & Nature/chicken_1f414.webp",
       },
       {
         emoji: "🐓",
@@ -3949,31 +4204,37 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐣",
         names: ["hatching chick", "hatching"],
         keywords: ["baby", "chick", "egg"],
+        animated: "/animated/Animals & Nature/hatching-chick_1f423.webp",
       },
       {
         emoji: "🐤",
         names: ["baby chick", "chick"],
         keywords: ["baby", "chick"],
+        animated: "/animated/Animals & Nature/baby-chick_1f424.webp",
       },
       {
         emoji: "🐥",
         names: ["front-facing baby chick", "front-facing"],
         keywords: ["baby", "chick", "newborn"],
+        animated: "/animated/Animals & Nature/front-facing-baby-chick_1f425.webp",
       },
       {
         emoji: "🐦",
         names: ["bird"],
         keywords: [],
+        animated: "/animated/Animals & Nature/bird_1f426.webp",
       },
       {
         emoji: "🐧",
         names: ["penguin", "antarctica"],
         keywords: [],
+        animated: "/animated/Animals & Nature/penguin_1f427.webp",
       },
       {
         emoji: "🕊️",
         names: ["dove"],
         keywords: ["fly", "peace"],
+        animated: "/animated/Animals & Nature/dove_1f54a-fe0f.webp",
       },
       {
         emoji: "🦅",
@@ -3984,6 +4245,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦆",
         names: ["duck", "pond"],
         keywords: ["duck"],
+        animated: "/animated/Animals & Nature/duck_1f986.webp",
       },
       {
         emoji: "🦢",
@@ -3994,6 +4256,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦉",
         names: ["owl"],
         keywords: ["wise"],
+        animated: "/animated/Animals & Nature/owl_1f989.webp",
       },
       {
         emoji: "🦤",
@@ -4009,6 +4272,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦩",
         names: ["flamingo", "flamboyant"],
         keywords: ["tropical"],
+        animated: "/animated/Animals & Nature/flamingo_1f9a9.webp",
       },
       {
         emoji: "🦚",
@@ -4019,6 +4283,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦜",
         names: ["parrot"],
         keywords: ["tropical", "pirate", "talk"],
+        animated: "/animated/Animals & Nature/parrot_1f99c.webp",
       },
       {
         emoji: "🪽",
@@ -4044,6 +4309,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐢",
         names: ["turtle", "terrapin", "tortoise"],
         keywords: [],
+        animated: "/animated/Animals & Nature/turtle_1f422.webp",
       },
       {
         emoji: "🦎",
@@ -4054,6 +4320,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐍",
         names: ["snake", "slither"],
         keywords: ["reptile", "bearer", "Ophiuchus", "serpent", "snake"],
+        animated: "/animated/Animals & Nature/snake_1f40d.webp",
       },
       {
         emoji: "🐲",
@@ -4069,16 +4336,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦕",
         names: ["sauropod", "brachiosaurus", "brontosaurus", "diplodocus"],
         keywords: ["dinosaur"],
+        animated: "/animated/Animals & Nature/sauropod_1f995.webp",
       },
       {
         emoji: "🦖",
         names: ["T-Rex", "t-rex", "rex", "tyrannosaurus", "T"],
         keywords: ["dinosaur"],
+        animated: "/animated/Animals & Nature/t-rex_1f996.webp",
       },
       {
         emoji: "🐳",
         names: ["spouting whale", "spouting"],
         keywords: ["beach", "whale"],
+        animated: "/animated/Animals & Nature/spouting-whale_1f433.webp",
       },
       {
         emoji: "🐋",
@@ -4099,16 +4369,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦭",
         names: ["seal"],
         keywords: ["lion", "sea"],
+        animated: "/animated/Animals & Nature/seal_1f9ad.webp",
       },
       {
         emoji: "🐟",
         names: ["fish", "fishes", "fishing"],
         keywords: ["swimming", "dinner", "fish", "fishes", "fishing", "Pisces"],
+        animated: "/animated/Animals & Nature/fish_1f41f.webp",
       },
       {
         emoji: "🐠",
         names: ["tropical fish", "tropical"],
         keywords: ["fish", "fishes", "tropical"],
+        animated: "/animated/Animals & Nature/tropical-fish_1f420.webp",
       },
       {
         emoji: "🐡",
@@ -4124,6 +4397,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐙",
         names: ["octopus"],
         keywords: ["creature"],
+        animated: "/animated/Animals & Nature/octopus_1f419.webp",
       },
       {
         emoji: "🐚",
@@ -4158,16 +4432,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦞",
         names: ["lobster", "bisque", "claws"],
         keywords: ["seafood"],
+        animated: "/animated/Animals & Nature/lobster_1f99e.webp",
       },
       {
         emoji: "🦐",
         names: ["shrimp", "shellfish"],
         keywords: ["small", "shrimp"],
+        animated: "/animated/Animals & Nature/shrimp_1f990.webp",
       },
       {
         emoji: "🦑",
         names: ["squid", "mollusk"],
         keywords: [],
+        animated: "/animated/Animals & Nature/squid_1f991.webp",
       },
       {
         emoji: "🦪",
@@ -4178,56 +4455,67 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🐌",
         names: ["snail", "escargot", "slug"],
         keywords: ["shell", "slow", "garden"],
+        animated: "/animated/Animals & Nature/snail_1f40c.webp",
       },
       {
         emoji: "🦋",
         names: ["butterfly"],
         keywords: ["pretty"],
+        animated: "/animated/Animals & Nature/butterfly_1f98b.webp",
       },
       {
         emoji: "🐛",
         names: ["bug"],
         keywords: ["bug", "garden"],
+        animated: "/animated/Animals & Nature/bug_1f41b.webp",
       },
       {
         emoji: "🐜",
         names: ["ant"],
         keywords: ["garden"],
+        animated: "/animated/Animals & Nature/ant_1f41c.webp",
       },
       {
         emoji: "🐝",
         names: ["honeybee", "bee", "bumblebee", "honey"],
         keywords: ["honey", "spring"],
+        animated: "/animated/Animals & Nature/honeybee_1f41d.webp",
       },
       {
         emoji: "🪲",
         names: ["beetle"],
         keywords: ["beetle", "bug"],
+        animated: "/animated/Animals & Nature/beetle_1fab2.webp",
       },
       {
         emoji: "🐞",
         names: ["lady beetle", "ladybird", "ladybug"],
         keywords: ["beetle", "garden", "lady"],
+        animated: "/animated/Animals & Nature/lady-beetle_1f41e.webp",
       },
       {
         emoji: "🦗",
         names: ["cricket", "grasshopper", "Orthoptera"],
         keywords: ["bug", "cricket"],
+        animated: "/animated/Animals & Nature/cricket_1f997.webp",
       },
       {
         emoji: "🪳",
         names: ["cockroach", "roach"],
         keywords: ["pest"],
+        animated: "/animated/Animals & Nature/cockroach_1fab3.webp",
       },
       {
         emoji: "🕷️",
         names: ["spider"],
         keywords: ["spider"],
+        animated: "/animated/Animals & Nature/spider_1f577-fe0f.webp",
       },
       {
         emoji: "🕸️",
         names: ["spider web", "web"],
         keywords: ["spider"],
+        animated: "/animated/Animals & Nature/spider-web_1f578-fe0f.webp",
       },
       {
         emoji: "🦂",
@@ -4238,6 +4526,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦟",
         names: ["mosquito", "malaria"],
         keywords: ["bite", "disease", "fever", "pest", "virus"],
+        animated: "/animated/Animals & Nature/mosquito_1f99f.webp",
       },
       {
         emoji: "🪰",
@@ -4253,6 +4542,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🦠",
         names: ["microbe", "amoeba"],
         keywords: ["bacteria", "science", "virus"],
+        animated: "/animated/Animals & Nature/microbe_1f9a0.webp",
       },
     ],
   },
@@ -4263,11 +4553,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💐",
         names: ["bouquet"],
         keywords: ["birthday", "date", "anniversary"],
+        animated: "/animated/Animals & Nature/bouquet_1f490.webp",
       },
       {
         emoji: "🌸",
         names: ["cherry blossom", "cherry", "springtime"],
         keywords: ["cherry", "blossom", "spring"],
+        animated: "/animated/Animals & Nature/cherry-blossom_1f338.webp",
       },
       {
         emoji: "💮",
@@ -4283,11 +4575,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🏵️",
         names: ["rosette"],
         keywords: [],
+        animated: "/animated/Animals & Nature/rosette_1f3f5-fe0f.webp",
       },
       {
         emoji: "🌹",
         names: ["rose"],
         keywords: ["elegant", "beauty", "valentine"],
+        animated: "/animated/Animals & Nature/rose_1f339.webp",
       },
       {
         emoji: "🥀",
@@ -4298,6 +4592,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌺",
         names: ["hibiscus"],
         keywords: [],
+        animated: "/animated/Animals & Nature/hibiscus_1f33a.webp",
       },
       {
         emoji: "🌻",
@@ -4308,11 +4603,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌼",
         names: ["blossom", "buttercup", "dandelion"],
         keywords: ["blossom"],
+        animated: "/animated/Animals & Nature/blossom_1f33c.webp",
       },
       {
         emoji: "🌷",
         names: ["tulip"],
         keywords: ["growth", "blossom"],
+        animated: "/animated/Animals & Nature/tulip_1f337.webp",
       },
       {
         emoji: "🪻",
@@ -4334,6 +4631,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌱",
         names: ["seedling", "sapling", "sprout"],
         keywords: ["young"],
+        animated: "/animated/Animals & Nature/seedling_1f331.webp",
       },
       {
         emoji: "🪴",
@@ -4351,21 +4649,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌲",
         names: ["evergreen tree", "evergreen"],
         keywords: ["christmas", "forest", "pine", "tree"],
+        animated: "/animated/Animals & Nature/evergreen-tree_1f332.webp",
       },
       {
         emoji: "🌳",
         names: ["deciduous tree", "deciduous", "habitat", "shedding"],
         keywords: ["forest", "green", "tree"],
+        animated: "/animated/Animals & Nature/deciduous-tree_1f333.webp",
       },
       {
         emoji: "🌴",
         names: ["palm tree", "palm", "tree"],
         keywords: ["beach", "palm", "tree", "tropical"],
+        animated: "/animated/Animals & Nature/palm-tree_1f334.webp",
       },
       {
         emoji: "🌵",
         names: ["cactus"],
         keywords: ["desert", "drought"],
+        animated: "/animated/Animals & Nature/cactus_1f335.webp",
       },
       {
         emoji: "🌾",
@@ -4376,16 +4678,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌿",
         names: ["herb"],
         keywords: ["leaf", "herb"],
+        animated: "/animated/Animals & Nature/herb_1f33f.webp",
       },
       {
         emoji: "☘️",
         names: ["shamrock"],
         keywords: ["irish"],
+        animated: "/animated/Animals & Nature/shamrock_2618-fe0f.webp",
       },
       {
         emoji: "🍀",
         names: ["four leaf clover", "clover", "four-leaf", "lucky"],
         keywords: ["4", "four", "irish", "leaf"],
+        animated: "/animated/Animals & Nature/four-leaf-clover_1f340.webp",
       },
       {
         emoji: "🍁",
@@ -4464,6 +4769,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍌",
         names: ["banana", "potassium"],
         keywords: ["banana"],
+        animated: "/animated/Food & Drink/banana_1f34c.webp",
       },
       {
         emoji: "🍍",
@@ -4504,6 +4810,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍓",
         names: ["strawberry"],
         keywords: ["berry"],
+        animated: "/animated/Food & Drink/strawberry_1f353.webp",
       },
       {
         emoji: "🫐",
@@ -4677,6 +4984,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥨",
         names: ["pretzel", "convoluted", "twisted"],
         keywords: [],
+        animated: "/animated/Food & Drink/pretzel_1f968.webp",
       },
       {
         emoji: "🥯",
@@ -4687,6 +4995,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥞",
         names: ["pancakes", "hotcake", "crêpe", "pancake"],
         keywords: ["breakfast"],
+        animated: "/animated/Food & Drink/pancakes_1f95e.webp",
       },
       {
         emoji: "🧇",
@@ -4702,11 +5011,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍖",
         names: ["meat on bone"],
         keywords: ["meat", "bone"],
+        animated: "/animated/Food & Drink/meat-on-bone_1f356.webp",
       },
       {
         emoji: "🍗",
         names: ["poultry leg", "drumstick", "poultry"],
         keywords: ["chicken", "bone", "hungry", "leg", "turkey"],
+        animated: "/animated/Food & Drink/poultry-leg_1f357.webp",
       },
       {
         emoji: "🥩",
@@ -4722,31 +5033,37 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍔",
         names: ["hamburger", "burger"],
         keywords: ["eat", "fast", "hungry"],
+        animated: "/animated/Food & Drink/hamburger_1f354.webp",
       },
       {
         emoji: "🍟",
         names: ["french fries", "french", "fries"],
         keywords: ["french", "fast"],
+        animated: "/animated/Food & Drink/french-fries_1f35f.webp",
       },
       {
         emoji: "🍕",
         names: ["pizza", "pepperoni"],
         keywords: ["cheese", "hungry", "slice"],
+        animated: "/animated/Food & Drink/pizza_1f355.webp",
       },
       {
         emoji: "🌭",
         names: ["hot dog", "frankfurter", "hotdog", "sausage"],
         keywords: ["dog", "hot"],
+        animated: "/animated/Food & Drink/hot-dog_1f32d.webp",
       },
       {
         emoji: "🥪",
         names: ["sandwich"],
         keywords: ["bread"],
+        animated: "/animated/Food & Drink/sandwich_1f96a.webp",
       },
       {
         emoji: "🌮",
         names: ["taco"],
         keywords: ["mexican"],
+        animated: "/animated/Food & Drink/taco_1f32e.webp",
       },
       {
         emoji: "🌯",
@@ -4762,6 +5079,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥙",
         names: ["stuffed flatbread", "gyro", "stuffed"],
         keywords: ["falafel", "flatbread", "kebab", "stuffed"],
+        animated: "/animated/Food & Drink/stuffed-flatbread_1f959.webp",
       },
       {
         emoji: "🧆",
@@ -4777,6 +5095,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍳",
         names: ["cooking", "easy", "fry", "frying", "side"],
         keywords: ["egg", "pan", "breakfast", "cooking", "over", "sunny"],
+        animated: "/animated/Food & Drink/cooking_1f373.webp",
       },
       {
         emoji: "🥘",
@@ -4807,6 +5126,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍿",
         names: ["popcorn"],
         keywords: ["corn", "movie", "pop"],
+        animated: "/animated/Food & Drink/popcorn_1f37f.webp",
       },
       {
         emoji: "🧈",
@@ -4822,21 +5142,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥫",
         names: ["canned food", "canned"],
         keywords: ["can"],
+        animated: "/animated/Food & Drink/canned-food_1f96b.webp",
       },
       {
         emoji: "🍱",
         names: ["bento box", "bento", "box"],
         keywords: [],
+        animated: "/animated/Food & Drink/bento-box_1f371.webp",
       },
       {
         emoji: "🍘",
         names: ["rice cracker", "cracker"],
         keywords: ["rice"],
+        animated: "/animated/Food & Drink/rice-cracker_1f358.webp",
       },
       {
         emoji: "🍙",
         names: ["rice ball", "ball", "rice"],
         keywords: ["Japanese", "rice"],
+        animated: "/animated/Food & Drink/rice-ball_1f359.webp",
       },
       {
         emoji: "🍚",
@@ -4867,11 +5191,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍢",
         names: ["oden"],
         keywords: ["skewer", "soup", "kebab", "seafood", "stick"],
+        animated: "/animated/Food & Drink/oden_1f362.webp",
       },
       {
         emoji: "🍣",
         names: ["sushi"],
         keywords: [],
+        animated: "/animated/Food & Drink/sushi_1f363.webp",
       },
       {
         emoji: "🍤",
@@ -4882,6 +5208,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍥",
         names: ["fish cake with swirl", "swirl"],
         keywords: ["cake", "fish", "pastry"],
+        animated: "/animated/Food & Drink/fish-cake-with-swirl_1f365.webp",
       },
       {
         emoji: "🥮",
@@ -4892,6 +5219,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍡",
         names: ["dango"],
         keywords: ["skewer", "Japanese", "stick"],
+        animated: "/animated/Food & Drink/dango_1f361.webp",
       },
       {
         emoji: "🥟",
@@ -4919,6 +5247,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍦",
         names: ["soft ice cream", "icecream", "serve", "soft"],
         keywords: ["cream", "ice", "soft"],
+        animated: "/animated/Food & Drink/soft-ice-cream_1f366.webp",
       },
       {
         emoji: "🍧",
@@ -4934,36 +5263,43 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍩",
         names: ["doughnut", "donut"],
         keywords: ["breakfast"],
+        animated: "/animated/Food & Drink/doughnut_1f369.webp",
       },
       {
         emoji: "🍪",
         names: ["cookie", "chip"],
         keywords: ["chocolate", "cookie"],
+        animated: "/animated/Food & Drink/cookie_1f36a.webp",
       },
       {
         emoji: "🎂",
         names: ["birthday cake", "birthday"],
         keywords: ["bday", "birthday", "cake", "pastry"],
+        animated: "/animated/Food & Drink/birthday-cake_1f382.webp",
       },
       {
         emoji: "🍰",
         names: ["shortcake"],
         keywords: ["cake", "pastry", "slice"],
+        animated: "/animated/Food & Drink/shortcake_1f370.webp",
       },
       {
         emoji: "🧁",
         names: ["cupcake", "sprinkles", "sugar"],
         keywords: ["bakery", "treat"],
+        animated: "/animated/Food & Drink/cupcake_1f9c1.webp",
       },
       {
         emoji: "🥧",
         names: ["pie", "filling"],
         keywords: ["apple", "meat", "pastry", "pumpkin", "slice"],
+        animated: "/animated/Food & Drink/pie_1f967.webp",
       },
       {
         emoji: "🍫",
         names: ["chocolate bar", "chocolate"],
         keywords: ["candy", "chocolate", "halloween", "tooth"],
+        animated: "/animated/Food & Drink/chocolate-bar_1f36b.webp",
       },
       {
         emoji: "🍬",
@@ -4974,11 +5310,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍭",
         names: ["lollipop"],
         keywords: ["candy"],
+        animated: "/animated/Food & Drink/lollipop_1f36d.webp",
       },
       {
         emoji: "🍮",
         names: ["custard", "pudding"],
         keywords: [],
+        animated: "/animated/Food & Drink/custard_1f36e.webp",
       },
       {
         emoji: "🍯",
@@ -4994,11 +5332,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍼",
         names: ["baby bottle", "bottle", "birth", "born"],
         keywords: ["milk", "bottle", "babies", "baby", "infant", "newborn"],
+        animated: "/animated/Food & Drink/baby-bottle_1f37c.webp",
       },
       {
         emoji: "🥛",
         names: ["glass of milk", "milk"],
         keywords: ["glass", "milk"],
+        animated: "/animated/Food & Drink/glass-of-milk_1f95b.webp",
       },
       {
         emoji: "☕",
@@ -5011,6 +5351,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "coffee",
         ],
         keywords: ["beverage", "hot", "morning", "steaming", "tea"],
+        animated: "/animated/Food & Drink/hot-beverage_2615.webp",
       },
       {
         emoji: "🫖",
@@ -5031,6 +5372,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍾",
         names: ["bottle with popping cork", "cork", "popping"],
         keywords: ["bottle", "popping"],
+        animated: "/animated/Food & Drink/bottle-with-popping-cork_1f37e.webp",
       },
       {
         emoji: "🍷",
@@ -5044,6 +5386,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "drinks",
           "glass",
         ],
+        animated: "/animated/Food & Drink/wine-glass_1f377.webp",
       },
       {
         emoji: "🍸",
@@ -5059,6 +5402,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "mad",
           "men",
         ],
+        animated: "/animated/Food & Drink/cocktail-glass_1f378.webp",
       },
       {
         emoji: "🍹",
@@ -5081,6 +5425,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "drunk",
           "tropical",
         ],
+        animated: "/animated/Food & Drink/tropical-drink_1f379.webp",
       },
       {
         emoji: "🍺",
@@ -5113,6 +5458,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🥂",
         names: ["clinking glasses", "clink", "clinking"],
         keywords: ["celebrate", "clink", "clinking", "glass", "glasses"],
+        animated: "/animated/Food & Drink/clinking-glasses_1f942.webp",
       },
       {
         emoji: "🥃",
@@ -5125,31 +5471,37 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "whisky",
         ],
         keywords: ["glass", "shot"],
+        animated: "/animated/Food & Drink/tumbler-glass_1f943.webp",
       },
       {
         emoji: "🫗",
         names: ["pouring liquid", "accident", "liquid", "pour", "pouring"],
         keywords: ["empty", "glass", "liquid", "oops", "spill"],
+        animated: "/animated/Food & Drink/pouring-liquid_1fad7.webp",
       },
       {
         emoji: "🥤",
         names: ["cup with straw", "cup", "malt", "soda", "straw"],
         keywords: ["cup", "juice", "soft", "straw"],
+        animated: "/animated/Food & Drink/cup-with-straw_1f964.webp",
       },
       {
         emoji: "🧋",
         names: ["bubble tea", "boba", "tea"],
         keywords: ["bubble", "milk", "pearl", "tea"],
+        animated: "/animated/Food & Drink/bubble-tea_1f9cb.webp",
       },
       {
         emoji: "🧃",
         names: ["beverage box"],
         keywords: ["beverage", "juice", "straw"],
+        animated: "/animated/Food & Drink/beverage-box_1f9c3.webp",
       },
       {
         emoji: "🧉",
         names: ["mate"],
         keywords: [],
+        animated: "/animated/Food & Drink/mate_1f9c9.webp",
       },
       {
         emoji: "🧊",
@@ -5170,6 +5522,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🍽️",
         names: ["fork and knife with plate", "plate"],
         keywords: ["cooking", "dinner", "eat", "fork", "knife"],
+        animated: "/animated/Food & Drink/fork-and-knife-with-plate_1f37d-fe0f.webp",
       },
       {
         emoji: "🍴",
@@ -5212,31 +5565,37 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎖️",
         names: ["military medal", "military"],
         keywords: ["award", "medal", "military"],
+        animated: "/animated/Activity/military-medal_1f396-fe0f.webp",
       },
       {
         emoji: "🏆",
         names: ["trophy", "champion", "champs", "winning"],
         keywords: ["prize", "slay", "victory", "win"],
+        animated: "/animated/Activity/trophy_1f3c6.webp",
       },
       {
         emoji: "🏅",
         names: ["sports medal", "medal", "sports", "winner"],
         keywords: ["award", "medal", "gold", "sports"],
+        animated: "/animated/Activity/sports-medal_1f3c5.webp",
       },
       {
         emoji: "📱",
         names: ["mobile phone", "cell", "mobile", "phone"],
         keywords: ["communication", "phone", "telephone"],
+        animated: "/animated/Objects/mobile-phone_1f4f1.webp",
       },
       {
         emoji: "☎️",
         names: ["telephone"],
         keywords: ["phone", "telephone"],
+        animated: "/animated/Objects/telephone_260e-fe0f.webp",
       },
       {
         emoji: "📞",
         names: ["telephone receiver", "receiver", "voip"],
         keywords: ["phone", "communication", "telephone"],
+        animated: "/animated/Objects/telephone-receiver_1f4de.webp",
       },
       {
         emoji: "📟",
@@ -5274,6 +5633,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💻",
         names: ["laptop", "pc", "personal"],
         keywords: ["office"],
+        animated: "/animated/Objects/laptop_1f4bb.webp",
       },
       {
         emoji: "🖥️",
@@ -5284,11 +5644,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🖨️",
         names: ["printer"],
         keywords: [],
+        animated: "/animated/Objects/printer_1f5a8-fe0f.webp",
       },
       {
         emoji: "⌨️",
         names: ["keyboard"],
         keywords: ["keyboard"],
+        animated: "/animated/Objects/keyboard_2328-fe0f.webp",
       },
       {
         emoji: "🖱️",
@@ -5324,6 +5686,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧮",
         names: ["abacus", "calculation", "calculator"],
         keywords: [],
+        animated: "/animated/Objects/abacus_1f9ee.webp",
       },
       {
         emoji: "🎥",
@@ -5344,11 +5707,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎬",
         names: ["clapper board", "action", "board", "clapper"],
         keywords: ["board", "movie"],
+        animated: "/animated/Objects/clapper-board_1f3ac.webp",
       },
       {
         emoji: "📺",
         names: ["television", "tv"],
         keywords: ["video"],
+        animated: "/animated/Objects/television_1f4fa.webp",
       },
       {
         emoji: "📷",
@@ -5382,6 +5747,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "search",
           "tilted",
         ],
+        animated: "/animated/Objects/magnifying-glass-tilted-left_1f50d.webp",
       },
       {
         emoji: "🔎",
@@ -5396,6 +5762,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "search",
           "tilted",
         ],
+        animated: "/animated/Objects/magnifying-glass-tilted-right_1f50e.webp",
       },
       {
         emoji: "🕯️",
@@ -5406,6 +5773,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💡",
         names: ["light bulb", "bulb", "light"],
         keywords: ["electric", "idea"],
+        animated: "/animated/Objects/light-bulb_1f4a1.webp",
       },
       {
         emoji: "🔦",
@@ -5434,6 +5802,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "silver",
           "treasure",
         ],
+        animated: "/animated/Objects/coin_1fa99.webp",
       },
       {
         emoji: "💰",
@@ -5453,6 +5822,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "rich",
           "win",
         ],
+        animated: "/animated/Objects/money-bag_1f4b0.webp",
       },
       {
         emoji: "🪎",
@@ -5513,6 +5883,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "pay",
           "wings",
         ],
+        animated: "/animated/Objects/money-with-wings_1f4b8.webp",
       },
       {
         emoji: "💳",
@@ -5535,6 +5906,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "✉️",
         names: ["envelope"],
         keywords: ["e-mail", "email", "letter", "envelope"],
+        animated: "/animated/Objects/envelope_2709-fe0f.webp",
       },
       {
         emoji: "📧",
@@ -5558,11 +5930,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "📤",
         names: ["outbox tray", "outbox"],
         keywords: ["email", "letter", "mail", "sent", "tray"],
+        animated: "/animated/Objects/outbox-tray_1f4e4.webp",
       },
       {
         emoji: "📥",
         names: ["inbox tray", "inbox", "tray", "zero"],
         keywords: ["email", "letter", "mail", "receive", "tray"],
+        animated: "/animated/Objects/inbox-tray_1f4e5.webp",
       },
       {
         emoji: "📦",
@@ -5605,6 +5979,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗳️",
         names: ["ballot box with ballot", "ballot"],
         keywords: [],
+        animated: "/animated/Objects/ballot-box-with-ballot_1f5f3-fe0f.webp",
       },
       {
         emoji: "🔒",
@@ -5615,11 +5990,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🔑",
         names: ["key", "keys", "major", "password", "unlock"],
         keywords: ["lock", "key"],
+        animated: "/animated/Objects/key_1f511.webp",
       },
       {
         emoji: "🗝️",
         names: ["old key"],
         keywords: ["key", "lock", "clue", "old"],
+        animated: "/animated/Objects/old-key_1f5dd-fe0f.webp",
       },
       {
         emoji: "🚪",
@@ -5716,6 +6093,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧻",
         names: ["roll of paper", "roll", "paper", "towels"],
         keywords: ["roll", "toilet", "paper"],
+        animated: "/animated/Objects/roll-of-paper_1f9fb.webp",
       },
       {
         emoji: "🪣",
@@ -5726,6 +6104,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧼",
         names: ["soap", "lather", "soapdish"],
         keywords: ["bathing", "clean", "cleaning", "soap"],
+        animated: "/animated/Objects/soap_1f9fc.webp",
       },
       {
         emoji: "🫧",
@@ -5741,6 +6120,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧽",
         names: ["sponge", "absorbing", "porous", "soak"],
         keywords: ["cleaning"],
+        animated: "/animated/Objects/sponge_1f9fd.webp",
       },
       {
         emoji: "🧯",
@@ -5751,6 +6131,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🛒",
         names: ["shopping cart", "cart"],
         keywords: ["trolley"],
+        animated: "/animated/Objects/shopping-cart_1f6d2.webp",
       },
       {
         emoji: "🚬",
@@ -5793,6 +6174,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗿",
         names: ["moai", "moyai", "stoneface"],
         keywords: ["statue"],
+        animated: "/animated/Travel & Places/moai_1f5ff.webp",
       },
       {
         emoji: "🪧",
@@ -5817,6 +6199,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "security",
         ],
         keywords: ["document"],
+        animated: "/animated/Objects/identification-card_1faaa.webp",
       },
     ],
   },
@@ -5859,6 +6242,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧭",
         names: ["compass"],
         keywords: ["direction", "magnetic"],
+        animated: "/animated/Travel & Places/compass_1f9ed.webp",
       },
     ],
   },
@@ -5894,11 +6278,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🏕️",
         names: ["camping"],
         keywords: ["camping"],
+        animated: "/animated/Travel & Places/camping_1f3d5-fe0f.webp",
       },
       {
         emoji: "🏖️",
         names: ["beach with umbrella", "beach"],
         keywords: ["beach", "umbrella"],
+        animated: "/animated/Travel & Places/beach-with-umbrella_1f3d6-fe0f.webp",
       },
       {
         emoji: "🏜️",
@@ -5909,6 +6295,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🏝️",
         names: ["desert island", "island"],
         keywords: ["desert"],
+        animated: "/animated/Travel & Places/desert-island_1f3dd-fe0f.webp",
       },
       {
         emoji: "🏞️",
@@ -5924,6 +6311,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🏛️",
         names: ["classical building", "classical"],
         keywords: [],
+        animated: "/animated/Travel & Places/classical-building_1f3db-fe0f.webp",
       },
       {
         emoji: "🏗️",
@@ -5975,6 +6363,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "suburbia",
           "where",
         ],
+        animated: "/animated/Travel & Places/house_1f3e0.webp",
       },
       {
         emoji: "🏡",
@@ -6165,6 +6554,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎢",
         names: ["roller coaster", "coaster"],
         keywords: ["amusement", "park", "roller", "theme"],
+        animated: "/animated/Travel & Places/roller-coaster_1f3a2.webp",
       },
       {
         emoji: "💈",
@@ -6185,6 +6575,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧳",
         names: ["luggage", "packing", "suitcase"],
         keywords: ["roller", "bag"],
+        animated: "/animated/Objects/luggage_1f9f3.webp",
       },
     ],
   },
@@ -6195,6 +6586,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚂",
         names: ["locomotive", "caboose", "trains"],
         keywords: ["engine", "railway", "steam", "train"],
+        animated: "/animated/Travel & Places/locomotive_1f682.webp",
       },
       {
         emoji: "🚃",
@@ -6282,6 +6674,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚑",
         names: ["ambulance"],
         keywords: ["emergency"],
+        animated: "/animated/Travel & Places/ambulance_1f691.webp",
       },
       {
         emoji: "🚒",
@@ -6292,6 +6685,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚓",
         names: ["police car", "patrol", "5–0", "cops", "police"],
         keywords: ["police"],
+        animated: "/animated/Travel & Places/police-car_1f693.webp",
       },
       {
         emoji: "🚔",
@@ -6302,6 +6696,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚕",
         names: ["taxi"],
         keywords: ["cab", "cabbie", "drive", "taxi", "yellow"],
+        animated: "/animated/Travel & Places/taxi_1f695.webp",
       },
       {
         emoji: "🚖",
@@ -6320,6 +6715,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚗",
         names: ["automobile"],
         keywords: ["driving", "automobile"],
+        animated: "/animated/Travel & Places/automobile_1f697.webp",
       },
       {
         emoji: "🚘",
@@ -6529,6 +6925,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🛥️",
         names: ["motor boat", "boat", "motor", "motorboat"],
         keywords: ["boat", "motor"],
+        animated: "/animated/Travel & Places/motor-boat_1f6e5-fe0f.webp",
       },
       {
         emoji: "🚢",
@@ -6539,6 +6936,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "✈️",
         names: ["airplane", "jet"],
         keywords: ["aeroplane", "airplane", "fly", "flying", "plane"],
+        animated: "/animated/Travel & Places/airplane_2708-fe0f.webp",
       },
       {
         emoji: "🛩️",
@@ -6600,6 +6998,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🚀",
         names: ["rocket", "launch", "rockets"],
         keywords: ["rocket"],
+        animated: "/animated/Travel & Places/rocket_1f680.webp",
       },
       {
         emoji: "🛸",
@@ -6615,6 +7014,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "⌛",
         names: ["hourglass done", "done", "hourglass"],
         keywords: ["done", "hourglass", "sand", "timer"],
+        animated: "/animated/Objects/hourglass-done_231b.webp",
       },
       {
         emoji: "⏳",
@@ -6628,6 +7028,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "waiting",
           "yolo",
         ],
+        animated: "/animated/Objects/hourglass-not-done_23f3.webp",
       },
       {
         emoji: "⌚",
@@ -6783,6 +7184,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌕",
         names: ["full moon", "moon", "full"],
         keywords: ["moon", "full"],
+        animated: "/animated/Animals & Nature/full-moon_1f315.webp",
       },
       {
         emoji: "🌙",
@@ -6793,11 +7195,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🌡️",
         names: ["thermometer"],
         keywords: ["thermometer"],
+        animated: "/animated/Objects/thermometer_1f321-fe0f.webp",
       },
       {
         emoji: "☀️",
         names: ["sun", "rays", "sunny"],
         keywords: ["bright", "sun", "sunny"],
+        animated: "/animated/Animals & Nature/sun_2600-fe0f.webp",
       },
       {
         emoji: "🪐",
@@ -6808,11 +7212,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "⭐",
         names: ["star", "astronomy", "stars"],
         keywords: ["medium"],
+        animated: "/animated/Animals & Nature/star_2b50.webp",
       },
       {
         emoji: "🌟",
         names: ["glowing star", "glittery", "glow", "glowing", "shining"],
         keywords: ["sparkle", "win"],
+        animated: "/animated/Animals & Nature/glowing-star_1f31f.webp",
       },
       {
         emoji: "🌠",
@@ -6828,31 +7234,37 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "☁️",
         names: ["cloud"],
         keywords: [],
+        animated: "/animated/Animals & Nature/cloud_2601-fe0f.webp",
       },
       {
         emoji: "⛅",
         names: ["sun behind cloud", "cloudy", "behind"],
         keywords: ["behind", "sun"],
+        animated: "/animated/Animals & Nature/sun-behind-cloud_26c5.webp",
       },
       {
         emoji: "🌤️",
         names: ["sun behind small cloud"],
         keywords: ["sun", "behind"],
+        animated: "/animated/Animals & Nature/sun-behind-small-cloud_1f324-fe0f.webp",
       },
       {
         emoji: "🌥️",
         names: ["sun behind large cloud"],
         keywords: ["sun", "behind"],
+        animated: "/animated/Animals & Nature/sun-behind-large-cloud_1f325-fe0f.webp",
       },
       {
         emoji: "🌦️",
         names: ["sun behind rain cloud"],
         keywords: ["rain", "behind", "sun"],
+        animated: "/animated/Animals & Nature/sun-behind-rain-cloud_1f326-fe0f.webp",
       },
       {
         emoji: "🌧️",
         names: ["cloud with rain"],
         keywords: ["rain"],
+        animated: "/animated/Animals & Nature/cloud-with-rain_1f327-fe0f.webp",
       },
       {
         emoji: "🌪️",
@@ -6893,6 +7305,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "trans",
           "transgender",
         ],
+        animated: "/animated/Animals & Nature/rainbow_1f308.webp",
       },
       {
         emoji: "☂️",
@@ -6916,21 +7329,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "zap",
         ],
         keywords: ["danger", "electric", "electricity", "high"],
+        animated: "/animated/Animals & Nature/high-voltage_26a1.webp",
       },
       {
         emoji: "❄️",
         names: ["snowflake"],
         keywords: ["snow"],
+        animated: "/animated/Animals & Nature/snowflake_2744-fe0f.webp",
       },
       {
         emoji: "☃️",
         names: ["snowman", "snow"],
         keywords: ["snow", "snowman"],
+        animated: "/animated/Animals & Nature/snowman_2603-fe0f.webp",
       },
       {
         emoji: "⛄",
         names: ["snowman without snow"],
         keywords: ["snow", "snowman"],
+        animated: "/animated/Animals & Nature/snowman-without-snow_26c4.webp",
       },
       {
         emoji: "☄️",
@@ -6941,6 +7358,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🔥",
         names: ["fire", "flame", "af", "lit", "litaf"],
         keywords: ["burn", "fire", "hot"],
+        animated: "/animated/Animals & Nature/fire_1f525.webp",
       },
       {
         emoji: "💧",
@@ -6961,36 +7379,43 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎃",
         names: ["jack-o-lantern", "jack"],
         keywords: ["halloween", "lantern", "pumpkin"],
+        animated: "/animated/Activity/jack-o-lantern_1f383.webp",
       },
       {
         emoji: "🎄",
         names: ["Christmas tree", "christmas tree", "christmas"],
         keywords: ["christmas", "tree", "Christmas"],
+        animated: "/animated/Activity/christmas-tree_1f384.webp",
       },
       {
         emoji: "🎆",
         names: ["fireworks"],
         keywords: ["boom", "entertainment", "fireworks", "yolo"],
+        animated: "/animated/Activity/fireworks_1f386.webp",
       },
       {
         emoji: "🎇",
         names: ["sparkler"],
         keywords: ["fireworks", "boom", "sparkle"],
+        animated: "/animated/Activity/sparkler_1f387.webp",
       },
       {
         emoji: "🧨",
         names: ["firecracker", "dynamite", "explosive", "spark"],
         keywords: ["fire", "fireworks", "pop", "popping"],
+        animated: "/animated/Activity/firecracker_1f9e8.webp",
       },
       {
         emoji: "✨",
         names: ["sparkles", "sparkle", "*"],
         keywords: ["magic", "sparkle"],
+        animated: "/animated/Activity/sparkles_2728.webp",
       },
       {
         emoji: "🎈",
         names: ["balloon"],
         keywords: ["birthday", "celebrate", "balloon"],
+        animated: "/animated/Activity/balloon_1f388.webp",
       },
       {
         emoji: "🎉",
@@ -7003,11 +7428,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "hooray",
           "woohoo",
         ],
+        animated: "/animated/Activity/party-popper_1f389.webp",
       },
       {
         emoji: "🎊",
         names: ["confetti ball", "confetti"],
         keywords: ["celebrate", "woohoo"],
+        animated: "/animated/Activity/confetti-ball_1f38a.webp",
       },
       {
         emoji: "🎋",
@@ -7065,16 +7492,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎗️",
         names: ["reminder ribbon", "reminder"],
         keywords: ["ribbon"],
+        animated: "/animated/Objects/reminder-ribbon_1f397-fe0f.webp",
       },
       {
         emoji: "🎟️",
         names: ["admission tickets", "admission", "tickets"],
         keywords: ["admission", "ticket"],
+        animated: "/animated/Activity/admission-tickets_1f39f-fe0f.webp",
       },
       {
         emoji: "🎫",
         names: ["ticket", "stub"],
         keywords: ["admission", "ticket"],
+        animated: "/animated/Activity/ticket_1f3ab.webp",
       },
     ],
   },
@@ -7110,16 +7540,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🔮",
         names: ["crystal ball", "crystal", "future"],
         keywords: ["fortune", "magic"],
+        animated: "/animated/Activity/crystal-ball_1f52e.webp",
       },
       {
         emoji: "🪄",
         names: ["magic wand", "magic", "magician", "wand"],
         keywords: ["magic", "witch", "wizard"],
+        animated: "/animated/Activity/magic-wand_1fa84.webp",
       },
       {
         emoji: "🎮",
         names: ["video game", "controller", "video"],
         keywords: ["entertainment", "video"],
+        animated: "/animated/Activity/video-game_1f3ae.webp",
       },
       {
         emoji: "🕹️",
@@ -7162,6 +7595,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🪩",
         names: ["mirror ball", "disco", "glitter"],
         keywords: ["dance", "mirror"],
+        animated: "/animated/Activity/mirror-ball_1faa9.webp",
       },
       {
         emoji: "🪆",
@@ -7234,6 +7668,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "thespian",
         ],
         keywords: ["art", "actor", "arts", "entertainment", "mask"],
+        animated: "/animated/Activity/performing-arts_1f3ad.webp",
       },
       {
         emoji: "🖼️",
@@ -7259,6 +7694,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "museum",
           "palette",
         ],
+        animated: "/animated/Activity/artist-palette_1f3a8.webp",
       },
       {
         emoji: "🧵",
@@ -7411,11 +7847,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👛",
         names: ["purse"],
         keywords: ["coin", "dress", "fancy", "handbag", "purse"],
+        animated: "/animated/Objects/purse_1f45b.webp",
       },
       {
         emoji: "👜",
         names: ["handbag"],
         keywords: ["bag", "dress", "handbag", "lady", "purse"],
+        animated: "/animated/Objects/handbag_1f45c.webp",
       },
       {
         emoji: "👝",
@@ -7426,6 +7864,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🛍️",
         names: ["shopping bags", "bags", "shopping"],
         keywords: ["bags", "bag", "hotel"],
+        animated: "/animated/Objects/shopping-bags_1f6cd-fe0f.webp",
       },
       {
         emoji: "🎒",
@@ -7492,6 +7931,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "👠",
         names: ["high-heeled shoe", "heel", "heels", "high-heeled", "stiletto"],
         keywords: ["dress", "fashion", "shoe", "shoes"],
+        animated: "/animated/Objects/high-heeled-shoe_1f460.webp",
       },
       {
         emoji: "👡",
@@ -7525,6 +7965,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "royalty",
           "win",
         ],
+        animated: "/animated/Objects/crown_1f451.webp",
       },
       {
         emoji: "👒",
@@ -7535,11 +7976,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎩",
         names: ["top hat", "hat", "top", "tophat"],
         keywords: ["fancy", "formal", "magic"],
+        animated: "/animated/Objects/top-hat_1f3a9.webp",
       },
       {
         emoji: "🎓",
         names: ["graduation cap", "graduation", "scholar"],
         keywords: ["cap", "education"],
+        animated: "/animated/Objects/graduation-cap_1f393.webp",
       },
       {
         emoji: "🧢",
@@ -7550,6 +7993,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🪖",
         names: ["military helmet", "army", "helmet", "warrior"],
         keywords: ["helmet", "military", "soldier", "war"],
+        animated: "/animated/Objects/military-helmet_1fa96.webp",
       },
       {
         emoji: "⛑️",
@@ -7580,6 +8024,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💎",
         names: ["gem stone", "gem", "jewel", "stone"],
         keywords: ["diamond", "engagement", "gem", "stone", "wedding"],
+        animated: "/animated/Objects/gem-stone_1f48e.webp",
       },
     ],
   },
@@ -7615,6 +8060,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "📣",
         names: ["megaphone", "cheering"],
         keywords: [],
+        animated: "/animated/Objects/megaphone_1f4e3.webp",
       },
       {
         emoji: "📯",
@@ -7635,16 +8081,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎵",
         names: ["musical note", "music", "musical", "note"],
         keywords: ["musical", "note"],
+        animated: "/animated/Objects/musical-note_1f3b5.webp",
       },
       {
         emoji: "🎶",
         names: ["musical notes", "notes"],
         keywords: ["musical", "note", "notes"],
+        animated: "/animated/Objects/musical-notes_1f3b6.webp",
       },
       {
         emoji: "🎙️",
         names: ["studio microphone", "studio"],
         keywords: ["mic", "microphone"],
+        animated: "/animated/Objects/studio-microphone_1f399-fe0f.webp",
       },
       {
         emoji: "🎚️",
@@ -7660,6 +8109,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🎤",
         names: ["microphone", "karaoke", "sing"],
         keywords: ["mic", "microphone"],
+        animated: "/animated/Objects/microphone_1f3a4.webp",
       },
       {
         emoji: "🎧",
@@ -7767,6 +8217,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "novels",
           "reading",
         ],
+        animated: "/animated/Objects/open-book_1f4d6.webp",
       },
       {
         emoji: "📗",
@@ -7795,6 +8246,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "reading",
           "school",
         ],
+        animated: "/animated/Objects/books_1f4da.webp",
       },
       {
         emoji: "📓",
@@ -7825,6 +8277,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "📰",
         names: ["newspaper", "news"],
         keywords: ["news", "paper", "communication", "newspaper"],
+        animated: "/animated/Objects/newspaper_1f4f0.webp",
       },
       {
         emoji: "🗞️",
@@ -7850,6 +8303,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "✏️",
         names: ["pencil"],
         keywords: ["pencil"],
+        animated: "/animated/Objects/pencil_270f-fe0f.webp",
       },
       {
         emoji: "✒️",
@@ -7880,16 +8334,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "📝",
         names: ["memo", "media"],
         keywords: ["notes", "communication", "pencil"],
+        animated: "/animated/Objects/memo_1f4dd.webp",
       },
       {
         emoji: "💼",
         names: ["briefcase"],
         keywords: ["office"],
+        animated: "/animated/Objects/briefcase_1f4bc.webp",
       },
       {
         emoji: "📁",
         names: ["file folder", "file", "folder"],
         keywords: ["file", "folder"],
+        animated: "/animated/Objects/file-folder_1f4c1.webp",
       },
       {
         emoji: "📂",
@@ -7900,11 +8357,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🗂️",
         names: ["card index dividers", "dividers"],
         keywords: ["index"],
+        animated: "/animated/Objects/card-index-dividers_1f5c2-fe0f.webp",
       },
       {
         emoji: "📅",
         names: ["calendar", "date"],
         keywords: ["calendar", "date"],
+        animated: "/animated/Objects/calendar_1f4c5.webp",
       },
       {
         emoji: "📆",
@@ -7930,16 +8389,19 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "📈",
         names: ["chart increasing", "increasing", "upward"],
         keywords: ["chart", "data", "graph", "growth", "right", "trend"],
+        animated: "/animated/Objects/chart-increasing_1f4c8.webp",
       },
       {
         emoji: "📉",
         names: ["chart decreasing", "decreasing", "downward"],
         keywords: ["chart", "data", "down", "graph", "negative", "trend"],
+        animated: "/animated/Objects/chart-decreasing_1f4c9.webp",
       },
       {
         emoji: "📊",
         names: ["bar chart", "chart", "bar"],
         keywords: ["chart", "data", "graph"],
+        animated: "/animated/Objects/bar-chart_1f4ca.webp",
       },
       {
         emoji: "📋",
@@ -8030,6 +8492,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💣",
         names: ["bomb", "dangerous", "explosion"],
         keywords: ["bomb", "boom", "hot"],
+        animated: "/animated/Objects/bomb_1f4a3.webp",
       },
       {
         emoji: "🪃",
@@ -8095,6 +8558,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧰",
         names: ["toolbox", "chest", "tool"],
         keywords: ["mechanic"],
+        animated: "/animated/Objects/toolbox_1f9f0.webp",
       },
       {
         emoji: "🧲",
@@ -8128,6 +8592,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🧪",
         names: ["test tube", "chemistry", "test", "tube"],
         keywords: ["chemist", "experiment", "lab", "science"],
+        animated: "/animated/Objects/test-tube_1f9ea.webp",
       },
       {
         emoji: "🧫",
@@ -8143,11 +8608,13 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🔬",
         names: ["microscope"],
         keywords: ["experiment", "lab", "science"],
+        animated: "/animated/Objects/microscope_1f52c.webp",
       },
       {
         emoji: "🔭",
         names: ["telescope"],
         keywords: ["contact", "science", "extraterrestrial"],
+        animated: "/animated/Objects/telescope_1f52d.webp",
       },
       {
         emoji: "📡",
@@ -8158,6 +8625,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💉",
         names: ["syringe", "vaccination"],
         keywords: ["medicine", "doctor", "flu", "needle", "shot", "sick"],
+        animated: "/animated/Objects/syringe_1f489.webp",
       },
       {
         emoji: "🩸",
@@ -8168,6 +8636,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "💊",
         names: ["pill", "drugs", "medicated", "pills"],
         keywords: ["doctor", "medicine", "sick", "vitamin"],
+        animated: "/animated/Objects/pill_1f48a.webp",
       },
       {
         emoji: "🩹",
@@ -8183,6 +8652,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "🩺",
         names: ["stethoscope"],
         keywords: ["medicine", "doctor"],
+        animated: "/animated/Objects/stethoscope_1fa7a.webp",
       },
       {
         emoji: "🩻",
@@ -8408,21 +8878,25 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "♈",
         names: ["Aries", "aries"],
         keywords: ["ram", "Aries"],
+        animated: "/animated/Symbols/aries_2648.webp",
       },
       {
         emoji: "♉",
         names: ["Taurus", "taurus"],
         keywords: ["bull", "ox", "Taurus"],
+        animated: "/animated/Symbols/taurus_2649.webp",
       },
       {
         emoji: "♊",
         names: ["Gemini", "gemini"],
         keywords: ["twins"],
+        animated: "/animated/Symbols/gemini_264a.webp",
       },
       {
         emoji: "♋",
         names: ["Cancer", "cancer"],
         keywords: ["crab", "Cancer"],
+        animated: "/animated/Symbols/cancer_264b.webp",
       },
       {
         emoji: "♌",
@@ -8433,41 +8907,49 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "♍",
         names: ["Virgo", "virgo"],
         keywords: ["Virgo"],
+        animated: "/animated/Symbols/virgo_264d.webp",
       },
       {
         emoji: "♎",
         names: ["Libra", "libra"],
         keywords: ["justice", "balance", "scales"],
+        animated: "/animated/Symbols/libra_264e.webp",
       },
       {
         emoji: "♏",
         names: ["Scorpio", "scorpio"],
         keywords: ["scorpion", "scorpius", "Scorpio", "Scorpius"],
+        animated: "/animated/Symbols/scorpio_264f.webp",
       },
       {
         emoji: "♐",
         names: ["Sagittarius", "sagittarius"],
         keywords: ["archer", "Sagittarius"],
+        animated: "/animated/Symbols/sagittarius_2650.webp",
       },
       {
         emoji: "♑",
         names: ["Capricorn", "capricorn"],
         keywords: ["goat", "Capricorn"],
+        animated: "/animated/Symbols/capricorn_2651.webp",
       },
       {
         emoji: "♒",
         names: ["Aquarius", "aquarius"],
         keywords: ["bearer", "Aquarius"],
+        animated: "/animated/Symbols/aquarius_2652.webp",
       },
       {
         emoji: "♓",
         names: ["Pisces", "pisces"],
         keywords: ["fish", "Pisces"],
+        animated: "/animated/Symbols/pisces_2653.webp",
       },
       {
         emoji: "⛎",
         names: ["Ophiuchus", "ophiuchus"],
         keywords: ["bearer", "serpent", "snake", "Ophiuchus"],
+        animated: "/animated/Symbols/ophiuchus_26ce.webp",
       },
       {
         emoji: "🎦",
@@ -8525,26 +9007,31 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
         emoji: "❓",
         names: ["red question mark", "question"],
         keywords: ["punctuation", "question", "?", "mark"],
+        animated: "/animated/Symbols/question-mark_2753.webp",
       },
       {
         emoji: "❔",
         names: ["white question mark"],
         keywords: ["punctuation", "?", "mark", "outlined", "question"],
+        animated: "/animated/Symbols/white-question-mark_2754.webp",
       },
       {
         emoji: "❕",
         names: ["white exclamation mark"],
         keywords: ["exclamation", "!", "mark", "outlined", "punctuation"],
+        animated: "/animated/Symbols/white-exclamation-mark_2755.webp",
       },
       {
         emoji: "❗",
         names: ["red exclamation mark"],
         keywords: ["exclamation", "punctuation", "!", "mark"],
+        animated: "/animated/Symbols/exclamation-mark_2757.webp",
       },
       {
         emoji: "💱",
         names: ["currency exchange", "currency", "exchange"],
         keywords: ["currency", "bank"],
+        animated: "/animated/Symbols/currency-exchange_1f4b1.webp",
       },
       {
         emoji: "💲",
@@ -8574,6 +9061,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "tick",
         ],
         keywords: ["button", "done", "mark"],
+        animated: "/animated/Symbols/check-mark-button_2705.webp",
       },
       {
         emoji: "❌",
@@ -8587,6 +9075,7 @@ export const EMOJI_DATABASE: EmojiCategory[] = [
           "multiply",
           "x",
         ],
+        animated: "/animated/Symbols/cross-mark_274c.webp",
       },
       {
         emoji: "🫟",
