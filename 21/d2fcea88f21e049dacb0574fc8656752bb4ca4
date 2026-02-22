@@ -1,0 +1,44 @@
+lib/emoji-data.ts
+  a96dd9de0660bbd3 118-137
+app/find/[word]/game.tsx
+  a96dd9de0660bbd3 28,37,88
+app/find/[word]/page.tsx
+  a96dd9de0660bbd3 5,79-82,90
+scripts/build-animated-map.mjs
+  a96dd9de0660bbd3 1-249
+components/SuccessScreen.tsx
+  a96dd9de0660bbd3 16,22,26,39-44,65,116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "21d2fcea88f21e049dacb0574fc8656752bb4ca4",
+  "prompts": {
+    "a7e3753c185dfde7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "edf70dfb-247a-415b-80fe-80357a6c39dc",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 232,
+      "total_deletions": 88,
+      "accepted_lines": 144,
+      "overriden_lines": 0
+    },
+    "a96dd9de0660bbd3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "323a227a-1bc2-4dc1-bcac-da2fe83a7bd4",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 339,
+      "total_deletions": 47,
+      "accepted_lines": 293,
+      "overriden_lines": 0
+    }
+  }
+}
