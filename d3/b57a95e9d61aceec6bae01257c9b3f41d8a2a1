@@ -1,0 +1,29 @@
+lib/topics/data.ts
+  e36f4ebf4a99bacd 481-499
+lib/topics/topics.test.ts
+  e36f4ebf4a99bacd 2,6-29,48-55,59-68,72-77
+lib/topics/distractor-coverage.test.ts
+  e36f4ebf4a99bacd 7,9-27,29-30,32-33
+lib/topics/build-session.test.ts
+  e36f4ebf4a99bacd 3,156-178,180,182-183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "d3b57a95e9d61aceec6bae01257c9b3f41d8a2a1",
+  "prompts": {
+    "e36f4ebf4a99bacd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da59f327-82a4-4c1a-af5d-c7b7f82b06f9",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 149,
+      "total_deletions": 38,
+      "accepted_lines": 120,
+      "overriden_lines": 0
+    }
+  }
+}
