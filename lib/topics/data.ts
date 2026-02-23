@@ -480,6 +480,13 @@ export const TOPICS: Topic[] = [
   {
     id: "12-con-giap",
     name: "12 Con Giáp",
+    descriptionMarkdown:
+      "Learn the 12 animals of the Vietnamese zodiac! Match each animal to its traditional name.",
+    learningGoals: [
+      "Recognize the 12 Vietnamese zodiac animals",
+      "Learn traditional zodiac branch names",
+      "Explore Vietnamese cultural traditions",
+    ],
     icon: "🐉",
     level: 2,
     items: [
