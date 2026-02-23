@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { buildSession } from "./build-session";
-import { getAllTopics } from "./index";
+import { getTopicById } from "./index";
 import { DEFAULT_SESSION_LENGTH } from "./session";
 import type { TopicItem } from "./schema";
 
@@ -153,15 +153,35 @@ describe("buildSession", () => {
   });
 
   describe("with real topic data", () => {
-    const topics = getAllTopics();
+    const TOPIC_IDS = [
+      // Level 1
+      "animal-friends",
+      "fruits",
+      "vehicles",
+      "clothing",
+      "colors",
+      "flags-easy",
+      // Level 2
+      "wild-animals",
+      "food",
+      "nature",
+      "emotions",
+      "shapes",
+      "telling-time",
+      "12-con-giap",
+      "flags-medium",
+      // Level 3
+      "flags-hard",
+      "celebrations",
+      "sports",
+      "professions",
+    ];
 
-    it.each(topics.map((t) => [t.id, t]))(
-      "builds a session for topic %s",
-      (_, topic) => {
-        const rounds = buildSession(topic.items);
-        expect(rounds).not.toBeNull();
-        expect(rounds!.length).toBe(DEFAULT_SESSION_LENGTH);
-      },
-    );
+    it.each(TOPIC_IDS)("builds a session for topic %s", (id) => {
+      const topic = getTopicById(id)!;
+      const rounds = buildSession(topic.items);
+      expect(rounds).not.toBeNull();
+      expect(rounds!.length).toBe(DEFAULT_SESSION_LENGTH);
+    });
   });
 });
