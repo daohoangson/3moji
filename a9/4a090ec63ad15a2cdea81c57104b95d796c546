@@ -1,0 +1,23 @@
+docs/feat/i18n.md
+  6bccc459f74041ff 1-26,28-29,31-88
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "a94a090ec63ad15a2cdea81c57104b95d796c546",
+  "prompts": {
+    "6bccc459f74041ff": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e97bc0c-2d2d-41ef-bc12-a8a3fba1d790",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 88,
+      "total_deletions": 0,
+      "accepted_lines": 86,
+      "overriden_lines": 2
+    }
+  }
+}
