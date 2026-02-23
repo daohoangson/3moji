@@ -4,15 +4,33 @@ import {
   getDistractors,
   getEmojisByCategory,
 } from "../emoji-data";
-import { getAllTopics, isEmojiItem } from "./index";
+import { getTopicById, isEmojiItem } from "./index";
+
+const EMOJI_TOPIC_IDS = [
+  "animal-friends",
+  "fruits",
+  "vehicles",
+  "clothing",
+  "flags-easy",
+  "wild-animals",
+  "food",
+  "nature",
+  "emotions",
+  "shapes",
+  "telling-time",
+  "12-con-giap",
+  "flags-medium",
+  "flags-hard",
+  "celebrations",
+  "sports",
+  "professions",
+];
 
 describe("all emoji topics have valid distractors", () => {
-  const topics = getAllTopics();
-  const emojiTopics = topics.filter((t) => t.items.some(isEmojiItem));
-
-  it.each(emojiTopics.map((t) => [t.id, t]))(
+  it.each(EMOJI_TOPIC_IDS)(
     "topic %s has all emojis with 2+ valid distractors",
-    (_, topic) => {
+    (id) => {
+      const topic = getTopicById(id)!;
       const problematic: string[] = [];
 
       for (const item of topic.items) {
