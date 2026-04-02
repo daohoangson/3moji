@@ -1,0 +1,27 @@
+docs/feat/tv-app.md
+  204414b1fbeee348 1-84
+docs/feat/flag-difficulty.md
+  204414b1fbeee348 1-63
+docs/feat/language-topics.md
+  204414b1fbeee348 1-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.32",
+  "base_commit_sha": "704cf219495fa05d07448fb522639c29cb589bd4",
+  "prompts": {
+    "204414b1fbeee348": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "adbbff6c-e197-4311-82c8-181ac745d8e3",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dao Hoang Son <daohoangson@gmail.com>",
+      "messages": [],
+      "total_additions": 262,
+      "total_deletions": 19,
+      "accepted_lines": 243,
+      "overriden_lines": 0
+    }
+  }
+}
