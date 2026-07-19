@@ -120,7 +120,7 @@ export function SessionSummary({
 
           <div className="mt-4 flex items-center justify-center gap-2 border-t border-slate-100 pt-4">
             <Timer className="h-5 w-5 text-slate-400" />
-            <span className="text-2xl font-black tabular-nums text-slate-500">
+            <span className="text-2xl font-black text-slate-500 tabular-nums">
               {formatTime(elapsedMs)}
             </span>
           </div>

@@ -152,8 +152,7 @@ export function GameScreen({
         {items.map((item, index) => {
           const isWrong = item.status === "wrong";
           const isCorrect = item.status === "correct";
-          const isClickable =
-            !isWrong && !isCorrect && !hasCorrectAnswer;
+          const isClickable = !isWrong && !isCorrect && !hasCorrectAnswer;
 
           return (
             <button

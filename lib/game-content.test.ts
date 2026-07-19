@@ -176,7 +176,9 @@ describe("fixVisuallySimilarEmojis", () => {
     expect(result.targetValue).toBe("🫠");
     // Distractors should be replaced since they share "hide" keyword
     expect(result.distractors).toHaveLength(2);
-    expect(areVisuallySimilar(result.distractors[0], result.distractors[1])).toBe(false);
+    expect(
+      areVisuallySimilar(result.distractors[0], result.distractors[1]),
+    ).toBe(false);
   });
 
   it("should preserve targetValue when fixing", () => {
