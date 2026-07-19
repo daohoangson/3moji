@@ -8,24 +8,26 @@ export function isSpeechAvailable(): boolean {
 /**
  * Speak a word using the Web Speech API
  */
-export function speakWord(word: string): void {
+export function speakWord(word: string, lang = "en-US"): void {
   if (!isSpeechAvailable()) return;
 
   // Cancel any ongoing speech
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = lang;
   utterance.rate = 0.8; // Slightly slower for kids
   utterance.pitch = 1.1; // Slightly higher pitch
   utterance.volume = 1;
 
-  // Try to use a child-friendly voice if available
+  // Prefer an installed voice matching the topic language when available
   const voices = window.speechSynthesis.getVoices();
-  const englishVoice = voices.find(
-    (voice) => voice.lang.startsWith("en") && voice.name.includes("Female"),
+  const languageCode = lang.split("-")[0].toLowerCase();
+  const matchingVoice = voices.find(
+    (voice) => voice.lang.toLowerCase().split("-")[0] === languageCode,
   );
-  if (englishVoice) {
-    utterance.voice = englishVoice;
+  if (matchingVoice) {
+    utterance.voice = matchingVoice;
   }
 
   window.speechSynthesis.speak(utterance);

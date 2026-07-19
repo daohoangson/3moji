@@ -28,6 +28,7 @@ export default async function TopicPlayPage({ params }: PageProps) {
       topicName={topic.name}
       topicIcon={topic.icon}
       topicItems={topic.items}
+      speechLang={topic.speechLang}
     />
   );
 }
