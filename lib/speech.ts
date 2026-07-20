@@ -22,10 +22,13 @@ export function speakWord(word: string, lang = "en-US"): void {
 
   // Prefer an installed voice matching the topic language when available
   const voices = window.speechSynthesis.getVoices();
-  const languageCode = lang.split("-")[0].toLowerCase();
-  const matchingVoice = voices.find(
-    (voice) => voice.lang.toLowerCase().split("-")[0] === languageCode,
-  );
+  const normalizedLang = lang.toLowerCase();
+  const languageCode = normalizedLang.split("-")[0];
+  const matchingVoice =
+    voices.find((voice) => voice.lang.toLowerCase() === normalizedLang) ??
+    voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === languageCode,
+    );
   if (matchingVoice) {
     utterance.voice = matchingVoice;
   }
