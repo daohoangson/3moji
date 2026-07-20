@@ -120,7 +120,7 @@ export function GameScreen({
   }, [inputWord, soundEnabled, speechLang]);
 
   const handleSpeakClick = () => {
-    if (!isSpeechAvailable()) return;
+    if (!isSpeechAvailable() || !soundEnabled) return;
     playPopSound();
     speakWord(inputWord, speechLang);
   };
