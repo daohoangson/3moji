@@ -172,6 +172,7 @@ describe("buildSession", () => {
       "flags-medium",
       // Level 3
       "flags-hard",
+      "world-cup-stars",
       "celebrations",
       "sports",
       "professions",

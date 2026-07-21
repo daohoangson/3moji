@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { getAllTopics, getTopicById, getTopicsByLevel } from "./index";
+import {
+  getAllTopics,
+  getTopicById,
+  getTopicsByLevel,
+  isEmojiItem,
+} from "./index";
 
 describe("topics utilities", () => {
   describe("getAllTopics", () => {
@@ -23,6 +28,7 @@ describe("topics utilities", () => {
         "flags-medium",
         // Level 3: Scholar (>5 years)
         "flags-hard",
+        "world-cup-stars",
         "celebrations",
         "sports",
         "professions",
@@ -40,6 +46,16 @@ describe("topics utilities", () => {
     it("returns undefined for unknown id", () => {
       const topic = getTopicById("unknown-topic");
       expect(topic).toBeUndefined();
+    });
+
+    it("keeps a unique country flag for every World Cup star", () => {
+      const topic = getTopicById("world-cup-stars")!;
+      expect(topic.items).toHaveLength(24);
+      expect(topic.items.every(isEmojiItem)).toBe(true);
+
+      const flags = topic.items.filter(isEmojiItem).map((item) => item.emoji);
+
+      expect(new Set(flags).size).toBe(flags.length);
     });
   });
 
@@ -71,6 +87,7 @@ describe("topics utilities", () => {
     it("returns level 3 topics", () => {
       expect(getTopicsByLevel(3).map((t) => t.id)).toEqual([
         "flags-hard",
+        "world-cup-stars",
         "celebrations",
         "sports",
         "professions",
