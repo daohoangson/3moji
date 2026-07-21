@@ -50,9 +50,11 @@ describe("topics utilities", () => {
 
     it("keeps a unique country flag for every World Cup star", () => {
       const topic = getTopicById("world-cup-stars")!;
+      expect(topic.items).toHaveLength(24);
+      expect(topic.items.every(isEmojiItem)).toBe(true);
+
       const flags = topic.items.filter(isEmojiItem).map((item) => item.emoji);
 
-      expect(flags).toHaveLength(24);
       expect(new Set(flags).size).toBe(flags.length);
     });
   });
