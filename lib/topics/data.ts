@@ -489,6 +489,7 @@ export const TOPICS: Topic[] = [
     ],
     icon: "🐉",
     level: 2,
+    speechLang: "vi-VN",
     items: [
       { word: "Tí", emoji: "🐀" },
       { word: "Sửu", emoji: "🐃" },

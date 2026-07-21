@@ -27,6 +27,7 @@ interface TopicSessionProps {
   topicName: string;
   topicIcon: string;
   topicItems: TopicItem[];
+  speechLang?: string;
 }
 
 export default function TopicSession({
@@ -34,6 +35,7 @@ export default function TopicSession({
   topicName,
   topicIcon,
   topicItems,
+  speechLang,
 }: TopicSessionProps) {
   const [rounds, resetRounds] = useClientValue(() => buildSession(topicItems));
   const [screen, setScreen] = useState<Screen>("game");
@@ -126,6 +128,7 @@ export default function TopicSession({
         type={round.type}
         onItemClick={handleItemClick}
         backHref={`/topics/${topicId}`}
+        speechLang={speechLang}
       />
     </div>
   );

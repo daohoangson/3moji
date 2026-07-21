@@ -37,6 +37,7 @@ export const TopicSchema = z.object({
   learningGoals: z.array(z.string()),
   icon: z.string(),
   level: TopicLevelSchema,
+  speechLang: z.string().optional(),
   items: z.array(TopicItemSchema),
 });
 

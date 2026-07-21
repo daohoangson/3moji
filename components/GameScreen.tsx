@@ -20,6 +20,7 @@ interface GameScreenProps {
   type: "color" | "emoji";
   onItemClick: (id: string) => void;
   backHref?: string;
+  speechLang?: string;
 }
 
 function CardContent({
@@ -54,6 +55,7 @@ export function GameScreen({
   type,
   onItemClick,
   backHref = "/",
+  speechLang = "en-US",
 }: GameScreenProps) {
   const hasCorrectAnswer = items.some((item) => item.status === "correct");
   const { soundEnabled } = useSoundSettings();
@@ -111,16 +113,16 @@ export function GameScreen({
     if (isSpeechAvailable() && soundEnabled) {
       // Small delay to let the screen render first
       const timer = setTimeout(() => {
-        speakWord(inputWord);
+        speakWord(inputWord, speechLang);
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [inputWord, soundEnabled]);
+  }, [inputWord, soundEnabled, speechLang]);
 
   const handleSpeakClick = () => {
-    if (!isSpeechAvailable()) return;
+    if (!isSpeechAvailable() || !soundEnabled) return;
     playPopSound();
-    speakWord(inputWord);
+    speakWord(inputWord, speechLang);
   };
 
   const wordButton = (
