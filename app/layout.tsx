@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import Script from "next/script";
 import { KeyboardHelp } from "@/components/KeyboardHelp";
+import { SpeechInitializer } from "@/components/SpeechInitializer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,6 +45,7 @@ export default function RootLayout({
             gtag('config', 'G-X8B5CLPKL4');
           `}
         </Script>
+        <SpeechInitializer />
         <KeyboardHelp />
         {children}
       </body>

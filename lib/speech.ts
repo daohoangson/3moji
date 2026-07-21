@@ -1,8 +1,36 @@
+let cachedVoices: SpeechSynthesisVoice[] | null = null;
+let initializationStarted = false;
+
 /**
  * Check if speech synthesis is available in the browser
  */
 export function isSpeechAvailable(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
+}
+
+function captureVoices(): SpeechSynthesisVoice[] {
+  const voices = window.speechSynthesis.getVoices();
+
+  if (voices.length > 0) {
+    cachedVoices = voices;
+  }
+
+  return voices;
+}
+
+/**
+ * Start loading browser voices once when the app mounts.
+ */
+export function initializeSpeech(): void {
+  if (!isSpeechAvailable() || initializationStarted) return;
+
+  initializationStarted = true;
+
+  if (captureVoices().length === 0) {
+    window.speechSynthesis.addEventListener("voiceschanged", captureVoices, {
+      once: true,
+    });
+  }
 }
 
 /**
@@ -21,7 +49,7 @@ export function speakWord(word: string, lang = "en-US"): void {
   utterance.volume = 1;
 
   // Prefer an installed voice matching the topic language when available
-  const voices = window.speechSynthesis.getVoices();
+  const voices = cachedVoices ?? captureVoices();
   const normalizedLang = lang.toLowerCase();
   const languageCode = normalizedLang.split("-")[0];
   const matchingVoice =
